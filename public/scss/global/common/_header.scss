@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  padding: rem(15) 0;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--bg-dark-secondary);
+  transition: transform var(--animation-default);
+
+  & .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: rem(20);
+  }
+
+  &_hidden {
+    transform: translateY(-100%);
+  }
+}

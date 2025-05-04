@@ -1,18 +1,18 @@
-export const animation = {
-  SHORT: 0.2,
-  DEFAULT: 0.35,
-  MEDIUM: 0.45,
-  LONG: 0.7
-}
+export const ANIMATION = {
+  SHORT: 0.35,
+  DEFAULT: 0.5,
+  MEDIUM: 0.7,
+  LONG: 1,
+  SWIPER: 700,
+  EASE: '.36,.3,0,1',
+};
 
-function getDVH() {
-  let a, b;
-  document.body.style.setProperty("height", "100dvh");
-  a = document.body.clientHeight;
-  document.body.style.setProperty("height", "100vh");
-  b = document.body.clientHeight;
-  document.body.style.removeProperty("height");
-  return b - a;
-}
+export const MEDIA = {
+  MOBILE: 600,
+  TABLET: 1160,
+  LAPTOP: 1600,
+  DESKTOP: 2100,
+};
 
-export const dvhDiff = getDVH();
+export const POLICY_LINK =
+  'https://st-152-fz.ru/index_polic.php?name=ООО%20«Водорой»&site=https://vodoroy.ru/';

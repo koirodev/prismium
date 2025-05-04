@@ -1,0 +1,151 @@
+@layer components {
+  .nav {
+    --nav-bg-color: theme('colors.light');
+    --nav-font: 400 #{rem(16)} / 1.5 #{theme('fontFamily.secondary')};
+    --nav-gap: #{rem(15)};
+    --nav-icon-size: #{rem(30)};
+    --nav-text-color: theme('colors.light');
+    --nav-text-color-hover: theme('colors.dark');
+
+    @apply ml-auto flex w-fit flex-row items-center justify-start gap-[var(--nav-gap)];
+
+    &__list {
+      @apply flex flex-row items-center justify-start gap-[var(--nav-gap)];
+
+      .nav__list {
+        top: calc(100% + #{rem(5)});
+        margin-top: rem(-10);
+
+        padding: rem(15) rem(10);
+        gap: calc(var(--nav-gap, #{rem(20)}) / 2);
+
+        @apply flex-start bg-dark animation-default border-stroke invisible absolute z-10 h-auto w-full min-w-fit flex-col overflow-hidden rounded border opacity-0 transition-[visibility_opacity_margin-top];
+
+        .nav {
+          &__item,
+          &__link {
+            @apply w-full whitespace-nowrap;
+          }
+
+          &__icon {
+            --icon-size: #{rem(24)};
+          }
+        }
+
+        > hr {
+          @apply block;
+        }
+      }
+
+      > hr {
+        @apply bg-stroke-light m-0 hidden h-px w-full border-none;
+      }
+    }
+
+    &__item {
+      @include hover {
+        > .nav__link {
+          color: var(--nav-text-color-hover);
+
+          background-color: var(--nav-bg-color);
+
+          > .nav__icon.icon {
+            --icon-color: var(--nav-text-color-hover);
+          }
+        }
+
+        .nav__list {
+          @apply visible mt-0 opacity-100;
+        }
+      }
+
+      @apply relative block size-fit rounded;
+    }
+
+    &__link {
+      padding: rem(10);
+      gap: calc(var(--nav-gap) / 2);
+
+      font: var(--nav-font);
+
+      @include hover {
+        color: var(--nav-text-color-hover);
+
+        background-color: var(--nav-bg-color);
+
+        .nav__icon.icon {
+          --icon-color: var(--nav-text-color-hover);
+        }
+      }
+
+      @apply text-light flex size-fit cursor-pointer flex-row items-center justify-start whitespace-nowrap rounded transition-colors;
+
+      .text {
+        @apply w-fit;
+      }
+    }
+
+    &__icon.icon {
+      --icon-color: var(--nav-text-color);
+      --icon-size: var(--nav-icon-size);
+    }
+
+    & {
+      @include media(700px) {
+        --nav-font: 400 #{rem(14)} / 1.5 #{theme('fontFamily.secondary')};
+        --nav-gap: #{rem(10)};
+        --nav-icon-size: #{rem(24)};
+        --nav-offset-right: #{rem(10)};
+        --nav-offset-top: #{rem(15)};
+        --nav-padding: #{rem(10)};
+        --nav-padding-top: #{rem(50)};
+
+        top: var(--nav-offset-top);
+        right: var(--nav-offset-right);
+
+        width: rem(250);
+
+        transform-origin: calc(100% - 20px) 20px;
+        transition: visibility var(--animation-default);
+
+        @apply flex-start bg-dark2 border-stroke pointer-events-none invisible absolute overflow-hidden rounded border p-0 opacity-0 transition-[visibility_opacity];
+
+        &::before {
+          @apply from-dark2 fixed left-0 top-0 z-10 h-[var(--nav-padding-top)] w-full to-transparent content-[''];
+        }
+
+        &__list {
+          padding: var(--nav-padding-top) var(--nav-padding) var(--nav-padding);
+          max-height: calc(
+            100vh - var(--global-dvh-diff, 0px) - var(--nav-offset-top) *
+              2 - var(--nav-padding-top) - var(--nav-padding)
+          );
+
+          @apply relative z-0 w-full flex-col items-start overflow-auto transition-[unset];
+
+          & .nav__list {
+            @apply visible static m-0 border-none bg-transparent p-0 pl-4 opacity-100;
+
+            & > hr {
+              @apply hidden;
+            }
+          }
+
+          & > hr {
+            @apply block;
+          }
+        }
+
+        &__item {
+          gap: calc(var(--nav-gap) / 2);
+
+          @apply flex-start w-full flex-col;
+        }
+
+        &__link {
+          @apply w-full p-2;
+        }
+      }
+    }
+  }
+}

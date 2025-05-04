@@ -6,7 +6,7 @@
   "element-case": "lower",
   "eof-newline": true,
   "leading-zero": true,
-  "quotes": "double",
+  "quotes": "single",
   "remove-empty-rulesets": true,
   "sort-order-fallback": "abc",
   "space-after-colon": 1,
@@ -26,7 +26,7 @@
   "lines-between-rulesets": 1,
   "sort-order": [
     ["..."],
-    ["$include contain", "$include pseudo", "all", "content"],
+    ["all", "content"],
     [
       "float",
       "clear",
@@ -334,13 +334,8 @@
       "scroll-padding-left",
       "scrollbar-width",
       "scrollbar-color",
-      "scrollbar-gutter",
-      "$include scrollbar",
-      "$include scrollbarHorizontal",
-      "$include scrollbarDelete"
+      "scrollbar-gutter"
     ],
-    ["$include container"],
-    ["$include mediaBigDesktop"],
     ["$include mediaDesktop"],
     ["$include mediaLaptop"],
     ["$include mediaTablet"],

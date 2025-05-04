@@ -1,0 +1,5 @@
+@layer utilities {
+  .animation-default {
+    @apply duration-default ease-default;
+  }
+}

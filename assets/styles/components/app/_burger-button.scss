@@ -1,0 +1,21 @@
+@layer components {
+  .burger-button {
+    @apply flex h-10 w-10 transform items-center justify-center rounded-full bg-white text-gray-800 shadow-md transition duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-opacity-50;
+
+    &.active {
+      @apply bg-gray-800 text-white;
+    }
+
+    span {
+      @apply h-00.5 mb-1 block w-6 bg-current transition duration-300 ease-in-out;
+
+      &:nth-child(2) {
+        @apply w-4;
+      }
+
+      &:nth-child(3) {
+        @apply w-5;
+      }
+    }
+  }
+}

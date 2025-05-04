@@ -1,0 +1,9 @@
+:root {
+  --shadow-default: 0 2px 7px rgb(0 0 0 / 7%), 0 10px 30px rgb(0 0 0 / 7%);
+
+  @include mediaBigDesktop {
+    --shadow-default:
+      0 #{big(2)} #{big(7)} rgb(0 0 0 / 7%),
+      0 #{big(10)} #{big(30)} rgb(0 0 0 / 7%);
+  }
+}

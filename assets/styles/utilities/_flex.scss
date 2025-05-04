@@ -1,0 +1,5 @@
+@layer utilities {
+  .flex-start {
+    @apply flex items-start justify-start;
+  }
+}

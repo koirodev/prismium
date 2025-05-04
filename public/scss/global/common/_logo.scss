@@ -1,0 +1,97 @@
+.logo {
+  --logo-font-size: #{rem(24)};
+  --logo-gap: #{rem(10)};
+  --logo-offset: #{rem(6)};
+  --logo-size: #{rem(50)};
+  --version-font-size: #{rem(10)};
+
+  position: relative;
+  width: fit-content;
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+  gap: var(--logo-gap);
+  text-decoration: none;
+  user-select: none;
+
+  @include media(700px) {
+    --logo-font-size: #{rem(18)};
+    --logo-gap: #{rem(7)};
+    --logo-size: #{rem(34)};
+    --version-font-size: #{rem(9)};
+  }
+
+  &__image {
+    position: relative;
+    top: var(--logo-offset, 0);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    display: flex;
+    flex-shrink: 0;
+    cursor: pointer;
+    user-select: none;
+
+    @include hover {
+      .logo__icon path {
+        &:first-child {
+          opacity: 0;
+        }
+
+        &:not(:first-child) {
+          transform: rotate(-30deg) translateY(22%) translateX(5%);
+          transition: transform var(--animation-default);
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    & path {
+      transform-origin: 0% 75%;
+      transition:
+        transform var(--animation-default),
+        opacity var(--animation-default);
+    }
+  }
+
+  &__text {
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--logo-font-size);
+    line-height: 1;
+  }
+
+  &__version {
+    position: relative;
+    padding: rem(2) rem(4);
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
+    color: var(--text-light-primary);
+    font-size: var(--version-font-size);
+    text-decoration: none;
+    // border: 1px solid var(--accent-primary-hover);
+
+    border-radius: var(--radius-small-elements);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--accent-primary-default);
+      opacity: 0.4;
+    }
+  }
+}

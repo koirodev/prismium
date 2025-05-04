@@ -1,6 +1,14 @@
+/**
+ * @description
+ * Плагин для получения высоты глобального хедера и хлебных крошек.
+ * Также вычисляет разницу между высотой 100vh и 100dvh.
+ * Это необходимо для корректного отображения элементов на мобильных устройствах.
+ * Плагин обновляет значения при изменении размера окна.
+ */
+
 export const getGlobalHeaderHeight = () => {
-  if (document.querySelector(".header")) {
-    const header = document.querySelector(".header");
+  if (document.querySelector('.header')) {
+    const header = document.querySelector('.header');
     return header.clientHeight;
   }
   return 0;
@@ -8,12 +16,12 @@ export const getGlobalHeaderHeight = () => {
 
 export const setGlobalHeaderHeight = () => {
   const height = getGlobalHeaderHeight();
-  document.body.style.setProperty("--global-header-height", `${height}px`);
+  document.body.style.setProperty('--global-header-height', `${height}px`);
 };
 
 export const getGlobalBreadcrumbsHeight = () => {
-  if (document.querySelector(".breadcrumbs")) {
-    const breadcrumbs = document.querySelector(".breadcrumbs");
+  if (document.querySelector('.breadcrumbs')) {
+    const breadcrumbs = document.querySelector('.breadcrumbs');
     return breadcrumbs.clientHeight;
   }
   return 0;
@@ -21,25 +29,25 @@ export const getGlobalBreadcrumbsHeight = () => {
 
 export const setGlobalBreadcrumbsHeight = () => {
   const height = getGlobalBreadcrumbsHeight();
-  document.body.style.setProperty("--global-breadcrumbs-height", `${height}px`);
+  document.body.style.setProperty('--global-breadcrumbs-height', `${height}px`);
 };
 
 export const getGlobalDVHDiff = () => {
   let a, b;
-  document.body.style.setProperty("height", "100dvh");
+  document.body.style.setProperty('height', '100dvh');
   a = document.body.clientHeight;
-  document.body.style.setProperty("height", "100vh");
+  document.body.style.setProperty('height', '100vh');
   b = document.body.clientHeight;
-  document.body.style.removeProperty("height");
+  document.body.style.removeProperty('height');
   return b - a;
 };
 
 export const setGlobalDVHDiff = () => {
   const diff = getGlobalDVHDiff();
   if (diff > 0) {
-    document.body.style.setProperty("--global-dvh-diff", `${diff}px`);
+    document.body.style.setProperty('--global-dvh-diff', `${diff}px`);
   } else {
-    document.body.style.removeProperty("--global-dvh-diff");
+    document.body.style.removeProperty('--global-dvh-diff');
   }
 };
 
@@ -62,11 +70,7 @@ export default defineNuxtPlugin(() => {
       }
     };
 
-    window.addEventListener("resize", handleResize);
-
-    onUnmounted(() => {
-      window.removeEventListener("resize", handleResize);
-    });
+    window.addEventListener('resize', handleResize);
   }
 
   return {
@@ -78,8 +82,8 @@ export default defineNuxtPlugin(() => {
         setGlobalBreadcrumbsHeight,
         getGlobalDVHDiff,
         setGlobalDVHDiff,
-        updateAllSizes
-      }
-    }
+        updateAllSizes,
+      },
+    },
   };
 });

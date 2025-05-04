@@ -9,16 +9,17 @@ tests
 
 # Node dependencies
 node_modules
+package-lock.json
 
 # Logs
 logs
 *.log
 
 # Misc
+__MACOSX
 .DS_Store
 .fleet
 .idea
-.vscode
 
 # Local env files
 .env

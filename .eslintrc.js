@@ -6,13 +6,13 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-essential',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   parserOptions: {
-    ecmaVersion: 2020
+    ecmaVersion: 2020,
   },
   rules: {
-    'quotes': ['error', 'single'],
-    'semi': ['error', 'always']
-  }
+    quotes: ['error', 'single'],
+    semi: ['error', 'always'],
+  },
 };

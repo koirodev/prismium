@@ -2,18 +2,71 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
 
+  runtimeConfig: {
+    public: {
+      siteUrl: 'https://example.ru',
+      gitApi: 'https://api.github.com/repos/koirodev/prismium',
+      latestVersion: 'https://registry.npmjs.org/prismium/latest',
+    },
+  },
+
+  imports: { autoImport: true, scan: true },
+
   modules: [
     '@vueuse/nuxt',
-    '@nuxt/image',
-    'nuxt-typed-router',
-    'nuxt-file-storage',
     'nuxt-svgo',
+    'nuxt-file-storage',
+    'nuxt-typed-router',
+    '@nuxtjs/sitemap',
     '@pinia/nuxt',
+    '@nuxtjs/i18n',
   ],
+
+  i18n: {
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: true,
+      fallbackLocale: 'en',
+    },
+    experimental: {
+      alternateLinkCanonicalQueries: true,
+      switchLocalePathLinkSSR: true,
+    },
+    locales: [
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'ru', language: 'ru-RU', name: 'Russian', file: 'ru.json' },
+      { code: 'zh', language: 'zh-CN', name: '中国人', file: 'zh.json' },
+    ],
+  },
+
+  site: {
+    url: 'https://example.ru',
+    name: 'Prismium docs',
+    trailingSlash: true,
+  },
+
+  sitemap: {
+    // excludeAppSources: true,
+    // sources: ['/api/sitemap'],
+  },
 
   svgo: {
     autoImportPath: '~/assets/svg',
     componentPrefix: 'svg',
+    defaultImport: 'componentext',
+  },
+
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        activeClass: 'router-link-active',
+        exactActiveClass: 'router-link-exact-active',
+        trailingSlash: 'append',
+      },
+    },
   },
 
   app: {
@@ -34,39 +87,28 @@ export default defineNuxtConfig({
         },
         { rel: 'manifest', href: '/favicon/site.webmanifest' },
       ],
-      meta: [{ name: 'apple-mobile-web-app-title', content: 'Prismium UI' }],
+      meta: [
+        { name: 'apple-mobile-web-app-title', content: 'Prismium docs' },
+        { name: 'robots', content: 'noindex, nofollow' },
+      ],
     },
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in',
-    },
+    pageTransition: { name: 'page', mode: 'out-in' },
   },
 
-  plugins: [
-    '~/plugins/has-polyfill.client.js',
-    '~/plugins/blank-polyfill.client.js',
-    '~/plugins/global-sizes.client.js',
-  ],
+  router: { options: { scrollBehaviorType: 'auto' } },
 
-  image: {
-    dir: 'assets/images',
-    quality: 80,
-    format: ['avif', 'webp', 'jpg', 'jpeg', 'png', 'gif'],
-    densities: [1, 2],
-  },
-
-  css: ['~/assets/scss/main.scss'],
+  css: ['normalize.css', '~/assets/styles/index.scss'],
 
   vite: {
+    build: { rollupOptions: { output: { manualChunks: undefined } } },
     css: {
       preprocessorOptions: {
         scss: {
           additionalData: `
-            @use '~/assets/scss/mixins/media' as *;
-            @use '~/assets/scss/mixins/mini' as *;
-            @use '~/assets/scss/mixins/disable-mob-hover' as *;
-            @use '~/assets/scss/mixins/pseudo-hover' as *;
-            @use '~/assets/scss/mixins/scrollbar' as *;
+            @use '~/assets/styles/mixins/hover' as *;
+            @use '~/assets/styles/mixins/media' as *;
+            @use '~/assets/styles/mixins/mini' as *;
+            @use '~/assets/styles/mixins/pseudo' as *;
           `,
           silenceDeprecations: ['legacy-js-api', 'import'],
         },
@@ -77,17 +119,11 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
+      tailwindcss: {},
       'postcss-media-minmax': {},
-      'css-blank-pseudo': { preserve: false },
-      '@csstools/postcss-is-pseudo-class': {
-        preserve: false,
-        onComplexSelector: 'warning',
-        onPseudoElement: 'warning',
-      },
-      'css-has-pseudo': { preserve: true },
       autoprefixer: {},
     },
   },
 
-  compatibilityDate: '2024-12-16',
+  compatibilityDate: '2025-05-02',
 });
