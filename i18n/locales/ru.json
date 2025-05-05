@@ -1,7 +1,8 @@
 {
   "docs": "Дока",
   "demos": "Демо",
-  "language": "Ru",
+  "language": "Язык",
+  "languageName": "Ru",
   "getStarted": "Начать",
   "changelog": "Журнал изменений",
   "star": "звезда",

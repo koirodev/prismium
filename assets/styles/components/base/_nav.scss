@@ -13,13 +13,13 @@
       @apply flex flex-row items-center justify-start gap-[var(--nav-gap)];
 
       .nav__list {
-        top: calc(100% + #{rem(5)});
+        top: calc(100% + #{rem(10)});
         margin-top: rem(-10);
 
         padding: rem(15) rem(10);
         gap: calc(var(--nav-gap, #{rem(20)}) / 2);
 
-        @apply flex-start bg-dark animation-default border-stroke invisible absolute z-10 h-auto w-full min-w-fit flex-col overflow-hidden rounded border opacity-0 transition-[visibility_opacity_margin-top];
+        @apply flex-start animation-default invisible absolute z-10 h-auto w-full min-w-fit flex-col overflow-hidden rounded border border-stroke bg-dark opacity-0 transition-[visibility_opacity_margin-top];
 
         .nav {
           &__item,
@@ -38,28 +38,30 @@
       }
 
       > hr {
-        @apply bg-stroke-light m-0 hidden h-px w-full border-none;
+        @apply m-0 hidden h-px w-full shrink-0 border-none bg-stroke-light;
       }
     }
 
     &__item {
-      @include hover {
-        > .nav__link {
-          color: var(--nav-text-color-hover);
+      @apply relative block size-fit rounded;
 
-          background-color: var(--nav-bg-color);
+      & {
+        @include hover {
+          > .nav__link {
+            color: var(--nav-text-color-hover);
 
-          > .nav__icon.icon {
-            --icon-color: var(--nav-text-color-hover);
+            background-color: var(--nav-bg-color);
+
+            > .nav__icon.icon {
+              --icon-color: var(--nav-text-color-hover);
+            }
+          }
+
+          .nav__list {
+            @apply visible mt-0 opacity-100;
           }
         }
-
-        .nav__list {
-          @apply visible mt-0 opacity-100;
-        }
       }
-
-      @apply relative block size-fit rounded;
     }
 
     &__link {
@@ -68,17 +70,19 @@
 
       font: var(--nav-font);
 
-      @include hover {
-        color: var(--nav-text-color-hover);
+      @apply flex size-fit cursor-pointer flex-row items-center justify-start whitespace-nowrap rounded text-light transition-colors;
 
-        background-color: var(--nav-bg-color);
+      & {
+        @include hover {
+          color: var(--nav-text-color-hover);
 
-        .nav__icon.icon {
-          --icon-color: var(--nav-text-color-hover);
+          background-color: var(--nav-bg-color);
+
+          .nav__icon.icon {
+            --icon-color: var(--nav-text-color-hover);
+          }
         }
       }
-
-      @apply text-light flex size-fit cursor-pointer flex-row items-center justify-start whitespace-nowrap rounded transition-colors;
 
       .text {
         @apply w-fit;
@@ -91,12 +95,12 @@
     }
 
     & {
-      @include media(700px) {
+      @include media(780px) {
         --nav-font: 400 #{rem(14)} / 1.5 #{theme('fontFamily.secondary')};
         --nav-gap: #{rem(10)};
         --nav-icon-size: #{rem(24)};
-        --nav-offset-right: #{rem(10)};
-        --nav-offset-top: #{rem(15)};
+        --nav-offset-right: calc(var(--container-offset) - #{rem(5)});
+        --nav-offset-top: #{rem(10)};
         --nav-padding: #{rem(10)};
         --nav-padding-top: #{rem(50)};
 
@@ -105,13 +109,26 @@
 
         width: rem(250);
 
+        transform: translateX(0);
         transform-origin: calc(100% - 20px) 20px;
         transition: visibility var(--animation-default);
 
-        @apply flex-start bg-dark2 border-stroke pointer-events-none invisible absolute overflow-hidden rounded border p-0 opacity-0 transition-[visibility_opacity];
+        @apply flex-start pointer-events-none invisible absolute rounded border border-stroke bg-dark2 p-0 opacity-0 transition-[visibility_opacity];
+
+        & {
+          @include mediaMobile {
+            --nav-offset-right: calc(var(--container-offset) - #{rem(7)});
+          }
+        }
 
         &::before {
-          @apply from-dark2 fixed left-0 top-0 z-10 h-[var(--nav-padding-top)] w-full to-transparent content-[''];
+          top: -1px;
+          left: -1px;
+
+          width: calc(100% + 2px);
+          height: calc(var(--nav-padding-top) + 1px);
+
+          @apply fixed z-10 rounded-tl rounded-tr bg-gradient-to-b from-dark2 to-transparent content-[''];
         }
 
         &__list {
@@ -122,6 +139,10 @@
           );
 
           @apply relative z-0 w-full flex-col items-start overflow-auto transition-[unset];
+
+          & {
+            @include scrollbarDelete;
+          }
 
           & .nav__list {
             @apply visible static m-0 border-none bg-transparent p-0 pl-4 opacity-100;

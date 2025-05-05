@@ -1,7 +1,45 @@
 <script setup>
 const { locales, setLocale, setLocaleCookie } = useI18n();
 
-const starsCount = ref(0);
+const burgerStore = useBurgerStore();
+const { isBurgerOpen } = storeToRefs(burgerStore);
+const isMobile = ref(false);
+
+const starsCount = ref(21);
+
+const close = () => {
+  if (isBurgerOpen.value) {
+    burgerStore.closeBurger();
+  }
+};
+
+const closeEvent = (e) => {
+  if (e.target.closest('.nav')) return;
+  if (e.target.closest('.burger-button')) return;
+
+  close();
+};
+
+const checkWindowSize = () => {
+  if (window.innerWidth > 780) {
+    isMobile.value = false;
+    return;
+  }
+
+  isMobile.value = true;
+};
+
+onMounted(() => {
+  window.addEventListener('resize', checkWindowSize);
+  document.addEventListener('click', (e) => closeEvent(e));
+  document.addEventListener('touchstart', (e) => closeEvent(e));
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkWindowSize);
+  document.removeEventListener('click', (e) => closeEvent(e));
+  document.removeEventListener('touchstart', (e) => closeEvent(e));
+});
 
 onMounted(async () => {
   try {
@@ -17,7 +55,12 @@ onMounted(async () => {
 </script>
 
 <template>
-  <nav class="nav">
+  <nav
+    :class="[
+      'nav',
+      { 'pointer-events-auto visible opacity-100': isBurgerOpen },
+    ]"
+  >
     <ul class="nav__list">
       <li class="nav__item">
         <span class="nav__link">{{ $t('docs') }}</span>
@@ -51,11 +94,13 @@ onMounted(async () => {
           </li>
         </ul>
       </li>
+      <hr />
       <li class="nav__item">
         <AppLink class="nav__link" to="/demos">
           {{ $t('demos') }}
         </AppLink>
       </li>
+      <hr />
       <li class="nav__item">
         <AppLink
           class="nav__link nav__link_github"
@@ -73,7 +118,7 @@ onMounted(async () => {
       <li class="nav__item">
         <span class="nav__link">
           <SvgFiRrWorld class="nav__icon icon icon-speed" />
-          {{ $t('language') }}
+          {{ isMobile ? $t('language') : $t('languageName') }}
         </span>
         <ul class="nav__list right-0">
           <li class="nav__item" v-for="loc in locales" :key="loc.value">

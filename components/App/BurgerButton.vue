@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+const burgerStore = useBurgerStore();
+</script>
 
 <template>
-  <button>
+  <button
+    :class="['burger-button', { active: burgerStore.isBurgerOpen }]"
+    @click="burgerStore.toggleBurger"
+  >
     <span></span>
   </button>
 </template>

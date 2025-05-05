@@ -1,7 +1,8 @@
 {
   "docs": "Docs",
   "demos": "Demos",
-  "language": "En",
+  "language": "Language",
+  "languageName": "En",
   "getStarted": "Get Started",
   "star": "Star",
   "stars": "Stars",

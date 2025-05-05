@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     },
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
-      { code: 'ru', language: 'ru-RU', name: 'Russian', file: 'ru.json' },
+      { code: 'ru', language: 'ru-RU', name: 'Русский', file: 'ru.json' },
       { code: 'zh', language: 'zh-CN', name: '中国人', file: 'zh.json' },
     ],
   },
@@ -109,6 +109,7 @@ export default defineNuxtConfig({
             @use '~/assets/styles/mixins/media' as *;
             @use '~/assets/styles/mixins/mini' as *;
             @use '~/assets/styles/mixins/pseudo' as *;
+            @use '~/assets/styles/mixins/scrollbar' as *;
           `,
           silenceDeprecations: ['legacy-js-api', 'import'],
         },
