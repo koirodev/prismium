@@ -1,6 +1,4 @@
-<script setup>
-const year = new Date().getFullYear();
-</script>
+<script setup></script>
 
 <template>
   <footer class="mt-auto py-3">
