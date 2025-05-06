@@ -17,7 +17,7 @@ export default defineNuxtPlugin(() => {
 
       const hrefAttr = link.getAttribute('href');
       if (hrefAttr && hrefAttr.startsWith('#')) {
-        useBurgerState().closeBurger();
+        useBurgerStore().closeBurger();
         return;
       }
 
@@ -27,7 +27,7 @@ export default defineNuxtPlugin(() => {
       if (linkUrl.origin === origin && linkUrl.pathname === pathname) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        useBurgerState().closeBurger();
+        useBurgerStore().closeBurger();
       }
     });
   }
