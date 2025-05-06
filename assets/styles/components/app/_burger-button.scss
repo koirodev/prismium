@@ -21,7 +21,7 @@
         top var(--button-animation) calc(var(--button-duration) / 2),
         bottom var(--button-animation) calc(var(--button-duration) / 2);
 
-      @apply absolute bottom-0 left-0 right-0 top-0 m-auto h-0.5 w-4/6 rounded-full bg-dark2/90 content-[''];
+      @apply absolute bottom-0 left-0 right-0 top-0 m-auto h-0.5 w-3/6 rounded-full bg-dark2/90 content-[''];
     }
 
     &::before {

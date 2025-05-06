@@ -1,49 +1,37 @@
-* {
-  -webkit-tap-highlight-color: transparent;
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
 
-  @apply box-border;
-}
-
-.page {
-  scroll-padding: calc(
-    var(--global-header-height, 0px) + var(--grid-row-gap, 10px)
-  );
-
-  @apply text-theme-text h-full scroll-smooth text-balance text-[16px];
-
-  &__body {
-    @apply bg-theme-bg m-0 min-h-full min-w-[300px];
+    @apply box-border;
   }
-}
 
-.main {
-  @apply flex h-auto flex-col;
-}
+  .page {
+    scroll-padding: calc(
+      var(--global-header-height, 0px) + var(--grid-row-gap, 10px)
+    );
 
-::selection {
-  @apply bg-theme-accent text-theme-text;
-}
+    @apply h-full scroll-smooth text-balance text-[16px] text-theme-text;
 
-.wrapper {
-  padding-top: var(--global-header-height, 0px);
-
-  @apply animation-default relative z-10 flex min-h-screen flex-col items-stretch;
-
-  &__content {
-    @apply flex grow flex-col;
+    &__body {
+      @apply m-0 min-h-full min-w-[300px] bg-theme-bg;
+    }
   }
-}
 
-.footer {
-  @apply mt-auto;
-}
+  .main {
+    @apply flex h-auto flex-col;
+  }
 
-.visually-hidden {
-  clip: rect(0 0 0 0);
+  ::selection {
+    @apply bg-theme-accent text-dark;
+  }
 
-  @apply absolute -m-px size-px overflow-hidden border-0 p-0;
-}
+  .wrapper {
+    padding-top: var(--global-header-height, 0px);
 
-.reset-styles {
-  @apply m-0 p-0;
+    @apply animation-default relative z-10 flex min-h-screen flex-col items-stretch;
+
+    &__content {
+      @apply flex grow flex-col;
+    }
+  }
 }

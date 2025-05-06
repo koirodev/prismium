@@ -1,14 +1,13 @@
 <script setup></script>
 
 <template>
-  <footer class="mt-auto py-3">
+  <footer class="mt-auto py-4">
     <div class="container flex items-center justify-between">
       <span class="text-s font-secondary">
         © prismium 2024 - {{ new Date().getFullYear() }}
       </span>
-
       <AppLink
-        class="icon-wrapper flex size-8"
+        class="icon-wrapper flex size-10"
         to="https://github.com/koirodev/prismium/"
         title="GitHub"
       >
