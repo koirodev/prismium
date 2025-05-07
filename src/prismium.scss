@@ -1,1 +1,228 @@
-@import "core/core";
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+:root {
+  --prismium-background-color-active: transparent;
+  --prismium-background-color-active-nested: transparent;
+  --prismium-background-color-disabled: transparent;
+  --prismium-background-color-hover: transparent;
+  --prismium-background-color-primary: transparent;
+  --prismium-border-color-primary: transparent;
+  --prismium-border-radius: 0;
+  --prismium-border-width: 0;
+  --prismium-content-gap: 0;
+  --prismium-content-offset: 0;
+  --prismium-current-gap: 0;
+  --prismium-duration: 0.35s;
+  --prismium-ease: cubic-bezier(0.36, 0.3, 0, 1);
+  --prismium-font-primary: 500 20px / 1.2 sans-serif;
+  --prismium-font-secondary: 500 16px / 1.2 sans-serif;
+  --prismium-gap: 0;
+  --prismium-icon-color-hover: #2BFADE;
+  --prismium-icon-color-primary: #202020;
+  --prismium-icon-size: 24px;
+  --prismium-link-color-hover: #FCB0FC;
+  --prismium-link-color-primary: #56E6DE;
+  --prismium-link-decoration: underline;
+  --prismium-padding: 0px;
+  --prismium-text-color-primary: #202020;
+  --prismium-text-color-secondary: #4C4C4C;
+}
+
+.prismium {
+  margin-top: var(--prismium-gap);
+
+  padding: var(--prismium-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  color: var(--prismium-text-color-primary);
+  font: var(--prismium-font-primary);
+
+  background-color: var(--prismium-background-color-primary);
+  border: solid var(--prismium-border-width) var(--prismium-border-color-primary);
+  border-radius: var(--prismium-border-radius);
+
+  transition: background-color calc(var(--prismium-duration) * 2) var(--prismium-ease);
+
+  @include hover {
+    &:has(> .prismium__current:hover:not(:disabled)) {
+      background-color: var(--prismium-background-color-hover);
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &__current {
+    position: relative;
+    margin: 0;
+
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--prismium-current-gap);
+
+    color: inherit;
+    font: inherit;
+    text-align: start;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    &:disabled {
+      opacity: 0.6;
+
+      cursor: not-allowed;
+
+      & .prismium__icon {
+        fill: var(--prismium-icon-color-primary);
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+
+    width: var(--prismium-icon-size);
+    height: var(--prismium-icon-size);
+    flex-shrink: 0;
+
+    fill: var(--prismium-icon-color-primary);
+
+    transition: transform var(--prismium-speed) var(--prismium-ease),
+      fill var(--prismium-duration) var(--prismium-ease);
+
+    pointer-events: all;
+
+    @include hover {
+      fill: var(--prismium-icon-color-hover);
+    }
+
+    &_hidden {
+      position: absolute;
+      margin: -1px;
+
+      padding: 0;
+      width: 0 !important;
+      height: 0 !important;
+
+      border: 0;
+      overflow: hidden;
+
+      pointer-events: none;
+      user-select: none;
+      clip: rect(0 0 0 0);
+    }
+  }
+
+  &__hidden {
+    padding-top: 0;
+    width: 100%;
+    max-height: 0;
+    display: block;
+    box-sizing: content-box;
+
+    overflow: hidden;
+    will-change: max-height;
+
+    transition: max-height var(--prismium-speed) var(--prismium-ease);
+
+    &.js-prismium-opened {
+      max-height: unset;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    padding-top: var(--prismium-content-offset);
+    width: 100%;
+    height: fit-content;
+
+    color: var(--prismium-text-color-secondary);
+    font: var(--prismium-font-secondary);
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: calc(var(--prismium-content-offset, 20px) / 2);
+      right: 0;
+
+      width: 0;
+      height: var(--prismium-border-width);
+
+      background-color: var(--prismium-border-color-primary);
+
+      transition: width var(--prismium-duration) var(--prismium-ease);
+    }
+
+    & > * + .prismium:first-of-type {
+      margin-top: calc(var(--prismium-gap) * 2);
+    }
+
+    & .prismium {
+      margin-top: var(--prismium-gap);
+    }
+  }
+
+  & a[href] {
+    color: var(--prismium-link-color-primary);
+    text-decoration-color: inherit;
+    text-decoration-line: var(--prismium-link-decoration);
+    text-decoration-style: var(--contacts-link-decoration);
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 1px;
+    text-underline-position: from-font;
+
+    transition: color var(--prismium-duration) var(--prismium-ease);
+
+    @include hover {
+      color: var(--prismium-link-color-hover);
+    }
+  }
+
+  &.js-prismium-active {
+    > .prismium__current {
+      > .prismium__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .prismium__content {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    .js-prismium-active {
+      background-color: var(--prismium-background-color-active-nested);
+    }
+  }
+
+  &.js-prismium-disabled {
+    pointer-events: none;
+    user-select: none;
+
+    .prismium__icon,
+    .prismium__current {
+      pointer-events: none;
+    }
+  }
+}

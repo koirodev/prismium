@@ -26,7 +26,7 @@
   "lines-between-rulesets": 1,
   "sort-order": [
     ["..."],
-    ["$include contain", "$include pseudo", "all", "content"],
+    ["$include pseudo", "all", "content"],
     [
       "float",
       "clear",
@@ -339,13 +339,6 @@
       "$include scrollbarHorizontal",
       "$include scrollbarDelete"
     ],
-    ["$include container"],
-    ["$include mediaBigDesktop"],
-    ["$include mediaDesktop"],
-    ["$include mediaLaptop"],
-    ["$include mediaTablet"],
-    ["$include mediaMobile"],
-    ["$include media"],
     ["$include hover"]
   ]
 }

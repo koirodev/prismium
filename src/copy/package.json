@@ -8,6 +8,7 @@
     "./ui": "./prismium-ui.mjs",
 
     "./css": "./prismium.css",
+    "./scss": "./prismium.scss",
 
     "./theme/light": "./themes/light.css",
     "./theme/dark": "./themes/dark.css",
@@ -27,7 +28,7 @@
     "type": "git",
     "url": "git+https://github.com/koirodev/prismium.git"
   },
-  "keywords": "@keywords",
+  "keywords": @keywords,
   "author": "@author",
   "license": "MIT",
   "bugs": {

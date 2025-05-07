@@ -1,7 +1,7 @@
 {
   "name": "prismium-src",
-  "version": "4.0.0-beta.43",
-  "description": "Modern JavaScript UI component library featuring smooth animated accordions, filters, dropdowns and tooltips. Seamlessly integrates with React, Vue and vanilla JavaScript.",
+  "version": "4.0.0-beta.44",
+  "description": "A modern JavaScript accordion library with smooth animations. Easily integrates with React, Vue, and vanilla JavaScript.",
   "type": "module",
   "scripts": {
     "build": "npx gulp",
@@ -15,7 +15,6 @@
     "prismium",
     "accordion",
     "dropdown",
-    "select",
     "filter",
     "javascript",
     "js",
@@ -28,8 +27,7 @@
     "vue",
     "react",
     "web-components",
-    "ui-components",
-    "ui-library"
+    "ui-components"
   ],
   "author": "Vitaly Koiro",
   "license": "MIT",

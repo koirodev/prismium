@@ -31,6 +31,7 @@ for (const taskPath of paths.tasks) {
 const defaultTasks = [
   'sass',
   'sass:minified',
+  'sass:modules',
   'js:process',
   'js:process:min',
   'js:process:modules',

@@ -48,4 +48,11 @@ export default function (gulp, config, banner) {
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest(`${config.root}/dist/`));
   });
+
+  gulp.task('sass:modules', function () {
+    return gulp
+      .src([`${config.root}/src/prismium.scss`])
+      .pipe(header(banner))
+      .pipe(gulp.dest(`${config.root}/dist/`));
+  });
 }
