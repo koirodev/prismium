@@ -18,5 +18,6 @@
   "cSpell.words": ["Prismium"],
   "files.associations": {
     "*.vue": "vue"
-  }
+  },
+  "liveServer.settings.port": 5501
 }

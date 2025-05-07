@@ -1,4 +1,6 @@
 <script setup>
+import { useBurgerStore } from '~/stores/burgerStore';
+
 const burgerStore = useBurgerStore();
 </script>
 

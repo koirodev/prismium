@@ -6,9 +6,9 @@
  * Плагин обновляет значения при изменении размера окна.
  */
 
-export const getGlobalHeaderHeight = () => {
-  if (document.querySelector('.header')) {
-    const header = document.querySelector('.header');
+export const getGlobalHeaderHeight = (selector = 'header') => {
+  if (document.querySelector(selector)) {
+    const header = document.querySelector(selector);
     return header.clientHeight;
   }
   return 0;

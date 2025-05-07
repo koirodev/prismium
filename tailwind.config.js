@@ -43,7 +43,7 @@ export default {
         stroke: {
           DEFAULT: '#8b8c8e33',
           light: '#8b8c8e33',
-          dark: '#1b2f3f1a',
+          dark: '#1b2f3f4d',
         },
         system: {
           error: '#89ffff',

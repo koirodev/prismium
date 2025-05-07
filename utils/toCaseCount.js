@@ -20,8 +20,6 @@
  */
 
 export default function toCaseCount(number, forms) {
-  console.log(number, forms);
-
   const cases = [2, 0, 1, 1, 1, 2];
   const mod100 = number % 100;
   const mod10 = number % 10;

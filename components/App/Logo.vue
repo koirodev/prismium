@@ -1,20 +1,7 @@
 <script setup>
-const versionPrefix = ref('v');
-const versionValue = ref('4.0.0');
-const version = computed(() => versionPrefix.value + versionValue.value);
+import { useNPMStore } from '~/stores/npmStore';
 
-onMounted(async () => {
-  try {
-    const { data } = await useFetch(
-      'https://registry.npmjs.org/prismium/latest'
-    );
-    if (data.value) {
-      versionValue.value = data.value.version;
-    }
-  } catch (error) {
-    console.error('Failed to fetch package version:', error);
-  }
-});
+const npmStore = useNPMStore();
 </script>
 
 <template>
@@ -25,8 +12,8 @@ onMounted(async () => {
       <SvgLogoLight class="logo-icon" :fontControlled="false" filled />
     </AppLink>
     <AppLink class="logo-name" to="/"> prismium </AppLink>
-    <AppLink class="logo-version" to="https://www.npmjs.com/package/prismium">
-      {{ version }}
+    <AppLink class="logo-version" :to="npmStore.packageUrl">
+      {{ `${npmStore.versionPrefix}${npmStore.version}` }}
     </AppLink>
   </div>
 </template>

@@ -13,6 +13,3 @@ export const MEDIA = {
   LAPTOP: 1600,
   DESKTOP: 2100,
 };
-
-export const POLICY_LINK =
-  'https://st-152-fz.ru/index_polic.php?name=ООО%20«Водорой»&site=https://vodoroy.ru/';

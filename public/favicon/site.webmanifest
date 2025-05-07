@@ -1,6 +1,6 @@
 {
-  "name": "Prismium UI",
-  "short_name": "Prismium UI",
+  "name": "Prismium Documentation",
+  "short_name": "Prismium",
   "icons": [
     {
       "src": "/favicon/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#02021A",
-  "background_color": "#02021A",
+  "theme_color": "#02021a",
+  "background_color": "#02021a",
   "display": "standalone"
 }

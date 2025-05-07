@@ -1,4 +1,6 @@
 <script setup>
+import { useBurgerStore } from '~/stores/burgerStore';
+
 const { locales, setLocale, setLocaleCookie } = useI18n();
 
 const burgerStore = useBurgerStore();
@@ -63,33 +65,31 @@ onMounted(async () => {
   >
     <ul class="nav__list">
       <li class="nav__item">
-        <span class="nav__link">{{ $t('docs') }}</span>
+        <span class="nav__link">{{ $t('common.docs') }}</span>
         <ul class="nav__list">
           <li class="nav__item">
             <AppLink class="nav__link" to="/get-started">
               <SvgFiRrRocket class="nav__icon icon" />
-              {{ $t('getStarted') }}
+              {{ $t('common.get_started') }}
             </AppLink>
           </li>
           <hr />
           <li class="nav__item">
-            <AppLink class="nav__link" to="/prismium-core">
+            <AppLink class="nav__link" to="/core">
               Prismium core / API
             </AppLink>
           </li>
           <li class="nav__item">
-            <AppLink class="nav__link" to="/prismium-react">
-              Prismium React
-            </AppLink>
+            <AppLink class="nav__link" to="/react">Prismium React</AppLink>
           </li>
           <li class="nav__item">
-            <AppLink class="nav__link" to="/prismium-vue">Prismium Vue</AppLink>
+            <AppLink class="nav__link" to="/vue">Prismium Vue</AppLink>
           </li>
           <hr />
           <li class="nav__item">
             <AppLink class="nav__link" to="/changelog">
               <SvgFiRrNotebook class="nav__icon icon" />
-              {{ $t('changelog') }}
+              {{ $t('common.changelog') }}
             </AppLink>
           </li>
         </ul>
@@ -97,7 +97,7 @@ onMounted(async () => {
       <hr />
       <li class="nav__item">
         <AppLink class="nav__link" to="/demos">
-          {{ $t('demos') }}
+          {{ $t('common.demos') }}
         </AppLink>
       </li>
       <hr />
@@ -110,7 +110,11 @@ onMounted(async () => {
           <span class="text">
             {{ starsCount }}
             {{
-              toCaseCount(starsCount, [$t('star'), $t('stars2'), $t('stars')])
+              toCaseCount(starsCount, [
+                $t('common.star'),
+                $t('common.stars2'),
+                $t('common.stars'),
+              ])
             }}
           </span>
         </AppLink>
@@ -118,7 +122,7 @@ onMounted(async () => {
       <li class="nav__item">
         <span class="nav__link">
           <SvgFiRrWorld class="nav__icon icon icon-speed" />
-          {{ isMobile ? $t('language') : $t('languageName') }}
+          {{ isMobile ? $t('common.language') : $t('common.language_name') }}
         </span>
         <ul class="nav__list right-0">
           <li class="nav__item" v-for="loc in locales" :key="loc.value">

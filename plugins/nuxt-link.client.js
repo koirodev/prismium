@@ -7,8 +7,12 @@
  * Этот плагин работает только на клиенте.
  */
 
+import { useBurgerStore } from '~/stores/burgerStore';
+
 export default defineNuxtPlugin(() => {
   if (process.client) {
+    const burgerStore = useBurgerStore();
+
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a');
 
@@ -17,7 +21,7 @@ export default defineNuxtPlugin(() => {
 
       const hrefAttr = link.getAttribute('href');
       if (hrefAttr && hrefAttr.startsWith('#')) {
-        useBurgerStore().closeBurger();
+        burgerStore.closeBurger();
         return;
       }
 
@@ -27,7 +31,7 @@ export default defineNuxtPlugin(() => {
       if (linkUrl.origin === origin && linkUrl.pathname === pathname) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        useBurgerStore().closeBurger();
+        burgerStore.closeBurger();
       }
     });
   }

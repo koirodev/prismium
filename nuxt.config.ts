@@ -88,7 +88,7 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/favicon/site.webmanifest' },
       ],
       meta: [
-        { name: 'apple-mobile-web-app-title', content: 'Prismium docs' },
+        { name: 'apple-mobile-web-app-title', content: 'Prismium' },
         { name: 'robots', content: 'noindex, nofollow' },
       ],
     },

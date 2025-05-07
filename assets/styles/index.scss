@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 @import 'mixins';
-@import 'utilities';
 
+@import 'js';
 @import 'fonts';
 @import 'theme';
+
 @import 'base';
 @import 'components';
 @import 'utilities';

@@ -40,7 +40,7 @@
   }
 
   .logo-version {
-    @apply animation-default relative flex h-fit w-fit self-center overflow-hidden rounded-md border border-stroke-light bg-primary-default/30 px-1 py-1 font-primary text-xs leading-none text-light no-underline transition-colors;
+    @apply animation-default relative flex h-fit w-fit self-center overflow-hidden rounded-md border border-stroke-light p-1 font-primary text-xs leading-none text-light;
 
     & {
       @include media(780px) {

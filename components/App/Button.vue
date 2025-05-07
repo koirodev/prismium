@@ -24,27 +24,15 @@ const props = defineProps({
     type: String,
     default: null,
   },
-  variant: {
-    type: String,
-    default: 'default',
-    validator: (value) => ['default', 'dark', 'light'].includes(value),
-  },
 });
 
 const { component, linkProps, icon } = useButton(props);
-
-const classes = computed(() => [
-  {
-    [`button_${props.variant}`]:
-      props.variant !== 'default' && props.variant != '',
-  },
-]);
 </script>
 
 <template>
   <component
+    class="button"
     :is="component"
-    :class="['button', classes]"
     v-bind="linkProps"
     :type="!to ? type : null"
     :title="title ?? $slots.default?.()?.[0]?.children ?? ''"

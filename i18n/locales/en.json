@@ -3,9 +3,9 @@
   "demos": "Demos",
   "language": "Language",
   "languageName": "En",
-  "getStarted": "Get Started",
-  "star": "Star",
-  "stars": "Stars",
-  "stars2": "Stars",
+  "get started": "Get Started",
+  "star": "star",
+  "stars": "stars",
+  "stars2": "stars",
   "changelog": "Changelog"
 }

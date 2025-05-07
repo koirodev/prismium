@@ -15,7 +15,7 @@ onUnmounted(() => {
 <template>
   <header
     :class="[
-      'animation-default bg-gradient-25-to-b fixed left-0 top-0 z-50 h-fit w-full from-dark to-transparent py-4 backdrop-blur-[1px] transition-transform',
+      'animation-default fixed left-0 top-0 z-50 h-fit w-full bg-gradient-to-b from-dark to-transparent py-4 backdrop-blur-[1px] transition-transform',
       { '-translate-y-full': isHeaderHidden },
     ]"
   >

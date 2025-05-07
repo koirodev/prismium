@@ -1,11 +1,11 @@
 @layer components {
   .nav {
-    --nav-bg-color: theme('colors.light');
+    --nav-bg-color: #{theme('colors.light/20')};
     --nav-font: 400 #{rem(16)} / 1.5 #{theme('fontFamily.secondary')};
     --nav-gap: #{rem(15)};
     --nav-icon-size: #{rem(30)};
-    --nav-text-color: theme('colors.light');
-    --nav-text-color-hover: theme('colors.dark');
+    --nav-text-color: #{theme('colors.light')};
+    --nav-text-color-hover: #{theme('colors.dark')};
 
     @apply ml-auto flex w-fit flex-row items-center justify-start gap-[var(--nav-gap)];
 
@@ -19,7 +19,7 @@
         padding: rem(15) rem(10);
         gap: calc(var(--nav-gap, #{rem(20)}) / 2);
 
-        @apply flex-start animation-default invisible absolute z-10 h-auto w-full min-w-fit flex-col overflow-hidden rounded border border-stroke bg-dark opacity-0 transition-[visibility_opacity_margin-top];
+        @apply flex-start animation-default invisible absolute z-10 h-auto w-full min-w-fit flex-col overflow-hidden rounded border border-stroke bg-dark/70 opacity-0 transition-[visibility_opacity_margin-top];
 
         .nav {
           &__item,
@@ -113,7 +113,7 @@
         transform-origin: calc(100% - 20px) 20px;
         transition: visibility var(--animation-default);
 
-        @apply flex-start pointer-events-none invisible absolute rounded border border-stroke bg-dark2 p-0 opacity-0 transition-[visibility_opacity];
+        @apply flex-start pointer-events-none invisible absolute rounded border border-stroke bg-dark2/95 p-0 opacity-0 transition-[visibility_opacity];
 
         & {
           @include mediaMobile {

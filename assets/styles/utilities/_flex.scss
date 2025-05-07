@@ -2,4 +2,8 @@
   .flex-start {
     @apply flex items-start justify-start;
   }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
 }
