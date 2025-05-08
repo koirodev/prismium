@@ -2,6 +2,30 @@ import React, { useRef, useEffect } from 'react';
 import { deepMerge } from '../../utils/deepMerge.mjs';
 import PrismiumCore from '../../core/core.mjs';
 
+/**
+ * Main Prismium React component
+ * Provides an accordion UI component with animation effects
+ * 
+ * @param {Object} props - Component props
+ * @param {import('../../types/options').PrismiumOptions} [props.options={}] - Configuration options for Prismium
+ * @param {import('../../types/index').PrismiumModule[]} [props.modules=[]] - Array of modules to use with Prismium
+ * @param {React.ReactNode} props.children - Child components
+ * @param {Function} [props.beforeInit] - Event handler for beforeInit event
+ * @param {Function} [props.init] - Event handler for init event
+ * @param {Function} [props.afterInit] - Event handler for afterInit event
+ * @param {Function} [props.beforeOpen] - Event handler for beforeOpen event
+ * @param {Function} [props.open] - Event handler for open event
+ * @param {Function} [props.afterOpen] - Event handler for afterOpen event
+ * @param {Function} [props.beforeClose] - Event handler for beforeClose event
+ * @param {Function} [props.close] - Event handler for close event
+ * @param {Function} [props.afterClose] - Event handler for afterClose event
+ * @param {Function} [props.beforeDestroy] - Event handler for beforeDestroy event
+ * @param {Function} [props.destroy] - Event handler for destroy event
+ * @param {Function} [props.afterDestroy] - Event handler for afterDestroy event
+ * @param {Function} [props.effectStart] - Event handler for effectStart event
+ * @param {Function} [props.effectEnd] - Event handler for effectEnd event
+ * @returns {React.ReactElement} Prismium component
+ */
 export const Prismium = ({
   options = {},
   modules = [],
@@ -34,7 +58,7 @@ export const Prismium = ({
     'effectEnd',
   ];
 
-  // Извлекаем события из отдельных пропсов
+  // Extract events from individual props
   const eventOverrides = eventNames.reduce((acc, eventName) => {
     if (extraProps[eventName]) acc[eventName] = extraProps[eventName];
     return acc;
@@ -69,7 +93,8 @@ export const Prismium = ({
       mergedOptions.emit &&
       mergedOptions.emit('beforeDestroy', instanceRef.current),
     destroy: () =>
-      mergedOptions.emit && mergedOptions.emit('destroy', instanceRef.current),
+      mergedOptions.emit &&
+      mergedOptions.emit('destroy', instanceRef.current),
     afterDestroy: () =>
       mergedOptions.emit &&
       mergedOptions.emit('afterDestroy', instanceRef.current),

@@ -1,5 +1,14 @@
+/**
+ * Icon Manager for Prismium
+ * Manages SVG icons and their behavior in the accordion
+ */
 export class IconManager {
-  // Настройка иконок | Setup icons
+  /**
+   * Set up the Icon manager with Prismium instance and current element
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {HTMLElement} $current - Current element where icon is placed
+   * @returns {IconManager} The IconManager instance
+   */
   setup(instance, $current) {
     this.instance = instance;
     this.$icons = $current.querySelectorAll(
@@ -13,7 +22,10 @@ export class IconManager {
     }
   }
 
-  // Обновление иконки в зависимости от состояния | Update icon based on state
+  /**
+   * Update icon based on accordion state
+   * @param {'open'|'close'} state - Current accordion state
+   */
   updateIcon(state) {
     if (!this.$icons || !this.icon) return;
 
@@ -42,7 +54,10 @@ export class IconManager {
     }
   }
 
-  // Настройка иконок | Setup icons
+  /**
+   * Initialize and configure icons
+   * Sets up single or multiple icon configurations
+   */
   setupIcons() {
     if (!this.$icons || !this.$icons.length) return;
 

@@ -1,5 +1,14 @@
+/**
+ * Effects Manager for Prismium
+ * Handles animation effects for accordion content
+ */
 export class EffectsManager {
-  // Применение эффекта | Apply effect
+  /**
+   * Apply animation effect based on instance options
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyEffect(instance, isOpening) {
     if (!instance.$content) return;
 
@@ -19,17 +28,28 @@ export class EffectsManager {
     effect?.call(this, instance, isOpening);
   }
 
-  // Применение эффектов при открытии | Apply open effects
+  /**
+   * Apply effects when opening the accordion
+   * @param {import('../../types/core').default} instance - Prismium instance
+   */
   applyOpenEffects(instance) {
     this.#applyEffect(instance, true);
   }
 
-  // Применение эффектов при закрытии | Apply close effects
+  /**
+   * Apply effects when closing the accordion
+   * @param {import('../../types/core').default} instance - Prismium instance
+   */
   applyCloseEffects(instance) {
     this.#applyEffect(instance, false);
   }
 
-  // Получение отфильтрованных дочерних элементов | Get filtered children
+  /**
+   * Get filtered children elements for animation
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @returns {Element[]} Filtered child elements
+   * @private
+   */
   #getFilteredChildren(instance) {
     let childrenSelectors, ignoreSelectors;
 
@@ -69,7 +89,13 @@ export class EffectsManager {
     );
   }
 
-  // Применение эффекта 'line-by-line' | Apply 'line-by-line' effect
+  /**
+   * Apply line-by-line animation effect
+   * Shows elements one by one with translation and opacity
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyLineByLineEffect(instance, isOpening) {
     const defaults = {
       speed: 350,
@@ -141,7 +167,13 @@ export class EffectsManager {
     }, maxDelay);
   }
 
-  // Применение эффекта 'fade-scale' | Apply 'fade-scale' effect
+  /**
+   * Apply fade-scale animation effect
+   * Fades and scales elements simultaneously
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyFadeScaleEffect(instance, isOpening) {
     const options = {
       speed: 400,
@@ -183,7 +215,13 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'slide' | Apply 'slide' effect
+  /**
+   * Apply slide animation effect
+   * Slides elements from a specified direction
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applySlideEffect(instance, isOpening) {
     const defaults = {
       speed: 400,
@@ -250,7 +288,13 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'stagger' | Apply 'stagger' effect
+  /**
+   * Apply stagger animation effect
+   * Animates elements from different directions
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyStaggerEffect(instance, isOpening) {
     const options = {
       speed: 400,
@@ -333,7 +377,13 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'wave' | Apply 'wave' effect
+  /**
+   * Apply wave animation effect
+   * Creates a wave-like animation pattern
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyWaveEffect(instance, isOpening) {
     const options = {
       speed: 400,
@@ -388,7 +438,13 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'flip' | Apply 'flip' effect
+  /**
+   * Apply flip animation effect
+   * Flips elements in 3D space
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyFlipEffect(instance, isOpening) {
     const options = {
       speed: 600,
@@ -439,7 +495,13 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'zoom' | Apply 'zoom' effect
+  /**
+   * Apply zoom animation effect
+   * Zooms elements from different origins
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyZoomEffect(instance, isOpening) {
     const options = {
       speed: 500,
@@ -487,7 +549,13 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'cascade' | Apply 'cascade' effect
+  /**
+   * Apply cascade animation effect
+   * Creates a cascading animation with rotation
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyCascadeEffect(instance, isOpening) {
     const options = {
       speed: 600,
@@ -533,7 +601,13 @@ export class EffectsManager {
     });
   }
 
-  // Применение кастомного эффекта | Apply custom effect
+  /**
+   * Apply custom animation effect
+   * Allows for custom user-defined animations
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyCustomEffect(instance, isOpening) {
     const defaults = {
       speed: 400,
@@ -584,7 +658,11 @@ export class EffectsManager {
     }
   }
 
-  // Получение длительности эффектов | Get effects duration
+  /**
+   * Calculate total animation duration for the current effect
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @returns {number} Total animation duration in milliseconds
+   */
   getEffectsDuration(instance) {
     if (!instance.$content || !instance.options.effect) return 0;
 

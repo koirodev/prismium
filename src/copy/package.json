@@ -5,10 +5,25 @@
   "type": "module",
   "main": "./prismium-core.mjs",
   "module": "./prismium-core.mjs",
+  "types": "./types/index.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": ["./types/index.d.ts"],
+      "core": ["./types/core.d.ts"],
+      "ui": ["./types/index.d.ts"],
+      "react": ["./types/react.d.ts"],
+      "vue": ["./types/vue.d.ts"]
+    }
+  },
   "exports": {
-    ".": "./prismium-core.mjs",
-    "./ui": "./prismium-ui.mjs",
-
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./prismium-core.mjs"
+    },
+    "./ui": {
+      "types": "./types/index.d.ts",
+      "import": "./prismium-ui.mjs"
+    },
     "./css": "./prismium.css",
     "./scss": "./prismium.scss",
 
@@ -22,9 +37,15 @@
 
     "./modules": "./modules/index.mjs",
 
-    "./react": "./react/index.mjs",
+    "./react": {
+      "types": "./types/react.d.ts",
+      "import": "./react/index.mjs"
+    },
     
-    "./vue": "./vue/index.mjs"
+    "./vue": {
+      "types": "./types/vue.d.ts",
+      "import": "./vue/index.mjs"
+    }
   },
   "repository": {
     "type": "git",

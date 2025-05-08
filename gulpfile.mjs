@@ -36,6 +36,7 @@ const defaultTasks = [
   'js:process:min',
   'js:process:modules',
   'copy',
+  'copy:types',
 ];
 
 gulp.task('default', gulp.series('clean', gulp.parallel(...defaultTasks)));
