@@ -2,6 +2,7 @@
 import { useNPMStore } from '~/stores/npmStore';
 
 const npmStore = useNPMStore();
+const namePrismium = ref('<strong>Prismium</strong>');
 </script>
 
 <template>
@@ -20,7 +21,10 @@ const npmStore = useNPMStore();
           </span>
         </h1>
         <div class="flex-start flex-col gap-2">
-          <p class="text_base text-light/80">{{ $t('banner.description') }}</p>
+          <p
+            class="text_base text-light/80"
+            v-html="$t('banner.description', { name: namePrismium })"
+          ></p>
           <span class="text_xs text-light/40">
             {{ $t('common.license_text') }},
             {{ `${npmStore.versionPrefix}${npmStore.version}` }}

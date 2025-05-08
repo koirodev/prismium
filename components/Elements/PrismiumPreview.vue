@@ -28,10 +28,6 @@ const prismiumOptions = {
 const prismiumModules = [EffectsModule];
 
 const testData = ref(data);
-
-definePageMeta({
-  layout: 'clear',
-});
 </script>
 
 <template>
@@ -41,7 +37,7 @@ definePageMeta({
     v-scrollbar="{ scrollbars: { autoHide: 'leave' } }"
   >
     <Prismium
-      :class="{ 'js-prismium-active': !i, ...themeClass }"
+      :class="{ 'js-prismium-active': !i }"
       :options="prismiumOptions"
       :modules="prismiumModules"
       v-for="(item, i) in testData"

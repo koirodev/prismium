@@ -15,9 +15,9 @@ const props = defineProps({
   <component :is="title ? 'section' : 'div'" class="section">
     <div class="container">
       <div class="section__head" v-if="title || description">
-        <h2 class="h2" v-if="title" v-html="title"></h2>
+        <h2 class="h2 w-full" v-if="title" v-html="title"></h2>
         <p
-          class="text_base text-light/70"
+          class="text_base w-full text-light/70"
           v-if="description"
           v-html="description"
         ></p>

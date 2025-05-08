@@ -1,6 +1,4 @@
-<script setup>
-const namePrismium = '<strong>Prismium</strong>';
-</script>
+<script setup></script>
 
 <template>
   <div>
@@ -8,8 +6,8 @@ const namePrismium = '<strong>Prismium</strong>';
 
     <LazySectionsDefault
       class="section_padding_top"
-      :title="$t('available_for.title', { name: namePrismium })"
-      :description="$t('available_for.description', { name: namePrismium })"
+      :title="$t('available_for.title')"
+      :description="$t('available_for.description')"
     >
       <div class="grid w-full grid-cols-3 gap-6 max-mt:gap-4 max-mm:gap-2">
         <CardsAvailable
@@ -42,22 +40,29 @@ const namePrismium = '<strong>Prismium</strong>';
 
     <LazySectionsDefault
       class="section_padding_top"
-      title="Используй <strong>Prismium</strong> в самых неожиданных местах"
-      description="С помощью <strong>Prismium</strong> ты можешь создавать не только обычные аккордеоны, но и много других элементов интерфейса. Например, ты можешь использовать его для создания фильтров, сравнения товаров, карточек и т.д."
+      :title="$t('presentation.use_prismium.title')"
+      :description="$t('presentation.use_prismium.description')"
     >
       <div class="flex flex-col gap-12">
-        <CardsDemoGif image="/images/demo/filters.gif" title="Фильтры" />
-        <CardsDemoGif image="/images/demo/cards.gif" title="Карточки" reverse />
+        <CardsDemoGif
+          image="/images/demo/filters.gif"
+          :title="$t('presentation.use_prismium.filters')"
+        />
+        <CardsDemoGif
+          image="/images/demo/cards.gif"
+          :title="$t('presentation.use_prismium.cards')"
+          reverse
+        />
         <CardsDemoGif
           image="/images/demo/comparison.gif"
-          title="Сравнение товаров"
+          :title="$t('presentation.use_prismium.comparison')"
         />
       </div>
     </LazySectionsDefault>
 
     <LazySectionsDefault
       class="section_center section_padding_top section_padding_bottom"
-      title="Начни использовать <strong>Prismium</strong> прямо сейчас"
+      :title="$t('start_using.title')"
     >
       <div class="flex-center w-full flex-col gap-4">
         <AppTerminal

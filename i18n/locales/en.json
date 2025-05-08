@@ -1,11 +1,67 @@
 {
-  "docs": "Docs",
-  "demos": "Demos",
-  "language": "Language",
-  "languageName": "En",
-  "get started": "Get Started",
-  "star": "star",
-  "stars": "stars",
-  "stars2": "stars",
-  "changelog": "Changelog"
+  "common": {
+    "docs": "Docs",
+    "demos": "Demo",
+    "language": "Language",
+    "language_name": "En",
+    "get_started": "Get Started",
+    "changelog": "Changelog",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "copy_get_started": "Copy the code to get started",
+    "released_on": "released on",
+    "license": "License",
+    "license_text": "MIT License",
+    "star": "star",
+    "stars": "stars",
+    "stars2": "stars",
+    "without_theme": "Without theme"
+  },
+  "banner": {
+    "title": "More than just an accordion",
+    "description": "<strong>Prismium</strong> lets you create the most modern accordion with just a couple of clicks, suitable for any design (after all, you can decide how it looks yourself or use predefined themes)."
+  },
+  "easy_to_use": {
+    "title": "Easy to Use",
+    "description": "A simple and intuitive API that allows you to quickly and easily create accordions. You don't have to worry about how it works under the hood, just use it."
+  },
+  "available_for": {
+    "title": "<strong>Prismium</strong> is available for",
+    "description": "<strong>Prismium</strong> is a library that works with any framework that supports Vanilla JS. You can use <strong>Prismium</strong> with React, Vue, and other frameworks. Simply import the library and use it in your project."
+  },
+  "presentation": {
+    "select_you_theme": {
+      "title": "Choose <strong>your</strong> <strong>Prismium</strong> style",
+      "description": "Or create your own stylish accordion using CSS. <strong>Prismium</strong> allows you to easily customize the styles of your accordion to match your design. You can use predefined themes or create your own."
+    },
+    "animations": {
+      "title": "Use <strong>modern animations</strong>",
+      "description": "Additionally, you always have the option to implement custom animations"
+    },
+    "attention": {
+      "title": "Attention to <strong>the details</strong>",
+      "description": "Control even the smallest details of your application.<br><strong>Prismium</strong> allows you to customize every aspect of your application to make it unique. You can adjust colors, fonts, sizes, margins, animations, icons, and much more."
+    },
+    "accessibility": {
+      "title": "Excellent <strong>accessibility</strong>",
+      "description": "Thanks to modern technologies, <strong>Prismium</strong> is accessible to all users. Themes for people with visual impairments are available, as well as RTL support.",
+      "theme": "Contrast theme:",
+      "rtl": "RTL support:"
+    },
+    "compatibility": {
+      "title": "<strong>Compatibility</strong> with all browsers",
+      "description": "<strong>Prismium</strong> supports all modern browsers and devices. We test <strong>Prismium</strong> on all popular browsers and devices to ensure it works seamlessly.",
+      "description_2": "Also, you can use <strong>Prismium</strong> on mobile devices and tablets. <strong>Prismium</strong> adapts to any screen size and resolution to provide the best experience with your application."
+    },
+    "use_prismium": {
+      "title": "Use <strong>Prismium</strong> in unexpected places",
+      "description": "With <strong>Prismium</strong>, you can create not only regular accordions but also many other UI elements. For example, you can use it to create filters, comparisons, cards, etc.",
+      "filters": "Filters",
+      "cards": "Cards",
+      "comparison": "Comparison"
+    }
+  },
+  "start_using": {
+    "title": "Start using <strong>Prismium</strong> right now"
+  }
 }

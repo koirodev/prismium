@@ -1,11 +1,67 @@
 {
-  "docs": "文档",
-  "demos": "示范",
-  "language": "语言",
-  "languageName": "语言",
-  "get started": "开始",
-  "star": "星",
-  "stars": "颗星",
-  "stars2": "星",
-  "changelog": "更新日志"
+  "common": {
+    "docs": "文档",
+    "demos": "演示",
+    "language": "语言",
+    "language_name": "中文",
+    "get_started": "开始使用",
+    "changelog": "更新日志",
+    "copy": "复制",
+    "copied": "已复制！",
+    "copy_get_started": "复制代码开始使用",
+    "released_on": "发布时间",
+    "license": "许可协议",
+    "license_text": "MIT License",
+    "star": "星",
+    "stars": "星",
+    "stars2": "星",
+    "without_theme": "无主题"
+  },
+  "banner": {
+    "title": "不只是一个手风琴组件",
+    "description": "<strong>Prismium</strong> 只需几次点击就能创建最现代化的手风琴组件，适用于任何设计（毕竟你可以自行决定其外观或使用预定义主题）。"
+  },
+  "easy_to_use": {
+    "title": "易于使用",
+    "description": "简单直观的 API 让你可以快速创建手风琴组件，无需关注底层原理，只需使用即可。"
+  },
+  "available_for": {
+    "title": "<strong>Prismium</strong> 适用于",
+    "description": "Prismium 是一个可在所有支持原生 JS 的框架上运行的库。你可以在 React、Vue 及其它框架中使用 Prismium。只需导入库并在项目中使用即可。"
+  },
+  "presentation": {
+    "select_you_theme": {
+      "title": "选择 <strong>你的</strong> <strong>Prismium</strong> 风格",
+      "description": "或者使用 CSS 创建你自己的时尚手风琴组件。Prismium 让你可以轻松自定义手风琴的样式以匹配你的设计。你可以使用预定义主题或创建自定义主题。"
+    },
+    "animations": {
+      "title": "使用 <strong>现代动画效果</strong>",
+      "description": "此外，你始终可以选择实现自定义动画。"
+    },
+    "attention": {
+      "title": "注重 <strong>细节</strong>",
+      "description": "控制应用程序中最细微的细节。<br><strong>Prismium</strong> 允许你自定义应用程序的每个方面，使其独一无二。你可以调整颜色、字体、大小、边距、动画、图标等。"
+    },
+    "accessibility": {
+      "title": "卓越的 <strong>无障碍</strong>",
+      "description": "得益于现代技术，Prismium 对所有用户都非常友好。还提供针对视力障碍人士的主题以及 RTL 支持。",
+      "theme": "对比主题：",
+      "rtl": "RTL 支持："
+    },
+    "compatibility": {
+      "title": "<strong>兼容性</strong> 适用于所有浏览器",
+      "description": "Prismium 支持所有现代浏览器和设备。我们在所有常用浏览器和设备上测试 Prismium 以确保其无缝运行。",
+      "description_2": "此外，你还可以在移动设备和平板电脑上使用 Prismium。Prismium 可适应任何屏幕尺寸和分辨率，为你的应用程序提供最佳体验。"
+    },
+    "use_prismium": {
+      "title": "在意想不到的地方使用 <strong>Prismium</strong>",
+      "description": "使用 Prismium，你不仅可以创建常规的手风琴组件，还可以构建许多其他 UI 元素。例如，你可以用它来创建过滤器、对比组件、卡片等。",
+      "filters": "过滤器",
+      "cards": "卡片",
+      "comparison": "对比"
+    }
+  },
+  "start_using": {
+    "title": "立即开始使用 <strong>Prismium</strong>"
+  }
 }

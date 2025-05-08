@@ -19,7 +19,7 @@
         padding: rem(15) rem(10);
         gap: calc(var(--nav-gap, #{rem(20)}) / 2);
 
-        @apply flex-start animation-default invisible absolute z-10 h-auto w-full min-w-fit flex-col overflow-hidden rounded border border-stroke bg-dark/70 opacity-0 transition-[visibility_opacity_margin-top];
+        @apply flex-start animation-default invisible absolute z-10 h-auto w-full min-w-fit flex-col overflow-hidden rounded border border-stroke bg-dark/80 opacity-0 transition-[visibility_opacity_margin-top];
 
         .nav {
           &__item,

@@ -2,7 +2,7 @@
 import { useDemoSettings } from '~/stores/demoSettingsStore';
 
 const demoSettings = useDemoSettings();
-const { $gsap, $ScrollTrigger } = useNuxtApp();
+const { $ScrollTrigger } = useNuxtApp();
 const darkTheme = ref(false);
 
 const setTheme = (theme) => {
@@ -48,18 +48,18 @@ onMounted(() => {
               start: `top ${offset}`,
               end: `bottom ${offset}`,
               onEnter: () => {
-                demoRef.value.classList.remove('preview_left');
-                demoRef.value.classList.add('preview_right');
+                demoRef.value?.classList.remove('preview_left');
+                demoRef.value?.classList.add('preview_right');
               },
               onEnterBack: () => {
-                demoRef.value.classList.remove('preview_left');
-                demoRef.value.classList.add('preview_right');
+                demoRef.value?.classList.remove('preview_left');
+                demoRef.value?.classList.add('preview_right');
               },
               onLeaveBack: () => {
-                demoRef.value.classList.remove('preview_right');
+                demoRef.value?.classList.remove('preview_right');
               },
               onLeave: () => {
-                demoRef.value.classList.remove('preview_right');
+                demoRef.value?.classList.remove('preview_right');
               },
             });
           });
@@ -73,18 +73,18 @@ onMounted(() => {
               start: `top ${offset}`,
               end: `bottom ${offset}`,
               onEnter: () => {
-                demoRef.value.classList.remove('preview_right');
-                demoRef.value.classList.add('preview_left');
+                demoRef.value?.classList.remove('preview_right');
+                demoRef.value?.classList.add('preview_left');
               },
               onEnterBack: () => {
-                demoRef.value.classList.remove('preview_right');
-                demoRef.value.classList.add('preview_left');
+                demoRef.value?.classList.remove('preview_right');
+                demoRef.value?.classList.add('preview_left');
               },
               onLeaveBack: () => {
-                demoRef.value.classList.remove('preview_left');
+                demoRef.value?.classList.remove('preview_left');
               },
               onLeave: () => {
-                demoRef.value.classList.remove('preview_left');
+                demoRef.value?.classList.remove('preview_left');
               },
             });
           });
@@ -101,9 +101,11 @@ onMounted(() => {
     >
       <div>
         <div class="local-block" data-preview-right>
-          <h2 class="h2 text-light">
-            Выбери <strong>свой</strong> стиль <strong>Prismium</strong>
-          </h2>
+          <h2
+            class="h2 text-light"
+            v-html="$t('presentation.select_you_theme.title')"
+          ></h2>
+
           <div class="tab-wrapper">
             <AppTab
               :active="demoSettings.theme === 'clear'"
@@ -146,14 +148,16 @@ onMounted(() => {
               >Sunset</AppTab
             >
           </div>
-          <p class="text_base text-light/70">
-            А также, у вас всегда остается возможность кастомизировать Prismium
-          </p>
+          <p
+            class="text_base text-light/70"
+            v-html="$t('presentation.select_you_theme.description')"
+          ></p>
         </div>
         <div class="local-block" data-preview-left>
-          <h2 class="h2 text-light">
-            Используй <strong>современные анимации</strong>
-          </h2>
+          <h2
+            class="h2 text-light"
+            v-html="$t('presentation.animations.title')"
+          ></h2>
           <div class="tab-wrapper">
             <AppTab
               :active="demoSettings.animation === 'line-by-line'"
@@ -197,28 +201,24 @@ onMounted(() => {
             >
           </div>
           <p class="text_base text-light/70">
-            А также, у вас всегда остается возможность реализовать кастомную
-            анимацию
+            {{ $t('presentation.animations.description') }}
           </p>
         </div>
         <div class="local-block" data-preview-right>
-          <h2 class="h2">Внимание <strong>к мелочам</strong></h2>
-          <p class="text_base text-light/70">
-            Контролируй даже самые мелкие детали своего приложения. Prismium
-            позволяет вам настраивать каждую деталь вашего приложения, чтобы
-            сделать его уникальным. Вы можете настроить цвета, шрифты, размеры,
-            отступы, анимации, иконки и многое другое.
-          </p>
+          <h2 class="h2" v-html="$t('presentation.attention.title')"></h2>
+          <p
+            class="text_base text-light/70"
+            v-html="$t('presentation.attention.description')"
+          ></p>
         </div>
         <div class="local-block" data-preview-left>
-          <h2 class="h2">Отличная <strong>доступность</strong></h2>
-          <p class="text_base text-light/70">
-            Благодаря современным технологиям, Prismium доступен для всех
-            пользователей. Вам доступны темы для людей с нарушениями зрения, а
-            также поддержка RTL.
-          </p>
+          <h2 class="h2" v-html="$t('presentation.accessibility.title')"></h2>
+          <p
+            class="text_base text-light/70"
+            v-html="$t('presentation.accessibility.description')"
+          ></p>
           <p class="text_xs -mb-2 text-light/70 max-mt:hidden">
-            Контрастная тема:
+            {{ $t('presentation.accessibility.theme') }}
           </p>
           <div class="tab-wrapper">
             <AppTab
@@ -233,7 +233,7 @@ onMounted(() => {
             >
           </div>
           <p class="text_xs -mb-2 text-light/70 max-mt:hidden">
-            Поддержка RTL:
+            {{ $t('presentation.accessibility.rtl') }}
           </p>
           <div class="tab-wrapper">
             <AppTab
@@ -249,17 +249,18 @@ onMounted(() => {
           </div>
         </div>
         <div class="local-block" data-preview-right>
-          <h2 class="h2 text-light">Отличная <strong>совместимость</strong></h2>
-          <p class="text_base text-light/70">
-            Prismium поддерживает все современные браузеры и устройства. Мы
-            тестируем Prismium на всех популярных браузерах и устройствах, чтобы
-            гарантировать, что Prismium будет работать без проблем.
-          </p>
-          <p class="text_base text-light/70">
-            А так-же вы можете использовать Prismium на мобильных устройствах и
-            планшетах. Prismium адаптируется к любому размеру экрана и
-            разрешению, чтобы обеспечить лучший опыт работы с вашим приложением.
-          </p>
+          <h2
+            class="h2 text-light"
+            v-html="$t('presentation.compatibility.title')"
+          ></h2>
+          <p
+            class="text_base text-light/70"
+            v-html="$t('presentation.compatibility.description')"
+          ></p>
+          <p
+            class="text_base text-light/70"
+            v-html="$t('presentation.compatibility.description_2')"
+          ></p>
         </div>
       </div>
       <div class="preview" ref="demoRef">
