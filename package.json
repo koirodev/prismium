@@ -1,6 +1,6 @@
 {
   "name": "prismium-src",
-  "version": "4.0.0-beta.45",
+  "version": "4.0.0-beta.47",
   "description": "A modern JavaScript accordion library with smooth animations. Easily integrates with React, Vue, and vanilla JavaScript.",
   "type": "module",
   "scripts": {

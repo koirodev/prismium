@@ -138,6 +138,16 @@ class Prismium {
     this.eventsAnyListeners = [];
     this.__modules__ = new Map();
 
+    if (this.options.modules) {
+      if (Array.isArray(this.options.modules)) {
+        this.options.modules.forEach(module => {
+          if (typeof module === 'object' && module.name) {
+            this.constructor.use(module);
+          }
+        });
+      }
+    }
+
     // Регистрация событий | Register events
     if (this.options && this.options.on) {
       Object.keys(this.options.on).forEach((eventName) => {

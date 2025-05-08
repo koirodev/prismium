@@ -20,11 +20,13 @@
       "types": "./types/index.d.ts",
       "import": "./prismium-core.mjs"
     },
-    "./ui": {
+    "./bundle": {
       "types": "./types/index.d.ts",
-      "import": "./prismium-ui.mjs"
+      "import": "./prismium-bundle.mjs"
     },
     "./css": "./prismium.css",
+    "./css/bundle": "./prismium-bundle.css",
+    
     "./scss": "./prismium.scss",
 
     "./theme/light": "./themes/light.css",
