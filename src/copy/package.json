@@ -3,6 +3,8 @@
   "version": "@version",
   "description": "@description",
   "type": "module",
+  "main": "./prismium-core.mjs",
+  "module": "./prismium-core.mjs",
   "exports": {
     ".": "./prismium-core.mjs",
     "./ui": "./prismium-ui.mjs",
