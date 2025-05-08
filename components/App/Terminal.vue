@@ -18,7 +18,7 @@ const copyCommand = () => {
 
 <template>
   <div
-    class="relative inline-flex size-fit w-full items-center gap-2 rounded border border-stroke-light bg-dark/30 p-2 backdrop-blur-sm"
+    class="relative inline-flex size-fit w-full items-center gap-2 rounded border border-stroke-light bg-dark2/30 p-2 backdrop-blur-sm"
   >
     <span class="icon-wrapper">
       <SvgFiRrAngleSmallRight class="icon" />

@@ -65,7 +65,7 @@ const copyCommand = () => {
 
 <style lang="scss" scoped>
 pre {
-  @apply text_md m-0 w-full min-w-fit overflow-auto bg-dark2;
+  @apply text_md m-0 w-full min-w-fit overflow-auto bg-dark2/30 backdrop-blur-sm;
 }
 
 .small {

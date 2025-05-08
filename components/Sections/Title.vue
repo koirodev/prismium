@@ -17,10 +17,10 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .section {
-  padding-bottom: calc(var(--section-padding) / 1.7);
+  margin-bottom: calc(var(--section-padding) / 2);
 
-  @include mediaTablet {
-    padding-bottom: var(--section-padding);
-  }
+  padding-bottom: calc(var(--section-padding) / 2);
+
+  @apply border-b border-stroke;
 }
 </style>

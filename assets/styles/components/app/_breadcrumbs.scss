@@ -3,7 +3,7 @@
     --breadcrumbs-color: theme('colors.light.DEFAULT');
     --breadcrumbs-color-hover: theme('colors.light.secondary');
     --breadcrumbs-gap: #{rem(20)};
-    --breadcrumbs-padding-bottom: calc(var(--breadcrumbs-padding-top) * 2);
+    --breadcrumbs-padding-bottom: var(--breadcrumbs-padding-top);
     --breadcrumbs-padding-top: #{rem(27)};
     --breadcrumbs-stroke-size: 1px;
 
@@ -16,6 +16,7 @@
 
       @include mediaMobile {
         --breadcrumbs-gap: #{rem(8)};
+        --breadcrumbs-padding-bottom: calc(var(--breadcrumbs-padding-top) * 2);
         --breadcrumbs-padding-top: #{rem(10)};
       }
     }
