@@ -38,13 +38,21 @@
       }
     }
 
-    &__margin {
+    &_margin {
       &_top {
         margin-top: var(--section-padding);
       }
 
       &_bottom {
         margin-bottom: var(--section-padding);
+      }
+    }
+
+    &_center {
+      .section {
+        &__head {
+          @apply text-center;
+        }
       }
     }
 

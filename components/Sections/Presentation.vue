@@ -3,9 +3,24 @@ import { useDemoSettings } from '~/stores/demoSettingsStore';
 
 const demoSettings = useDemoSettings();
 const { $gsap, $ScrollTrigger } = useNuxtApp();
+const darkTheme = ref(false);
 
 const setTheme = (theme) => {
   demoSettings.setTheme(theme);
+
+  switch (theme) {
+    case 'dark':
+      darkTheme.value = true;
+      break;
+    case 'dark-contrast':
+      darkTheme.value = true;
+      break;
+    case 'clear':
+      darkTheme.value = true;
+      break;
+    default:
+      darkTheme.value = false;
+  }
 };
 
 const setDirection = (direction) => {
@@ -81,8 +96,10 @@ onMounted(() => {
 
 <template>
   <section class="section" ref="sectionRef">
-    <div class="container grid grid-cols-2 gap-[var(--local-gap)]">
-      <div class="column">
+    <div
+      class="container grid grid-cols-2 gap-[var(--local-gap)] max-mt:flex max-mt:flex-col"
+    >
+      <div>
         <div class="local-block" data-preview-right>
           <h2 class="h2 text-light">
             Выбери <strong>свой</strong> стиль <strong>Prismium</strong>
@@ -129,7 +146,7 @@ onMounted(() => {
               >Sunset</AppTab
             >
           </div>
-          <p class="text_base text-light/60">
+          <p class="text_base text-light/70">
             А также, у вас всегда остается возможность кастомизировать Prismium
           </p>
         </div>
@@ -179,41 +196,30 @@ onMounted(() => {
               >Cascade</AppTab
             >
           </div>
-          <p class="text_base text-light/60">
+          <p class="text_base text-light/70">
             А также, у вас всегда остается возможность реализовать кастомную
             анимацию
           </p>
         </div>
         <div class="local-block" data-preview-right>
           <h2 class="h2">Внимание <strong>к мелочам</strong></h2>
-          <p class="text_base text-light">
+          <p class="text_base text-light/70">
             Контролируй даже самые мелкие детали своего приложения. Prismium
             позволяет вам настраивать каждую деталь вашего приложения, чтобы
             сделать его уникальным. Вы можете настроить цвета, шрифты, размеры,
             отступы, анимации, иконки и многое другое.
           </p>
-          <p class="text_xs -mb-2 text-light/60">Скорость анимаций:</p>
-          <div class="tab-wrapper">
-            <AppTab
-              :active="demoSettings.theme === 'light-contrast'"
-              @click="setTheme('light-contrast')"
-              >Light contrast</AppTab
-            >
-            <AppTab
-              :active="demoSettings.theme === 'dark-contrast'"
-              @click="setTheme('dark-contrast')"
-              >Dark contrast</AppTab
-            >
-          </div>
         </div>
         <div class="local-block" data-preview-left>
           <h2 class="h2">Отличная <strong>доступность</strong></h2>
-          <p class="text_base text-light">
+          <p class="text_base text-light/70">
             Благодаря современным технологиям, Prismium доступен для всех
             пользователей. Вам доступны темы для людей с нарушениями зрения, а
             также поддержка RTL.
           </p>
-          <p class="text_xs -mb-2 text-light/60">Контрастная тема:</p>
+          <p class="text_xs -mb-2 text-light/70 max-mt:hidden">
+            Контрастная тема:
+          </p>
           <div class="tab-wrapper">
             <AppTab
               :active="demoSettings.theme === 'light-contrast'"
@@ -226,7 +232,9 @@ onMounted(() => {
               >Dark contrast</AppTab
             >
           </div>
-          <p class="text_xs -mb-2 text-light/60">Поддержка RTL:</p>
+          <p class="text_xs -mb-2 text-light/70 max-mt:hidden">
+            Поддержка RTL:
+          </p>
           <div class="tab-wrapper">
             <AppTab
               :active="demoSettings.direction === 'ltr'"
@@ -242,12 +250,12 @@ onMounted(() => {
         </div>
         <div class="local-block" data-preview-right>
           <h2 class="h2 text-light">Отличная <strong>совместимость</strong></h2>
-          <p class="text_base text-light">
+          <p class="text_base text-light/70">
             Prismium поддерживает все современные браузеры и устройства. Мы
             тестируем Prismium на всех популярных браузерах и устройствах, чтобы
             гарантировать, что Prismium будет работать без проблем.
           </p>
-          <p class="text_base text-light">
+          <p class="text_base text-light/70">
             А так-же вы можете использовать Prismium на мобильных устройствах и
             планшетах. Prismium адаптируется к любому размеру экрана и
             разрешению, чтобы обеспечить лучший опыт работы с вашим приложением.
@@ -256,7 +264,7 @@ onMounted(() => {
       </div>
       <div class="preview" ref="demoRef">
         <ElementsPrismiumPreview
-          class="preview__item"
+          :class="['preview__item', { preview__item_light: darkTheme }]"
           :key="demoSettings.theme + demoSettings.animation"
         />
       </div>
@@ -271,13 +279,31 @@ onMounted(() => {
 
 .tab-wrapper {
   @apply flex flex-wrap gap-2;
+
+  & {
+    @include mediaTablet {
+      @apply hidden;
+    }
+  }
 }
 
 .local-block {
   @apply relative flex min-h-screen flex-col items-start justify-center gap-4;
 
+  & {
+    @include mediaTablet {
+      @apply min-h-fit w-full pb-[var(--section-padding)];
+    }
+  }
+
   &[data-preview-left] {
     left: calc(100% + var(--local-gap));
+
+    & {
+      @include mediaTablet {
+        left: 0;
+      }
+    }
   }
 }
 
@@ -292,6 +318,12 @@ onMounted(() => {
   transition: right var(--local-animation-short);
 
   @apply relative flex w-full items-start justify-start;
+
+  & {
+    @include mediaTablet {
+      @apply hidden;
+    }
+  }
 
   &_right {
     .preview__item {
@@ -308,9 +340,15 @@ onMounted(() => {
   }
 
   &__item {
-    transition: transform var(--local-animation);
+    transition:
+      transform var(--local-animation),
+      background-color var(--local-animation-short);
 
     @apply sticky mx-auto size-full overflow-auto rounded border border-stroke bg-dark2/20 p-4 backdrop-blur-sm;
+
+    &_light {
+      @apply bg-light;
+    }
 
     & {
       top: calc(var(--global-header-height, 80px) + 10px);

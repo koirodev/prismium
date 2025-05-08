@@ -29,7 +29,7 @@ const props = defineProps({
       :alt="title"
     />
     <span
-      class="text_xl animation-default transition-padding max-mm:text_xs text-center text-light"
+      class="text_xl animation-default transition-padding max-mm:text_xs self-center text-center text-light"
     >
       {{ title }}
     </span>

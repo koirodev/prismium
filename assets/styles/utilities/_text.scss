@@ -63,8 +63,23 @@
     }
   }
 
+  .h3 {
+    @apply font-secondary text-4xl font-bold;
+
+    & {
+      @include mediaTablet {
+        @apply text-2xl;
+      }
+
+      @include mediaMobile {
+        @apply text-xl;
+      }
+    }
+  }
+
   .h1,
-  .h2 {
+  .h2,
+  .h3 {
     line-height: 1.2;
   }
 

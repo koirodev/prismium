@@ -33,7 +33,7 @@ const npmStore = useNPMStore();
       </div>
       <AppTerminal
         class="z-10 m-auto max-w-[300px] max-mt:m-0"
-        command="npm i prismium"
+        command="npm install prismium"
       />
     </div>
   </section>

@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+const namePrismium = '<strong>Prismium</strong>';
+</script>
 
 <template>
   <div>
@@ -6,8 +8,8 @@
 
     <LazySectionsDefault
       class="section_padding_top"
-      :title="$t('available_for.title')"
-      :description="$t('available_for.description')"
+      :title="$t('available_for.title', { name: namePrismium })"
+      :description="$t('available_for.description', { name: namePrismium })"
     >
       <div class="grid w-full grid-cols-3 gap-6 max-mt:gap-4 max-mm:gap-2">
         <CardsAvailable
@@ -39,12 +41,33 @@
     <LazySectionsPresentation class="section_padding_top" />
 
     <LazySectionsDefault
-      class="section_padding_top section_padding_bottom"
+      class="section_padding_top"
       title="Используй <strong>Prismium</strong> в самых неожиданных местах"
+      description="С помощью <strong>Prismium</strong> ты можешь создавать не только обычные аккордеоны, но и много других элементов интерфейса. Например, ты можешь использовать его для создания фильтров, сравнения товаров, карточек и т.д."
     >
-      <CardsDemoGif image="/images/demo/filters.gif" title="Фильтры" />
-      <CardsDemoGif image="/images/demo/cards.gif" title="Карточки" />
-      <CardsDemoGif image="/images/demo/comparison.gif" title="Сравнения" />
+      <div class="flex flex-col gap-12">
+        <CardsDemoGif image="/images/demo/filters.gif" title="Фильтры" />
+        <CardsDemoGif image="/images/demo/cards.gif" title="Карточки" reverse />
+        <CardsDemoGif
+          image="/images/demo/comparison.gif"
+          title="Сравнение товаров"
+        />
+      </div>
+    </LazySectionsDefault>
+
+    <LazySectionsDefault
+      class="section_center section_padding_top section_padding_bottom"
+      title="Начни использовать <strong>Prismium</strong> прямо сейчас"
+    >
+      <div class="flex-center w-full flex-col gap-4">
+        <AppTerminal
+          class="z-10 m-auto max-w-[300px] max-mt:m-0"
+          command="npm install prismium"
+        />
+        <AppButton to="/get-started" icon="fi-rr-rocket">
+          {{ $t('common.get_started') }}
+        </AppButton>
+      </div>
     </LazySectionsDefault>
   </div>
 </template>

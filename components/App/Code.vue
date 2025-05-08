@@ -32,7 +32,7 @@ const copyCommand = () => {
 <template>
   <div
     v-if="!small"
-    class="relative h-fit w-full overflow-auto rounded border border-stroke"
+    class="relative h-fit w-full overflow-hidden rounded border border-stroke"
     v-highlight
   >
     <button
@@ -46,7 +46,7 @@ const copyCommand = () => {
       <SvgFiRrCheck class="icon" v-else />
     </button>
     <div
-      class="max-h-[70vh]"
+      class="max-h-[70vh] w-full overflow-auto"
       v-scrollbar="{ scrollbars: { autoHide: 'leave' } }"
     >
       <pre><code :class="`language-${language}`"><slot></slot></code></pre>
