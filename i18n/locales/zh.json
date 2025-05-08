@@ -1,7 +1,7 @@
 {
   "common": {
     "docs": "文档",
-    "demos": "演示",
+    "demos": "示例",
     "language": "语言",
     "language_name": "中文",
     "get_started": "开始使用",
@@ -9,59 +9,63 @@
     "copy": "复制",
     "copied": "已复制！",
     "copy_get_started": "复制代码开始使用",
-    "released_on": "发布时间",
+    "released_on": "发布于",
     "license": "许可协议",
-    "license_text": "MIT License",
-    "star": "星",
-    "stars": "星",
-    "stars2": "星",
+    "license_text": "MIT 许可协议",
+    "star": "星标",
+    "stars": "星标",
+    "stars2": "星标",
     "without_theme": "无主题"
   },
   "banner": {
-    "title": "不只是一个手风琴组件",
-    "description": "<strong>Prismium</strong> 只需几次点击就能创建最现代化的手风琴组件，适用于任何设计（毕竟你可以自行决定其外观或使用预定义主题）。"
+    "title": "不仅仅是一个手风琴",
+    "description": "<strong>Prismium</strong> 允许你仅需几次点击就创建出最现代的手风琴，与任何设计相匹配（毕竟，你可以自行决定它的外观，或使用预设主题）。"
   },
   "easy_to_use": {
     "title": "易于使用",
-    "description": "简单直观的 API 让你可以快速创建手风琴组件，无需关注底层原理，只需使用即可。"
+    "description": "简单明了的 API 允许你 <strong>快速便捷地</strong> 创建手风琴。你 <strong>无需担心</strong> 底层的工作原理，<strong>只需使用</strong> 它。"
   },
   "available_for": {
     "title": "<strong>Prismium</strong> 适用于",
-    "description": "Prismium 是一个可在所有支持原生 JS 的框架上运行的库。你可以在 React、Vue 及其它框架中使用 Prismium。只需导入库并在项目中使用即可。"
+    "description": "作为一个支持 Vanilla JS 的库，<strong>Prismium</strong> 可用于任何框架。你可以在 React、Vue 及其他框架中使用 <strong>Prismium</strong>。只需引入该库并在你的项目中使用即可。"
   },
   "presentation": {
     "select_you_theme": {
       "title": "选择 <strong>你的</strong> <strong>Prismium</strong> 风格",
-      "description": "或者使用 CSS 创建你自己的时尚手风琴组件。Prismium 让你可以轻松自定义手风琴的样式以匹配你的设计。你可以使用预定义主题或创建自定义主题。"
+      "description": "或者使用 CSS <strong>创造你自己的</strong> 时尚手风琴。<strong>Prismium</strong> 让你轻松自定义折叠面板样式，以匹配你的设计。你可以使用预设主题或创建你自己的。"
     },
     "animations": {
-      "title": "使用 <strong>现代动画效果</strong>",
-      "description": "此外，你始终可以选择实现自定义动画。"
+      "title": "使用 <strong>现代动画</strong>",
+      "description": "此外，你始终可以实现自定义动画。"
     },
     "attention": {
-      "title": "注重 <strong>细节</strong>",
-      "description": "控制应用程序中最细微的细节。<br><strong>Prismium</strong> 允许你自定义应用程序的每个方面，使其独一无二。你可以调整颜色、字体、大小、边距、动画、图标等。"
+      "title": "关注 <strong>细节</strong>",
+      "description": "控制你的应用程序中甚至是 <strong>最细微的细节</strong>。<br><strong>Prismium</strong> 允许你自定义应用程序的每个方面，让它独一无二。你可以调整颜色、字体、尺寸、间距、动画、图标等等。"
     },
     "accessibility": {
-      "title": "卓越的 <strong>无障碍</strong>",
-      "description": "得益于现代技术，Prismium 对所有用户都非常友好。还提供针对视力障碍人士的主题以及 RTL 支持。",
+      "title": "卓越的 <strong>无障碍性</strong>",
+      "description": "借助现代技术，<strong>Prismium 可供所有用户使用</strong>。它为视障用户提供了主题，并支持 RTL。",
       "theme": "对比主题：",
       "rtl": "RTL 支持："
     },
     "compatibility": {
-      "title": "<strong>兼容性</strong> 适用于所有浏览器",
-      "description": "Prismium 支持所有现代浏览器和设备。我们在所有常用浏览器和设备上测试 Prismium 以确保其无缝运行。",
-      "description_2": "此外，你还可以在移动设备和平板电脑上使用 Prismium。Prismium 可适应任何屏幕尺寸和分辨率，为你的应用程序提供最佳体验。"
+      "title": "与所有浏览器的 <strong>兼容性</strong>",
+      "description": "<strong>Prismium</strong> 支持所有现代浏览器和设备。我们在所有流行的浏览器和设备上测试 <strong>Prismium</strong>，以确保其完美运行。",
+      "description_2": "此外，你可以在移动设备和平板电脑上使用 <strong>Prismium</strong>。<strong>Prismium</strong> 可适应任何屏幕尺寸和分辨率，为你的应用程序提供最佳用户体验。"
     },
     "use_prismium": {
-      "title": "在意想不到的地方使用 <strong>Prismium</strong>",
-      "description": "使用 Prismium，你不仅可以创建常规的手风琴组件，还可以构建许多其他 UI 元素。例如，你可以用它来创建过滤器、对比组件、卡片等。",
-      "filters": "过滤器",
+      "title": "在最意想不到的地方使用 <strong>Prismium</strong>",
+      "description": "使用 <strong>Prismium</strong>，你不仅可以创建常规折叠面板，还可以构建许多其他界面元素。例如，你可以用它来创建筛选器、对比、卡片等。",
+      "filters": "筛选器",
       "cards": "卡片",
       "comparison": "对比"
     }
   },
   "start_using": {
     "title": "立即开始使用 <strong>Prismium</strong>"
+  },
+  "seo_home_page": {
+    "title": "仅需几次点击即可使用 Prismium 为 Vue、React 和 Vanilla JavaScript 创建现代折叠面板",
+    "description": "Prismium 是一个现代化的折叠面板创建库，让你只需极少的努力构建美观且响应迅速的折叠面板。它支持各种样式和主题，并提供众多自定义选项。支持 Vue 和 React，同时与 Vanilla JavaScript 完全兼容。"
   }
 }

@@ -9,7 +9,7 @@
     "copy": "Copy",
     "copied": "Copied!",
     "copy_get_started": "Copy the code to get started",
-    "released_on": "released on",
+    "released_on": "Released on",
     "license": "License",
     "license_text": "MIT License",
     "star": "star",
@@ -18,44 +18,44 @@
     "without_theme": "Without theme"
   },
   "banner": {
-    "title": "More than just an accordion",
-    "description": "<strong>Prismium</strong> lets you create the most modern accordion with just a couple of clicks, suitable for any design (after all, you can decide how it looks yourself or use predefined themes)."
+    "title": "More Than Just an Accordion",
+    "description": "<strong>Prismium</strong> allows you to create the most modern accordion in a couple of clicks that fits any design (after all, you can decide for yourself how it will look, or use preset themes)."
   },
   "easy_to_use": {
     "title": "Easy to Use",
-    "description": "A simple and intuitive API that allows you to quickly and easily create accordions. You don't have to worry about how it works under the hood, just use it."
+    "description": "A simple and clear API that allows you to <strong>quickly and easily</strong> create accordions. You <strong>don't need to worry</strong> about how it works under the hood, <strong>just use it</strong>."
   },
   "available_for": {
     "title": "<strong>Prismium</strong> is available for",
-    "description": "<strong>Prismium</strong> is a library that works with any framework that supports Vanilla JS. You can use <strong>Prismium</strong> with React, Vue, and other frameworks. Simply import the library and use it in your project."
+    "description": "<strong>Prismium</strong> is a library that works with any framework that supports Vanilla JS. You can use <strong>Prismium</strong> with React, Vue, and other frameworks. Just import the library and use it in your project."
   },
   "presentation": {
     "select_you_theme": {
       "title": "Choose <strong>your</strong> <strong>Prismium</strong> style",
-      "description": "Or create your own stylish accordion using CSS. <strong>Prismium</strong> allows you to easily customize the styles of your accordion to match your design. You can use predefined themes or create your own."
+      "description": "Or <strong>create your own</strong> stylish accordion using CSS. <strong>Prismium</strong> lets you easily customize the accordion styles to match your design. You can use preset themes or create your own."
     },
     "animations": {
       "title": "Use <strong>modern animations</strong>",
-      "description": "Additionally, you always have the option to implement custom animations"
+      "description": "Also, you always have the possibility to implement a custom animation."
     },
     "attention": {
       "title": "Attention to <strong>the details</strong>",
-      "description": "Control even the smallest details of your application.<br><strong>Prismium</strong> allows you to customize every aspect of your application to make it unique. You can adjust colors, fonts, sizes, margins, animations, icons, and much more."
+      "description": "Control even the <strong>smallest details</strong> of your application.<br><strong>Prismium</strong> lets you customize every aspect of your app to make it unique. You can adjust colors, fonts, sizes, spacing, animations, icons, and much more."
     },
     "accessibility": {
       "title": "Excellent <strong>accessibility</strong>",
-      "description": "Thanks to modern technologies, <strong>Prismium</strong> is accessible to all users. Themes for people with visual impairments are available, as well as RTL support.",
+      "description": "Thanks to modern technologies, <strong>Prismium is accessible to all users</strong>. You have themes for visually impaired users, as well as RTL support.",
       "theme": "Contrast theme:",
       "rtl": "RTL support:"
     },
     "compatibility": {
       "title": "<strong>Compatibility</strong> with all browsers",
-      "description": "<strong>Prismium</strong> supports all modern browsers and devices. We test <strong>Prismium</strong> on all popular browsers and devices to ensure it works seamlessly.",
-      "description_2": "Also, you can use <strong>Prismium</strong> on mobile devices and tablets. <strong>Prismium</strong> adapts to any screen size and resolution to provide the best experience with your application."
+      "description": "<strong>Prismium</strong> supports all modern browsers and devices. We test <strong>Prismium</strong> on all popular browsers and devices to ensure that it works flawlessly.",
+      "description_2": "Also, you can use <strong>Prismium</strong> on mobile devices and tablets. <strong>Prismium</strong> adapts to any screen size and resolution to provide the best user experience with your application."
     },
     "use_prismium": {
-      "title": "Use <strong>Prismium</strong> in unexpected places",
-      "description": "With <strong>Prismium</strong>, you can create not only regular accordions but also many other UI elements. For example, you can use it to create filters, comparisons, cards, etc.",
+      "title": "Use <strong>Prismium</strong> in the most unexpected places",
+      "description": "With <strong>Prismium</strong>, you can create not only regular accordions but also many other interface elements. For example, you can use it to create filters, comparisons, cards, etc.",
       "filters": "Filters",
       "cards": "Cards",
       "comparison": "Comparison"
@@ -63,5 +63,9 @@
   },
   "start_using": {
     "title": "Start using <strong>Prismium</strong> right now"
+  },
+  "seo_home_page": {
+    "title": "Create a modern accordion in just a few clicks with Prismium for Vue, React, and Vanilla JavaScript",
+    "description": "Prismium is a modern library for creating accordions, allowing you to build beautiful and responsive accordions with minimal effort. It supports various styles and themes, and provides numerous customization options. It supports both Vue and React, and is fully compatible with Vanilla JavaScript."
   }
 }

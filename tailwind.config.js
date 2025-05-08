@@ -28,13 +28,17 @@ export default {
           accent: 'theme("colors.primary.DEFAULT")',
         },
         white: '#ffffff',
-        light: '#fafafa',
+        light: {
+          DEFAULT: '#fafafa',
+          secondary: '#fafafab3',
+        },
         dark: '#02021a',
         dark2: '#09071d',
         primary: {
           DEFAULT: '#89ffff',
           default: '#89ffff',
           hover: '#3effff',
+          transparent: '#89ffff83',
         },
         secondary: {
           DEFAULT: '#fbf1f4',

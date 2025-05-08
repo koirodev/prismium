@@ -1,4 +1,13 @@
-<script setup></script>
+<script setup>
+const { t: $t } = useI18n();
+
+useHead(
+  processHead({
+    title: $t('seo_home_page.title'),
+    description: $t('seo_home_page.description'),
+  })
+);
+</script>
 
 <template>
   <div>

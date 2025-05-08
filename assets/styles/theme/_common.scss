@@ -6,9 +6,8 @@
   }
 
   .page {
-    scroll-padding: calc(
-      var(--global-header-height, 0px) + var(--grid-row-gap, 10px)
-    );
+    scroll-padding-top: 90px;
+    scroll-behavior: smooth;
 
     @apply h-full scroll-smooth text-balance text-[16px] text-theme-text;
 

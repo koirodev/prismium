@@ -50,7 +50,7 @@ const copyCommand = () => {
 <style lang="scss" scoped>
 .icon {
   --icon-size: 100%;
-  --icon-color: theme('colors.light');
+  --icon-color: theme('colors.light.DEFAULT');
 }
 
 .icon-wrapper {

@@ -1,10 +1,10 @@
 @layer components {
   .nav {
-    --nav-bg-color: #{theme('colors.light/20')};
+    --nav-bg-color: #{theme('colors.light.DEFAULT')};
     --nav-font: 400 #{rem(16)} / 1.5 #{theme('fontFamily.secondary')};
     --nav-gap: #{rem(15)};
     --nav-icon-size: #{rem(30)};
-    --nav-text-color: #{theme('colors.light')};
+    --nav-text-color: #{theme('colors.light.DEFAULT')};
     --nav-text-color-hover: #{theme('colors.dark')};
 
     @apply ml-auto flex w-fit flex-row items-center justify-start gap-[var(--nav-gap)];

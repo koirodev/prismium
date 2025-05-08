@@ -1,7 +1,7 @@
 <script setup>
 import { useDemoSettings } from '~/stores/demoSettingsStore';
 
-import data from '~/examples/test.json';
+import data from '~/examples/demo-data.json';
 
 import { Prismium, PrismiumCurrent, PrismiumContent } from 'prismium/vue';
 import { EffectsModule } from 'prismium/modules';

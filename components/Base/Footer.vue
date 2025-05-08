@@ -21,12 +21,12 @@
 .icon-wrapper {
   @include hover {
     .icon {
-      --icon-color: theme('colors.primary.DEFAULT');
+      --icon-color: theme('colors.light.secondary');
     }
   }
 
   .icon {
-    --icon-color: theme('colors.light');
+    --icon-color: theme('colors.light.DEFAULT');
     --icon-size: 100%;
   }
 }

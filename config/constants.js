@@ -13,3 +13,5 @@ export const MEDIA = {
   LAPTOP: 1600,
   DESKTOP: 2100,
 };
+
+export const SEO_TITLE_SUFFIX = 'Prismium';

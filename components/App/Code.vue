@@ -32,7 +32,7 @@ const copyCommand = () => {
 <template>
   <div
     v-if="!small"
-    class="relative h-fit w-full overflow-hidden rounded border border-stroke"
+    class="code-block relative h-fit w-full overflow-hidden rounded border border-stroke"
     v-highlight
   >
     <button
@@ -65,13 +65,17 @@ const copyCommand = () => {
 
 <style lang="scss" scoped>
 pre {
-  @apply m-0 w-full min-w-fit overflow-auto bg-dark2;
+  @apply text_md m-0 w-full min-w-fit overflow-auto bg-dark2;
 }
 
 .small {
   font: inherit;
 
   @apply cursor-pointer rounded border border-stroke bg-stroke px-2 py-1;
+
+  pre {
+    font: inherit;
+  }
 }
 
 .icon {

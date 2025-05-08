@@ -14,27 +14,29 @@
  * useHead(processHead(data || {}, 'Главная страница', configData || {}));
  */
 
-export default function processHead(data = {}, lifebuoy = '', configData = {}) {
+import { SEO_TITLE_SUFFIX } from '~/config';
+
+export default function processHead(props = {}) {
   const config = useRuntimeConfig();
-  
-  const title = (seoTitle, pageTitle, lifebuoy) => {
-    if (typeof seoTitle === 'string' && seoTitle) {
-      return seoTitle;
-    }
-    if (typeof pageTitle === 'string' && pageTitle) {
-      return `${pageTitle}${postfix()}`;
-    }
-    if (typeof lifebuoy === 'string' && lifebuoy) {
-      return `${lifebuoy}${postfix()}`;
+
+  const title = (title) => {
+    if (typeof title === 'string' && title) {
+      return `${title}${postfix()}`;
     }
 
     return '';
   };
 
-  const postfix = () => (SEO_TITLE_SUFFIX ? ` | ${SEO_TITLE_SUFFIX}` : '');
+  const postfix = () => {
+    if (props.postfix !== false) {
+      return SEO_TITLE_SUFFIX ? ` | ${SEO_TITLE_SUFFIX}` : '| Prismium';
+    }
+
+    return '';
+  };
 
   return {
-    title: title(data?.seo_title, data?.pagetitle, lifebuoy),
+    title: title(props.title),
     link: [
       {
         rel: 'canonical',
@@ -44,15 +46,11 @@ export default function processHead(data = {}, lifebuoy = '', configData = {}) {
     meta: [
       {
         name: 'description',
-        content:
-          typeof data?.seo_description === 'string' ? data.seo_description : '',
+        content: typeof props.description === 'string' ? props.description : '',
       },
       {
         name: 'robots',
-        content:
-          data?.searchable && isRobots()
-            ? 'index, follow'
-            : 'noindex, nofollow',
+        content: isRobots() ? 'index, follow' : 'noindex, nofollow',
       },
     ],
   };

@@ -62,17 +62,17 @@ const classes = computed(() => [
           v-for="(item, i) in items"
           :key="i"
         >
-          <NuxtLink
+          <AppLink
             class="breadcrumbs__link"
             itemprop="item"
-            :to="item.link"
+            :to="item.to"
             :title="item.title"
           >
             <span class="breadcrumbs__text text" itemprop="name">
               {{ item.title }}
             </span>
             <meta itemprop="position" :content="i" />
-          </NuxtLink>
+          </AppLink>
         </li>
       </ul>
     </div>

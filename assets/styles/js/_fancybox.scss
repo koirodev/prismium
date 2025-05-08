@@ -4,9 +4,11 @@
   --js-fancybox-animation: var(--js-fancybox-duration) var(--js-fancybox-ease); // Скорость анимации
   --js-fancybox-backdrop: #02021a33; // Фон модальном окне (не в фото)
   --js-fancybox-backdrop-photo: #02021a33; // Фон в модальном окне фото
-  --js-fancybox-cross-color: theme('colors.light'); // Цвет кнопки закрытия
+  --js-fancybox-cross-color: theme(
+    'colors.light.DEFAULT'
+  ); // Цвет кнопки закрытия
   --js-fancybox-cross-color-hover: theme(
-    'colors.light'
+    'colors.light.secondary'
   ); // Цвет кнопки закрытия при наведении
   --js-fancybox-cross-offset-right: 0px; // Позиционирование кнопки закрытия в модальном окне (не в фото)
   --js-fancybox-cross-offset-top: calc(
