@@ -51,7 +51,7 @@ export default function (gulp, config, banner) {
 
   gulp.task('sass:modules', function () {
     return gulp
-      .src([`${config.root}/src/prismium.scss`])
+      .src([`${config.root}/src/prismium.scss`, `${config.root}/src/prismium-bundle.scss`])
       .pipe(header(banner))
       .pipe(gulp.dest(`${config.root}/dist/`));
   });

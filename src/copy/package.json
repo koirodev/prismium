@@ -26,8 +26,9 @@
     },
     "./css": "./prismium.css",
     "./css/bundle": "./prismium-bundle.css",
-    
+
     "./scss": "./prismium.scss",
+    "./scss/bundle": "./prismium-bundle.scss",
 
     "./theme/light": "./themes/light.css",
     "./theme/dark": "./themes/dark.css",
