@@ -6,11 +6,12 @@ import codeCdnModule from '~/examples/cdn/module.html?raw';
 import codeBaseTemplate from '~/examples/base-template/index.html?raw';
 
 const { t: $t } = useI18n();
+const i18nPage = ref('pages.get_started');
 
 useHead(
   processHead({
-    title: $t('pages.get_started.seo.title'),
-    description: $t('pages.get_started.seo.description'),
+    title: $t(`${i18nPage.value}.seo.title`),
+    description: $t(`${i18nPage.value}.seo.description`),
   })
 );
 </script>
@@ -33,13 +34,10 @@ useHead(
     <SectionsTitle :title="$t('pages.get_started.h1')" />
 
     <SectionsDocs class="section_padding_bottom">
-      <h2>Установка</h2>
-      <p>
-        У вас имеется несколько способов установить <b>Prismium</b> в ваш
-        проект. Все зависит от ваших предпочтений и требований проекта.
-      </p>
+      <h2 v-html="$t(`${i18nPage}.installation.title`)"></h2>
+      <p v-html="$t(`${i18nPage}.installation.description`)"></p>
 
-      <h3>Установка через <strong>NPM</strong></h3>
+      <h3 v-html="$t(`${i18nPage}.installation.npm.title`)"></h3>
       <AppTerminal class="max-w-[300px]" command="npm install prismium" />
       <AppCode language="javascript">
         <pre><code>import Prismium from 'prismium'; // library
@@ -47,11 +45,7 @@ import 'prismium/css'; // styles
 
 new Prismium(/* ... */);</code></pre>
       </AppCode>
-      <p>
-        По умолчанию <b>Prismium</b> импортируется без тем и модулей. Если вам
-        не достаточно стандартного функционала, то вам придется импортировать
-        необходимые вам модули и темы.
-      </p>
+      <p v-html="$t(`${i18nPage}.installation.npm.theme_desc`)"></p>
       <AppCode language="javascript">
         <pre><code>import Prismium from 'prismium'; // library
 import { EffectsModule } from 'prismium/modules'; // modules
@@ -64,11 +58,7 @@ new Prismium('[data-prismium]', {
   theme: 'dark',
 });</code></pre>
       </AppCode>
-      <p>
-        Если вы не хотите импортировать модули или темы, вы можете использовать
-        <b>Prismium</b> со всеми модулями и темами по умолчанию. Однако, это
-        может привести к увеличению размера вашего бандла.
-      </p>
+      <p v-html="$t(`${i18nPage}.installation.npm.theme_desc_2`)"></p>
       <AppCode language="javascript">
         <pre><code>import Prismium from 'prismium/bundle'; // bundle
 import 'prismium/css/bundle'; // style bundle
@@ -78,24 +68,18 @@ new Prismium('[data-prismium]', {
 });</code></pre>
       </AppCode>
 
-      <h3>Использование через <strong>CDN</strong></h3>
+      <h3 v-html="$t(`${i18nPage}.installation.cdn.title`)"></h3>
       <AppCode language="html">{{ codeCdnBundle }}</AppCode>
       <AppCode language="html">{{ codeCdnModule }}</AppCode>
 
-      <h3>Скачать ресурсы</h3>
-      <p>
-        Если вы хотите использовать <b>Prismium</b> локально, то вы можете
-        загрузить ресурсы с сайта:
-        <AppLink to="https://www.jsdelivr.com/package/npm/prismium"
-          >jsdelivr.com</AppLink
-        >
-      </p>
+      <h3 v-html="$t(`${i18nPage}.installation.download.title`)"></h3>
+      <p v-html="$t(`${i18nPage}.installation.download.description`)"></p>
 
-      <h2>Добавление HTML шаблона <strong>Prismium</strong></h2>
-      <p>Давайте добавим базовый шаблон <b>Prismium</b> в ваше приложение:</p>
+      <h2 v-html="$t(`${i18nPage}.html.title`)"></h2>
+      <p v-html="$t(`${i18nPage}.html.description`)"></p>
       <AppCode language="html">{{ codeBaseTemplate }}</AppCode>
 
-      <h2>Инициализация <strong>Prismium</strong> в проекте</h2>
+      <h2 v-html="$t(`${i18nPage}.init.title`)"></h2>
       <AppCode language="javascript">
         <pre><code>// Minimal initialization for basic usage
 new Prismium('[data-prismium]');
@@ -118,21 +102,9 @@ new Prismium('[data-prismium]', {
 });</code></pre>
       </AppCode>
 
-      <h2>Настройка стилей и размеров <strong>Prismium</strong></h2>
-      <p>
-        Скорее всего вам понадобится кастомизировать <b>Prismium</b>, сделать
-        это очень просто, просто обращайтесь к классам которые вы задали в HTML
-        <b>Prismium</b> или к своим классам, которые вы зададите сами.
-        <AppLink to="/core">Список основных классов</AppLink>
-      </p>
-      <p>
-        Если вам не надо сильно кастомизировать <b>Prismium</b>, то возможно вам
-        хватит базовых CSS переменных. С их списком вы можете ознакомиться тут
-        по <AppLink to="/core">ссылке</AppLink>. Кстати, темы
-        <b>Prismium</b> полностью реализованы с применением базовых CSS
-        переменных библиотеки, так что вам ничто не мешает с легкостью создать
-        свою тему.
-      </p>
+      <h2 v-html="$t(`${i18nPage}.styles.title`)"></h2>
+      <p v-html="$t(`${i18nPage}.styles.description`)"></p>
+      <p v-html="$t(`${i18nPage}.styles.description_2`)"></p>
       <AppCode language="css">
         <pre><code>.prismium {
   --prismium-background-color-disabled: #C5C5C5;
@@ -156,43 +128,15 @@ new Prismium('[data-prismium]', {
 }</code></pre>
       </AppCode>
 
-      <h2>Что делать дальше?</h2>
-      <p>
-        Как можете заметить, <b>Prismium</b> очень прост в использовании и
-        настройке. Вы можете использовать его в своем проекте, как только вы
-        добавили его в проект и инициализировали. Но это только начало!
-      </p>
-      <p><b>Что вы можете сделать дальше:</b></p>
+      <h2 v-html="$t(`${i18nPage}.next.title`)"></h2>
+      <p v-html="$t(`${i18nPage}.next.description`)"></p>
+      <p v-html="$t(`${i18nPage}.next.description_2`)"></p>
       <ul>
-        <li>
-          Ознакомиться <AppLink to="/core">с полной документацией</AppLink>
-          <b> Prismium</b>
-        </li>
-        <li>
-          Ознакомиться с уже готовыми
-          <AppLink to="/demo">демо кейсами Prismium</AppLink>
-        </li>
-        <li>
-          Попробовать реализовать свой <b>Prismium</b> через
-          <AppLink to="/constructor">конструктор</AppLink>
-        </li>
-        <li>
-          Если у вас возникли вопросы, вы можете задать их на
-          <AppLink to="https://stackoverflow.com/questions"
-            >StackOverflow</AppLink
-          >
-          или
-          <AppLink to="https://github.com/koirodev/prismium/discussions"
-            >Prismium Discussions</AppLink
-          >.
-        </li>
-        <li>
-          Если вы обнаружили ошибку или у вас есть предложение по улучшению
-          <b>Prismium</b>, создайте issue на
-          <AppLink to="https://github.com/koirodev/prismium/issues"
-            >GitHub</AppLink
-          >
-        </li>
+        <li
+          v-for="i in 4"
+          :key="i"
+          v-html="$t(`${i18nPage}.next.list[${i}]`)"
+        ></li>
       </ul>
     </SectionsDocs>
   </div>

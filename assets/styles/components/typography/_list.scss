@@ -70,7 +70,7 @@
   ul.list,
   .article ol,
   .article ul {
-    --list-circle-border-color: var(--text-dark-primary);
+    --list-circle-border-color: theme('colors.light.DEFAULT');
     --list-circle-border-size: 1px;
     --list-circle-color: theme('colors.light.DEFAULT');
     --list-circle-size: #{rem(7)};
@@ -147,22 +147,6 @@
     & b,
     & strong {
       font-weight: 700;
-    }
-
-    & a[href]:not([class]) {
-      color: var(--accent-primary-hover);
-      text-decoration-color: inherit;
-      text-decoration-line: underline;
-      text-decoration-style: solid;
-      text-decoration-skip-ink: none;
-      text-decoration-thickness: 1px;
-      text-underline-position: from-font;
-
-      transition: color var(--animation-default);
-
-      @include hover {
-        color: inherit;
-      }
     }
   }
 

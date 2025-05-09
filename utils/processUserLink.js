@@ -12,18 +12,24 @@
 export default function processUserLink(el) {
   if (!el) return;
   if (el.isProcessed) return;
+  const localePath = useLocalePath();
 
   if (
     !el.getAttribute('href')?.startsWith('http') &&
     el.getAttribute('target') !== '_blank'
   ) {
+    el.setAttribute('href', localePath(el.getAttribute('href')));
+
     el.addEventListener('click', (e) => {
       e.preventDefault();
       navigateTo(el.getAttribute('href'));
     });
   }
 
-  el.classList.add('link');
+  if (el.getAttribute('href')?.startsWith('http')) {
+    el.setAttribute('target', '_blank');
+  }
+
   el.isProcessed = true;
 
   return;
