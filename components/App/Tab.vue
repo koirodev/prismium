@@ -11,7 +11,7 @@ const props = defineProps({
 watch(
   () => props.active,
   (newVal) => {
-    if (newVal) {
+    if (newVal && process.client) {
       $stRefresh();
     }
   },

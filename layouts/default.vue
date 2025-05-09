@@ -9,7 +9,7 @@ const pageRef = ref(null);
 const isLoad = ref(false);
 const isOldBrowser = useState('isOldBrowser');
 
-let scrollSmoother;
+// let scrollSmoother;
 onMounted(() => {
   isLoad.value = true;
   pageRef.value.classList.remove('overflow-hidden');
@@ -60,7 +60,7 @@ watchEffect(() => {
 
     <AppPreloader v-if="!isLoad" />
 
-    <div class="font-primary h-screen overflow-hidden opacity-0" ref="pageRef">
+    <div class="h-screen overflow-hidden font-primary opacity-0" ref="pageRef">
       <BaseHeader />
 
       <div class="wrapper">

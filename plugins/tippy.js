@@ -9,9 +9,12 @@ import 'tippy.js/dist/backdrop.css';
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('tippy', {
     mounted(el, binding) {
+      if (!process.client) return;
+      if (typeof window === 'undefined') return;
+
       nextTick(() => {
         tippy(el, {
-          content: binding.value || el.getAttribute('area-label'),
+          content: binding.value || el.getAttribute('aria-label'),
           duration: 300,
           theme: 'light',
           followCursor: true,
@@ -27,7 +30,9 @@ export default defineNuxtPlugin((nuxtApp) => {
       });
     },
     updated(el, binding) {
-      el._tippy.setContent(binding.value || el.getAttribute('area-label'));
+      if (el._tippy) {
+        el._tippy.setContent(binding.value || el.getAttribute('aria-label'));
+      }
     },
   });
 });

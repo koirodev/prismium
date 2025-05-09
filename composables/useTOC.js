@@ -5,7 +5,6 @@
  */
 
 export default function useTOC() {
-  const { $ScrollTrigger } = useNuxtApp();
   const toc = ref([]);
   const observers = ref([]);
 
@@ -77,15 +76,15 @@ export default function useTOC() {
         .querySelectorAll(`${heading}:not(.${ignoreClass})`)
         .forEach((el, i) => {
           const active = ref(false);
-          el.id = `toc-${i}-${heading}`;
+          el.id = el.id || `toc-${i}-${heading}`;
 
           // Добавляем элемент под наблюдение
           headingObserver.observe(el);
 
           toc.value.push({
             text: el.textContent,
-            id: `toc-${i}-${heading}`,
-            link: `#${`toc-${i}-${heading}`}`,
+            id: el.id || `toc-${i}-${heading}`,
+            link: `#${el.id || `toc-${i}-${heading}`}`,
             active: active,
             heading: heading,
           });

@@ -9,6 +9,18 @@ const isMobile = ref(false);
 
 const starsCount = ref(21);
 
+const { data, error } = await useAsyncData('githubStars', () =>
+  $fetch('https://api.github.com/repos/koirodev/prismium')
+);
+
+if (error.value) {
+  console.error('Failed to fetch GitHub stars:', error.value);
+}
+
+if (data.value) {
+  starsCount.value = data.value.stargazers_count;
+}
+
 const close = () => {
   if (isBurgerOpen.value) {
     burgerStore.closeBurger();
@@ -41,18 +53,6 @@ onUnmounted(() => {
   window.removeEventListener('resize', checkWindowSize);
   document.removeEventListener('click', (e) => closeEvent(e));
   document.removeEventListener('touchstart', (e) => closeEvent(e));
-});
-
-onMounted(async () => {
-  try {
-    const { data } = await useFetch(
-      'https://api.github.com/repos/koirodev/prismium'
-    );
-
-    if (data.value) starsCount.value = data.value.stargazers_count;
-  } catch (error) {
-    console.error('Failed to fetch GitHub stars:', error);
-  }
 });
 </script>
 

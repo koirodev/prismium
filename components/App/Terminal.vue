@@ -5,6 +5,7 @@ const props = defineProps({
     default: null,
   },
 });
+
 const isCopied = ref(false);
 
 const copyCommand = () => {
@@ -35,7 +36,7 @@ const copyCommand = () => {
     <span class="icon-wrapper">
       <button
         type="button"
-        :area-label="!isCopied ? $t('common.copy') : $t('common.copied')"
+        :aria-label="!isCopied ? $t('common.copy') : $t('common.copied')"
         padded="false"
         @click.prevent="copyCommand"
         v-tippy

@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
   <section class="section" v-if="title">
     <div class="container">
-      <h1 class="h2" v-html="title"></h1>
+      <h1 class="h2 text-light" v-html="title"></h1>
     </div>
   </section>
 </template>

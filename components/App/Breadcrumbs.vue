@@ -13,20 +13,9 @@ const props = defineProps({
   },
 });
 
-const { $globalSizes, $gsap } = useNuxtApp();
-const sectionRef = ref(null);
+const { $globalSizes } = useNuxtApp();
 
 onMounted(() => {
-  const isOldBrowser = useState('isOldBrowser');
-
-  if (!isOldBrowser.value) {
-    $gsap.fromTo(
-      sectionRef.value,
-      { opacity: 0 },
-      { opacity: 1, duration: ANIMATION.LONG }
-    );
-  }
-
   nextTick(() => {
     $globalSizes.setGlobalBreadcrumbsHeight();
   });
@@ -47,7 +36,7 @@ const classes = computed(() => [
 </script>
 
 <template>
-  <div :class="['breadcrumbs section', classes]" v-if="items" ref="sectionRef">
+  <div :class="['breadcrumbs section', classes]" v-if="items">
     <div class="container">
       <ul
         class="breadcrumbs__list text"

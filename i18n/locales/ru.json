@@ -74,18 +74,18 @@
         "breadcrumbs": "Главная"
       },
       "seo": {
-        "title": "Современный аккордеон для Vue, React и Vanilla JavaScript",
-        "description": "Prismium - это современная библиотека для создания гибких аккордеонов, которая позволяет создавать красивые и отзывчивые аккордеоны с минимальными усилиями. Prismium поддерживает различные стили и темы, а также предоставляет множество настроек для кастомизации. Поддерживает и Vue, и React, а также полностью совместим с Vanilla JavaScript."
+        "title": "Гибкие и настраиваемые аккордеоны для Vue, React и JavaScript",
+        "description": "Простой и мощный инструмент для создания красивых, отзывчивых аккордеонов с поддержкой Vue, React и Vanilla JavaScript. Начните с Prismium уже сегодня!"
       }
     },
     "get_started": {
       "common": {
-        "link": "/get-started",
+        "link": "/get-started/",
         "breadcrumbs": "Начало работы"
       },
       "seo": {
-        "title": "Создать свой аккордеон с нуля JavaScript, React, Vue.js",
-        "description": "Начать использовать Prismium - это просто! Просто импортируйте библиотеку и используйте ее в своем проекте. Prismium поддерживает различные стили и темы, а также предоставляет множество настроек для кастомизации. Поддерживает и Vue, и React, а также полностью совместим с Vanilla JavaScript."
+        "title": "Как создать аккордеон с Prismium: Руководство по JavaScript, React и Vue",
+        "description": "Легко начните использовать Prismium в вашем проекте с простым импортом и настройкой. Поддержка Vue, React и Vanilla JS для гибкости и кастомизации."
       },
       "h1": "Начало работы с <strong>Prismium</strong>",
       "installation": {
@@ -128,6 +128,17 @@
           "Если вы обнаружили ошибку или у вас есть предложение по улучшению <b>Prismium</b>, создайте issue на <a href=\"https://github.com/koirodev/prismium/issues\">GitHub</a>"
         ]
       }
+    },
+    "core": {
+      "common": {
+        "link": "/core/",
+        "breadcrumbs": "Prismium API"
+      },
+      "seo": {
+        "title": "Документация Prismium API для Vanilla JavaScript",
+        "description": "Изучите полную документацию Prismium API для Vanilla JavaScript. Получите информацию о кастомизации и настройке аккордеонов в проектах на чистом JavaScript."
+      },
+      "h1": "Полная документация <strong>Prismium API</strong>"
     },
     "error": {
       "seo": {

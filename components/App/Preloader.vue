@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="max-mt:bottom-[10%] max-mt:w-1/6 max-mm:w-1/4 absolute bottom-0 left-0 right-0 top-0 z-[60] m-auto w-1/6"
+    class="absolute bottom-0 left-0 right-0 top-0 z-[60] m-auto w-1/6 max-mt:bottom-[10%] max-mt:w-1/6 max-mm:w-1/4"
     width="211"
     height="211"
     viewBox="0 0 211 211"

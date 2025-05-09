@@ -1,10 +1,11 @@
 <script setup>
 const { t: $t } = useI18n();
+const i18nPage = ref('pages.home');
 
 useHead(
   processHead({
-    title: $t('pages.home.seo.title'),
-    description: $t('ages.home.seo.description'),
+    title: $t(`${i18nPage.value}.seo.title`),
+    description: $t(`${i18nPage.value}.seo.description`),
   })
 );
 </script>

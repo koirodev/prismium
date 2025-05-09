@@ -116,8 +116,8 @@
     @apply text-primary;
   }
 
-  .link,
-  .article a:not([class]) {
+  .link:any-link,
+  .article a:not([class]):any-link {
     --link-color: theme('colors.primary.DEFAULT');
     --link-color-hover: theme('colors.primary.DEFAULT');
     --link-stroke-color: theme('colors.primary.transparent');

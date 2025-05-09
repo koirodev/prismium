@@ -37,7 +37,7 @@ let scrollSmoother;
 const initScrollSmoother = () => {
   const isOldBrowser = useState('isOldBrowser');
   if (isOldBrowser.value) return;
-  
+
   scrollSmoother = ScrollSmoother.create({
     wrapper: settings.wrapper,
     content: settings.content,

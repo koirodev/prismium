@@ -8,6 +8,8 @@ import 'prismjs/components/prism-jsx.js';
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('highlight', {
     mounted(el) {
+      if (!process.client) return;
+
       const { $stRefresh } = useNuxtApp();
 
       Prism.highlightAllUnder(el);

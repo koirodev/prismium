@@ -6,7 +6,9 @@ const containerRef = ref(null);
   <section class="section">
     <div class="container grid grid-cols-5" ref="containerRef">
       <TypographyArticle class="local-article"><slot></slot></TypographyArticle>
-      <AppTOC class="local-toc" :container="containerRef" />
+      <ClientOnly>
+        <AppTOC class="local-toc" :container="containerRef" />
+      </ClientOnly>
     </div>
   </section>
 </template>

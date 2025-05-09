@@ -66,12 +66,15 @@ onMounted(() => {
     >
       <template v-if="structuredToc.length > 0">
         <li
-          class="toc-item m-0"
+          class="toc-item text_md m-0"
           v-for="(h2Item, index) in structuredToc"
           :key="`h2-${index}`"
         >
           <a
-            :class="['toc-link font-medium', { active: h2Item.active }]"
+            :class="[
+              'toc-link animation-default font-medium',
+              { active: h2Item.active },
+            ]"
             :href="h2Item.link"
           >
             {{ h2Item.text }}
@@ -83,7 +86,7 @@ onMounted(() => {
               :key="`h3-${index}-${subIndex}`"
             >
               <a
-                :class="['toc-link', { active: h3Item.active }]"
+                :class="['toc-link text_md', { active: h3Item.active }]"
                 :href="h3Item.link"
               >
                 {{ h3Item.text }}
@@ -111,11 +114,11 @@ onMounted(() => {
 }
 
 .toc-item {
-  @apply flex-start w-full flex-col;
+  @apply flex w-full flex-col items-start justify-start;
 }
 
 .toc-link {
-  @apply text_md animation-default flex w-full rounded px-3 py-2 text-light transition-colors any-hover:text-light/70;
+  @apply flex w-full rounded px-3 py-2 text-light transition-colors any-hover:text-light/70;
 
   &.active {
     @apply bg-light text-dark;

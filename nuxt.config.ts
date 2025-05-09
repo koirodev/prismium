@@ -10,8 +10,6 @@ export default defineNuxtConfig({
     },
   },
 
-  imports: { autoImport: true, scan: true },
-
   modules: [
     '@vueuse/nuxt',
     'nuxt-svgo',

@@ -9,6 +9,7 @@
     scroll-padding-top: 90px;
     scroll-behavior: smooth;
 
+    color: theme('colors.theme.text');
     @apply h-full scroll-smooth text-balance text-[16px] text-theme-text;
 
     &__body {

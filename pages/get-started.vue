@@ -1,6 +1,4 @@
 <script setup>
-import { AppBreadcrumbs } from '#components';
-
 import codeCdnBundle from '~/examples/cdn/bundle.html?raw';
 import codeCdnModule from '~/examples/cdn/module.html?raw';
 import codeBaseTemplate from '~/examples/base-template/index.html?raw';
@@ -25,13 +23,13 @@ useHead(
           to: $t('pages.home.common.link'),
         },
         {
-          title: $t('pages.get_started.common.breadcrumbs'),
-          to: $t('pages.get_started.common.link'),
+          title: $t(`${i18nPage}.common.breadcrumbs`),
+          to: $t(`${i18nPage}.common.link`),
         },
       ]"
     />
 
-    <SectionsTitle :title="$t('pages.get_started.h1')" />
+    <SectionsTitle :title="$t(`${i18nPage}.h1`)" />
 
     <SectionsDocs class="section_padding_bottom">
       <h2 v-html="$t(`${i18nPage}.installation.title`)"></h2>
@@ -133,9 +131,9 @@ new Prismium('[data-prismium]', {
       <p v-html="$t(`${i18nPage}.next.description_2`)"></p>
       <ul>
         <li
-          v-for="i in 4"
+          v-for="i in 5"
           :key="i"
-          v-html="$t(`${i18nPage}.next.list[${i}]`)"
+          v-html="$t(`${i18nPage}.next.list[${i - 1}]`)"
         ></li>
       </ul>
     </SectionsDocs>

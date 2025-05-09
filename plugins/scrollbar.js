@@ -16,6 +16,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   nuxtApp.vueApp.directive('scrollbar', {
     mounted(el, binding) {
+      if (!process.client) return;
+
       const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       if (isTouch) return;
 

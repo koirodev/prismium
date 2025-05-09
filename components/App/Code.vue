@@ -8,6 +8,18 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  smallClear: {
+    type: Boolean,
+    default: false,
+  },
+  backtick: {
+    type: Boolean,
+    default: false,
+  },
+  maxHeight: {
+    type: String,
+    default: '70vh',
+  },
 });
 
 const isCopied = ref(false);
@@ -31,14 +43,14 @@ const copyCommand = () => {
 
 <template>
   <div
-    v-if="!small"
+    v-if="!small && !smallClear && !backtick"
     class="code-block relative h-fit w-full overflow-hidden rounded border border-stroke"
     v-highlight
   >
     <button
       class="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded bg-dark2/50 backdrop-blur-sm"
       type="button"
-      :area-label="!isCopied ? $t('common.copy') : $t('common.copied')"
+      :aria-label="!isCopied ? $t('common.copy') : $t('common.copied')"
       @click="copyCommand"
       v-tippy
     >
@@ -46,7 +58,8 @@ const copyCommand = () => {
       <SvgFiRrCheck class="icon" v-else />
     </button>
     <div
-      class="max-h-[70vh] w-full overflow-auto"
+      class="w-full overflow-auto"
+      :class="`max-h-[${maxHeight}]`"
       v-scrollbar="{ scrollbars: { autoHide: 'leave' } }"
     >
       <pre><code :class="`language-${language}`"><slot></slot></code></pre>
@@ -54,8 +67,24 @@ const copyCommand = () => {
   </div>
 
   <code
+    :class="`small-clear language-${language}`"
+    :aria-label="!isCopied ? $t('common.copy') : $t('common.copied')"
+    @click="copyCommand"
+    v-else-if="smallClear"
+    ><slot></slot
+  ></code>
+
+  <code
+    :class="`small-clear language-${language}`"
+    :aria-label="!isCopied ? $t('common.copy') : $t('common.copied')"
+    @click="copyCommand"
+    v-else-if="backtick"
+    >`<slot></slot>`</code
+  >
+
+  <code
     :class="`small language-${language}`"
-    :area-label="!isCopied ? $t('common.copy') : $t('common.copied')"
+    :aria-label="!isCopied ? $t('common.copy') : $t('common.copied')"
     @click="copyCommand"
     v-tippy
     v-else
@@ -65,13 +94,23 @@ const copyCommand = () => {
 
 <style lang="scss" scoped>
 pre {
-  @apply text_md m-0 w-full min-w-fit overflow-auto bg-dark2/30 backdrop-blur-sm;
+  @apply text_md m-0 w-full min-w-fit overflow-auto bg-dark2/30 !font-mono backdrop-blur-sm;
 }
 
 .small {
   font: inherit;
 
-  @apply cursor-pointer rounded border border-stroke bg-stroke px-2 py-1;
+  @apply cursor-pointer rounded border border-stroke bg-dark2/30 px-2 py-[0.15rem] !font-mono text-light;
+
+  pre {
+    font: inherit;
+  }
+}
+
+.small-clear {
+  font: inherit;
+
+  @apply cursor-pointer bg-transparent p-0 !font-mono text-theme-accent;
 
   pre {
     font: inherit;

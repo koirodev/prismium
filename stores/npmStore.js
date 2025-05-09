@@ -22,8 +22,8 @@ export const useNPMStore = defineStore('npm', () => {
 
   async function fetchData() {
     try {
-      const { data: npmjs } = await useFetch(
-        'https://registry.npmjs.org/prismium/latest'
+      const { data: npmjs } = await useAsyncData('npmjs-latest', () =>
+        $fetch('https://registry.npmjs.org/prismium/latest')
       );
       if (npmjs.value) {
         data.value = npmjs.value;

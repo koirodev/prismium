@@ -24,7 +24,7 @@ export default {
         transparent: 'transparent',
         theme: {
           bg: 'theme("colors.dark")',
-          text: 'theme("colors.white")',
+          text: 'theme("colors.light.DEFAULT")',
           accent: 'theme("colors.primary.DEFAULT")',
         },
         white: '#ffffff',
