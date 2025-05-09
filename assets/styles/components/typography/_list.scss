@@ -91,10 +91,6 @@
     --list-ul-item-gap: #{rem(10)};
     --list-ul-padding-left: 0px;
 
-    @include mediaTablet {
-      --list-circle-top: #{rem(9)};
-    }
-
     margin: 0;
 
     padding: 0;
@@ -108,6 +104,10 @@
     list-style: none;
 
     counter-reset: item;
+
+    @include mediaTablet {
+      --list-circle-top: #{rem(9)};
+    }
 
     & ul,
     & ol {

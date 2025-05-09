@@ -3,8 +3,8 @@ const { t: $t } = useI18n();
 
 useHead(
   processHead({
-    title: $t('seo_home_page.title'),
-    description: $t('seo_home_page.description'),
+    title: $t('pages.home.seo.title'),
+    description: $t('ages.home.seo.description'),
   })
 );
 </script>

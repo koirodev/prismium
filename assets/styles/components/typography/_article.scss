@@ -1,6 +1,6 @@
 @layer components {
   .article {
-    --article-font: 400 #{rem(18)} / 1.5 #{theme('fontFamily.primary')};
+    --article-font: 400 #{rem(18)} / 1.6 theme('fontFamily.primary');
     --article-image-background: theme('colors.dark2');
     --article-margin-blocks: #{rem(20)};
     --article-margin-h2-3-bottom: #{rem(30)};
@@ -12,9 +12,15 @@
     --article-text-color: theme('colors.light.secondary');
     --article-title-color: theme('colors.white');
 
+    width: 100%;
+    display: block;
+
+    color: var(--article-text-color);
+    font: var(--article-font);
+
     & {
       @include mediaTablet {
-        --article-font: 400 #{rem(16)} / 1.5 #{theme('fontFamily.primary')};
+        --article-font: 400 #{rem(16)} / 1.6 theme('fontFamily.primary');
         --article-margin-blocks: #{rem(15)};
         --article-margin-h2-3-bottom: #{rem(20)};
         --article-margin-h2-3-top: #{rem(35)};
@@ -23,12 +29,6 @@
         --article-margin-text: #{rem(15)};
       }
     }
-
-    width: 100%;
-    display: block;
-
-    color: var(--article-text-color);
-    font: var(--article-font);
 
     &:empty {
       display: none;

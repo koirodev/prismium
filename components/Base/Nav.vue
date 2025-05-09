@@ -87,7 +87,10 @@ onMounted(async () => {
           </li>
           <hr />
           <li class="nav__item">
-            <AppLink class="nav__link" to="/changelog">
+            <AppLink
+              class="nav__link"
+              to="https://github.com/koirodev/prismium/blob/main/CHANGELOG.md"
+            >
               <SvgFiRrNotebook class="nav__icon icon" />
               {{ $t('common.changelog') }}
             </AppLink>
@@ -96,9 +99,19 @@ onMounted(async () => {
       </li>
       <hr />
       <li class="nav__item">
-        <AppLink class="nav__link" to="/demos">
-          {{ $t('common.demos') }}
-        </AppLink>
+        <span class="nav__link">{{ $t('common.resources') }}</span>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <AppLink class="nav__link" to="/demos">
+              {{ $t('common.demos') }}
+            </AppLink>
+          </li>
+          <li class="nav__item">
+            <AppLink class="nav__link" to="/constructor">
+              {{ $t('common.constructor') }}
+            </AppLink>
+          </li>
+        </ul>
       </li>
       <hr />
       <li class="nav__item">
@@ -107,16 +120,14 @@ onMounted(async () => {
           to="https://github.com/koirodev/prismium/"
         >
           <SvgGithub class="nav__icon icon" />
-          <span class="text">
-            {{ starsCount }}
-            {{
-              toCaseCount(starsCount, [
-                $t('common.star'),
-                $t('common.stars2'),
-                $t('common.stars'),
-              ])
-            }}
-          </span>
+          {{ starsCount }}
+          {{
+            toCaseCount(starsCount, [
+              $t('common.star'),
+              $t('common.stars2'),
+              $t('common.stars'),
+            ])
+          }}
         </AppLink>
       </li>
       <li class="nav__item">

@@ -12,7 +12,7 @@
     --button-border-width: 0px;
     --button-duration: theme('transitionDuration.default');
     --button-ease: theme('transitionTimingFunction.default');
-    --button-font: 400 #{rem(16)} / 1.5 theme('fontFamily.secondary');
+    --button-font: 400 #{rem(16)} / 1.6 theme('fontFamily.secondary');
     --button-icon-color: var(--button-text-color);
     --button-icon-color-disabled: var(--button-text-color-disabled);
     --button-icon-color-hover: var(--button-text-color-hover);
@@ -78,19 +78,7 @@
 
         .button__icon {
           &::before {
-            height: rem(40);
-
-            @include mediaDesktop {
-              height: rem(34);
-            }
-
-            @include mediaLaptop {
-              height: rem(26);
-            }
-
-            @include mediaTablet {
-              height: rem(22);
-            }
+            height: 40%;
           }
         }
 
@@ -130,7 +118,7 @@
         margin: auto;
 
         width: var(--button-stroke-size);
-        height: 100%;
+        height: 65%;
 
         background-color: var(--button-stroke-color);
 

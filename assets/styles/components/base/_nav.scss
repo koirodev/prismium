@@ -1,11 +1,11 @@
 @layer components {
   .nav {
-    --nav-bg-color: #{theme('colors.light.DEFAULT')};
-    --nav-font: 400 #{rem(16)} / 1.5 #{theme('fontFamily.secondary')};
+    --nav-bg-color: theme('colors.light.DEFAULT');
+    --nav-font: 400 #{rem(16)} / 1.6 theme('fontFamily.secondary');
     --nav-gap: #{rem(15)};
     --nav-icon-size: #{rem(30)};
-    --nav-text-color: #{theme('colors.light.DEFAULT')};
-    --nav-text-color-hover: #{theme('colors.dark')};
+    --nav-text-color: theme('colors.light.DEFAULT');
+    --nav-text-color-hover: theme('colors.dark');
 
     @apply ml-auto flex w-fit flex-row items-center justify-start gap-[var(--nav-gap)];
 
@@ -96,7 +96,7 @@
 
     & {
       @include media(780px) {
-        --nav-font: 400 #{rem(14)} / 1.5 #{theme('fontFamily.secondary')};
+        --nav-font: 400 #{rem(14)} / 1.6 theme('fontFamily.secondary');
         --nav-gap: #{rem(10)};
         --nav-icon-size: #{rem(24)};
         --nav-offset-right: calc(var(--container-offset) - #{rem(5)});

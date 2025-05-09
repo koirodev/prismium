@@ -9,8 +9,8 @@ const { t: $t } = useI18n();
 
 useHead(
   processHead({
-    title: $t('seo_get_started.title'),
-    description: $t('seo_get_started.description'),
+    title: $t('pages.get_started.seo.title'),
+    description: $t('pages.get_started.seo.description'),
   })
 );
 </script>
@@ -19,12 +19,18 @@ useHead(
   <div>
     <AppBreadcrumbs
       :items="[
-        { title: $t('common.home'), to: '/' },
-        { title: $t('seo_get_started.breadcrumbs'), to: '/' },
+        {
+          title: $t('pages.home.common.breadcrumbs'),
+          to: $t('pages.home.common.link'),
+        },
+        {
+          title: $t('pages.get_started.common.breadcrumbs'),
+          to: $t('pages.get_started.common.link'),
+        },
       ]"
     />
 
-    <SectionsTitle :title="$t('page_get_started.h1')" />
+    <SectionsTitle :title="$t('pages.get_started.h1')" />
 
     <SectionsDocs class="section_padding_bottom">
       <h2>Установка</h2>
@@ -156,11 +162,15 @@ new Prismium('[data-prismium]', {
         настройке. Вы можете использовать его в своем проекте, как только вы
         добавили его в проект и инициализировали. Но это только начало!
       </p>
-      <p>Что вы можете сделать дальше:</p>
+      <p><b>Что вы можете сделать дальше:</b></p>
       <ul>
         <li>
           Ознакомиться <AppLink to="/core">с полной документацией</AppLink>
           <b> Prismium</b>
+        </li>
+        <li>
+          Ознакомиться с уже готовыми
+          <AppLink to="/demo">демо кейсами Prismium</AppLink>
         </li>
         <li>
           Попробовать реализовать свой <b>Prismium</b> через

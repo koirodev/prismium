@@ -51,7 +51,7 @@
     &_center {
       .section {
         &__head {
-          @apply text-center;
+          @apply flex-center text-center;
         }
       }
     }

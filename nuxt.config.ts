@@ -1,10 +1,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: false,
+  ssr: true,
 
   runtimeConfig: {
     public: {
-      siteUrl: 'https://example.ru',
+      siteUrl: 'https://acc.prismify.in',
       gitApi: 'https://api.github.com/repos/koirodev/prismium',
       latestVersion: 'https://registry.npmjs.org/prismium/latest',
     },
@@ -47,7 +47,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://example.ru',
+    url: 'https://acc.prismify.in',
     name: 'Prismium docs',
     trailingSlash: true,
   },

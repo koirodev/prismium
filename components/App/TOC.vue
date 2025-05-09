@@ -32,7 +32,6 @@ const createStructuredToc = () => {
   });
 
   structuredToc.value = result;
-  console.log('toc', structuredToc.value);
 };
 
 watch(
