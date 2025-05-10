@@ -10,8 +10,7 @@
   </a>
 </div>
 
-Prismium
-========
+# Prismium
 
 Modern JavaScript UI component library featuring smooth animated accordions, filters, dropdowns and tooltips. Seamlessly integrates with React, Vue and vanilla JavaScript.
 

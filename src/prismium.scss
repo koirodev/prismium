@@ -23,15 +23,15 @@
   --prismium-font-primary: 500 20px / 1.2 sans-serif;
   --prismium-font-secondary: 500 16px / 1.2 sans-serif;
   --prismium-gap: 0;
-  --prismium-icon-color-hover: #2BFADE;
+  --prismium-icon-color-hover: #2bfade;
   --prismium-icon-color-primary: #202020;
   --prismium-icon-size: 24px;
-  --prismium-link-color-hover: #FCB0FC;
-  --prismium-link-color-primary: #56E6DE;
+  --prismium-link-color-hover: #fcb0fc;
+  --prismium-link-color-primary: #56e6de;
   --prismium-link-decoration: underline;
   --prismium-padding: 0px;
   --prismium-text-color-primary: #202020;
-  --prismium-text-color-secondary: #4C4C4C;
+  --prismium-text-color-secondary: #4c4c4c;
 }
 
 .prismium {
@@ -47,13 +47,15 @@
   font: var(--prismium-font-primary);
 
   background-color: var(--prismium-background-color-primary);
-  border: solid var(--prismium-border-width) var(--prismium-border-color-primary);
+  border: solid var(--prismium-border-width)
+    var(--prismium-border-color-primary);
   border-radius: var(--prismium-border-radius);
 
-  transition: background-color calc(var(--prismium-duration) * 2) var(--prismium-ease);
+  transition: background-color calc(var(--prismium-duration) * 2)
+    var(--prismium-ease);
 
   @include hover {
-    &:has(> .prismium__current:hover:not(:disabled)) {
+    &:not(.prismium-disabled) {
       background-color: var(--prismium-background-color-hover);
     }
   }
@@ -143,7 +145,7 @@
 
     transition: max-height var(--prismium-speed) var(--prismium-ease);
 
-    &.js-prismium-opened {
+    &.prismium-opened {
       max-height: unset;
     }
   }
@@ -159,7 +161,7 @@
     font: var(--prismium-font-secondary);
 
     &::before {
-      content: "";
+      content: '';
 
       position: absolute;
       top: calc(var(--prismium-content-offset, 20px) / 2);
@@ -198,7 +200,7 @@
     }
   }
 
-  &.js-prismium-active {
+  &.prismium-active {
     > .prismium__current {
       > .prismium__icon {
         transform: rotate(180deg);
@@ -211,18 +213,16 @@
       }
     }
 
-    .js-prismium-active {
+    .prismium-active {
       background-color: var(--prismium-background-color-active-nested);
     }
   }
 
-  &.js-prismium-disabled {
-    pointer-events: none;
-    user-select: none;
-
+  &.prismium-disabled {
     .prismium__icon,
     .prismium__current {
-      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.6;
     }
   }
 }

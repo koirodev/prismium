@@ -120,7 +120,10 @@ export class DOMManager {
    * @param {HTMLElement} el - Root element
    */
   handleInitialState(el) {
-    if (el.classList.contains(this.instance.options.activeClass)) {
+    if (
+      el.classList.contains(this.instance.options.activeClass) ||
+      this.instance.opened
+    ) {
       el.classList.remove(this.instance.options.activeClass);
       this.instance.$hidden.classList.add(this.instance.options.openedClass);
       this.instance.on('afterInit', () => {
@@ -128,6 +131,15 @@ export class DOMManager {
       });
     } else {
       this.instance.opened = false;
+    }
+
+    if (
+      el.classList.contains(this.instance.options.disabledClass) ||
+      this.instance.disabled
+    ) {
+      this.instance.on('afterInit', () => {
+        this.instance.disable(el);
+      });
     }
   }
 

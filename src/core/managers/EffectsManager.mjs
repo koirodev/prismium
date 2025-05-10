@@ -175,13 +175,14 @@ export class EffectsManager {
    * @private
    */
   #applyFadeScaleEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 400,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       scale: 0.9,
       opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectFadeScale };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
@@ -296,7 +297,7 @@ export class EffectsManager {
    * @private
    */
   #applyStaggerEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 400,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       delay: 50,
@@ -305,6 +306,7 @@ export class EffectsManager {
       opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectStagger };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
@@ -385,7 +387,7 @@ export class EffectsManager {
    * @private
    */
   #applyWaveEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 400,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       delay: 30,
@@ -394,6 +396,7 @@ export class EffectsManager {
       opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectWave };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
@@ -446,7 +449,7 @@ export class EffectsManager {
    * @private
    */
   #applyFlipEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 600,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       delay: 50,
@@ -455,6 +458,7 @@ export class EffectsManager {
       opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectFlip };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
@@ -462,13 +466,16 @@ export class EffectsManager {
     if (typeof options.perspective === 'number')
       options.perspective = `${options.perspective}px`;
 
+    if (typeof options.rotation === 'number')
+      options.rotation = `${options.rotation}deg`;
+
     instance.$content.style.perspective = options.perspective;
 
     // Сбрасываем стили перед анимацией | Reset styles before animation
     children.forEach((child, i) => {
       child.style.transition = 'none';
       child.style.transform = isOpening
-        ? `rotateX(${options.rotation}deg)`
+        ? `rotateX(${options.rotation})`
         : 'rotateX(0)';
       child.style.opacity = isOpening ? options.opacity : '1';
     });
@@ -503,7 +510,7 @@ export class EffectsManager {
    * @private
    */
   #applyZoomEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 500,
       easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
       delay: 50,
@@ -518,6 +525,7 @@ export class EffectsManager {
       ],
     };
 
+    const options = { ...defaults, ...instance.options.effectZoom };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
@@ -557,7 +565,7 @@ export class EffectsManager {
    * @private
    */
   #applyCascadeEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 600,
       easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
       delay: 100,
@@ -566,6 +574,7 @@ export class EffectsManager {
       opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectCascade };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
@@ -611,7 +620,6 @@ export class EffectsManager {
   #applyCustomEffect(instance, isOpening) {
     const defaults = {
       speed: 400,
-      easing: 'cubic-bezier(.25,.1,.25,1)',
       delay: 50,
       setup: null,
       open: null,
@@ -622,12 +630,23 @@ export class EffectsManager {
     const options = { ...defaults, ...instance.options.effectCustom };
     const children = this.#getFilteredChildren(instance);
 
+    if (!instance.effect) {
+      instance.effect = {};
+    }
+
+    const instanceEffect = instance.effect;
+
+    if (!instanceEffect.speed || !instanceEffect.delay) {
+      instanceEffect.speed = options.speed;
+      instanceEffect.delay = options.delay;
+    }
+
     if (!children.length) return;
 
     // Применяем начальную настройку если есть | Apply setup if exists
     if (typeof options.setup === 'function') {
       children.forEach((child, i) => {
-        options.setup(child, i, children.length, isOpening);
+        options.setup(instance, child, i, children.length, isOpening);
       });
     }
 
@@ -639,7 +658,7 @@ export class EffectsManager {
       const animate = isOpening ? options.open : options.close;
       if (typeof animate === 'function') {
         requestAnimationFrame(() => {
-          animate(child, i, children.length);
+          animate(instance, child, i, children.length);
         });
       }
     });
@@ -652,7 +671,7 @@ export class EffectsManager {
         instance.timerManager.clearTimeout(instance.__cleanupTimer);
       instance.__cleanupTimer = instance.timerManager.setTimeout(() => {
         children.forEach((child, i) => {
-          options.cleanup(child, i, children.length, isOpening);
+          options.cleanup(instance, child, i, children.length, isOpening);
         });
       }, maxDelay);
     }

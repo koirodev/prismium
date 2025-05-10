@@ -1,4 +1,9 @@
-import { PrismiumEventCallback, PrismiumEventListeners, PrismiumTheme, PrismiumEffect } from './index';
+import {
+  PrismiumEventCallback,
+  PrismiumEventListeners,
+  PrismiumTheme,
+  PrismiumEffect,
+} from './index';
 import Prismium from './core';
 
 /**
@@ -17,6 +22,18 @@ export interface PrismiumOptions {
   init?: boolean;
 
   /**
+   * Determines whether the accordion can be interacted with after initialization.
+   * @default false
+   */
+  disabled?: boolean;
+
+  /**
+   * Determines the state of the accordion after initialization.
+   * @default false
+   */
+  opened?: boolean;
+
+  /**
    * Theme for the accordion
    * @default 'clear'
    */
@@ -26,10 +43,12 @@ export interface PrismiumOptions {
    * Animation speed in milliseconds or object with open/close speeds
    * @default 350
    */
-  speed?: number | {
-    open: number;
-    close: number;
-  };
+  speed?:
+    | number
+    | {
+        open?: number;
+        close?: number;
+      };
 
   /**
    * Automatically close other accordions when one is opened
@@ -53,10 +72,12 @@ export interface PrismiumOptions {
    * Scroll to accordion after opening
    * @default false
    */
-  scrollTo?: boolean | {
-    offset?: number;
-    behavior?: ScrollBehavior;
-  };
+  scrollTo?:
+    | boolean
+    | {
+        offset?: number;
+        behavior?: ScrollBehavior;
+      };
 
   /**
    * Path to SVG sprite file
@@ -72,7 +93,7 @@ export interface PrismiumOptions {
 
   /**
    * Selectors for container elements
-   * @default ['[data-prismium-container]', '.section']
+   * @default ['[data-prismium-container]']
    */
   containerSelectors?: string | string[];
 
@@ -95,26 +116,20 @@ export interface PrismiumOptions {
   hiddenSelector?: string;
 
   /**
-   * CSS class for hidden elements
-   * @default 'js-prismium-hidden'
-   */
-  hiddenClass?: string;
-
-  /**
    * CSS class for active accordion
-   * @default 'js-prismium-active'
+   * @default 'prismium-active'
    */
   activeClass?: string;
 
   /**
    * CSS class for opened content
-   * @default 'js-prismium-opened'
+   * @default 'prismium-opened'
    */
   openedClass?: string;
 
   /**
    * CSS class for disabled accordion
-   * @default 'js-prismium-disabled'
+   * @default 'prismium-disabled'
    */
   disabledClass?: string;
 
@@ -122,6 +137,144 @@ export interface PrismiumOptions {
    * Animation effect type
    */
   effect?: PrismiumEffect;
+
+  /**
+   * Animation effect selectors
+   */
+  effectSelectors?: string | string[];
+
+  /**
+   * Animation effect ignore selectors
+   */
+  effectIgnore?: string | string[];
+
+  /**
+   * Animation effect line by line
+   */
+  effectLineByLine?: {
+    speed?: number;
+    easing?: string;
+    delay?: number;
+    scale?: number;
+    y?: number | string;
+    x?: number | string;
+    opacity?: number;
+  };
+
+  /**
+   * Animation effect fade scale
+   */
+  effectFadeScale?: {
+    speed?: number;
+    easing?: string;
+    scale?: number;
+    opacity?: number;
+  };
+
+  /**
+   * Animation effect slide
+   */
+  effectSlide?: {
+    speed?: number;
+    easing?: string;
+    directions?: 'up' | 'down' | 'left' | 'right';
+    distance?: number | string;
+    opacity?: number;
+  };
+
+  /**
+   * Animation effect stagger
+   */
+  effectStagger?: {
+    speed?: number;
+    easing?: string;
+    delay?: number;
+    directions?: Array<'up' | 'right' | 'down' | 'left'>;
+    distance?: number | string;
+    opacity?: number;
+  };
+
+  /**
+   * Animation effect wave
+   */
+  effectWave?: {
+    speed?: number;
+    easing?: string;
+    delay?: number;
+    amplitude?: string | number;
+    frequency?: number;
+    opacity?: number;
+  };
+
+  /**
+   * Animation effect flip
+   */
+  effectFlip?: {
+    speed?: number;
+    easing?: string;
+    delay?: number;
+    perspective?: number | string;
+    rotation?: number | string;
+    opacity?: number;
+  };
+
+  /**
+   * Animation effect zoom
+   */
+  effectZoom?: {
+    speed?: number;
+    easing?: string;
+    delay?: number;
+    scale?: number;
+    opacity?: number;
+    origins?: string[];
+  };
+
+  /**
+   * Animation effect cascade
+   */
+  effectCascade?: {
+    speed?: number;
+    easing?: string;
+    delay?: number;
+    rotation?: number;
+    distance?: number | string;
+    opacity?: number;
+  };
+
+  /**
+   * Animation effect custom
+   */
+  effectCustom?: {
+    speed?: number;
+    delay?: number;
+    setup?: (
+      prismium: Prismium,
+      child: HTMLElement,
+      index: number,
+      total: number,
+      isOpening: boolean
+    ) => void;
+    open?: (
+      prismium: Prismium,
+      child: HTMLElement,
+      index: number,
+      total: number
+    ) => void;
+    close?: (
+      prismium: Prismium,
+      child: HTMLElement,
+      index: number,
+      total: number
+    ) => void;
+    cleanup?: (
+      prismium: Prismium,
+      child: HTMLElement,
+      index: number,
+      total: number,
+      isOpening: boolean
+    ) => void;
+  };
 
   /**
    * Event listeners
@@ -137,11 +290,6 @@ export interface PrismiumOptions {
    * Global event listener for all events
    */
   onAny?: PrismiumEventCallback;
-
-  /**
-   * Emit function for events
-   */
-  emit?: (event: string, instance?: Prismium) => void;
 
   /**
    * Any additional custom options

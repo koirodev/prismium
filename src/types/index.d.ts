@@ -10,12 +10,21 @@ export as namespace Prismium;
 /**
  * Prismium event names
  */
-export type PrismiumEventName = 
-  | 'beforeInit' | 'init' | 'afterInit'
-  | 'beforeOpen' | 'open' | 'afterOpen'
-  | 'beforeClose' | 'close' | 'afterClose'
-  | 'beforeDestroy' | 'destroy' | 'afterDestroy'
-  | 'effectStart' | 'effectEnd';
+export type PrismiumEventName =
+  | 'beforeInit'
+  | 'init'
+  | 'afterInit'
+  | 'beforeOpen'
+  | 'open'
+  | 'afterOpen'
+  | 'beforeClose'
+  | 'close'
+  | 'afterClose'
+  | 'beforeDestroy'
+  | 'destroy'
+  | 'afterDestroy'
+  | 'effectStart'
+  | 'effectEnd';
 
 /**
  * Prismium event callback function
@@ -37,12 +46,12 @@ export interface PrismiumModule {
    * Module name
    */
   name: string;
-  
+
   /**
    * Called when the module is installed into Prismium
    */
   install?: (instance: Prismium) => void;
-  
+
   /**
    * Called when Prismium is initialized
    */
@@ -57,7 +66,7 @@ export interface PrismiumSpeed {
    * Opening speed in milliseconds
    */
   open?: number;
-  
+
   /**
    * Closing speed in milliseconds
    */
@@ -67,7 +76,7 @@ export interface PrismiumSpeed {
 /**
  * Prismium theme type
  */
-export type PrismiumTheme = 
+export type PrismiumTheme =
   | 'clear'
   | 'light'
   | 'dark'
@@ -76,12 +85,12 @@ export type PrismiumTheme =
   | 'forest'
   | 'ocean'
   | 'sunset'
-  | {[key: string]: boolean};
+  | { [key: string]: boolean };
 
 /**
  * Effect types available in Prismium
  */
-export type PrismiumEffect = 
+export type PrismiumEffect =
   | 'line-by-line'
   | 'fade-scale'
   | 'slide'

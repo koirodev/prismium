@@ -49,7 +49,7 @@ export const Prismium = defineComponent({
       type: Object,
       default: () => ({}),
     },
-    
+
     /**
      * Array of modules to use with Prismium
      * @type {import('../../types/index').PrismiumModule[]}
@@ -58,7 +58,7 @@ export const Prismium = defineComponent({
       type: Array,
       default: () => [],
     },
-    
+
     /**
      * Additional attributes to apply to the root element
      * @type {Object}
@@ -68,7 +68,7 @@ export const Prismium = defineComponent({
       default: () => ({}),
     },
   },
-  
+
   /**
    * Component setup function
    * @param {Object} props - Component props

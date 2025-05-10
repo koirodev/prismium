@@ -11,87 +11,87 @@ export interface PrismiumProps {
    * Options for configuring the Prismium instance
    */
   options?: PrismiumOptions;
-  
+
   /**
    * Modules to register with Prismium
    */
   modules?: PrismiumModule[];
-  
+
   /**
    * Children components
    */
   children?: React.ReactNode;
-  
+
   /**
    * Event handler for beforeInit event
    */
   beforeInit?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for init event
    */
   init?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for afterInit event
    */
   afterInit?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for beforeOpen event
    */
   beforeOpen?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for open event
    */
   open?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for afterOpen event
    */
   afterOpen?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for beforeClose event
    */
   beforeClose?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for close event
    */
   close?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for afterClose event
    */
   afterClose?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for beforeDestroy event
    */
   beforeDestroy?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for destroy event
    */
   destroy?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for afterDestroy event
    */
   afterDestroy?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for effectStart event
    */
   effectStart?: (instance: Prismium) => void;
-  
+
   /**
    * Event handler for effectEnd event
    */
   effectEnd?: (instance: Prismium) => void;
-  
+
   /**
    * Additional props to spread to the component
    */
@@ -107,17 +107,17 @@ export interface PrismiumCurrentProps {
    * @default 'div'
    */
   selector?: string;
-  
+
   /**
    * Additional attributes to apply to the element
    */
   attributes?: Record<string, any>;
-  
+
   /**
    * Children components
    */
   children?: React.ReactNode;
-  
+
   /**
    * Additional props to spread to the component
    */
@@ -133,17 +133,17 @@ export interface PrismiumContentProps {
    * @default 'div'
    */
   selector?: string;
-  
+
   /**
    * Additional attributes to apply to the element
    */
   attributes?: Record<string, any>;
-  
+
   /**
    * Children components
    */
   children?: React.ReactNode;
-  
+
   /**
    * Additional props to spread to the component
    */

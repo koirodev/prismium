@@ -13,8 +13,7 @@
   </a>
 </div>
 
-Prismium
-========
+# Prismium
 
 Prismium is a modern JavaScript library of UI components. Accordion, filter, dropdown, tooltip in one package.
 

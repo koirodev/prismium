@@ -1,35 +1,35 @@
-# Типизация Prismium
+# Prismium Typings
 
-В этой директории находятся файлы определения типов для библиотеки Prismium. Они могут использоваться как для TypeScript-проектов, так и для обеспечения автокомплита в JavaScript-проектах через JSDoc.
+This directory contains type definition files for the Prismium library. They can be used in TypeScript projects as well as to provide autocomplete in JavaScript projects through JSDoc.
 
-## Структура типов
+## Typings Structure
 
-- `index.d.ts` - Основные типы и интерфейсы библиотеки
-- `core.d.ts` - Типы для основного класса Prismium
-- `options.d.ts` - Типы для конфигурационных опций
-- `managers.d.ts` - Типы для менеджеров (DOM, Icons, Timer, Effects)
-- `react.d.ts` - Типы для React компонентов
-- `vue.d.ts` - Типы для Vue компонентов
+- `index.d.ts` - Main types and interfaces of the library
+- `core.d.ts` - Types for the main Prismium class
+- `options.d.ts` - Types for configuration options
+- `managers.d.ts` - Types for managers (DOM, Icons, Timer, Effects)
+- `react.d.ts` - Types for React components
+- `vue.d.ts` - Types for Vue components
 
-## Использование с TypeScript
+## Using with TypeScript
 
 ```typescript
-// При импорте Prismium в TypeScript-проекте
+// When importing Prismium in a TypeScript project
 import Prismium from 'prismium';
 
-// Импорт типов для опций
+// Importing types for options
 import { PrismiumOptions } from 'prismium';
 
-// Создание экземпляра с типизированными опциями
+// Creating an instance with typed options
 const options: PrismiumOptions = {
   theme: 'dark',
-  effect: 'line-by-line'
+  effect: 'line-by-line',
 };
 
 const accordion = new Prismium('.accordion', options);
 ```
 
-## Использование с JavaScript + JSDoc
+## Using with JavaScript + JSDoc
 
 ```javascript
 /**
@@ -41,13 +41,13 @@ const accordion = new Prismium('.accordion', options);
  */
 const options = {
   theme: 'dark',
-  effect: 'line-by-line'
+  effect: 'line-by-line',
 };
 
 const accordion = new Prismium('.accordion', options);
 ```
 
-## React-компоненты
+## React Components
 
 ```tsx
 import { Prismium, PrismiumCurrent, PrismiumContent } from 'prismium/react';
@@ -55,20 +55,20 @@ import { Prismium, PrismiumCurrent, PrismiumContent } from 'prismium/react';
 const MyAccordion = () => {
   return (
     <Prismium options={{ theme: 'dark' }}>
-      <PrismiumCurrent>Заголовок аккордеона</PrismiumCurrent>
-      <PrismiumContent>Содержимое аккордеона</PrismiumContent>
+      <PrismiumCurrent>Accordion Header</PrismiumCurrent>
+      <PrismiumContent>Accordion Content</PrismiumContent>
     </Prismium>
   );
 };
 ```
 
-## Vue-компоненты
+## Vue Components
 
 ```vue
 <template>
   <Prismium :options="options">
-    <PrismiumCurrent>Заголовок аккордеона</PrismiumCurrent>
-    <PrismiumContent>Содержимое аккордеона</PrismiumContent>
+    <PrismiumCurrent>Accordion Header</PrismiumCurrent>
+    <PrismiumContent>Accordion Content</PrismiumContent>
   </Prismium>
 </template>
 
@@ -81,10 +81,10 @@ export default {
     return {
       options: {
         theme: 'dark',
-        effect: 'line-by-line'
-      }
+        effect: 'line-by-line',
+      },
     };
-  }
+  },
 };
 </script>
 ```

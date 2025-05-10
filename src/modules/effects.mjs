@@ -21,7 +21,7 @@ export default {
      * @type {import('../types/index').PrismiumEffect|null}
      */
     effect: null,
-    
+
     /**
      * Selectors for elements to ignore when applying effects
      * @type {string[]}

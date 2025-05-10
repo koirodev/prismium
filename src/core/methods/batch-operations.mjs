@@ -1,7 +1,7 @@
 import { processAccordions, getElementDepth } from '../../utils/base.mjs';
 
 export default {
-  // Открыть все аккордеоны в контейнере | Open all accordions in the container
+  // Open all accordions in the container
   openAll(container, selector = '.prismium') {
     if (container && typeof container === 'string') {
       container = document.querySelector(container);
@@ -35,7 +35,7 @@ export default {
     this._isOpeningAll = false;
   },
 
-  // Закрыть все аккордеоны в контейнере | Close all accordions in the container
+  // Close all accordions in the container
   closeAll(container, selector = '.prismium') {
     if (typeof container === 'string') {
       container = document.querySelector(container);
@@ -52,7 +52,7 @@ export default {
       });
   },
 
-  // Открыть все аккордеоны на странице | Open all accordions on the page
+  // Open all accordions on the page
   openEverything(selector = '.prismium') {
     const accordions = Array.from(document.querySelectorAll(selector));
 
@@ -80,7 +80,7 @@ export default {
     this._isOpeningEverything = false;
   },
 
-  // Закрыть все аккордеоны на странице | Close all accordions on the page
+  // Close all accordions on the page
   closeEverything(selector = '.prismium') {
     document
       .querySelectorAll(`${selector}.${this.options.activeClass}`)
@@ -91,11 +91,47 @@ export default {
       });
   },
 
-  // Закрыть вложенные аккордеоны | Close nested accordions
-  closeNested(el) {
+  // Close nested accordions
+  closeNested(el = this.el) {
     el.querySelectorAll(`.${this.options.activeClass}`).forEach((nested) => {
       const instance = this.getInstance(nested);
       instance.close(nested);
     });
+  },
+
+  // Disables the ability to interact with the accordion
+  disable(el = this.el) {
+    if (el && typeof el === 'string') {
+      el = document.querySelector(el);
+    }
+
+    const instance = this.getInstance(el);
+    if (!instance) return;
+
+    const tagName = instance.$current.tagName.toLowerCase();
+
+    instance.el.classList.add(instance.options.disabledClass);
+    instance.$current.setAttribute('tabindex', '-1');
+
+    if (tagName === 'button') {
+      instance.$current.setAttribute('disabled', 'true');
+    }
+
+    instance.disabled = true;
+  },
+
+  // Enables interaction with the accordion.
+  enable(el = this.el) {
+    if (el && typeof el === 'string') {
+      el = document.querySelector(el);
+    }
+
+    const instance = this.getInstance(el);
+    if (!instance) return;
+
+    instance.el.classList.remove(instance.options.disabledClass);
+    instance.$current.removeAttribute('disabled');
+    instance.$current.removeAttribute('tabindex');
+    instance.disabled = false;
   },
 };

@@ -33,4 +33,19 @@ export const publicMethods = {
     const instance = new this(undefined, { init: false });
     return instance.toggle(el, scrollTo);
   },
+
+  closeNested(el) {
+    const instance = new this(undefined, { init: false });
+    return instance.closeNested(el);
+  },
+
+  disable(el) {
+    const instance = new this(undefined, { init: false });
+    return instance.disable(el);
+  },
+
+  enable(el) {
+    const instance = new this(undefined, { init: false });
+    return instance.enable(el);
+  },
 };

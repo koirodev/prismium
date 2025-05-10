@@ -16,7 +16,7 @@ export const PrismiumCurrent = defineComponent({
       type: String,
       default: 'div',
     },
-    
+
     /**
      * Additional attributes to apply to the element
      * @type {Object}
@@ -26,7 +26,7 @@ export const PrismiumCurrent = defineComponent({
       default: () => ({}),
     },
   },
-  
+
   /**
    * Component setup function
    * @param {Object} props - Component props

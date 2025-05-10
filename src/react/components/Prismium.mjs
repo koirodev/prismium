@@ -5,7 +5,7 @@ import PrismiumCore from '../../core/core.mjs';
 /**
  * Main Prismium React component
  * Provides an accordion UI component with animation effects
- * 
+ *
  * @param {Object} props - Component props
  * @param {import('../../types/options').PrismiumOptions} [props.options={}] - Configuration options for Prismium
  * @param {import('../../types/index').PrismiumModule[]} [props.modules=[]] - Array of modules to use with Prismium
@@ -93,8 +93,7 @@ export const Prismium = ({
       mergedOptions.emit &&
       mergedOptions.emit('beforeDestroy', instanceRef.current),
     destroy: () =>
-      mergedOptions.emit &&
-      mergedOptions.emit('destroy', instanceRef.current),
+      mergedOptions.emit && mergedOptions.emit('destroy', instanceRef.current),
     afterDestroy: () =>
       mergedOptions.emit &&
       mergedOptions.emit('afterDestroy', instanceRef.current),

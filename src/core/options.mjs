@@ -10,14 +10,13 @@ export default {
 
   // NS
   iconAttribute: 'data-prismium-icon',
-  containerSelectors: ['[data-prismium-container]', '.section'],
+  containerSelectors: ['[data-prismium-container]'],
   currentSelector: '[data-prismium-current]',
   contentSelector: '[data-prismium-content]',
   hiddenSelector: '[data-prismium-hidden]',
 
   // Classes
-  hiddenClass: 'js-prismium-hidden',
-  activeClass: 'js-prismium-active',
-  openedClass: 'js-prismium-opened',
-  disabledClass: 'js-prismium-disabled',
+  activeClass: 'prismium-active',
+  openedClass: 'prismium-opened',
+  disabledClass: 'prismium-disabled',
 };
