@@ -37,14 +37,14 @@ useHead(
 
       <h3 v-html="$t(`${i18nPage}.installation.npm.title`)"></h3>
       <AppTerminal class="max-w-[300px]" command="npm install prismium" />
-      <AppCode language="javascript">
+      <AppCode lang="js">
         <pre><code>import Prismium from 'prismium'; // library
 import 'prismium/css'; // styles
 
 new Prismium(/* ... */);</code></pre>
       </AppCode>
       <p v-html="$t(`${i18nPage}.installation.npm.theme_desc`)"></p>
-      <AppCode language="javascript">
+      <AppCode lang="js">
         <pre><code>import Prismium from 'prismium'; // library
 import { EffectsModule } from 'prismium/modules'; // modules
 
@@ -57,7 +57,7 @@ new Prismium('[data-prismium]', {
 });</code></pre>
       </AppCode>
       <p v-html="$t(`${i18nPage}.installation.npm.theme_desc_2`)"></p>
-      <AppCode language="javascript">
+      <AppCode lang="js">
         <pre><code>import Prismium from 'prismium/bundle'; // bundle
 import 'prismium/css/bundle'; // style bundle
 
@@ -67,18 +67,18 @@ new Prismium('[data-prismium]', {
       </AppCode>
 
       <h3 v-html="$t(`${i18nPage}.installation.cdn.title`)"></h3>
-      <AppCode language="html">{{ codeCdnBundle }}</AppCode>
-      <AppCode language="html">{{ codeCdnModule }}</AppCode>
+      <AppCode lang="html">{{ codeCdnBundle }}</AppCode>
+      <AppCode lang="html">{{ codeCdnModule }}</AppCode>
 
       <h3 v-html="$t(`${i18nPage}.installation.download.title`)"></h3>
       <p v-html="$t(`${i18nPage}.installation.download.description`)"></p>
 
       <h2 v-html="$t(`${i18nPage}.html.title`)"></h2>
       <p v-html="$t(`${i18nPage}.html.description`)"></p>
-      <AppCode language="html">{{ codeBaseTemplate }}</AppCode>
+      <AppCode lang="html">{{ codeBaseTemplate }}</AppCode>
 
       <h2 v-html="$t(`${i18nPage}.init.title`)"></h2>
-      <AppCode language="javascript">
+      <AppCode lang="js">
         <pre><code>// Minimal initialization for basic usage
 new Prismium('[data-prismium]');
 
@@ -103,7 +103,7 @@ new Prismium('[data-prismium]', {
       <h2 v-html="$t(`${i18nPage}.styles.title`)"></h2>
       <p v-html="$t(`${i18nPage}.styles.description`)"></p>
       <p v-html="$t(`${i18nPage}.styles.description_2`)"></p>
-      <AppCode language="css">
+      <AppCode lang="css">
         <pre><code>.prismium {
   --prismium-background-color-disabled: #C5C5C5;
   --prismium-background-color-hover: #DFFFFF;

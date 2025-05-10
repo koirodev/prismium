@@ -70,13 +70,13 @@ const toggle = (lang) => {
       >
     </div>
     <div class="w-full">
-      <AppCode language="html" v-if="activeLanguage === 'core'">{{
+      <AppCode lang="html" v-if="activeLanguage === 'core'">{{
         activeContent
       }}</AppCode>
-      <AppCode language="jsx" v-if="activeLanguage === 'react'">{{
+      <AppCode lang="jsx" v-if="activeLanguage === 'react'">{{
         activeContent
       }}</AppCode>
-      <AppCode language="html" v-if="activeLanguage === 'vue'">{{
+      <AppCode lang="html" v-if="activeLanguage === 'vue'">{{
         activeContent
       }}</AppCode>
     </div>

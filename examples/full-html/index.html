@@ -6,22 +6,25 @@
     <button data-prismium-current>
       your button text
 
-      <!-- Optional accordion icon (static version) -->
-      <!-- You can use the icon in any format -->
-      <!-- You can also use an HTML tag instead of svg or img -->
+      <!-- Optional accordion icon.
+           See below for more details about icons -->
       <svg data-prismium-icon>
         <use xlink:href="sprite.svg#chevron_bottom"></use>
       </svg>
     </button>
 
-    <!-- Accordion content container -->
-    <div data-prismium-content>
-      your hidden content
+    <!-- Optional container,
+         if not provided, Prismium will add it automatically -->
+    <div data-prismium-hidden>
+      <!-- Accordion content container -->
+      <div data-prismium-content>
+        your hidden content
 
-      <!-- Nested accordions -->
-      <div data-prismium><!-- children --></div>
-      <div data-prismium><!-- children --></div>
-      <div data-prismium><!-- children --></div>
+        <!-- Nested accordions -->
+        <div data-prismium><!-- children --></div>
+        <div data-prismium><!-- children --></div>
+        <div data-prismium><!-- children --></div>
+      </div>
     </div>
   </div>
 

@@ -1,8 +1,8 @@
 <script setup>
 const props = defineProps({
-  language: {
+  lang: {
     type: String,
-    default: 'javascript',
+    default: 'js',
   },
   small: {
     type: Boolean,
@@ -43,7 +43,7 @@ const copyCommand = () => {
 
 <template>
   <div
-    v-if="!small && !smallClear && !backtick"
+    v-if="!small"
     class="code-block relative h-fit w-full overflow-hidden rounded border border-stroke"
     v-highlight
   >
@@ -59,31 +59,15 @@ const copyCommand = () => {
     </button>
     <div
       class="w-full overflow-auto"
-      :class="`max-h-[${maxHeight}]`"
+      :style="{ maxHeight: maxHeight }"
       v-scrollbar="{ scrollbars: { autoHide: 'leave' } }"
     >
-      <pre><code :class="`language-${language}`"><slot></slot></code></pre>
+      <pre><code :class="`language-${lang}`"><slot></slot></code></pre>
     </div>
   </div>
 
   <code
-    :class="`small-clear language-${language}`"
-    :aria-label="!isCopied ? $t('common.copy') : $t('common.copied')"
-    @click="copyCommand"
-    v-else-if="smallClear"
-    ><slot></slot
-  ></code>
-
-  <code
-    :class="`small-clear language-${language}`"
-    :aria-label="!isCopied ? $t('common.copy') : $t('common.copied')"
-    @click="copyCommand"
-    v-else-if="backtick"
-    >`<slot></slot>`</code
-  >
-
-  <code
-    :class="`small language-${language}`"
+    class="small"
     :aria-label="!isCopied ? $t('common.copy') : $t('common.copied')"
     @click="copyCommand"
     v-tippy
@@ -94,23 +78,13 @@ const copyCommand = () => {
 
 <style lang="scss" scoped>
 pre {
-  @apply text_md m-0 w-full min-w-fit overflow-auto bg-dark2/30 !font-mono backdrop-blur-sm;
+  @apply text_md m-0 w-full min-w-fit overflow-auto bg-dark2 !font-mono backdrop-blur-sm;
 }
 
 .small {
   font: inherit;
 
-  @apply cursor-pointer rounded border border-stroke bg-dark2/30 px-2 py-[0.15rem] !font-mono text-light;
-
-  pre {
-    font: inherit;
-  }
-}
-
-.small-clear {
-  font: inherit;
-
-  @apply cursor-pointer bg-transparent p-0 !font-mono text-theme-accent;
+  @apply cursor-pointer rounded border border-stroke bg-dark2 px-2 py-[0.15rem] !font-mono text-light;
 
   pre {
     font: inherit;

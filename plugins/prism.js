@@ -1,6 +1,7 @@
 import Prism from 'prismjs';
 import 'prism-themes/themes/prism-nord.css';
 import 'prismjs/components/prism-javascript.js';
+import 'prismjs/components/prism-typescript.js';
 import 'prismjs/components/prism-css.js';
 import 'prismjs/components/prism-scss.js';
 import 'prismjs/components/prism-jsx.js';
