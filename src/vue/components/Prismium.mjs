@@ -5,7 +5,7 @@ import {
   provide,
   inject,
   onMounted,
-  onBeforeUnmount,
+  onUnmounted,
   toRaw,
 } from 'vue';
 import { deepMerge } from '../../utils/deepMerge.mjs';
@@ -134,7 +134,7 @@ export const Prismium = defineComponent({
       }
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       try {
         const rawInstance = instance.value ? toRaw(instance.value) : null;
         if (rawInstance && !rawInstance.destroyed && rawInstance.destroy) {

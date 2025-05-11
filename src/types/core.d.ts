@@ -20,6 +20,13 @@ declare class Prismium {
   static __instances__: Map<Element, Prismium>;
 
   /**
+   * Initialize the Prismium instance
+   * @param el - Element to initialize with
+   * @returns The Prismium instance
+   */
+  static init(el: HTMLElement): Prismium;
+
+  /**
    * Register a module to be used with Prismium
    * @param module - Module or array of modules to register
    * @returns Prismium constructor for chaining
@@ -27,24 +34,36 @@ declare class Prismium {
   static use(module: PrismiumModule | PrismiumModule[]): typeof Prismium;
 
   /**
+   * Get a Prismium instance from an element
+   * @param el - Element or CSS selector
+   * @returns The Prismium instance or null
+   */
+  static getInstance(el: HTMLElement | string): Prismium | null;
+
+  /**
    * Open a specific accordion by selector or element
    * @param selector - CSS selector or DOM element
    * @returns Promise that resolves when the accordion is opened
    */
-  static open(selector: string | Element): Promise<Prismium>;
+  static open(selector: string | HTMLElement): Promise<Prismium>;
 
   /**
    * Open all accordions that match the selector
+   * @param container - CSS selector or DOM element
    * @param selector - CSS selector
    * @returns Promise that resolves when all accordions are opened
    */
-  static openAll(selector?: string): Promise<Prismium[]>;
+  static openAll(
+    container: string | HTMLElement,
+    selector?: string
+  ): Promise<Prismium[]>;
 
   /**
    * Open all accordions in the document
+   * @param selector - CSS selector
    * @returns Promise that resolves when all accordions are opened
    */
-  static openEverything(): Promise<Prismium[]>;
+  static openEverything(selector?: string): Promise<Prismium[]>;
 
   /**
    * Close a specific accordion by selector or element
@@ -75,7 +94,7 @@ declare class Prismium {
 
   /**
    * Closes nested accordions
-   * @param selector - CSS selector
+   * @param selector - CSS selector or DOM element
    * @returns Promise that resolves when all accordions are toggled
    */
   static closeNested(selector: string | Element): Promise<Prismium>;
@@ -202,6 +221,11 @@ declare class Prismium {
   init(el?: HTMLElement): Prismium;
 
   /**
+   * Destroy the Prismium instance
+   */
+  destroy(): void;
+
+  /**
    * Configure animation speeds
    * @param open - Opening animation speed in ms
    * @param close - Closing animation speed in ms (defaults to open speed)
@@ -244,11 +268,6 @@ declare class Prismium {
    * @returns Promise that resolves when the toggle is complete
    */
   toggle(el?: HTMLElement, animated?: boolean): Promise<Prismium>;
-
-  /**
-   * Destroy the Prismium instance
-   */
-  destroy(): void;
 
   /**
    * Clean up resources and references

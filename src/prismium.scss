@@ -219,8 +219,7 @@
   }
 
   &.prismium-disabled {
-    .prismium__icon,
-    .prismium__current {
+    > .prismium__current {
       cursor: not-allowed;
       opacity: 0.6;
     }

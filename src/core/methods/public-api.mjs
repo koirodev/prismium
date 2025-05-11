@@ -1,4 +1,14 @@
 export const publicMethods = {
+  getInstance(el) {
+    const instance = new this(undefined, { init: false });
+    return instance.getInstance(el);
+  },
+
+  init(el) {
+    const instance = new this(undefined, { init: false });
+    return instance.init(el);
+  },
+
   open(el, scrollTo = true) {
     const instance = new this(undefined, { init: false });
     return instance.open(el, scrollTo);

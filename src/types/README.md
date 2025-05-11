@@ -21,12 +21,12 @@ import Prismium from 'prismium';
 import { PrismiumOptions } from 'prismium';
 
 // Creating an instance with typed options
-const options: PrismiumOptions = {
+const prismiumOptions: PrismiumOptions = {
   theme: 'dark',
   effect: 'line-by-line',
 };
 
-const accordion = new Prismium('.accordion', options);
+const accordion = new Prismium('.accordion', prismiumOptions);
 ```
 
 ## Using with JavaScript + JSDoc
@@ -39,12 +39,12 @@ const accordion = new Prismium('.accordion', options);
 /**
  * @type {PrismiumOptions}
  */
-const options = {
+const prismiumOptions = {
   theme: 'dark',
   effect: 'line-by-line',
 };
 
-const accordion = new Prismium('.accordion', options);
+const accordion = new Prismium('.accordion', prismiumOptions);
 ```
 
 ## React Components

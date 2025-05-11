@@ -26,6 +26,8 @@ class Prismium {
   static __instances__ = new Map();
 
   // Public methods as static
+  static init = publicMethods.init;
+  static getInstance = publicMethods.getInstance;
   static open = publicMethods.open;
   static openAll = publicMethods.openAll;
   static openEverything = publicMethods.openEverything;

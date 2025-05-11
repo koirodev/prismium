@@ -35,23 +35,6 @@ export default {
     this._isOpeningAll = false;
   },
 
-  // Close all accordions in the container
-  closeAll(container, selector = '.prismium') {
-    if (typeof container === 'string') {
-      container = document.querySelector(container);
-    }
-
-    container
-      .querySelectorAll(`${selector}.${this.options.activeClass}`)
-      .forEach((el) => {
-        const instance = this.getInstance(el);
-        this.close(el);
-        if (instance && instance.iconManager) {
-          instance.iconManager.updateIcon('close');
-        }
-      });
-  },
-
   // Open all accordions on the page
   openEverything(selector = '.prismium') {
     const accordions = Array.from(document.querySelectorAll(selector));
@@ -80,6 +63,23 @@ export default {
     this._isOpeningEverything = false;
   },
 
+  // Close all accordions in the container
+  closeAll(container, selector = '.prismium') {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+
+    container
+      .querySelectorAll(`${selector}.${this.options.activeClass}`)
+      .forEach((el) => {
+        const instance = this.getInstance(el);
+        this.close(el);
+        if (instance && instance.iconManager) {
+          instance.iconManager.updateIcon('close');
+        }
+      });
+  },
+
   // Close all accordions on the page
   closeEverything(selector = '.prismium') {
     document
@@ -93,6 +93,10 @@ export default {
 
   // Close nested accordions
   closeNested(el = this.el) {
+    if (typeof el === 'string') {
+      el = document.querySelector(el);
+    }
+
     el.querySelectorAll(`.${this.options.activeClass}`).forEach((nested) => {
       const instance = this.getInstance(nested);
       instance.close(nested);
