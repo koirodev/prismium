@@ -45,19 +45,19 @@ const propsReturn = ref(props.return);
       <slot></slot>
     </div>
     <div class="local-item" v-if="type">
-      <p class="local-title">Тип</p>
+      <p class="local-title">{{ $t('common.type') }}</p>
       <AppCode class="!text-base" small>{{ type }}</AppCode>
     </div>
     <div class="local-item" v-if="propsDefault">
-      <p class="local-title">По умолчанию</p>
+      <p class="local-title">{{ $t('common.default') }}</p>
       <AppCode class="!text-base" small>{{ propsDefault }}</AppCode>
     </div>
     <div class="local-item" v-if="args">
-      <p class="local-title">Аргументы</p>
+      <p class="local-title">{{ $t('common.args') }}</p>
       <AppCode class="!text-base" small>{{ args }}</AppCode>
     </div>
     <div class="local-item" v-if="params?.length">
-      <p class="local-title">Параметры</p>
+      <p class="local-title">{{ $t('common.params') }}</p>
       <div class="flex-start flex-col gap-2">
         <AppCode class="!text-base" small v-for="item in params" :key="item">{{
           item
@@ -65,11 +65,11 @@ const propsReturn = ref(props.return);
       </div>
     </div>
     <div class="local-item" v-if="propsReturn">
-      <p class="local-title">Возвращает</p>
+      <p class="local-title">{{ $t('common.return') }}</p>
       <AppCode class="!text-base" small>{{ propsReturn }}</AppCode>
     </div>
     <div class="local-item" v-if="$slots.note">
-      <p class="local-title">Примечание</p>
+      <p class="local-title">{{ $t('common.note') }}</p>
       <div class="article w-full"><slot name="note"></slot></div>
     </div>
   </div>

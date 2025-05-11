@@ -33,6 +33,32 @@ useHead(
     <SectionsTitle :title="$t(`${i18nPage}.h1`)" />
 
     <SectionsDocs class="section_padding_bottom">
+      <template #aside>
+        <AppAsideNav
+          :items="[
+            {
+              title: 'Начало работы',
+              link: '/get-started',
+            },
+            {
+              title: 'Установка',
+              link: '/core/installation',
+            },
+            {
+              title: 'Инициализация',
+              link: '/core/initialization',
+            },
+            {
+              title: 'Параметры',
+              link: '/core/parameters',
+            },
+            {
+              title: 'Эффекты',
+              link: '/core/effects',
+            },
+          ]"
+        />
+      </template>
       <h2 id="full-html-layout" v-html="$t(`${i18nPage}.full_html.title`)"></h2>
       <AppCode max-height="unset" lang="html">{{ codeHtmlLayout }}</AppCode>
 
@@ -54,177 +80,175 @@ useHead(
       <p v-html="$t(`${i18nPage}.icons.dynamic.description`)"></p>
       <AppCode lang="html">{{ codeIconDynamic }}</AppCode>
 
-      <h2 id="prismium-styles">Стили <strong>Prismium</strong></h2>
-      <p>
-        Библиотека Prismium содержит предустановленный стили <b>CSS</b> и
-        <b>SCSS</b>
-      </p>
+      <h2 id="prismium-styles" v-html="$t(`${i18nPage}.styles.title`)"></h2>
+      <p v-html="$t(`${i18nPage}.styles.description`)"></p>
 
-      <h3 id="css-styles">CSS стили</h3>
-      <p><b>CSS</b> стили для локального использования <b>(без npm)</b>:</p>
+      <h3 id="css-styles" v-html="$t(`${i18nPage}.styles.css.title`)"></h3>
       <ul>
-        <li><AppCode small>prismium.css</AppCode> — базовый набор стилей</li>
         <li>
-          <AppCode small>prismium.min.css</AppCode> — минифицированный базовый
-          набор стилей
+          <AppCode small>prismium.css</AppCode> —
+          {{ $t(`${i18nPage}.styles.css.prismium_css`) }}
         </li>
         <li>
-          <AppCode small>prismium-bundle.css</AppCode> — набор всех стилей
-          Prismium, включая темы
+          <AppCode small>prismium.min.css</AppCode> —
+          {{ $t(`${i18nPage}.styles.css.prismium_min_css`) }}
         </li>
         <li>
-          <AppCode small>prismium-bundle.min.css</AppCode> — минифицированный
-          набор всех стилей <b>Prismium</b>, включая темы
+          <AppCode small>prismium-bundle.css</AppCode> —
+          {{ $t(`${i18nPage}.styles.css.prismium_bundle_css`) }}
+        </li>
+        <li>
+          <AppCode small>prismium-bundle.min.css</AppCode> —
+          {{ $t(`${i18nPage}.styles.css.prismium_bundle_min_css`) }}
         </li>
       </ul>
-      <p><b>CSS</b> стили для использования через <b>NPM</b></p>
+      <p v-html="$t(`${i18nPage}.styles.css.description`)"></p>
       <ul>
-        <li><AppCode small>prismium/css</AppCode> — базовый набор стилей</li>
         <li>
-          <AppCode small>prismium/css/bundle</AppCode> — набор всех стилей
-          Prismium, включая темы
+          <AppCode small>prismium/css</AppCode> —
+          {{ $t(`${i18nPage}.styles.css.prismium_css`) }}
         </li>
-      </ul>
-
-      <h3 id="scss-styles">SCSS стили</h3>
-      <ul>
-        <li><AppCode small>prismium/scss</AppCode> — базовый набор стилей</li>
         <li>
-          <AppCode small>prismium/scss/bundle</AppCode> — набор всех стилей
-          Prismium, включая темы
+          <AppCode small>prismium/css/bundle</AppCode> —
+          {{ $t(`${i18nPage}.styles.css.prismium_bundle_css`) }}
         </li>
       </ul>
 
-      <h3 id="prismium-themes">Темы Prismium</h3>
-      <AppAccordion title="Темы (без NPM)">
+      <h3 id="scss-styles">{{ $t(`${i18nPage}.styles.scss.title`) }}</h3>
+      <ul>
+        <li>
+          <AppCode small>prismium/scss</AppCode> —
+          {{ $t(`${i18nPage}.styles.scss.prismium_scss`) }}
+        </li>
+        <li>
+          <AppCode small>prismium/scss/bundle</AppCode> —
+          {{ $t(`${i18nPage}.styles.scss.prismium_scss_bundle`) }}
+        </li>
+      </ul>
+
+      <h3 id="prismium-themes">{{ $t(`${i18nPage}.themes.title`) }}</h3>
+      <AppAccordion :title="$t(`${i18nPage}.themes.without_npm`)">
         <div class="article">
           <ul>
             <li>
-              <AppCode small>/themes/dark.css</AppCode> — темная тема,
-              вдохновлена свежи асфальтом на треках Ф-1
+              <AppCode small>/themes/dark.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.dark`) }}
             </li>
             <li>
-              <AppCode small>/themes/dark.min.css</AppCode> — темная тема
-              (минифицированная)
+              <AppCode small>/themes/dark.min.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.dark_min`) }}
             </li>
             <li>
-              <AppCode small>/themes/dark-contrast.css</AppCode> — контрастная
-              темная тема
+              <AppCode small>/themes/dark-contrast.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.dark_contrast`) }}
             </li>
             <li>
               <AppCode small>/themes/dark-contrast.min.css</AppCode> —
-              контрастная темная тема (минифицированная)
+              {{ $t(`${i18nPage}.themes.dark_contrast_min`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>/themes/light.css</AppCode> — светлая тема с
-              нотками легкости
+              <AppCode small>/themes/light.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.light`) }}
             </li>
             <li>
-              <AppCode small>/themes/light.min.css</AppCode> — светлая тема
-              (минифицированная)
+              <AppCode small>/themes/light.min.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.light_min`) }}
             </li>
             <li>
-              <AppCode small>/themes/light-contrast.css</AppCode> — контрастная
-              светлая тема
+              <AppCode small>/themes/light-contrast.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.light_contrast`) }}
             </li>
             <li>
               <AppCode small>/themes/light-contrast.min.css</AppCode> —
-              контрастная светлая тема (минифицированная)
+              {{ $t(`${i18nPage}.themes.light_contrast_min`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>/themes/forest.css</AppCode> — светлая тема,
-              вдохновленная бамбуковой рощей в Арасияме
+              <AppCode small>/themes/forest.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.forest`) }}
             </li>
             <li>
-              <AppCode small>/themes/forest.min.css</AppCode> — тоже самое
-              (минифицированная)
-            </li>
-            <AppSeparator />
-            <li>
-              <AppCode small>/themes/ocean.css</AppCode> — светлая тема,
-              вдохновленная индийским океаном
-            </li>
-            <li>
-              <AppCode small>/themes/ocean.min.css</AppCode> — тоже самое
-              (минифицированная)
+              <AppCode small>/themes/forest.min.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.forest_min`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>/themes/sunset.css</AppCode> — светлая тема,
-              вдохновленная закатами в Сиднее
+              <AppCode small>/themes/ocean.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.ocean`) }}
             </li>
             <li>
-              <AppCode small>/themes/sunset.min.css</AppCode> — тоже самое
-              (минифицированная)
+              <AppCode small>/themes/ocean.min.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.ocean_min`) }}
+            </li>
+            <AppSeparator />
+            <li>
+              <AppCode small>/themes/sunset.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.sunset`) }}
+            </li>
+            <li>
+              <AppCode small>/themes/sunset.min.css</AppCode> —
+              {{ $t(`${i18nPage}.themes.sunset_min`) }}
             </li>
           </ul>
         </div>
       </AppAccordion>
-      <AppAccordion title="Импорт тем (через NPM)">
+      <AppAccordion :title="$t(`${i18nPage}.themes.with_npm`)">
         <div class="article">
           <ul>
             <li>
-              <AppCode small>prismium/theme/dark</AppCode> — темная тема,
-              вдохновлена свежи асфальтом на треках Ф-1
+              <AppCode small>prismium/theme/dark</AppCode> —
+              {{ $t(`${i18nPage}.themes.dark`) }}
             </li>
             <li>
               <AppCode small>prismium/theme/dark-contrast</AppCode> —
-              контрастная темная тема
+              {{ $t(`${i18nPage}.themes.dark_contrast`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>prismium/theme/light</AppCode> — светлая тема с
-              нотками легкости
+              <AppCode small>prismium/theme/light</AppCode> —
+              {{ $t(`${i18nPage}.themes.light`) }}
             </li>
             <li>
               <AppCode small>prismium/theme/light-contrast</AppCode> —
-              контрастная светлая тема
+              {{ $t(`${i18nPage}.themes.light_contrast`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>prismium/theme/forest</AppCode> — светлая тема,
-              вдохновленная бамбуковой рощей в Арасияме
+              <AppCode small>prismium/theme/forest</AppCode> —
+              {{ $t(`${i18nPage}.themes.forest`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>prismium/theme/ocean</AppCode> — светлая тема,
-              вдохновленная индийским океаном
+              <AppCode small>prismium/theme/ocean</AppCode> —
+              {{ $t(`${i18nPage}.themes.ocean`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>prismium/theme/sunset</AppCode> — светлая тема,
-              вдохновленная закатами в Сиднее
+              <AppCode small>prismium/theme/sunset</AppCode> —
+              {{ $t(`${i18nPage}.themes.sunset`) }}
             </li>
           </ul>
         </div>
       </AppAccordion>
 
-      <h2 id="prismium-initialization">
-        Инициализация <strong>Prismium</strong> в проекте
-      </h2>
-      <p>
-        Отлично, мы реализовали HTML шаблон <b>Prismium</b> и подключили
-        необходимые стили. Теперь можно приступить к инициализации.
-      </p>
-      <p>
-        Чтобы инициализировать <b>Prismium</b>, вам понадобится вызвать класс
-        <AppCode small>Prismium(element, parameters)</AppCode>
-      </p>
+      <h2
+        id="prismium-initialization"
+        v-html="$t(`${i18nPage}.initialization.title`)"
+      ></h2>
+      <p v-html="$t(`${i18nPage}.initialization.description`)"></p>
+      <p v-html="$t(`${i18nPage}.initialization.description2`)"></p>
       <ul>
         <li>
-          <AppCode small>element</AppCode> — HTMLElement или строка (CSS
-          селектор). <b>Обязательный параметр!</b>
+          <AppCode small>element</AppCode> —
+          <span v-html="$t(`${i18nPage}.initialization.element`)"></span>
         </li>
         <li>
-          <AppCode small>parameters</AppCode> — Object с параметрами
-          инициализации.
+          <AppCode small>parameters</AppCode> —
+          <span v-html="$t(`${i18nPage}.initialization.parameters`)"></span>
         </li>
       </ul>
-      <p>
-        <b>Пример инициализации <b>Prismium</b>:</b>
-      </p>
+      <p v-html="$t(`${i18nPage}.initialization.example_title`)"></p>
       <AppCode lang="js">
         <pre><code>new Prismium('[data-prismium]', {
   speed: 500,
@@ -232,10 +256,7 @@ useHead(
   autoCloseNested: true,
 });</code></pre>
       </AppCode>
-      <p>
-        После инициализации <b>Prismium</b> у вас появится доступ к его
-        экземпляру через HTMLElement:
-      </p>
+      <p v-html="$t(`${i18nPage}.initialization.after_init`)"></p>
       <AppCode lang="js">
         <pre><code>const prismium = document.querySelector('[data-prismium]').prismium
 
@@ -243,7 +264,10 @@ useHead(
 prismium.open();</code></pre>
       </AppCode>
 
-      <h2 id="prismium-parameters">Параметры <strong>Prismium</strong></h2>
+      <h2
+        id="prismium-parameters"
+        v-html="$t(`${i18nPage}.parameters.title`)"
+      ></h2>
       <ElementsDocsItem
         id="param-init"
         title="init"
@@ -251,8 +275,7 @@ prismium.open();</code></pre>
         default="true"
       >
         <template #default>
-          Параметр для автоматической инициализации <b>Prismium</b> сразу после
-          вызова класса.
+          <span v-html="$t(`${i18nPage}.parameters.init.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -274,7 +297,7 @@ prismium.init();</code></pre>
         default="false"
       >
         <template #default>
-          Определяет будет ли <b>Prismium</b> открытым по умолчанию.
+          <span v-html="$t(`${i18nPage}.parameters.opened.description`)"></span>
         </template>
       </ElementsDocsItem>
 
@@ -285,12 +308,9 @@ prismium.init();</code></pre>
         default="false"
       >
         <template #default>
-          Определяет будет ли возможность взаимодействия с <b>Prismium</b> по
-          умолчанию.
-          <b
-            >Отключает взаимодействие (открытие/закрытие) даже при помощи
-            методов!</b
-          >
+          <span
+            v-html="$t(`${i18nPage}.parameters.disabled.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -301,7 +321,7 @@ prismium.init();</code></pre>
         default="'clear'"
       >
         <template #default>
-          Устанавливает тему <b>Prismium</b> из существующих наборов.
+          <span v-html="$t(`${i18nPage}.parameters.theme.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="ts">
@@ -326,7 +346,7 @@ prismium.init();</code></pre>
         default="350"
       >
         <template #default>
-          Устанавливает скорость анимации открытия и закрытия <b>Prismium</b>.
+          <span v-html="$t(`${i18nPage}.parameters.speed.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -347,8 +367,9 @@ prismium.init();</code></pre>
         default="false"
       >
         <template #default>
-          Определяет, будет ли <b>Prismium</b> закрываться при открытии других
-          <b>Prismium</b> первого уровня.
+          <span
+            v-html="$t(`${i18nPage}.parameters.auto_close.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -359,9 +380,9 @@ prismium.init();</code></pre>
         default="false"
       >
         <template #default>
-          Определяет, будут ли вложенные <b>Prismium</b> закрываться при
-          открытии других вложенных <b>Prismium</b> в родительском
-          <b>Prismium</b>.
+          <span
+            v-html="$t(`${i18nPage}.parameters.auto_close_nested.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -372,17 +393,9 @@ prismium.init();</code></pre>
         default="false"
       >
         <template #default>
-          Определяет источник высоты при открытии. Необходимо для плавной
-          анимации раскрытия <b>Prismium</b>, по умолчанию высота берется исходя
-          их высоты контента
-          <i
-            >(по умолчанию
-            <code class="local-code">`[data-prismium-content]`</code>)</i
-          >. При установленном значении
-          <code class="local-code">`true`</code> высота будет браться из
-          родительского элемента
-          <i>(по умолчанию <code class="local-code">`[data-prismium]`</code>)</i
-          >.
+          <span
+            v-html="$t(`${i18nPage}.parameters.get_parent_height.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -393,8 +406,9 @@ prismium.init();</code></pre>
         default="false"
       >
         <template #default>
-          Определяет, будет ли <b>Prismium</b> прокручивать страницу к
-          открываемому элементу.
+          <span
+            v-html="$t(`${i18nPage}.parameters.scroll_to.description`)"
+          ></span>
         </template>
         <template #note>
           <AppCode lang="ts">
@@ -413,8 +427,9 @@ prismium.init();</code></pre>
         default="'sprite.svg'"
       >
         <template #default>
-          Необходимо для поддержки смены иконки в <b>Prismium</b> через спрайт
-          при открытии/закрытии.
+          <span
+            v-html="$t(`${i18nPage}.parameters.sprite_path.description`)"
+          ></span>
         </template>
         <template #note>
           <AppCode lang="html">{{ codeIconSprite }}</AppCode>
@@ -428,9 +443,9 @@ prismium.init();</code></pre>
         default="'data-prismium-icon'"
       >
         <template #default>
-          Указывает атрибут, который будет использоваться для
-          <b>HTML-элемента</b> иконки. Допустимы только <b>data</b> и
-          <b>HTML-атрибуты</b>.
+          <span
+            v-html="$t(`${i18nPage}.parameters.icon_attribute.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -441,8 +456,11 @@ prismium.init();</code></pre>
         default="['[data-prismium-container]']"
       >
         <template #default>
-          Указывает селекторы, которые будут использоваться для поиска
-          контейнера <b>Prismium</b>.
+          <span
+            v-html="
+              $t(`${i18nPage}.parameters.container_selectors.description`)
+            "
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -453,8 +471,9 @@ prismium.init();</code></pre>
         default="'[data-prismium-current]'"
       >
         <template #default>
-          Указывает селектор элемента, который будет использоваться для открытия
-          <b>Prismium</b>.
+          <span
+            v-html="$t(`${i18nPage}.parameters.current_selector.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -465,8 +484,9 @@ prismium.init();</code></pre>
         default="'[data-prismium-content]'"
       >
         <template #default>
-          Указывает селектор элемента, который будет использоваться для поиска
-          контента внутри <b>Prismium</b>.
+          <span
+            v-html="$t(`${i18nPage}.parameters.content_selector.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -477,10 +497,9 @@ prismium.init();</code></pre>
         default="'[data-prismium-hidden]'"
       >
         <template #default>
-          Указывает селектор элемента, который будет использоваться для поиска
-          технического контейнера <b>Prismium</b>. Контейнер не является
-          обязательным в DOM-дереве. Смотреть
-          <a href="#full-html-layout">полный HTML шаблон</a>.
+          <span
+            v-html="$t(`${i18nPage}.parameters.hidden_selector.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -491,27 +510,19 @@ prismium.init();</code></pre>
         default="'prismium-active'"
       >
         <template #default>
-          Указывает класс активного <b>Prismium</b>. Может использоваться для
-          установки активного состояния. <br />
-          <b>Не рекомендуется изменять!</b> Участвует в стилях
-          <b>Prismium</b> по умолчанию.
+          <span
+            v-html="$t(`${i18nPage}.parameters.active_class.description`)"
+          ></span>
         </template>
         <template #note>
-          <p>
-            Для установки активного состояния <b>Prismium</b> по умолчанию,
-            необходимо добавить класс
-            <code class="local-code">`prismium-active`</code> к элементу
-            <code class="local-code">`[data-prismium]`</code>. <br /><b
-              >Например:</b
-            >
-            <AppCode lang="html">
-              <pre><code>&lt;div class="prismium-active" data-prismium&gt;
+          <p v-html="$t(`${i18nPage}.parameters.active_class.note`)"></p>
+          <AppCode lang="html">
+            <pre><code>&lt;div class="prismium-active" data-prismium&gt;
   &lt;div data-prismium-current&gt;&lt;/div&gt;
   &lt;div data-prismium-content&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            </AppCode>
-          </p></template
-        >
+          </AppCode>
+        </template>
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -521,10 +532,9 @@ prismium.init();</code></pre>
         default="'prismium-opened'"
       >
         <template #default>
-          Указывает класс технического контейнера <b>Prismium</b> после полного
-          раскрытия. <br />
-          <b>Не рекомендуется изменять!</b> Участвует в стилях
-          <b>Prismium</b> по умолчанию.
+          <span
+            v-html="$t(`${i18nPage}.parameters.opened_class.description`)"
+          ></span>
         </template>
       </ElementsDocsItem>
 
@@ -535,33 +545,24 @@ prismium.init();</code></pre>
         default="'prismium-disabled'"
       >
         <template #default>
-          Указывает класс выключенного <b>Prismium</b>. Может использоваться для
-          установки выключенного состояния. Не влияет на состояние
-          <b>Prismium</b> (открыт/закрыт) по умолчанию. <br />
-          <b>Не рекомендуется изменять!</b> Участвует в стилях
-          <b>Prismium</b> по умолчанию.
+          <span
+            v-html="$t(`${i18nPage}.parameters.disabled_class.description`)"
+          ></span>
         </template>
         <template #note>
-          <p>
-            Для установки выключенного состояния <b>Prismium</b> по умолчанию,
-            необходимо добавить класс
-            <code class="local-code">`prismium-disabled`</code> к элементу
-            <code class="local-code">`[data-prismium]`</code>. <br /><b
-              >Например:</b
-            >
-            <AppCode lang="html">
-              <pre><code>&lt;div class="prismium-disabled" data-prismium&gt;
+          <p v-html="$t(`${i18nPage}.parameters.disabled_class.note`)"></p>
+          <AppCode lang="html">
+            <pre><code>&lt;div class="prismium-disabled" data-prismium&gt;
   &lt;div data-prismium-current&gt;&lt;/div&gt;
   &lt;div data-prismium-content&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            </AppCode>
-          </p></template
-        >
+          </AppCode>
+        </template>
       </ElementsDocsItem>
 
       <ElementsDocsItem id="param-on" title="on" type="object">
         <template #default>
-          Используется для установки событий на экземпляр <b>Prismium</b>.
+          <span v-html="$t(`${i18nPage}.parameters.on.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -585,7 +586,7 @@ prismium.init();</code></pre>
         type="function(handler)"
       >
         <template #default>
-          Add event listener that will be fired on all events
+          <span v-html="$t(`${i18nPage}.parameters.on_any.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -598,21 +599,10 @@ prismium.init();</code></pre>
         </template>
       </ElementsDocsItem>
 
-      <h2>Эффекты <strong>Prismium</strong></h2>
+      <h2 v-html="$t(`${i18nPage}.effects.title`)" id="effects"></h2>
       <ElementsDocsItem id="param-effect" title="effect" type="string">
         <template #default>
-          Используется для установки эффекта открытия/закрытия <b>Prismium</b>.
-          <br />
-          Доступные эффекты: <code class="local-code">`line-by-line`</code>,
-          <code class="local-code">`fade-scale`</code>,
-          <code class="local-code">`slide`</code>,
-          <code class="local-code">`stagger`</code>,
-          <code class="local-code">`wave`</code>,
-          <code class="local-code">`flip`</code>,
-          <code class="local-code">`zoom`</code>,
-          <code class="local-code">`cascade`</code>,
-          <code class="local-code">`custom`</code>. Требует подключения модуля
-          эффектов. Если вы используете бандл, то он уже подключен.
+          <span v-html="$t(`${i18nPage}.parameters.effect.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -634,9 +624,9 @@ new Prismium('[data-prismium]', {
         title="effectSelectors"
         type="string | string[]"
       >
-        Определяет селекторы, которые будут использоваться для поиска элементов
-        эффекта. По умолчанию <b>Prismium</b> анимирует первых детей
-        <code class="local-code">`[data-prismium-content]`</code>
+        <span
+          v-html="$t(`${i18nPage}.parameters.effect_selectors.description`)"
+        ></span>
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -644,8 +634,9 @@ new Prismium('[data-prismium]', {
         title="effectIgnore"
         type="string | string[]"
       >
-        Определяет элементы с селектором, которые будут игнорироваться при
-        анимации эффекта.
+        <span
+          v-html="$t(`${i18nPage}.parameters.effect_ignore.description`)"
+        ></span>
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -822,119 +813,9 @@ new Prismium('[data-prismium]', {
         type="object"
       >
         <template #default>
-          Используется для создания кастомного эффекта открытия/закрытия.
-          <ul>
-            <li>
-              <code class="local-code">`speed`</code> — необходим для
-              правильного подсчета конечной точки анимации. Доступен через
-              <code class="local-code">`prismium.effect.open`</code> в событиях.
-            </li>
-            <li>
-              <code class="local-code">`delay`</code> — необходим для
-              правильного подсчета конечной точки анимации. Доступен через
-              <code class="local-code">`prismium.effect.delay`</code> в
-              событиях.
-            </li>
-            <li>
-              <code class="local-code">`setup`</code> — событие срабатывает
-              непосредственно перед закрытием или открытием экземпляра
-              <b>Prismium</b>.
-              <ul>
-                <li>
-                  <code class="local-code">`prismium`</code> — экземпляр
-                  <b>Prismium</b>.
-                </li>
-                <li>
-                  <code class="local-code">`children`</code> — HTML-элемент
-                  ребенка
-                </li>
-                <li>
-                  <code class="local-code">`index`</code> — индекс ребенка.
-                  Отсчитывается с 0.
-                </li>
-                <li>
-                  <code class="local-code">`total`</code> — общее количество
-                  детей с эффектом
-                </li>
-                <li>
-                  <code class="local-code">`isOpening`</code> — определяет
-                  открывается ли <b>Prismium</b> или закрывается
-                </li>
-              </ul>
-            </li>
-            <li>
-              <code class="local-code">`open`</code> — событие срабатывает при
-              открытии экземпляра <b>Prismium</b>.
-              <ul>
-                <li>
-                  <code class="local-code">`prismium`</code> — экземпляр
-                  <b>Prismium</b>.
-                </li>
-                <li>
-                  <code class="local-code">`children`</code> — HTML-элемент
-                  ребенка
-                </li>
-                <li>
-                  <code class="local-code">`index`</code> — индекс ребенка.
-                  Отсчитывается с 0.
-                </li>
-                <li>
-                  <code class="local-code">`total`</code> — общее количество
-                  детей с эффектом
-                </li>
-              </ul>
-            </li>
-            <li>
-              <code class="local-code">`close`</code> — событие срабатывает при
-              закрытии экземпляра <b>Prismium</b>.
-              <ul>
-                <li>
-                  <code class="local-code">`prismium`</code> — экземпляр
-                  <b>Prismium</b>.
-                </li>
-                <li>
-                  <code class="local-code">`children`</code> — HTML-элемент
-                  ребенка
-                </li>
-                <li>
-                  <code class="local-code">`index`</code> — индекс ребенка.
-                  Отсчитывается с 0.
-                </li>
-                <li>
-                  <code class="local-code">`total`</code> — общее количество
-                  детей с эффектом
-                </li>
-              </ul>
-            </li>
-            <li>
-              <code class="local-code">`cleanup`</code> — событие срабатывает
-              непосредственно после закрытия или открытия экземпляра
-              <b>Prismium</b>. Как правило используется для очистки от ранее
-              установленных стилей.
-              <ul>
-                <li>
-                  <code class="local-code">`prismium`</code> — экземпляр
-                  <b>Prismium</b>.
-                </li>
-                <li>
-                  <code class="local-code">`children`</code> — HTML-элемент
-                  ребенка
-                </li>
-                <li>
-                  <code class="local-code">`index`</code> — индекс ребенка.
-                  Отсчитывается с 0.
-                </li>
-                <li>
-                  <code class="local-code">`total`</code> — общее количество
-                  детей с эффектом
-                </li>
-                <li>
-                  <code class="local-code">`isOpening`</code> — определяет
-                  открывается ли <b>Prismium</b> или закрывается
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <div
+            v-html="$t(`${i18nPage}.parameters.effect_custom.description`)"
+          ></div>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -972,7 +853,7 @@ new Prismium('[data-prismium]', {
         </template>
       </ElementsDocsItem>
 
-      <h2>Статические методы</h2>
+      <h2>{{ $t(`${i18nPage}.static_methods.title`) }}</h2>
       <ElementsDocsItem
         id="static-method-init"
         title="init()"
@@ -980,8 +861,7 @@ new Prismium('[data-prismium]', {
         return="Prismium instance"
       >
         <template #default>
-          Инициализирует экземпляр <b>Prismium</b> на переданном элементе
-          <code class="local-code">`el`</code>. <br />
+          <span v-html="$t(`${i18nPage}.static_methods.init`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -999,7 +879,7 @@ Prismium.init();</code></pre>
         return="void"
       >
         <template #default>
-          Регистрирует модуль, который будет использоваться <b>Prismium</b>.
+          <span v-html="$t(`${i18nPage}.static_methods.use`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1024,7 +904,9 @@ const prismium = new Prismium('[data-prismium]', {
         :params="['el: HTMLElement | string']"
         return="Prismium instance"
       >
-        <template #default> </template>
+        <template #default>
+          <span v-html="$t(`${i18nPage}.static_methods.get_instance`)"></span>
+        </template>
         <template #note>
           <AppCode lang="js">
             <pre><code>const element = document.querySelector('[data-prismium]');
@@ -1044,7 +926,9 @@ element.prismium</code></pre>
         :params="['selector: string | HTMLElement']"
         return="Prismium constructor"
       >
-        <template #default>Открывает один экземпляр <b>Prismium</b></template>
+        <template #default>
+          <span v-html="$t(`${i18nPage}.static_methods.open`)"></span>
+        </template>
         <template #note>
           <AppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
@@ -1063,9 +947,7 @@ Prismium.open('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          Открывает все экземпляры <b>Prismium</b> в выбранном контейнере по
-          селектору <code class="local-code">`selector`</code>
-          <i>(по умолчанию <code class="local-code">`'.prismium'`</code>)</i>
+          <span v-html="$t(`${i18nPage}.static_methods.open_all`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1085,8 +967,9 @@ Prismium.openAll('.my-container', '.prismium')</code></pre>
         return="void"
       >
         <template #default>
-          Открывает все экземпляры <b>Prismium</b> на странице по селектору. По
-          умолчанию откроет все экземпляры <b>Prismium</b>.
+          <span
+            v-html="$t(`${i18nPage}.static_methods.open_everything`)"
+          ></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1103,7 +986,9 @@ Prismium.openEverything('.my-prismium')</code></pre>
         :params="['selector: string | HTMLElement']"
         return="void"
       >
-        <template #default>Переключает один экземпляр <b>Prismium</b></template>
+        <template #default>
+          <span v-html="$t(`${i18nPage}.static_methods.toggle`)"></span>
+        </template>
         <template #note>
           <AppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
@@ -1121,7 +1006,9 @@ Prismium.toggle('[data-prismium]');</code></pre>
         :params="['selector: string | HTMLElement']"
         return="void"
       >
-        <template #default>Закрывает один экземпляр <b>Prismium</b></template>
+        <template #default>
+          <span v-html="$t(`${i18nPage}.static_methods.close`)"></span>
+        </template>
         <template #note>
           <AppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
@@ -1140,9 +1027,7 @@ Prismium.close('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          Закрывает все экземпляры <b>Prismium</b> в выбранном контейнере по
-          селектору <code class="local-code">`selector`</code>
-          <i>(по умолчанию <code class="local-code">`'.prismium'`</code>)</i>
+          <span v-html="$t(`${i18nPage}.static_methods.close_all`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1162,8 +1047,9 @@ Prismium.closeAll('.my-container', '.prismium')</code></pre>
         return="void"
       >
         <template #default>
-          Открывает все экземпляры <b>Prismium</b> на странице по селектору. По
-          умолчанию откроет все экземпляры <b>Prismium</b>.
+          <span
+            v-html="$t(`${i18nPage}.static_methods.close_everything`)"
+          ></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1181,8 +1067,7 @@ Prismium.closeEverything('.my-prismium')</code></pre>
         return="void"
       >
         <template #default>
-          Закрывает все вложенные экземпляры <b>Prismium</b> в выбранном
-          экземпляре.
+          <span v-html="$t(`${i18nPage}.static_methods.close_nested`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1202,11 +1087,7 @@ Prismium.closeNested('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          Запрещает взаимодействие с одним экземпляром <b>Prismium</b>.
-          <b
-            >Отключает взаимодействие (открытие/закрытие) даже при помощи
-            методов!</b
-          >
+          <span v-html="$t(`${i18nPage}.static_methods.disable`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1226,8 +1107,7 @@ Prismium.disable('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          Возобновляет возможность взаимодействия с одним экземпляром
-          <b>Prismium</b>.
+          <span v-html="$t(`${i18nPage}.static_methods.enable`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1240,7 +1120,7 @@ Prismium.enable('[data-prismium]');</code></pre>
         </template>
       </ElementsDocsItem>
 
-      <h2>Методы экземпляра</h2>
+      <h2>{{ $t(`${i18nPage}.methods.title`) }}</h2>
       <ElementsDocsItem
         id="method-init"
         title="init()"
@@ -1248,7 +1128,7 @@ Prismium.enable('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          Инициализирует экземпляр <b>Prismium</b>.
+          <span v-html="$t(`${i18nPage}.methods.init.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1267,7 +1147,9 @@ prismium.init();</code></pre>
         :params="['el?: HTMLElement']"
         return="Prismium instance"
       >
-        <template #default>Уничтожает экземпляр <b>Prismium</b>.</template>
+        <template #default>
+          <span v-html="$t(`${i18nPage}.methods.destroy.description`)"></span>
+        </template>
         <template #note>
           <AppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
@@ -1284,10 +1166,9 @@ prismium.destroy();</code></pre>
         return="void"
       >
         <template #default>
-          Устанавливает скорость открытия/закрытия <b>Prismium</b>.
-          <br />
-          <code class="local-code">`open`</code> — скорость открытия
-          <code class="local-code">`close`</code> — скорость закрытия
+          <span
+            v-html="$t(`${i18nPage}.methods.setup_speed.description`)"
+          ></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1300,7 +1181,7 @@ prismium.setupSpeed(100, 200);</code></pre>
 
       <ElementsDocsItem id="method-open" title="open()" return="void">
         <template #default>
-          Открывает один экземпляр <b>Prismium</b>.
+          <span v-html="$t(`${i18nPage}.methods.open.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1313,7 +1194,7 @@ prismium.open();</code></pre>
 
       <ElementsDocsItem id="method-close" title="close()" return="void">
         <template #default>
-          Закрывает один экземпляр <b>Prismium</b>.
+          <span v-html="$t(`${i18nPage}.methods.close.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1326,7 +1207,7 @@ prismium.close();</code></pre>
 
       <ElementsDocsItem id="method-toggle" title="toggle()" return="void">
         <template #default>
-          Переключает один экземпляр <b>Prismium</b>.
+          <span v-html="$t(`${i18nPage}.methods.toggle.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1346,7 +1227,9 @@ prismium.toggle();</code></pre>
         ]"
         return="Prismium instance"
       >
-        <template #default>Добавляет обработчик событий.</template>
+        <template #default>
+          <span v-html="$t(`${i18nPage}.methods.on.description`)"></span>
+        </template>
         <template #note>
           <AppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
@@ -1371,9 +1254,7 @@ prismium.on('beforeOpen afterOpen', (prismium) => console.log(prismium));
         return="Prismium instance"
       >
         <template #default>
-          Добавляет обработчик событий, который будет вызван только один раз.
-          При добавлении нескольких обработчиков, обработчик будет удален
-          автоматически после первого вызова.
+          <span v-html="$t(`${i18nPage}.methods.once.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1395,7 +1276,9 @@ prismium.once('beforeOpen afterOpen', (prismium) => console.log(prismium));
         :params="['handler: PrismiumEventCallback']"
         return="Prismium instance"
       >
-        <template #default>Добавляет обработчик на все события.</template>
+        <template #default>
+          <span v-html="$t(`${i18nPage}.methods.on_any.description`)"></span>
+        </template>
         <template #note>
           <AppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
@@ -1416,11 +1299,8 @@ prismium.onAny((prismium) => console.log(prismium));
         return="Prismium instance"
       >
         <template #default>
-          Снимает привязку обработчиков событий. <br />Если указан только список
-          событий (без обработчика), удаляются все обработчики этих событий.
-          <br />Если указан и обработчик, то удаляется только этот конкретный
-          обработчик.</template
-        >
+          <span v-html="$t(`${i18nPage}.methods.off.description`)"></span>
+        </template>
         <template #note>
           <AppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
@@ -1446,7 +1326,7 @@ prismium.off(['beforeOpen', 'afterOpen']);
         return="Prismium instance"
       >
         <template #default>
-          Снимает привязку обработчика на все события.
+          <span v-html="$t(`${i18nPage}.methods.off_any.description`)"></span>
         </template>
         <template #note>
           <AppCode lang="js">
@@ -1462,15 +1342,11 @@ prismium.offAny();</code></pre>
         </template>
       </ElementsDocsItem>
 
-      <h2>События <strong>Prismium</strong></h2>
-      <p>
-        <b>Prismium</b> имеет много полезных событий, которые вы можете
-        прослушивать. События могут быть назначены двумя способами:
-      </p>
+      <h2 v-html="$t(`${i18nPage}.events.title`)" id="events"></h2>
+      <p v-html="$t(`${i18nPage}.events.description`)"></p>
       <ol>
         <li>
-          Использовать параметр <code class="local-code">`on`</code> при
-          инициализации <b>Prismium</b>:
+          <p v-html="$t(`${i18nPage}.events.list.init`)"></p>
           <AppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]', {
   on: {
@@ -1482,8 +1358,7 @@ prismium.offAny();</code></pre>
           </AppCode>
         </li>
         <li>
-          Использовать метод <code class="local-code">`on`</code> после
-          инициализации <b>Prismium</b>:
+          <p v-html="$t(`${i18nPage}.events.list.method`)"></p>
           <AppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 prismium.on('beforeOpen', (prismium) => {
@@ -1492,24 +1367,18 @@ prismium.on('beforeOpen', (prismium) => {
           </AppCode>
         </li>
       </ol>
-      <p>
-        <b>
-          Обратите внимание, что ключевое слово
-          <code class="local-code">`this`</code> в обработчике всегда указывает
-          на экземпляр Prismium, а не на элемент, на котором он был вызван.
-        </b>
-      </p>
+      <p v-html="$t(`${i18nPage}.events.note`)"></p>
 
       <ElementsDocsItem
         id="event-before-init"
         title="beforeInit"
         args="(prismium)"
       >
-        Событие срабатывает перед инициализацией экземпляра.
+        {{ $t(`${i18nPage}.events.before_init.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem id="event-init" title="init" args="(prismium)">
-        Событие срабатывает при инициализации экземпляра.
+        {{ $t(`${i18nPage}.events.init.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1517,7 +1386,7 @@ prismium.on('beforeOpen', (prismium) => {
         title="beforeOpen"
         args="(prismium)"
       >
-        Событие срабатывает сразу после инициализации экземпляра.
+        {{ $t(`${i18nPage}.events.after_init.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1525,11 +1394,11 @@ prismium.on('beforeOpen', (prismium) => {
         title="beforeOpen"
         args="(prismium)"
       >
-        Событие срабатывает перед открытием экземпляра.
+        {{ $t(`${i18nPage}.events.before_open.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem id="event-open" title="open" args="(prismium)">
-        Событие срабатывает при открытии экземпляра.
+        {{ $t(`${i18nPage}.events.open.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1537,7 +1406,7 @@ prismium.on('beforeOpen', (prismium) => {
         title="afterOpen"
         args="(prismium)"
       >
-        Событие срабатывает сразу после открытия экземпляра.
+        {{ $t(`${i18nPage}.events.after_open.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1545,11 +1414,11 @@ prismium.on('beforeOpen', (prismium) => {
         title="beforeClose"
         args="(prismium)"
       >
-        Событие срабатывает перед закрытием экземпляра.
+        {{ $t(`${i18nPage}.events.before_close.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem id="event-close" title="close" args="(prismium)">
-        Событие срабатывает при закрытии экземпляра.
+        {{ $t(`${i18nPage}.events.close.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1557,7 +1426,7 @@ prismium.on('beforeOpen', (prismium) => {
         title="afterClose"
         args="(prismium)"
       >
-        Событие срабатывает сразу после закрытия экземпляра.
+        {{ $t(`${i18nPage}.events.after_close.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1565,11 +1434,11 @@ prismium.on('beforeOpen', (prismium) => {
         title="beforeDestroy"
         args="(prismium)"
       >
-        Событие срабатывает перед уничтожением экземпляра.
+        {{ $t(`${i18nPage}.events.before_destroy.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem id="event-destroy" title="destroy" args="(prismium)">
-        Событие срабатывает при уничтожении экземпляра.
+        {{ $t(`${i18nPage}.events.destroy.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1577,7 +1446,7 @@ prismium.on('beforeOpen', (prismium) => {
         title="afterDestroy"
         args="(prismium)"
       >
-        Событие срабатывает сразу после уничтожения экземпляра.
+        {{ $t(`${i18nPage}.events.after_destroy.description`) }}
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1585,11 +1454,7 @@ prismium.on('beforeOpen', (prismium) => {
         title="effectStart"
         args="(prismium, direction)"
       >
-        Событие срабатывает при начале эффекта открытия/закрытия экземпляра.
-        <br />
-        <code class="local-code">`direction`</code> — направление эффекта
-        <code class="local-code">`'open'`</code> или
-        <code class="local-code">`'close'`</code>
+        <span v-html="$t(`${i18nPage}.events.effect_start.description`)"></span>
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -1597,19 +1462,11 @@ prismium.on('beforeOpen', (prismium) => {
         title="effectEnd"
         args="(prismium, direction)"
       >
-        Событие срабатывает при завершении эффекта открытия/закрытия экземпляра.
-        <br />
-        <code class="local-code">`'direction'`</code> — направление эффекта
-        <code class="local-code">`'open'`</code> или
-        <code class="local-code">`'close'`</code>
+        <span v-html="$t(`${i18nPage}.events.effect_end.description`)"></span>
       </ElementsDocsItem>
 
-      <h2>Определения TypeScript</h2>
-      <p>
-        <b>Prismium</b> полностью типизирован и экспортирует определения в
-        <code class="local-code">`Prismium`</code> и
-        <code class="local-code">`PrismiumOptions`</code>:
-      </p>
+      <h2>{{ $t(`${i18nPage}.ts.title`) }}</h2>
+      <p v-html="$t(`${i18nPage}.ts.description`)"></p>
       <AppCode lang="js">
         <pre><code>// main.ts
 import Prismium, { PrismiumOptions } from 'prismium';
@@ -1631,7 +1488,7 @@ const prismium = new Prismium('[data-prismium]', options);
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .local-code {
   @apply text-primary/80;
 }
