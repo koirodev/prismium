@@ -37,7 +37,7 @@ const testData = ref(data);
     v-scrollbar="{ scrollbars: { autoHide: 'leave' } }"
   >
     <Prismium
-      :class="{ 'js-prismium-active': !i }"
+      :class="{ 'prismium-active': !i }"
       :options="prismiumOptions"
       :modules="prismiumModules"
       v-for="(item, i) in testData"

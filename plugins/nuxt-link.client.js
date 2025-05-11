@@ -18,10 +18,10 @@ export default defineNuxtPlugin(() => {
 
       if (!link) return;
       if (link.target === '_blank') return;
+      burgerStore.closeBurger();
 
       const hrefAttr = link.getAttribute('href');
       if (hrefAttr && hrefAttr.startsWith('#')) {
-        burgerStore.closeBurger();
         return;
       }
 
@@ -31,7 +31,6 @@ export default defineNuxtPlugin(() => {
       if (linkUrl.origin === origin && linkUrl.pathname === pathname) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        burgerStore.closeBurger();
       }
     });
   }

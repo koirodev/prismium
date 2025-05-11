@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     'nuxt-svgo',
     'nuxt-file-storage',
     'nuxt-typed-router',
-    '@nuxtjs/sitemap',
+    // '@nuxtjs/sitemap',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
   ],
@@ -44,16 +44,16 @@ export default defineNuxtConfig({
     ],
   },
 
-  site: {
-    url: 'https://acc.prismify.in',
-    name: 'Prismium docs',
-    trailingSlash: true,
-  },
+  // site: {
+  //   url: 'https://acc.prismify.in',
+  //   name: 'Prismium docs',
+  //   trailingSlash: true,
+  // },
 
-  sitemap: {
-    // excludeAppSources: true,
-    // sources: ['/api/sitemap'],
-  },
+  // sitemap: {
+  //   excludeAppSources: true,
+  //   sources: ['/api/sitemap'],
+  // },
 
   svgo: {
     autoImportPath: '~/assets/svg',

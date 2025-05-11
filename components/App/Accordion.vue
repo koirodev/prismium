@@ -27,13 +27,8 @@ const options = {
 
 const classes = computed(() => {
   return {
-    'js-prismium-active': props.open,
+    'prismium-active': props.open,
   };
-});
-onMounted(() => {
-  nextTick(() => {
-    console.log(prismium.value.$el.prismium);
-  });
 });
 </script>
 

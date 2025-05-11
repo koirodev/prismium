@@ -33,36 +33,25 @@ useHead(
     <SectionsTitle :title="$t(`${i18nPage}.h1`)" />
 
     <SectionsDocs class="section_padding_bottom">
-      <h2 id="full-html-layout">
-        <strong>Prismium</strong> полный HTML шаблон
-      </h2>
+      <h2 id="full-html-layout" v-html="$t(`${i18nPage}.full_html.title`)"></h2>
       <AppCode max-height="unset" lang="html">{{ codeHtmlLayout }}</AppCode>
 
-      <h2 id="prismium-icons">Варианты иконок <strong>Prismium</strong></h2>
-      <p>
-        <b>Prismium</b> поддерживает добавление статичных и динамичных иконок, а
-        так-же добавление иконок через спрайты. Всего у вас есть
-        <b>3 способа</b> добавить иконку:
-      </p>
-      <h3 id="prismium-static-icon">Статичная иконка</h3>
-      <p>
-        Поддерживает любой формат и <b>HTML-тег</b>. Например:
-        <code class="local-code">`svg`</code>,
-        <code class="local-code">`button`</code>,
-        <code class="local-code">`span`</code>,
-        <code class="local-code">`img`</code> и т.д.
-      </p>
+      <h2 id="prismium-icons" v-html="$t(`${i18nPage}.icons.title`)"></h2>
+      <p v-html="$t(`${i18nPage}.icons.description`)"></p>
+      <h3
+        id="prismium-static-icon"
+        v-html="$t(`${i18nPage}.icons.static.title`)"
+      ></h3>
+      <p v-html="$t(`${i18nPage}.icons.static.description`)"></p>
       <AppCode lang="html">{{ codeIconStatic }}</AppCode>
-      <h3 id="prismium-svg-sprite">SVG-спрайт, автоматическая смена</h3>
-      <p>
-        Поддерживает только <b>SVG-спрайты</b>. Требует указания пути к спрайту.
-        <a href="/core#param-sprite-path">Подробнее.</a>
-      </p>
-      <h3 id="prismium-dynamic-icon">Динамическая иконка</h3>
-      <p>
-        Поддерживает любой формат и <b>HTML-тег</b>, аналогично статичной
-        иконке. Не требует указания дополнительных параметров.
-      </p>
+      <h3 id="prismium-svg-sprite">
+        {{ $t(`${i18nPage}.icons.sprite.title`) }}
+      </h3>
+      <p v-html="$t(`${i18nPage}.icons.sprite.description`)"></p>
+      <h3 id="prismium-dynamic-icon">
+        {{ $t(`${i18nPage}.icons.dynamic.title`) }}
+      </h3>
+      <p v-html="$t(`${i18nPage}.icons.dynamic.description`)"></p>
       <AppCode lang="html">{{ codeIconDynamic }}</AppCode>
 
       <h2 id="prismium-styles">Стили <strong>Prismium</strong></h2>
@@ -297,7 +286,11 @@ prismium.init();</code></pre>
       >
         <template #default>
           Определяет будет ли возможность взаимодействия с <b>Prismium</b> по
-          умолчанию. <b>Отключает взаимодействие даже при помощи методов!</b>
+          умолчанию.
+          <b
+            >Отключает взаимодействие (открытие/закрытие) даже при помощи
+            методов!</b
+          >
         </template>
       </ElementsDocsItem>
 
@@ -567,7 +560,23 @@ prismium.init();</code></pre>
       </ElementsDocsItem>
 
       <ElementsDocsItem id="param-on" title="on" type="object">
-        Используется для установки событий на экземпляр <b>Prismium</b>.
+        <template #default>
+          Используется для установки событий на экземпляр <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]', {
+  on: {
+    BeforeOpen: (prismium) => {
+      console.log(prismium);
+    },
+    close: (prismium) => {
+      console.log(prismium);
+    },
+  }
+});</code></pre>
+          </AppCode>
+        </template>
       </ElementsDocsItem>
 
       <ElementsDocsItem
@@ -816,111 +825,111 @@ new Prismium('[data-prismium]', {
           Используется для создания кастомного эффекта открытия/закрытия.
           <ul>
             <li>
-              <code class="local-code">`speed`</code> - необходим для
+              <code class="local-code">`speed`</code> — необходим для
               правильного подсчета конечной точки анимации. Доступен через
               <code class="local-code">`prismium.effect.open`</code> в событиях.
             </li>
             <li>
-              <code class="local-code">`delay`</code> - необходим для
+              <code class="local-code">`delay`</code> — необходим для
               правильного подсчета конечной точки анимации. Доступен через
               <code class="local-code">`prismium.effect.delay`</code> в
               событиях.
             </li>
             <li>
-              <code class="local-code">`setup`</code> - событие срабатывает
+              <code class="local-code">`setup`</code> — событие срабатывает
               непосредственно перед закрытием или открытием экземпляра
               <b>Prismium</b>.
               <ul>
                 <li>
-                  <code class="local-code">`prismium`</code> - экземпляр
+                  <code class="local-code">`prismium`</code> — экземпляр
                   <b>Prismium</b>.
                 </li>
                 <li>
-                  <code class="local-code">`children`</code> - HTML-элемент
+                  <code class="local-code">`children`</code> — HTML-элемент
                   ребенка
                 </li>
                 <li>
-                  <code class="local-code">`index`</code> - индекс ребенка.
+                  <code class="local-code">`index`</code> — индекс ребенка.
                   Отсчитывается с 0.
                 </li>
                 <li>
-                  <code class="local-code">`total`</code> - общее количество
+                  <code class="local-code">`total`</code> — общее количество
                   детей с эффектом
                 </li>
                 <li>
-                  <code class="local-code">`isOpening`</code> - определяет
+                  <code class="local-code">`isOpening`</code> — определяет
                   открывается ли <b>Prismium</b> или закрывается
                 </li>
               </ul>
             </li>
             <li>
-              <code class="local-code">`open`</code> - событие срабатывает при
+              <code class="local-code">`open`</code> — событие срабатывает при
               открытии экземпляра <b>Prismium</b>.
               <ul>
                 <li>
-                  <code class="local-code">`prismium`</code> - экземпляр
+                  <code class="local-code">`prismium`</code> — экземпляр
                   <b>Prismium</b>.
                 </li>
                 <li>
-                  <code class="local-code">`children`</code> - HTML-элемент
+                  <code class="local-code">`children`</code> — HTML-элемент
                   ребенка
                 </li>
                 <li>
-                  <code class="local-code">`index`</code> - индекс ребенка.
+                  <code class="local-code">`index`</code> — индекс ребенка.
                   Отсчитывается с 0.
                 </li>
                 <li>
-                  <code class="local-code">`total`</code> - общее количество
+                  <code class="local-code">`total`</code> — общее количество
                   детей с эффектом
                 </li>
               </ul>
             </li>
             <li>
-              <code class="local-code">`close`</code> - событие срабатывает при
+              <code class="local-code">`close`</code> — событие срабатывает при
               закрытии экземпляра <b>Prismium</b>.
               <ul>
                 <li>
-                  <code class="local-code">`prismium`</code> - экземпляр
+                  <code class="local-code">`prismium`</code> — экземпляр
                   <b>Prismium</b>.
                 </li>
                 <li>
-                  <code class="local-code">`children`</code> - HTML-элемент
+                  <code class="local-code">`children`</code> — HTML-элемент
                   ребенка
                 </li>
                 <li>
-                  <code class="local-code">`index`</code> - индекс ребенка.
+                  <code class="local-code">`index`</code> — индекс ребенка.
                   Отсчитывается с 0.
                 </li>
                 <li>
-                  <code class="local-code">`total`</code> - общее количество
+                  <code class="local-code">`total`</code> — общее количество
                   детей с эффектом
                 </li>
               </ul>
             </li>
             <li>
-              <code class="local-code">`cleanup`</code> - событие срабатывает
+              <code class="local-code">`cleanup`</code> — событие срабатывает
               непосредственно после закрытия или открытия экземпляра
               <b>Prismium</b>. Как правило используется для очистки от ранее
               установленных стилей.
               <ul>
                 <li>
-                  <code class="local-code">`prismium`</code> - экземпляр
+                  <code class="local-code">`prismium`</code> — экземпляр
                   <b>Prismium</b>.
                 </li>
                 <li>
-                  <code class="local-code">`children`</code> - HTML-элемент
+                  <code class="local-code">`children`</code> — HTML-элемент
                   ребенка
                 </li>
                 <li>
-                  <code class="local-code">`index`</code> - индекс ребенка.
+                  <code class="local-code">`index`</code> — индекс ребенка.
                   Отсчитывается с 0.
                 </li>
                 <li>
-                  <code class="local-code">`total`</code> - общее количество
+                  <code class="local-code">`total`</code> — общее количество
                   детей с эффектом
                 </li>
                 <li>
-                  <code class="local-code">`isOpening`</code> - определяет
+                  <code class="local-code">`isOpening`</code> — определяет
                   открывается ли <b>Prismium</b> или закрывается
                 </li>
               </ul>
@@ -962,6 +971,662 @@ new Prismium('[data-prismium]', {
           </AppCode>
         </template>
       </ElementsDocsItem>
+
+      <h2>Статические методы</h2>
+      <ElementsDocsItem
+        id="static-method-init"
+        title="init()"
+        :params="['el: HTMLElement']"
+        return="Prismium instance"
+      >
+        <template #default>
+          Инициализирует экземпляр <b>Prismium</b> на переданном элементе
+          <code class="local-code">`el`</code>. <br />
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = document.querySelector('[data-prismium]');
+
+Prismium.init();</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-use"
+        title="use()"
+        :params="['selector: string | HTMLElement']"
+        return="void"
+      >
+        <template #default>
+          Регистрирует модуль, который будет использоваться <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code> import Prismium from 'prismium';
+import { EffectsModule } from 'prismium/modules';
+
+Prismium.use([EffectsModule]);
+
+const prismium = new Prismium('[data-prismium]', {
+  effect: 'line-by-line',
+  effectLineByLine: {
+    // effect options
+  },
+});</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-get-instance"
+        title="getInstance()"
+        :params="['el: HTMLElement | string']"
+        return="Prismium instance"
+      >
+        <template #default> </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const element = document.querySelector('[data-prismium]');
+
+Prismium.getInstance(element);
+// or
+Prismium.getInstance('[data-prismium]');
+//or
+element.prismium</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-open"
+        title="open()"
+        :params="['selector: string | HTMLElement']"
+        return="Prismium constructor"
+      >
+        <template #default>Открывает один экземпляр <b>Prismium</b></template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = document.querySelector('[data-prismium]');
+
+Prismium.open(prismium);
+// or
+Prismium.open('[data-prismium]');</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-open-all"
+        title="openAll()"
+        :params="['container: string | HTMLElement', 'selector?: string']"
+        return="void"
+      >
+        <template #default>
+          Открывает все экземпляры <b>Prismium</b> в выбранном контейнере по
+          селектору <code class="local-code">`selector`</code>
+          <i>(по умолчанию <code class="local-code">`'.prismium'`</code>)</i>
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const myContainer = document.querySelector('.my-container');
+
+Prismium.openAll(myContainer, '.prismium');
+// or
+Prismium.openAll('.my-container', '.prismium')</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-open-everything"
+        title="openEverything()"
+        :params="['selector?: string']"
+        return="void"
+      >
+        <template #default>
+          Открывает все экземпляры <b>Prismium</b> на странице по селектору. По
+          умолчанию откроет все экземпляры <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>Prismium.openEverything();
+// or
+Prismium.openEverything('.my-prismium')</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-toggle"
+        title="toggle()"
+        :params="['selector: string | HTMLElement']"
+        return="void"
+      >
+        <template #default>Переключает один экземпляр <b>Prismium</b></template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = document.querySelector('[data-prismium]');
+
+Prismium.toggle(prismium);
+// or
+Prismium.toggle('[data-prismium]');</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-close"
+        title="close()"
+        :params="['selector: string | HTMLElement']"
+        return="void"
+      >
+        <template #default>Закрывает один экземпляр <b>Prismium</b></template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = document.querySelector('[data-prismium]');
+
+Prismium.close(prismium);
+// or
+Prismium.close('[data-prismium]');</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-close-all"
+        title="closeAll()"
+        :params="['container: string | HTMLElement', 'selector?: string']"
+        return="void"
+      >
+        <template #default>
+          Закрывает все экземпляры <b>Prismium</b> в выбранном контейнере по
+          селектору <code class="local-code">`selector`</code>
+          <i>(по умолчанию <code class="local-code">`'.prismium'`</code>)</i>
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const myContainer = document.querySelector('.my-container');
+
+Prismium.closeAll(myContainer, '.prismium');
+// or
+Prismium.closeAll('.my-container', '.prismium')</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-close-everything"
+        title="closeEverything()"
+        :params="['selector?: string']"
+        return="void"
+      >
+        <template #default>
+          Открывает все экземпляры <b>Prismium</b> на странице по селектору. По
+          умолчанию откроет все экземпляры <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>Prismium.closeEverything();
+// or
+Prismium.closeEverything('.my-prismium')</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-close-nested"
+        title="closeNested()"
+        :params="['selector: string | HTMLElement']"
+        return="void"
+      >
+        <template #default>
+          Закрывает все вложенные экземпляры <b>Prismium</b> в выбранном
+          экземпляре.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const parent = document.querySelector('[data-prismium]');
+
+Prismium.closeNested(parent);
+// or
+Prismium.closeNested('[data-prismium]');</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-disable"
+        title="disable()"
+        :params="['selector: string | HTMLElement']"
+        return="void"
+      >
+        <template #default>
+          Запрещает взаимодействие с одним экземпляром <b>Prismium</b>.
+          <b
+            >Отключает взаимодействие (открытие/закрытие) даже при помощи
+            методов!</b
+          >
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = document.querySelector('[data-prismium]');
+
+Prismium.disable(prismium);
+// or
+Prismium.disable('[data-prismium]');</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="static-method-enable"
+        title="enable()"
+        :params="['selector: string | HTMLElement']"
+        return="void"
+      >
+        <template #default>
+          Возобновляет возможность взаимодействия с одним экземпляром
+          <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = document.querySelector('[data-prismium]');
+
+Prismium.enable(prismium);
+// or
+Prismium.enable('[data-prismium]');</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <h2>Методы экземпляра</h2>
+      <ElementsDocsItem
+        id="method-init"
+        title="init()"
+        :params="['el?: HTMLElement']"
+        return="void"
+      >
+        <template #default>
+          Инициализирует экземпляр <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]', {
+  init: false,
+});
+
+prismium.init();</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="method-destroy"
+        title="destroy()"
+        :params="['el?: HTMLElement']"
+        return="Prismium instance"
+      >
+        <template #default>Уничтожает экземпляр <b>Prismium</b>.</template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+
+prismium.destroy();</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="method-setup-speed"
+        title="setupSpeed()"
+        :params="['open: number, close?: number']"
+        return="void"
+      >
+        <template #default>
+          Устанавливает скорость открытия/закрытия <b>Prismium</b>.
+          <br />
+          <code class="local-code">`open`</code> — скорость открытия
+          <code class="local-code">`close`</code> — скорость закрытия
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+
+prismium.setupSpeed(100, 200);</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem id="method-open" title="open()" return="void">
+        <template #default>
+          Открывает один экземпляр <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+
+prismium.open();</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem id="method-close" title="close()" return="void">
+        <template #default>
+          Закрывает один экземпляр <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+
+prismium.close();</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem id="method-toggle" title="toggle()" return="void">
+        <template #default>
+          Переключает один экземпляр <b>Prismium</b>.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+
+prismium.toggle();</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="method-on"
+        title="on()"
+        :params="[
+          'events: string | string[]',
+          'handler: PrismiumEventCallback',
+        ]"
+        return="Prismium instance"
+      >
+        <template #default>Добавляет обработчик событий.</template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+
+prismium.on('beforeOpen', (prismium) => console.log(prismium));
+// or
+prismium.on(['beforeOpen', 'afterOpen'], (prismium) => console.log(prismium));
+// or
+prismium.on('beforeOpen afterOpen', (prismium) => console.log(prismium));
+</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="method-once"
+        title="once()"
+        :params="[
+          'events: string | string[]',
+          'handler: PrismiumEventCallback',
+        ]"
+        return="Prismium instance"
+      >
+        <template #default>
+          Добавляет обработчик событий, который будет вызван только один раз.
+          При добавлении нескольких обработчиков, обработчик будет удален
+          автоматически после первого вызова.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+
+prismium.once('beforeOpen', (prismium) => console.log(prismium));
+// or
+prismium.once(['beforeOpen', 'afterOpen'], (prismium) => console.log(prismium));
+// or
+prismium.once('beforeOpen afterOpen', (prismium) => console.log(prismium));
+</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="method-on-any"
+        title="onAny()"
+        :params="['handler: PrismiumEventCallback']"
+        return="Prismium instance"
+      >
+        <template #default>Добавляет обработчик на все события.</template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+
+prismium.onAny((prismium) => console.log(prismium));
+</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="method-off"
+        title="off()"
+        :params="[
+          'events: string | string[]',
+          'handler?: PrismiumEventCallback',
+        ]"
+        return="Prismium instance"
+      >
+        <template #default>
+          Снимает привязку обработчиков событий. <br />Если указан только список
+          событий (без обработчика), удаляются все обработчики этих событий.
+          <br />Если указан и обработчик, то удаляется только этот конкретный
+          обработчик.</template
+        >
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+const handler = (prismium) => console.log(prismium);
+
+prismium.on(['beforeOpen', 'afterOpen'], handler);
+
+// removed all event handlers
+prismium.off('beforeOpen');
+// removed the event handler with a specific name and handler
+prismium.off('beforeOpen', handler);
+// removed event handlers with specific names
+prismium.off(['beforeOpen', 'afterOpen']);
+</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="method-off-any"
+        title="offAny()"
+        :params="['handler: PrismiumEventCallback']"
+        return="Prismium instance"
+      >
+        <template #default>
+          Снимает привязку обработчика на все события.
+        </template>
+        <template #note>
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+const handler = (prismium) => console.log(prismium);
+prismium.onAny(handler);
+
+// removed all event handlers
+prismium.offAny(handler);
+// removed all event handlers
+prismium.offAny();</code></pre>
+          </AppCode>
+        </template>
+      </ElementsDocsItem>
+
+      <h2>События <strong>Prismium</strong></h2>
+      <p>
+        <b>Prismium</b> имеет много полезных событий, которые вы можете
+        прослушивать. События могут быть назначены двумя способами:
+      </p>
+      <ol>
+        <li>
+          Использовать параметр <code class="local-code">`on`</code> при
+          инициализации <b>Prismium</b>:
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]', {
+  on: {
+    beforeOpen: (prismium) => {
+      console.log(prismium);
+    },
+  }
+});</code></pre>
+          </AppCode>
+        </li>
+        <li>
+          Использовать метод <code class="local-code">`on`</code> после
+          инициализации <b>Prismium</b>:
+          <AppCode lang="js">
+            <pre><code>const prismium = new Prismium('[data-prismium]');
+prismium.on('beforeOpen', (prismium) => {
+  console.log(prismium);
+});</code></pre>
+          </AppCode>
+        </li>
+      </ol>
+      <p>
+        <b>
+          Обратите внимание, что ключевое слово
+          <code class="local-code">`this`</code> в обработчике всегда указывает
+          на экземпляр Prismium, а не на элемент, на котором он был вызван.
+        </b>
+      </p>
+
+      <ElementsDocsItem
+        id="event-before-init"
+        title="beforeInit"
+        args="(prismium)"
+      >
+        Событие срабатывает перед инициализацией экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem id="event-init" title="init" args="(prismium)">
+        Событие срабатывает при инициализации экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-after-init"
+        title="beforeOpen"
+        args="(prismium)"
+      >
+        Событие срабатывает сразу после инициализации экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-before-open"
+        title="beforeOpen"
+        args="(prismium)"
+      >
+        Событие срабатывает перед открытием экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem id="event-open" title="open" args="(prismium)">
+        Событие срабатывает при открытии экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-after-open"
+        title="afterOpen"
+        args="(prismium)"
+      >
+        Событие срабатывает сразу после открытия экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-before-close"
+        title="beforeClose"
+        args="(prismium)"
+      >
+        Событие срабатывает перед закрытием экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem id="event-close" title="close" args="(prismium)">
+        Событие срабатывает при закрытии экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-after-close"
+        title="afterClose"
+        args="(prismium)"
+      >
+        Событие срабатывает сразу после закрытия экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-before-destroy"
+        title="beforeDestroy"
+        args="(prismium)"
+      >
+        Событие срабатывает перед уничтожением экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem id="event-destroy" title="destroy" args="(prismium)">
+        Событие срабатывает при уничтожении экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-after-destroy"
+        title="afterDestroy"
+        args="(prismium)"
+      >
+        Событие срабатывает сразу после уничтожения экземпляра.
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-effect-start"
+        title="effectStart"
+        args="(prismium, direction)"
+      >
+        Событие срабатывает при начале эффекта открытия/закрытия экземпляра.
+        <br />
+        <code class="local-code">`direction`</code> — направление эффекта
+        <code class="local-code">`'open'`</code> или
+        <code class="local-code">`'close'`</code>
+      </ElementsDocsItem>
+
+      <ElementsDocsItem
+        id="event-effect-end"
+        title="effectEnd"
+        args="(prismium, direction)"
+      >
+        Событие срабатывает при завершении эффекта открытия/закрытия экземпляра.
+        <br />
+        <code class="local-code">`'direction'`</code> — направление эффекта
+        <code class="local-code">`'open'`</code> или
+        <code class="local-code">`'close'`</code>
+      </ElementsDocsItem>
+
+      <h2>Определения TypeScript</h2>
+      <p>
+        <b>Prismium</b> полностью типизирован и экспортирует определения в
+        <code class="local-code">`Prismium`</code> и
+        <code class="local-code">`PrismiumOptions`</code>:
+      </p>
+      <AppCode lang="js">
+        <pre><code>// main.ts
+import Prismium, { PrismiumOptions } from 'prismium';
+
+const options: PrismiumOptions = {
+  speed: {
+    open: 400,
+    close: 200,
+  },
+  autoClose: true,
+  autoCloseNested: true,
+  effect: 'line-by-line',
+}
+
+const prismium = new Prismium('[data-prismium]', options);
+      </code></pre>
+      </AppCode>
     </SectionsDocs>
   </div>
 </template>

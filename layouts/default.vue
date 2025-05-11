@@ -1,25 +1,19 @@
 <script setup>
-import { ANIMATION, MEDIA } from '~/config';
+import { ANIMATION } from '~/config';
 
 const { locale } = useI18n();
-const { $initScrollSmoother, $gsap, $cubicDefault } = useNuxtApp();
-const { isMobile } = useDevice();
+const { $gsap, $cubicDefault } = useNuxtApp();
 
 const pageRef = ref(null);
 const isLoad = ref(false);
 const isOldBrowser = useState('isOldBrowser');
 
-// let scrollSmoother;
 onMounted(() => {
   isLoad.value = true;
   pageRef.value.classList.remove('overflow-hidden');
   pageRef.value.classList.remove('h-screen');
 
   nextTick(() => {
-    // if (!isMobile.value.any() && !('ontouchstart' in window)) {
-    //   scrollSmoother = $initScrollSmoother();
-    // }
-
     if (isOldBrowser.value) {
       pageRef.value.style.opacity = 1;
     } else {
@@ -30,12 +24,6 @@ onMounted(() => {
       );
     }
   });
-});
-
-onUnmounted(() => {
-  if (scrollSmoother) {
-    scrollSmoother ? scrollSmoother.kill : null;
-  }
 });
 
 useAlternateLanguageLinks();

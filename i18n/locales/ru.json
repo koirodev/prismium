@@ -122,7 +122,7 @@
         "description_2": "<b>Что вы можете сделать дальше:</b>",
         "list": [
           "Ознакомиться <a href=\"/core\">с полной документацией</a> <b>Prismium</b>",
-          "Посмотреть готовые демо-кейсы <a href=\"/demo\">Prismium</a>",
+          "Посмотреть готовые демо-кейсы <a href=\"/demos\">Prismium</a>",
           "Попробовать реализовать свой <b>Prismium</b> через <a href=\"/constructor\">конструктор</a>",
           "Если у вас возникли вопросы, задать их на <a href=\"https://stackoverflow.com/questions\">StackOverflow</a> или в <a href=\"https://github.com/koirodev/prismium/discussions\">Prismium Discussions</a>",
           "Если вы обнаружили ошибку или у вас есть предложение по улучшению <b>Prismium</b>, создать issue на <a href=\"https://github.com/koirodev/prismium/issues\">GitHub</a>"
@@ -138,7 +138,26 @@
         "title": "Документация Prismium API для Vanilla JavaScript",
         "description": "Изучите полную документацию Prismium API для Vanilla JavaScript. Получите информацию о кастомизации и настройке аккордеонов в проектах на чистом JavaScript."
       },
-      "h1": "Полная документация <strong>Prismium API</strong>"
+      "h1": "Полная документация <strong>Prismium API</strong>",
+      "full_html": {
+        "title": "<strong>Prismium</strong> полный HTML шаблон"
+      },
+      "icons": {
+        "title": "Варианты иконок <strong>Prismium</strong>",
+        "description": "<b>Prismium</b> поддерживает добавление статичных и динамичных иконок, а так-же добавление иконок через спрайты. Всего у вас есть <b>3 способа</b> добавить иконку:",
+        "static": {
+          "title": "Статичная иконка",
+          "description": "Поддерживает любой формат и <b>HTML-тег</b>. Например: <code class=\"local-code\">`svg`</code>, <code class=\"local-code\">`button`</code>, <code class=\"local-code\">`span`</code>, <code class=\"local-code\">`img`</code> и т.д."
+        },
+        "sprite": {
+          "title": "Динамический SVG-спрайт",
+          "description": "Поддерживает только <b>SVG-спрайты</b>. Требует указания пути к спрайту. <a href=\"#param-sprite-path\">Подробнее.</a>"
+        },
+        "dynamic": {
+          "title": "Динамическая иконка",
+          "description": "Поддерживает любой формат и <b>HTML-тег</b>, аналогично статичной иконке. Не требует указания дополнительных параметров."
+        }
+      }
     },
     "error": {
       "seo": {

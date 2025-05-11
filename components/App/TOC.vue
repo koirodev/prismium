@@ -62,7 +62,7 @@ onMounted(() => {
 <template>
   <nav class="toc-container">
     <ul
-      class="animation-default flex-start sticky top-[var(--toc-top-offset)] max-h-[var(--toc-max-height)] flex-col overflow-y-auto rounded-lg border border-stroke bg-dark2 p-2 transition-[top_max-height]"
+      class="animation-default flex-start sticky top-[var(--toc-top-offset)] max-h-[var(--toc-max-height)] flex-col gap-1 overflow-y-auto rounded-lg border border-stroke bg-dark2 p-2 transition-[top_max-height]"
     >
       <template v-if="structuredToc.length > 0">
         <li
@@ -118,7 +118,7 @@ onMounted(() => {
 }
 
 .toc-link {
-  @apply flex w-full rounded px-3 py-2 text-light transition-colors any-hover:text-light/70;
+  @apply text_xs flex w-full rounded px-2 py-1 text-light transition-colors any-hover:text-light/70;
 
   &.active {
     @apply bg-light text-dark;
