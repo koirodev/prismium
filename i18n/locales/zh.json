@@ -1,137 +1,137 @@
 {
   "common": {
-    "back_home": "Вернуться домой",
-    "docs": "Дока",
-    "resources": "Ресурсы",
-    "demos": "Демо",
-    "constructor": "Конструктор",
-    "language": "Язык",
-    "language_name": "Ru",
-    "get_started": "Начать работу",
-    "changelog": "Журнал изменений",
-    "copy": "Скопировать",
-    "copied": "Скопировано!",
-    "copy_get_started": "Скопируйте код, чтобы начать",
-    "released_on": "выпущен",
-    "license": "Лицензия",
-    "license_text": "MIT лицензия",
-    "star": "звезда",
-    "stars": "звезд",
-    "stars2": "звезды",
-    "without_theme": "Без темы",
-    "type": "Тип",
-    "default": "По умолчанию",
-    "args": "Аргументы",
-    "params": "Параметры",
-    "return": "Возвращает",
-    "note": "Примечание"
+    "back_home": "返回主页",
+    "docs": "文档",
+    "resources": "资源",
+    "demos": "示例",
+    "constructor": "构造器",
+    "language": "语言",
+    "language_name": "中文",
+    "get_started": "开始使用",
+    "changelog": "更新日志",
+    "copy": "复制",
+    "copied": "已复制！",
+    "copy_get_started": "复制代码以开始",
+    "released_on": "发布于",
+    "license": "许可证",
+    "license_text": "MIT许可证",
+    "star": "星",
+    "stars": "星",
+    "stars2": "星",
+    "without_theme": "无主题",
+    "type": "类型",
+    "default": "默认",
+    "args": "参数",
+    "params": "参数",
+    "return": "返回",
+    "note": "注释"
   },
   "banner": {
-    "title": "Больше чем просто аккордеон",
-    "description": "<strong>Prismium</strong> позволяет в пару кликов создать самый современный аккордеон, который подойдет под любой дизайн (ведь вы можете сами решить, как он будет выглядеть, или использовать предустановленные темы)."
+    "title": "不仅仅是手风琴",
+    "description": "<strong>Prismium</strong> 可让您通过几次点击创建最现代的手风琴，可适用于任何设计（因为您可以自行决定其外观，或使用预设主题）。"
   },
   "easy_to_use": {
-    "title": "Прост в использовании",
-    "description": "Простая и понятная API, которая позволяет вам <strong>быстро и легко</strong> создавать аккордеоны. Вам <strong>не нужно беспокоиться</strong> о том, как это работает под капотом, <strong>просто используйте его</strong>."
+    "title": "易于使用",
+    "description": "简单易懂的 API，让您能够 <strong>快速轻松</strong> 地创建手风琴。您<strong>无需担心</strong>底层实现，只需<strong>直接使用它</strong>。"
   },
   "available_for": {
-    "title": "<strong>Prismium</strong> доступен для",
-    "description": "<strong>Prismium</strong> — это библиотека, которая работает с любым фреймворком, поддерживающим Vanilla JS. Вы можете использовать <strong>Prismium</strong> с React, Vue и другими фреймворками. Просто импортируйте библиотеку и используйте ее в своем проекте."
+    "title": "<strong>Prismium</strong> 适用于",
+    "description": "<strong>Prismium</strong> 是一个库，可用于任何支持 Vanilla JS 的框架。您可以在 React、Vue 等框架中使用 <strong>Prismium</strong>。只需导入该库并在项目中使用。"
   },
   "presentation": {
     "select_you_theme": {
-      "title": "Выбери <strong>свой</strong> стиль <strong>Prismium</strong>",
-      "description": "Или <strong>создай свой собственный</strong> стильный аккордеон с помощью CSS. <strong>Prismium</strong> позволяет вам легко настраивать стили аккордеона так, чтобы он соответствовал вашему дизайну. Вы можете использовать предустановленные темы или создать свою собственную."
+      "title": "选择 <strong>您的</strong> <strong>Prismium</strong> 风格",
+      "description": "或使用 CSS <strong>创建您自己的</strong> 时尚手风琴。<strong>Prismium</strong> 让您轻松自定义手风琴样式，使其符合您的设计。您可以使用预设主题或创建自己的。"
     },
     "animations": {
-      "title": "Используй <strong>современные анимации</strong>",
-      "description": "А также у вас всегда остается возможность реализовать кастомную анимацию."
+      "title": "使用 <strong>现代动画</strong>",
+      "description": "此外，您始终可以实现自定义动画。"
     },
     "attention": {
-      "title": "Внимание <strong>к мелочам</strong>",
-      "description": "Контролируй даже <strong>самые мелкие детали</strong> своего приложения. <br><strong>Prismium</strong> позволяет вам настраивать каждую деталь вашего приложения, чтобы сделать его уникальным. Вы можете настроить цвета, шрифты, размеры, отступы, анимации, иконки и многое другое."
+      "title": "注重 <strong>细节</strong>",
+      "description": "掌控应用程序的<strong>每一个细节</strong>。<br><strong>Prismium</strong> 允许您自定义应用程序的每个细节，使其独一无二。您可以自定义颜色、字体、尺寸、间距、动画、图标及更多。"
     },
     "accessibility": {
-      "title": "Отличная <strong>доступность</strong>",
-      "description": "Благодаря современным технологиям, <strong>Prismium доступен для всех пользователей</strong>. Вам доступны темы для людей с нарушениями зрения, а также поддержка RTL.",
-      "theme": "Контрастная тема:",
-      "rtl": "Поддержка RTL:"
+      "title": "优秀的 <strong>可访问性</strong>",
+      "description": "借助现代技术，<strong>Prismium 对所有用户都友好</strong>。为视障人士提供主题，并支持 RTL。",
+      "theme": "对比主题：",
+      "rtl": "RTL 支持："
     },
     "compatibility": {
-      "title": "<strong>Совместимость</strong> с любыми браузерами",
-      "description": "<strong>Prismium</strong> поддерживает все современные браузеры и устройства. Мы тестируем Prismium на всех популярных браузерах и устройствах, чтобы гарантировать, что библиотека будет работать без проблем.",
-      "description_2": "А также вы можете использовать <strong>Prismium</strong> на мобильных устройствах и планшетах. Prismium адаптируется к любому размеру экрана и разрешению, чтобы обеспечить лучший опыт работы с вашим приложением."
+      "title": "<strong>兼容</strong>所有浏览器",
+      "description": "<strong>Prismium</strong> 支持所有现代浏览器和设备。我们在所有流行的浏览器和设备上测试 Prismium，以确保库能无缝工作。",
+      "description_2": "此外，您还可以在移动设备和平板上使用 <strong>Prismium</strong>。Prismium 可适应任何屏幕尺寸和分辨率，以提供最佳体验。"
     },
     "use_prismium": {
-      "title": "Используй <strong>Prismium</strong> в самых неожиданных местах",
-      "description": "С помощью <strong>Prismium</strong> ты можешь создавать не только обычные аккордеоны, но и многие другие элементы интерфейса. Например, ты можешь использовать его для создания фильтров, карточек, сравнения товаров и т.д.",
-      "filters": "Фильтры",
-      "cards": "Карточки",
-      "comparison": "Сравнение"
+      "title": "在最意想不到的地方使用 <strong>Prismium</strong>",
+      "description": "借助 <strong>Prismium</strong>，您不仅可以创建普通手风琴，还能创建许多其他界面元素。例如，您可以使用它来创建筛选器、卡片、商品对比等。",
+      "filters": "筛选器",
+      "cards": "卡片",
+      "comparison": "对比"
     }
   },
   "start_using": {
-    "title": "Начни использовать <strong>Prismium</strong> прямо сейчас"
+    "title": "立即开始使用 <strong>Prismium</strong>"
   },
   "pages": {
     "home": {
       "common": {
         "link": "/",
-        "breadcrumbs": "Главная"
+        "breadcrumbs": "主页"
       },
       "seo": {
-        "title": "Гибкие и настраиваемые аккордеоны для Vue, React и JavaScript",
-        "description": "Простой и мощный инструмент для создания красивых, отзывчивых аккордеонов с поддержкой Vue, React и Vanilla JavaScript. Начните с Prismium уже сегодня!"
+        "title": "适用于 Vue, React 和 JavaScript 的灵活可定制手风琴",
+        "description": "简单而强大的工具，用于创建美观、响应迅速的手风琴，支持 Vue, React 和 Vanilla JavaScript。今天就从 Prismium 开始吧！"
       }
     },
     "get_started": {
       "common": {
         "link": "/get-started/",
-        "breadcrumbs": "Начало работы"
+        "breadcrumbs": "开始使用"
       },
       "seo": {
-        "title": "Как создать аккордеон с Prismium: Руководство по JavaScript, React и Vue",
-        "description": "Легко начните использовать Prismium в вашем проекте с простым импортом и настройкой. Поддержка Vue, React и Vanilla JS для гибкости и кастомизации."
+        "title": "如何使用 Prismium 创建手风琴：JavaScript, React 和 Vue 指南",
+        "description": "通过简单导入和配置，轻松在项目中使用 Prismium。支持 Vue, React 和 Vanilla JS，实现灵活定制。"
       },
-      "h1": "Начало работы с <strong>Prismium</strong>",
+      "h1": "开始使用 <strong>Prismium</strong>",
       "installation": {
-        "title": "Установка",
-        "description": "У вас имеется несколько способов установить <b>Prismium</b> в ваш проект. Все зависит от ваших предпочтений и требований проекта.",
+        "title": "安装",
+        "description": "您有多种方式在项目中安装 <b>Prismium</b>，具体取决于您的偏好和项目要求。",
         "npm": {
-          "title": "Установка через <strong>NPM</strong>",
-          "theme_desc": "По умолчанию <b>Prismium</b> импортируется без тем и модулей. Если вам недостаточно стандартного функционала, то вам придется импортировать необходимые модули и темы.",
-          "theme_desc_2": "Если вы не хотите импортировать модули или темы, вы можете использовать <b>Prismium</b> со всеми модулями и темами по умолчанию. Однако это может привести к увеличению размера вашего бандла."
+          "title": "通过 <strong>NPM</strong> 安装",
+          "theme_desc": "默认情况下，<b>Prismium</b> 导入时不包含主题和模块。如果标准功能不足，您需要导入所需的模块和主题。",
+          "theme_desc_2": "如果您不想导入模块或主题，可以默认使用包含所有模块和主题的 <b>Prismium</b>，但这可能会增加打包体积。"
         },
         "cdn": {
-          "title": "Использование через <strong>CDN</strong>"
+          "title": "通过 <strong>CDN</strong> 使用"
         },
         "download": {
-          "title": "Скачать ресурсы <strong>Prismium</strong>",
-          "description": "Если вы хотите использовать <b>Prismium</b> локально, то можете загрузить ресурсы с сайта: <a href=\"https://www.jsdelivr.com/package/npm/prismium\">jsdelivr.com</a>"
+          "title": "下载 <strong>Prismium</strong> 资源",
+          "description": "如果您希望在本地使用 <b>Prismium</b>，可以从网站下载资源： <a href=\"https://www.jsdelivr.com/package/npm/prismium\">jsdelivr.com</a>"
         }
       },
       "html": {
-        "title": "Добавление HTML шаблона <strong>Prismium</strong>",
-        "description": "Давайте добавим базовый шаблон <b>Prismium</b> в ваше приложение:"
+        "title": "添加 <strong>Prismium</strong> HTML 模板",
+        "description": "让我们在您的应用中添加基本的 <b>Prismium</b> 模板："
       },
       "init": {
-        "title": "Инициализация <strong>Prismium</strong> в проекте"
+        "title": "在项目中初始化 <strong>Prismium</strong>"
       },
       "styles": {
-        "title": "Настройка стилей и размеров <strong>Prismium</strong>",
-        "description": "Скорее всего, вам понадобится кастомизировать <b>Prismium</b>; сделать это очень просто – обращайтесь к классам, которые заданы в HTML <b>Prismium</b>, или к своим, которые вы зададите сами. <a href=\"/core\">Список основных классов</a>.",
-        "description_2": "Если вам не нужно сильно кастомизировать <b>Prismium</b>, то, возможно, вам хватит базовых CSS-переменных. С их списком вы можете ознакомиться по <a href=\"/core\">ссылке</a>. Кстати, темы <b>Prismium</b> полностью реализованы с применением базовых CSS-переменных библиотеки, так что ничто не мешает вам с легкостью создать свою тему."
+        "title": "定制 <strong>Prismium</strong> 的样式和尺寸",
+        "description": "您可能需要定制 <b>Prismium</b>；这非常简单 —— 只需使用 HTML 中定义的 <b>Prismium</b> 类或您自定义的类。<a href=\"/core\">主要类列表</a>。",
+        "description_2": "如果您不需要对 <b>Prismium</b> 进行过多定制，基本的 CSS 变量可能就足够了。您可以通过<a href=\"/core\">链接</a>查看它们的列表。顺便说一句，<b>Prismium</b> 的主题完全基于库的 CSS 变量实现，因此您可以轻松创建自己的主题。"
       },
       "next": {
-        "title": "Что делать дальше?",
-        "description": "Как вы можете заметить, <b>Prismium</b> очень прост в использовании и настройке. Вы можете применять его в своем проекте, как только добавите и инициализируете библиотеку. Но это только начало!",
-        "description_2": "<b>Что вы можете сделать дальше:</b>",
+        "title": "下一步是什么？",
+        "description": "如您所见，<b>Prismium</b> 非常易用和易定制。只要引入并初始化库，您就可以在项目中使用它。但这仅仅是开始！",
+        "description_2": "<b>接下来您可以做：</b>",
         "list": [
-          "Ознакомиться <a href=\"/core\">с полной документацией</a> <b>Prismium</b>",
-          "Посмотреть готовые демо-кейсы <a href=\"/demos\">Prismium</a>",
-          "Попробовать реализовать свой <b>Prismium</b> через <a href=\"/constructor\">конструктор</a>",
-          "Если у вас возникли вопросы, задать их на <a href=\"https://stackoverflow.com/questions\">StackOverflow</a> или в <a href=\"https://github.com/koirodev/prismium/discussions\">Prismium Discussions</a>",
-          "Если вы обнаружили ошибку или у вас есть предложение по улучшению <b>Prismium</b>, создать issue на <a href=\"https://github.com/koirodev/prismium/issues\">GitHub</a>"
+          "查阅 <a href=\"/core\">完整文档</a> 的 <b>Prismium</b>",
+          "查看现成的示例案例 <a href=\"/demos\">Prismium</a>",
+          "尝试通过 <a href=\"/constructor\">构造器</a> 实现您自己的 <b>Prismium</b>",
+          "如果您有任何疑问，可在 <a href=\"https://stackoverflow.com/questions\">StackOverflow</a> 或 <a href=\"https://github.com/koirodev/prismium/discussions\">Prismium Discussions</a> 提问",
+          "如果您发现错误或有改进 <b>Prismium</b> 的建议，请在 <a href=\"https://github.com/koirodev/prismium/issues\">GitHub</a> 上创建 issue"
         ]
       }
     },
@@ -141,310 +141,306 @@
         "breadcrumbs": "Prismium API"
       },
       "seo": {
-        "title": "Документация Prismium API для Vanilla JavaScript",
-        "description": "Изучите полную документацию Prismium API для Vanilla JavaScript. Получите информацию о кастомизации и настройке аккордеонов в проектах на чистом JavaScript."
+        "title": "Vanilla JavaScript 的 Prismium API 文档",
+        "description": "查阅 Vanilla JavaScript 的 Prismium API 完整文档，获取有关手风琴自定义和配置的信息。"
       },
-      "h1": "Полная документация <strong>Prismium API</strong>",
+      "h1": "完整文档 <strong>Prismium API</strong>",
       "full_html": {
-        "title": "<strong>Prismium</strong> полный HTML шаблон"
+        "title": "<strong>Prismium</strong> 完整 HTML 模板"
       },
       "icons": {
-        "title": "Варианты иконок <strong>Prismium</strong>",
-        "description": "<b>Prismium</b> поддерживает добавление статичных и динамичных иконок, а так-же добавление иконок через спрайты. Всего у вас есть <b>3 способа</b> добавить иконку:",
+        "title": "<strong>Prismium</strong> 图标选项",
+        "description": "<b>Prismium</b> 支持添加静态和动态图标，以及通过精灵图添加图标。共有 <b>3 种方式</b> 添加图标：",
         "static": {
-          "title": "Статичная иконка",
-          "description": "Поддерживает любой формат и <b>HTML-тег</b>. Например: <code class=\"local-code\">`svg`</code>, <code class=\"local-code\">`button`</code>, <code class=\"local-code\">`span`</code>, <code class=\"local-code\">`img`</code> и т.д."
+          "title": "静态图标",
+          "description": "支持任何格式和 <b>HTML标签</b>。例如： <code class=\"local-code\">`svg`</code>, <code class=\"local-code\">`button`</code>, <code class=\"local-code\">`span`</code>, <code class=\"local-code\">`img`</code> 等。"
         },
         "sprite": {
-          "title": "Динамический SVG-спрайт",
-          "description": "Поддерживает только <b>SVG-спрайты</b>. Требует указания пути к спрайту. <a href=\"#param-sprite-path\">Подробнее.</a>"
+          "title": "动态 SVG 精灵图",
+          "description": "仅支持 <b>SVG 精灵图</b>。需要指定精灵图路径。<a href=\"#param-sprite-path\">详情请见。</a>"
         },
         "dynamic": {
-          "title": "Динамическая иконка",
-          "description": "Поддерживает любой формат и <b>HTML-тег</b>, аналогично статичной иконке. Не требует указания дополнительных параметров."
+          "title": "动态图标",
+          "description": "支持任何格式和 <b>HTML标签</b>，与静态图标类似，无需额外参数。"
         }
       },
       "styles": {
-        "title": "Стили <strong>Prismium</strong>",
-        "description": "Библиотека Prismium содержит предустановленный стили <b>CSS</b> и <b>SCSS</b>",
+        "title": "<strong>Prismium</strong> 样式",
+        "description": "Prismium 库包含预设 <b>CSS</b> 和 <b>SCSS</b> 样式",
         "css": {
-          "title": "CSS стили",
-          "description": "<b>CSS</b> стили для использования через <b>NPM</b>",
-          "prismium_css": "базовый набор стилей",
-          "prismium_min_css": "минифицированный базовый набор стилей",
-          "prismium_bundle_css": "набор всех стилей Prismium, включая темы",
-          "prismium_bundle_min_css": "минифицированный набор всех стилей Prismium, включая темы"
+          "title": "CSS 样式",
+          "description": "可通过 <b>NPM</b> 使用的 <b>CSS</b> 样式",
+          "prismium_css": "基本样式集",
+          "prismium_min_css": "基本样式集（压缩版）",
+          "prismium_bundle_css": "包含主题的全部 Prismium 样式集",
+          "prismium_bundle_min_css": "全部 Prismium 样式集（压缩版），包含主题"
         },
         "scss": {
-          "title": "SCSS стили",
-          "prismium_scss": "базовый набор стилей",
-          "prismium_scss_bundle": "набор всех стилей Prismium, включая темы"
+          "title": "SCSS 样式",
+          "prismium_scss": "基本样式集",
+          "prismium_scss_bundle": "包含主题的全部样式集"
         }
       },
       "themes": {
-        "title": "Темы Prismium",
-        "without_npm": "Темы (без NPM)",
-        "dark": "темная тема, вдохновлена свежи асфальтом на треках Ф-1",
-        "dark_min": "темная тема (минифицированная)",
-        "dark_contrast": "контрастная темная тема",
-        "dark_contrast_min": "контрастная темная тема (минифицированная)",
-        "light": "светлая тема с нотками легкости",
-        "light_min": "светлая тема (минифицированная)",
-        "light_contrast": "контрастная светлая тема",
-        "light_contrast_min": "контрастная светлая тема (минифицированная)",
-        "forest": "светлая тема, вдохновленная бамбуковой рощей в Арасияме",
-        "forest_min": "тоже самое (минифицированная)",
-        "ocean": "светлая тема, вдохновленная индийским океаном",
-        "ocean_min": "тоже самое (минифицированная)",
-        "sunset": "светлая тема, вдохновленная закатами в Сиднее",
-        "sunset_min": "тоже самое (минифицированная)",
-        "with_npm": "Импорт тем (через NPM)"
+        "title": "Prismium 主题",
+        "without_npm": "主题（无 NPM）",
+        "dark": "暗黑主题，灵感来自 F-1 赛道上的新鲜柏油",
+        "dark_min": "暗黑主题（压缩版）",
+        "dark_contrast": "对比暗黑主题",
+        "dark_contrast_min": "对比暗黑主题（压缩版）",
+        "light": "明亮主题，带有轻盈感",
+        "light_min": "明亮主题（压缩版）",
+        "light_contrast": "对比明亮主题",
+        "light_contrast_min": "对比明亮主题（压缩版）",
+        "forest": "明亮主题，灵感来自岚山竹林",
+        "forest_min": "同上（压缩版）",
+        "ocean": "明亮主题，灵感来自印度洋",
+        "ocean_min": "同上（压缩版）",
+        "sunset": "明亮主题，灵感来自悉尼日落",
+        "sunset_min": "同上（压缩版）",
+        "with_npm": "主题导入（通过 NPM）"
       },
       "initialization": {
-        "title": "Инициализация <strong>Prismium</strong> в проекте",
-        "description": "Отлично, мы реализовали HTML шаблон <b>Prismium</b> и подключили необходимые стили. Теперь можно приступить к инициализации.",
-        "description2": "Чтобы инициализировать <b>Prismium</b>, вам понадобится вызвать класс <AppCode small>Prismium(element, parameters)</AppCode>",
-        "element": "HTMLElement или строка (CSS селектор). <b>Обязательный параметр!</b>",
-        "parameters": "Object с параметрами инициализации.",
-        "example_title": "<b>Пример инициализации <b>Prismium</b>:</b>",
-        "after_init": "После инициализации <b>Prismium</b> у вас появится доступ к его экземпляру через HTMLElement:"
+        "title": "在项目中初始化 <strong>Prismium</strong>",
+        "description": "很好，我们已经实现了 <b>Prismium</b> 的 HTML 模板并引入了必要的样式。现在可以开始初始化了。",
+        "description2": "要初始化 <b>Prismium</b>，您需要调用类 <AppCode small>Prismium(element, parameters)</AppCode>",
+        "element": "HTMLElement 或者字符串（CSS 选择器）。<b>必填参数！</b>",
+        "parameters": "包含初始化参数的对象。",
+        "example_title": "<b>Prismium 初始化示例：</b>",
+        "after_init": "初始化 <b>Prismium</b> 后，您可通过 HTMLElement 访问其实例："
       },
       "parameters": {
-        "title": "Параметры <strong>Prismium</strong>",
+        "title": "<strong>Prismium</strong> 参数",
         "init": {
-          "description": "Параметр для автоматической инициализации <b>Prismium</b> сразу после вызова класса."
+          "description": "在调用类后自动初始化 <b>Prismium</b> 的参数。"
         },
         "opened": {
-          "description": "Определяет будет ли <b>Prismium</b> открытым по умолчанию."
+          "description": "确定 <b>Prismium</b> 是否默认展开。"
         },
         "disabled": {
-          "description": "Определяет будет ли возможность взаимодействия с <b>Prismium</b> по умолчанию. <b>Отключает взаимодействие (открытие/закрытие) даже при помощи методов!</b>"
+          "description": "确定是否允许默认交互 <b>Prismium</b>。<b>即使使用方法也会禁用交互（展开/折叠）！</b>"
         },
         "theme": {
-          "description": "Устанавливает тему <b>Prismium</b> из существующих наборов."
+          "description": "从现有主题中设置 <b>Prismium</b> 主题。"
         },
         "speed": {
-          "description": "Устанавливает скорость анимации открытия и закрытия <b>Prismium</b>."
+          "description": "设置 <b>Prismium</b> 展开和折叠动画速度。"
         },
         "auto_close": {
-          "description": "Определяет, будет ли <b>Prismium</b> закрываться при открытии других <b>Prismium</b> первого уровня."
+          "description": "确定在展开其他一级 <b>Prismium</b> 时是否自动折叠当前。"
         },
         "auto_close_nested": {
-          "description": "Определяет, будут ли вложенные <b>Prismium</b> закрываться при открытии других вложенных <b>Prismium</b> в родительском <b>Prismium</b>."
+          "description": "确定在父级 <b>Prismium</b> 中展开其他子级时是否自动关闭嵌套的 <b>Prismium</b>。"
         },
         "get_parent_height": {
-          "description": "Определяет источник высоты при открытии. Необходимо для плавной анимации раскрытия <b>Prismium</b>, по умолчанию высота берется исходя их высоты контента <i>(по умолчанию <code class=\"local-code\">`[data-prismium-content]`</code>)</i> При установленном значении <code class=\"local-code\">`true`</code> высота будет браться из родительского элемента <i>(по умолчанию <code class=\"local-code\">`[data-prismium]`</code>)</i>."
+          "description": "确定展开时使用的高度来源。为实现平滑的 <b>Prismium</b> 展开动画，默认高度依据内容高度获取 <i>(默认 <code class=\"local-code\">`[data-prismium-content]`</code>)</i>；若设为 <code class=\"local-code\">`true`</code>，则高度取自父级元素 <i>(默认 <code class=\"local-code\">`[data-prismium]`</code>)</i>。"
         },
         "scroll_to": {
-          "description": "Определяет, будет ли <b>Prismium</b> прокручивать страницу к открываемому элементу."
+          "description": "确定是否在展开 <b>Prismium</b> 时滚动页面至该元素。"
         },
         "sprite_path": {
-          "description": "Необходимо для поддержки смены иконки в <b>Prismium</b> через спрайт при открытии/закрытии."
+          "description": "用于支持通过精灵图在 <b>Prismium</b> 展开/折叠时切换图标。"
         },
         "icon_attribute": {
-          "description": "Указывает атрибут, который будет использоваться для <b>HTML-элемента</b> иконки. Допустимы только <b>data</b> и <b>HTML-атрибуты</b>."
+          "description": "指定用于图标 <b>HTML 元素</b> 的属性。仅允许使用 <b>data</b> 和 <b>HTML 属性</b>。"
         },
         "container_selectors": {
-          "description": "Указывает селекторы, которые будут использоваться для поиска контейнера <b>Prismium</b>."
+          "description": "指定用于查找 <b>Prismium</b> 容器的选择器。"
         },
         "current_selector": {
-          "description": "Указывает селектор элемента, который будет использоваться для открытия <b>Prismium</b>."
+          "description": "指定用于展开 <b>Prismium</b> 的元素选择器。"
         },
         "content_selector": {
-          "description": "Указывает селектор элемента, который будет использоваться для поиска контента внутри <b>Prismium</b>."
+          "description": "指定用于查找 <b>Prismium</b> 内部内容的选择器。"
         },
         "hidden_selector": {
-          "description": "Указывает селектор элемента, который будет использоваться для поиска технического контейнера <b>Prismium</b>. Контейнер не является обязательным в DOM-дереве. Смотреть <a href=\"#full-html-layout\">полный HTML шаблон</a>."
+          "description": "指定用于查找 <b>Prismium</b> 技术容器的选择器。该容器在 DOM 中不是必需的。请参阅 <a href=\"#full-html-layout\">完整 HTML 模板</a>。"
         },
         "active_class": {
-          "description": "Указывает класс активного <b>Prismium</b>. Может использоваться для установки активного состояния. <br /> <b>Не рекомендуется изменять!</b> Участвует в стилях <b>Prismium</b> по умолчанию.",
-          "note": "Для установки активного состояния <b>Prismium</b> по умолчанию, необходимо добавить класс <code class=\"local-code\">`prismium-active`</code> к элементу <code class=\"local-code\">`[data-prismium]`</code>. <br /><b>Например:</b>"
+          "description": "指定活动 <b>Prismium</b> 的类。可用于设置激活状态。<br /><b>不建议更改！</b> 默认参与 <b>Prismium</b> 样式。",
+          "note": "要默认设置 <b>Prismium</b> 的激活状态，需要向元素 <code class=\"local-code\">`[data-prismium]`</code> 添加类 <code class=\"local-code\">`prismium-active`</code>。<br /><b>例如：</b>"
         },
         "opened_class": {
-          "description": "Указывает класс технического контейнера <b>Prismium</b> после полного раскрытия. <br /> <b>Не рекомендуется изменять!</b> Участвует в стилях <b>Prismium</b> по умолчанию."
+          "description": "指定 <b>Prismium</b> 技术容器在完全展开后的类。<br /><b>不建议更改！</b> 默认参与 <b>Prismium</b> 样式。"
         },
         "disabled_class": {
-          "description": "Указывает класс выключенного <b>Prismium</b>. Может использоваться для установки выключенного состояния. Не влияет на состояние <b>Prismium</b> (открыт/закрыт) по умолчанию. <br /> <b>Не рекомендуется изменять!</b> Участвует в стилях <b>Prismium</b> по умолчанию.",
-          "note": "Для установки выключенного состояния <b>Prismium</b> по умолчанию, необходимо добавить класс <code class=\"local-code\">`prismium-disabled`</code> к элементу <code class=\"local-code\">`[data-prismium]`</code>. <br /><b>Например:</b>"
+          "description": "指定禁用 <b>Prismium</b> 的类。可用于设置禁用状态。默认不影响 <b>Prismium</b>（展开/折叠）状态。<br /><b>不建议更改！</b> 默认参与 <b>Prismium</b> 样式。",
+          "note": "要默认设置 <b>Prismium</b> 的禁用状态，需要向元素 <code class=\"local-code\">`[data-prismium]`</code> 添加类 <code class=\"local-code\">`prismium-disabled`</code>。<br /><b>例如：</b>"
         },
         "on": {
-          "description": "Используется для установки событий на экземпляр <b>Prismium</b>."
+          "description": "用于绑定事件到 <b>Prismium</b> 实例。"
         },
         "on_any": {
-          "description": "Добавляет прослушиватель событий, который будет срабатывать при всех событиях"
+          "description": "添加事件监听器，可监听所有事件。"
         },
         "effect": {
-          "description": "Используется для установки эффекта открытия/закрытия <b>Prismium</b>.<br />Доступные эффекты: <code class=\"local-code\">`line-by-line`</code>, <code class=\"local-code\">`fade-scale`</code>, <code class=\"local-code\">`slide`</code>, <code class=\"local-code\">`stagger`</code>, <code class=\"local-code\">`wave`</code>, <code class=\"local-code\">`flip`</code>, <code class=\"local-code\">`zoom`</code>, <code class=\"local-code\">`cascade`</code>, <code class=\"local-code\">`custom`</code>. Требует подключения модуля эффектов. Если вы используете бандл, то он уже подключен."
+          "description": "用于设置 <b>Prismium</b> 的展开/折叠效果。<br />可用效果： <code class=\"local-code\">`line-by-line`</code>, <code class=\"local-code\">`fade-scale`</code>, <code class=\"local-code\">`slide`</code>, <code class=\"local-code\">`stagger`</code>, <code class=\"local-code\">`wave`</code>, <code class=\"local-code\">`flip`</code>, <code class=\"local-code\">`zoom`</code>, <code class=\"local-code\">`cascade`</code>, <code class=\"local-code\">`custom`</code>。需要引入效果模块。如果使用打包版，则已包含。"
         },
         "effect_selectors": {
-          "description": "Определяет селекторы, которые будут использоваться для поиска элементов эффекта. По умолчанию <b>Prismium</b> анимирует первых детей <code class=\"local-code\">`[data-prismium-content]`</code>"
+          "description": "指定用于查找效果元素的选择器。默认情况下，<b>Prismium</b> 对首个子元素 <code class=\"local-code\">`[data-prismium-content]`</code> 进行动画处理。"
         },
         "effect_ignore": {
-          "description": "Определяет элементы с селектором, которые будут игнорироваться при анимации эффекта."
+          "description": "指定在效果动画中需要忽略的元素选择器。"
         },
         "effect_custom": {
-          "description": "Используется для создания кастомного эффекта открытия/закрытия.<ul><li><code class=\"local-code\">`speed`</code> — необходим для правильного подсчета конечной точки анимации. Доступен через <code class=\"local-code\">`prismium.effect.open`</code> в событиях.</li><li><code class=\"local-code\">`delay`</code> — необходим для правильного подсчета конечной точки анимации. Доступен через <code class=\"local-code\">`prismium.effect.delay`</code> в событиях.</li><li><code class=\"local-code\">`setup`</code> — событие срабатывает непосредственно перед закрытием или открытием экземпляра <b>Prismium</b>.<ul><li><code class=\"local-code\">`prismium`</code> — экземпляр <b>Prismium</b>. </li><li><code class=\"local-code\">`children`</code> — HTML-элемент ребенка</li><li><code class=\"local-code\">`index`</code> — индекс ребенка. Отсчитывается с 0.</li><li><code class=\"local-code\">`total`</code> — общее количество детей с эффектом</li><li><code class=\"local-code\">`isOpening`</code> — определяет открывается ли <b>Prismium</b> или закрывается</li></ul></li><li><code class=\"local-code\">`open`</code> — событие срабатывает при открытии экземпляра <b>Prismium</b>.<ul><li><code class=\"local-code\">`prismium`</code> — экземпляр <b>Prismium</b>.</li><li><code class=\"local-code\">`children`</code> — HTML-элемент ребенка</li><li><code class=\"local-code\">`index`</code> — индекс ребенка. Отсчитывается с 0.</li><li><code class=\"local-code\">`total`</code> — общее количество детей с эффектом</li></ul></li><li><code class=\"local-code\">`close`</code> — событие срабатывает при закрытии экземпляра <b>Prismium</b>.<ul><li><code class=\"local-code\">`prismium`</code> — экземпляр <b>Prismium</b>.</li><li><code class=\"local-code\">`children`</code> — HTML-элемент ребенка</li><li><code class=\"local-code\">`index`</code> — индекс ребенка. Отсчитывается с 0.</li><li><code class=\"local-code\">`total`</code> — общее количество детей с эффектом</li></ul></li><li><code class=\"local-code\">`cleanup`</code> — событие срабатывает непосредственно после закрытия или открытия экземпляра <b>Prismium</b>. Как правило используется для очистки от ранее установленных стилей.<ul><li><code class=\"local-code\">`prismium`</code> — экземпляр <b>Prismium</b>.</li><li><code class=\"local-code\">`children`</code> — HTML-элемент ребенка</li><li><code class=\"local-code\">`index`</code> — индекс ребенка. Отсчитывается с 0.</li><li><code class=\"local-code\">`total`</code> — общее количество детей с эффектом</li><li><code class=\"local-code\">`isOpening`</code> — определяет открывается ли <b>Prismium</b> или закрывается</li></ul></li></ul>"
+          "description": "用于创建自定义展开/折叠效果。<ul><li><code class=\"local-code\">`speed`</code> — 用于准确计算动画终点，通过事件中的 <code class=\"local-code\">`prismium.effect.open`</code> 可获取。</li><li><code class=\"local-code\">`delay`</code> — 用于准确计算动画终点，通过事件中的 <code class=\"local-code\">`prismium.effect.delay`</code> 可获取。</li><li><code class=\"local-code\">`setup`</code> — 事件在 <b>Prismium</b> 展开或折叠前触发。<ul><li><code class=\"local-code\">`prismium`</code> — <b>Prismium</b> 实例。</li><li><code class=\"local-code\">`children`</code> — 子 HTML 元素</li><li><code class=\"local-code\">`index`</code> — 子元素索引，从 0 开始。</li><li><code class=\"local-code\">`total`</code> — 带效果的子元素总数</li><li><code class=\"local-code\">`isOpening`</code> — 判断 <b>Prismium</b> 是展开还是折叠</li></ul></li><li><code class=\"local-code\">`open`</code> — 在 <b>Prismium</b> 展开时触发事件。<ul><li><code class=\"local-code\">`prismium`</code> — <b>Prismium</b> 实例。</li><li><code class=\"local-code\">`children`</code> — 子 HTML 元素</li><li><code class=\"local-code\">`index`</code> — 子元素索引，从 0 开始。</li><li><code class=\"local-code\">`total`</code> — 带效果的子元素总数</li></ul></li><li><code class=\"local-code\">`close`</code> — 在 <b>Prismium</b> 折叠时触发事件。<ul><li><code class=\"local-code\">`prismium`</code> — <b>Prismium</b> 实例。</li><li><code class=\"local-code\">`children`</code> — 子 HTML 元素</li><li><code class=\"local-code\">`index`</code> — 子元素索引，从 0 开始。</li><li><code class=\"local-code\">`total`</code> — 带效果的子元素总数</li></ul></li><li><code class=\"local-code\">`cleanup`</code> — 在 <b>Prismium</b> 完全展开或折叠后立即触发事件，通常用于清理先前设置的样式。<ul><li><code class=\"local-code\">`prismium`</code> — <b>Prismium</b> 实例。</li><li><code class=\"local-code\">`children`</code> — 子 HTML 元素</li><li><code class=\"local-code\">`index`</code> — 子元素索引，从 0 开始。</li><li><code class=\"local-code\">`total`</code> — 带效果的子元素总数</li><li><code class=\"local-code\">`isOpening`</code> — 判断 <b>Prismium</b> 是展开还是折叠</li></ul></li></ul>"
         }
       },
       "effects": {
-        "title": "Эффекты <strong>Prismium</strong>"
+        "title": "<strong>Prismium</strong> 效果"
       },
       "static_methods": {
-        "title": {
-          "description": "Статические методы"
-        },
+        "title": "静态方法",
         "init": {
-          "description": "Инициализирует экземпляр <b>Prismium</b> на переданном элементе<code class=\"local-code\">`el`</code>."
+          "description": "在传入的元素 <code class=\"local-code\">`el`</code> 上初始化 <b>Prismium</b> 实例。"
         },
         "use": {
-          "description": "Регистрирует модуль, который будет использоваться <b>Prismium</b>."
+          "description": "注册将用于 <b>Prismium</b> 的模块。"
         },
         "get_instance": {
-          "description": "Получает экземпляр <b>Prismium</b> по переданному элементу <code class=\"local-code\">`el`</code>."
+          "description": "根据传入的元素 <code class=\"local-code\">`el`</code> 获取 <b>Prismium</b> 实例。"
         },
         "open": {
-          "description": "Открывает один экземпляр <b>Prismium</b>"
+          "description": "展开一个 <b>Prismium</b> 实例"
         },
         "open_all": {
-          "description": "Открывает все экземпляры <b>Prismium</b> в выбранном контейнере по селектору <code class=\"local-code\">`selector`</code> <i>(по умолчанию <code class=\"local-code\">`'.prismium'`</code>)</i>"
+          "description": "展开所选容器中所有 <b>Prismium</b> 实例，选择器为 <code class=\"local-code\">`selector`</code> <i>(默认 <code class=\"local-code\">`'.prismium'`</code>)</i>"
         },
         "open_everything": {
-          "description": "Открывает все экземпляры <b>Prismium</b> на странице по селектору. По умолчанию откроет все экземпляры <b>Prismium</b>."
+          "description": "展开页面中所有 <b>Prismium</b> 实例，默认展开所有实例。"
         },
         "toggle": {
-          "description": "Переключает один экземпляр <b>Prismium</b>"
+          "description": "切换一个 <b>Prismium</b> 实例"
         },
         "close": {
-          "description": "Закрывает один экземпляр <b>Prismium</b>"
+          "description": "折叠一个 <b>Prismium</b> 实例"
         },
         "close_all": {
-          "description": "Закрывает все экземпляры <b>Prismium</b> в выбранном контейнере по селектору <code class=\"local-code\">`selector`</code> <i>(по умолчанию <code class=\"local-code\">`'.prismium'`</code>)</i>"
+          "description": "折叠所选容器中所有 <b>Prismium</b> 实例，选择器为 <code class=\"local-code\">`selector`</code> <i>(默认 <code class=\"local-code\">`'.prismium'`</code>)</i>"
         },
         "close_everything": {
-          "description": "Открывает все экземпляры <b>Prismium</b> на странице по селектору. По умолчанию откроет все экземпляры <b>Prismium</b>."
+          "description": "展开页面中所有 <b>Prismium</b> 实例，默认展开所有实例。"
         },
         "close_nested": {
-          "description": "Закрывает все вложенные экземпляры <b>Prismium</b> в выбранном экземпляре."
+          "description": "折叠所选实例中的所有嵌套 <b>Prismium</b> 实例"
         },
         "disable": {
-          "description": "Запрещает взаимодействие с одним экземпляром <b>Prismium</b>. <b>Отключает взаимодействие (открытие/закрытие) даже при помощи методов!</b>"
+          "description": "禁用与 <b>Prismium</b> 实例的交互。<b>即使使用方法也将禁用交互（展开/折叠）！</b>"
         },
         "enable": {
-          "description": "Возобновляет возможность взаимодействия с одним экземпляром <b>Prismium</b>."
+          "description": "重新启用与 <b>Prismium</b> 实例的交互。"
         }
       },
       "methods": {
-        "title": {
-          "description": "Методы экземпляра"
-        },
+        "title": "实例方法",
         "init": {
-          "description": "Инициализирует экземпляр <b>Prismium</b>."
+          "description": "初始化 <b>Prismium</b> 实例。"
         },
         "destroy": {
-          "description": "Уничтожает экземпляр <b>Prismium</b>."
+          "description": "销毁 <b>Prismium</b> 实例。"
         },
         "setup_speed": {
-          "description": "Устанавливает скорость открытия/закрытия <b>Prismium</b>. <br /> <code class=\"local-code\">`open`</code> — скорость открытия <code class=\"local-code\">`close`</code> — скорость закрытия"
+          "description": "设置 <b>Prismium</b> 展开/折叠的速度。<br /><code class=\"local-code\">`open`</code> — 展开速度；<code class=\"local-code\">`close`</code> — 折叠速度"
         },
         "open": {
-          "description": "Открывает один экземпляр <b>Prismium</b>."
+          "description": "展开一个 <b>Prismium</b> 实例。"
         },
         "close": {
-          "description": "Закрывает один экземпляр <b>Prismium</b>."
+          "description": "折叠一个 <b>Prismium</b> 实例。"
         },
         "toggle": {
-          "description": "Переключает один экземпляр <b>Prismium</b>."
+          "description": "切换一个 <b>Prismium</b> 实例。"
         },
         "on": {
-          "description": "Добавляет обработчик событий."
+          "description": "添加事件处理程序。"
         },
         "once": {
-          "description": "Добавляет обработчик событий, который будет вызван только один раз. При добавлении нескольких обработчиков, обработчик будет удален автоматически после первого вызова."
+          "description": "添加事件处理程序，仅触发一次。若添加多个处理程序，触发一次后会自动移除。"
         },
         "on_any": {
-          "description": "Добавляет обработчик на все события."
+          "description": "为所有事件添加处理程序。"
         },
         "off": {
-          "description": "Снимает привязку обработчиков событий. <br />Если указан только список событий (без обработчика), удаляются все обработчики этих событий. <br />Если указан и обработчик, то удаляется только этот конкретный обработчик."
+          "description": "移除事件处理程序绑定。<br />如果只指定事件列表（无处理程序），则移除所有该事件的处理程序。<br />如果同时指定了处理程序，则仅移除此特定处理程序。"
         },
         "off_any": {
-          "description": "Снимает привязку обработчика на все события."
+          "description": "移除所有事件的处理程序绑定。"
         }
       },
       "events": {
-        "title": "События <b>Prismium</b>",
-        "description": "<b>Prismium</b> имеет много полезных событий, которые вы можете прослушивать. События могут быть назначены двумя способами:",
+        "title": "<b>Prismium</b> 事件",
+        "description": "<b>Prismium</b> 拥有众多有用的事件供您监听。事件可以通过两种方式绑定：",
         "list": {
-          "init": "Использовать параметр <code class=\"local-code\">`on`</code> при инициализации <b>Prismium</b>:",
-          "method": "Использовать метод <code class=\"local-code\">`on`</code> после инициализации <b>Prismium</b>:"
+          "init": "在初始化 <b>Prismium</b> 时使用参数 <code class=\"local-code\">`on`</code>：",
+          "method": "在初始化 <b>Prismium</b> 后使用方法 <code class=\"local-code\">`on`</code>："
         },
-        "note": "<b>Обратите внимание, что ключевое слово <code class=\"local-code\">`this`</code> в обработчике всегда указывает на экземпляр Prismium, а не на элемент, на котором он был вызван.</b>",
+        "note": "<b>请注意，事件处理程序中的关键字 <code class=\"local-code\">`this`</code> 总是指向 <b>Prismium</b> 实例，而不是触发事件的元素。</b>",
         "before_init": {
-          "description": "Событие срабатывает перед инициализацией экземпляра."
+          "description": "实例初始化前触发的事件。"
         },
         "init": {
-          "description": "Событие срабатывает при инициализации экземпляра."
+          "description": "实例初始化时触发的事件。"
         },
         "after_init": {
-          "description": "Событие срабатывает сразу после инициализации экземпляра."
+          "description": "实例初始化后立即触发的事件。"
         },
         "before_open": {
-          "description": "Событие срабатывает перед открытием экземпляра."
+          "description": "实例展开前触发的事件。"
         },
         "open": {
-          "description": "Событие срабатывает при открытии экземпляра."
+          "description": "实例展开时触发的事件。"
         },
         "after_open": {
-          "description": "Событие срабатывает сразу после открытия экземпляра."
+          "description": "实例展开后立即触发的事件。"
         },
         "before_close": {
-          "description": "Событие срабатывает перед закрытием экземпляра."
+          "description": "实例折叠前触发的事件。"
         },
         "close": {
-          "description": "Событие срабатывает при закрытии экземпляра."
+          "description": "实例折叠时触发的事件。"
         },
         "after_close": {
-          "description": "Событие срабатывает сразу после закрытия экземпляра."
+          "description": "实例折叠后立即触发的事件。"
         },
         "before_destroy": {
-          "description": "Событие срабатывает перед уничтожением экземпляра."
+          "description": "实例销毁前触发的事件。"
         },
         "destroy": {
-          "description": "Событие срабатывает при уничтожении экземпляра."
+          "description": "实例销毁时触发的事件。"
         },
         "after_destroy": {
-          "description": "Событие срабатывает сразу после уничтожения экземпляра."
+          "description": "实例销毁后立即触发的事件。"
         },
         "effect_start": {
-          "description": "Событие срабатывает при начале эффекта открытия/закрытия экземпляра. <br /> <code class=\"local-code\">`direction`</code> — направление эффекта <code class=\"local-code\">`'open'`</code> или <code class=\"local-code\">`'close'`</code>"
+          "description": "在展开/折叠效果开始时触发事件。<br /><code class=\"local-code\">`direction`</code> — 效果方向 <code class=\"local-code\">`'open'`</code> 或 <code class=\"local-code\">`'close'`</code>"
         },
         "effect_end": {
-          "description": "Событие срабатывает при завершении эффекта открытия/закрытия экземпляра. <br /> <code class=\"local-code\">`'direction'`</code> — направление эффекта <code class=\"local-code\">`'open'`</code> или <code class=\"local-code\">`'close'`</code>"
+          "description": "在展开/折叠效果结束时触发事件。<br /><code class=\"local-code\">`'direction'`</code> — 效果方向 <code class=\"local-code\">`'open'`</code> 或 <code class=\"local-code\">`'close'`</code>"
         }
       },
       "ts": {
-        "title": "Определения TypeScript",
-        "description": "<b>Prismium</b> полностью типизирован и экспортирует определения в <code class=\"local-code\">`Prismium`</code> и <code class=\"local-code\">`PrismiumOptions`</code>:"
+        "title": "TypeScript 定义",
+        "description": "<b>Prismium</b> 完全采用类型定义，并导出 <code class=\"local-code\">`Prismium`</code> 和 <code class=\"local-code\">`PrismiumOptions`</code> 的定义："
       }
     },
     "error": {
       "seo": {
-        "unknown": "Неизвестная ошибка",
-        "404": "Страница не найдена",
-        "500": "Внутренняя ошибка сервера",
-        "other": "Ошибка {code}"
+        "unknown": "未知错误",
+        "404": "页面未找到",
+        "500": "服务器内部错误",
+        "other": "错误 {code}"
       },
       "404": {
-        "title": "Ошибка <strong>404</strong>.",
-        "description": "К сожалению, такой страницы не существует. Вероятно, был неправильно набран адрес или страница была удалена. Попробуйте вернуться на главную страницу."
+        "title": "错误 <strong>404</strong>。",
+        "description": "抱歉，该页面不存在。可能是因为地址输入有误或页面已删除。请尝试返回主页。"
       },
       "500": {
-        "title": "Ошибка <strong>500</strong>.",
-        "description": "К сожалению, произошла внутренняя ошибка сервера. Мы уже работаем над ее устранением. Пожалуйста, попробуйте вернуться на главную страницу или обновить страницу позже."
+        "title": "错误 <strong>500</strong>。",
+        "description": "抱歉，发生了服务器内部错误。我们正在修复。请尝试返回主页或稍后刷新页面。"
       },
       "000": {
-        "title": "Ошибка <strong>{code}</strong>.",
-        "description": "К сожалению, произошла ошибка. Мы уже работаем над ее устранением. Попробуйте вернуться на главную страницу или обновить страницу позже."
+        "title": "错误 <strong>{code}</strong>。",
+        "description": "抱歉，发生错误。我们正在修复，请尝试返回主页或稍后刷新页面。"
       }
     }
   }

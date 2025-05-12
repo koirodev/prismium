@@ -32,7 +32,7 @@ useHead(
 
     <SectionsTitle :title="$t(`${i18nPage}.h1`)" />
 
-    <SectionsDocs class="section_padding_bottom">
+    <LazySectionsDocs class="section_padding_bottom">
       <template #aside>
         <AppAsideNav
           :items="[
@@ -60,7 +60,9 @@ useHead(
         />
       </template>
       <h2 id="full-html-layout" v-html="$t(`${i18nPage}.full_html.title`)"></h2>
-      <AppCode max-height="unset" lang="html">{{ codeHtmlLayout }}</AppCode>
+      <LazyAppCode max-height="unset" lang="html">{{
+        codeHtmlLayout
+      }}</LazyAppCode>
 
       <h2 id="prismium-icons" v-html="$t(`${i18nPage}.icons.title`)"></h2>
       <p v-html="$t(`${i18nPage}.icons.description`)"></p>
@@ -69,7 +71,7 @@ useHead(
         v-html="$t(`${i18nPage}.icons.static.title`)"
       ></h3>
       <p v-html="$t(`${i18nPage}.icons.static.description`)"></p>
-      <AppCode lang="html">{{ codeIconStatic }}</AppCode>
+      <LazyAppCode lang="html">{{ codeIconStatic }}</LazyAppCode>
       <h3 id="prismium-svg-sprite">
         {{ $t(`${i18nPage}.icons.sprite.title`) }}
       </h3>
@@ -78,7 +80,7 @@ useHead(
         {{ $t(`${i18nPage}.icons.dynamic.title`) }}
       </h3>
       <p v-html="$t(`${i18nPage}.icons.dynamic.description`)"></p>
-      <AppCode lang="html">{{ codeIconDynamic }}</AppCode>
+      <LazyAppCode lang="html">{{ codeIconDynamic }}</LazyAppCode>
 
       <h2 id="prismium-styles" v-html="$t(`${i18nPage}.styles.title`)"></h2>
       <p v-html="$t(`${i18nPage}.styles.description`)"></p>
@@ -86,30 +88,30 @@ useHead(
       <h3 id="css-styles" v-html="$t(`${i18nPage}.styles.css.title`)"></h3>
       <ul>
         <li>
-          <AppCode small>prismium.css</AppCode> —
+          <LazyAppCode small>prismium.css</LazyAppCode> —
           {{ $t(`${i18nPage}.styles.css.prismium_css`) }}
         </li>
         <li>
-          <AppCode small>prismium.min.css</AppCode> —
+          <LazyAppCode small>prismium.min.css</LazyAppCode> —
           {{ $t(`${i18nPage}.styles.css.prismium_min_css`) }}
         </li>
         <li>
-          <AppCode small>prismium-bundle.css</AppCode> —
+          <LazyAppCode small>prismium-bundle.css</LazyAppCode> —
           {{ $t(`${i18nPage}.styles.css.prismium_bundle_css`) }}
         </li>
         <li>
-          <AppCode small>prismium-bundle.min.css</AppCode> —
+          <LazyAppCode small>prismium-bundle.min.css</LazyAppCode> —
           {{ $t(`${i18nPage}.styles.css.prismium_bundle_min_css`) }}
         </li>
       </ul>
       <p v-html="$t(`${i18nPage}.styles.css.description`)"></p>
       <ul>
         <li>
-          <AppCode small>prismium/css</AppCode> —
+          <LazyAppCode small>prismium/css</LazyAppCode> —
           {{ $t(`${i18nPage}.styles.css.prismium_css`) }}
         </li>
         <li>
-          <AppCode small>prismium/css/bundle</AppCode> —
+          <LazyAppCode small>prismium/css/bundle</LazyAppCode> —
           {{ $t(`${i18nPage}.styles.css.prismium_bundle_css`) }}
         </li>
       </ul>
@@ -117,11 +119,11 @@ useHead(
       <h3 id="scss-styles">{{ $t(`${i18nPage}.styles.scss.title`) }}</h3>
       <ul>
         <li>
-          <AppCode small>prismium/scss</AppCode> —
+          <LazyAppCode small>prismium/scss</LazyAppCode> —
           {{ $t(`${i18nPage}.styles.scss.prismium_scss`) }}
         </li>
         <li>
-          <AppCode small>prismium/scss/bundle</AppCode> —
+          <LazyAppCode small>prismium/scss/bundle</LazyAppCode> —
           {{ $t(`${i18nPage}.styles.scss.prismium_scss_bundle`) }}
         </li>
       </ul>
@@ -131,63 +133,63 @@ useHead(
         <div class="article">
           <ul>
             <li>
-              <AppCode small>/themes/dark.css</AppCode> —
+              <LazyAppCode small>/themes/dark.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.dark`) }}
             </li>
             <li>
-              <AppCode small>/themes/dark.min.css</AppCode> —
+              <LazyAppCode small>/themes/dark.min.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.dark_min`) }}
             </li>
             <li>
-              <AppCode small>/themes/dark-contrast.css</AppCode> —
+              <LazyAppCode small>/themes/dark-contrast.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.dark_contrast`) }}
             </li>
             <li>
-              <AppCode small>/themes/dark-contrast.min.css</AppCode> —
+              <LazyAppCode small>/themes/dark-contrast.min.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.dark_contrast_min`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>/themes/light.css</AppCode> —
+              <LazyAppCode small>/themes/light.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.light`) }}
             </li>
             <li>
-              <AppCode small>/themes/light.min.css</AppCode> —
+              <LazyAppCode small>/themes/light.min.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.light_min`) }}
             </li>
             <li>
-              <AppCode small>/themes/light-contrast.css</AppCode> —
+              <LazyAppCode small>/themes/light-contrast.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.light_contrast`) }}
             </li>
             <li>
-              <AppCode small>/themes/light-contrast.min.css</AppCode> —
+              <LazyAppCode small>/themes/light-contrast.min.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.light_contrast_min`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>/themes/forest.css</AppCode> —
+              <LazyAppCode small>/themes/forest.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.forest`) }}
             </li>
             <li>
-              <AppCode small>/themes/forest.min.css</AppCode> —
+              <LazyAppCode small>/themes/forest.min.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.forest_min`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>/themes/ocean.css</AppCode> —
+              <LazyAppCode small>/themes/ocean.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.ocean`) }}
             </li>
             <li>
-              <AppCode small>/themes/ocean.min.css</AppCode> —
+              <LazyAppCode small>/themes/ocean.min.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.ocean_min`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>/themes/sunset.css</AppCode> —
+              <LazyAppCode small>/themes/sunset.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.sunset`) }}
             </li>
             <li>
-              <AppCode small>/themes/sunset.min.css</AppCode> —
+              <LazyAppCode small>/themes/sunset.min.css</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.sunset_min`) }}
             </li>
           </ul>
@@ -197,35 +199,35 @@ useHead(
         <div class="article">
           <ul>
             <li>
-              <AppCode small>prismium/theme/dark</AppCode> —
+              <LazyAppCode small>prismium/theme/dark</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.dark`) }}
             </li>
             <li>
-              <AppCode small>prismium/theme/dark-contrast</AppCode> —
+              <LazyAppCode small>prismium/theme/dark-contrast</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.dark_contrast`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>prismium/theme/light</AppCode> —
+              <LazyAppCode small>prismium/theme/light</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.light`) }}
             </li>
             <li>
-              <AppCode small>prismium/theme/light-contrast</AppCode> —
+              <LazyAppCode small>prismium/theme/light-contrast</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.light_contrast`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>prismium/theme/forest</AppCode> —
+              <LazyAppCode small>prismium/theme/forest</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.forest`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>prismium/theme/ocean</AppCode> —
+              <LazyAppCode small>prismium/theme/ocean</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.ocean`) }}
             </li>
             <AppSeparator />
             <li>
-              <AppCode small>prismium/theme/sunset</AppCode> —
+              <LazyAppCode small>prismium/theme/sunset</LazyAppCode> —
               {{ $t(`${i18nPage}.themes.sunset`) }}
             </li>
           </ul>
@@ -240,29 +242,29 @@ useHead(
       <p v-html="$t(`${i18nPage}.initialization.description2`)"></p>
       <ul>
         <li>
-          <AppCode small>element</AppCode> —
+          <LazyAppCode small>element</LazyAppCode> —
           <span v-html="$t(`${i18nPage}.initialization.element`)"></span>
         </li>
         <li>
-          <AppCode small>parameters</AppCode> —
+          <LazyAppCode small>parameters</LazyAppCode> —
           <span v-html="$t(`${i18nPage}.initialization.parameters`)"></span>
         </li>
       </ul>
       <p v-html="$t(`${i18nPage}.initialization.example_title`)"></p>
-      <AppCode lang="js">
+      <LazyAppCode lang="js">
         <pre><code>new Prismium('[data-prismium]', {
   speed: 500,
   autoClose: true,
   autoCloseNested: true,
 });</code></pre>
-      </AppCode>
+      </LazyAppCode>
       <p v-html="$t(`${i18nPage}.initialization.after_init`)"></p>
-      <AppCode lang="js">
+      <LazyAppCode lang="js">
         <pre><code>const prismium = document.querySelector('[data-prismium]').prismium
 
 // For example, to open an element
 prismium.open();</code></pre>
-      </AppCode>
+      </LazyAppCode>
 
       <h2
         id="prismium-parameters"
@@ -278,7 +280,7 @@ prismium.open();</code></pre>
           <span v-html="$t(`${i18nPage}.parameters.init.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]', {
   init: false,
 });
@@ -286,7 +288,7 @@ prismium.open();</code></pre>
 /* logic before Prismium initialization */
 
 prismium.init();</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -324,7 +326,7 @@ prismium.init();</code></pre>
           <span v-html="$t(`${i18nPage}.parameters.theme.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="ts">
+          <LazyAppCode lang="ts">
             <pre><code>type PrismiumTheme = 
   | 'clear'
   | 'light'
@@ -335,7 +337,7 @@ prismium.init();</code></pre>
   | 'ocean'
   | 'sunset'
   | {[key: string]: boolean};</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -349,14 +351,14 @@ prismium.init();</code></pre>
           <span v-html="$t(`${i18nPage}.parameters.speed.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   speed: {
     open: 500,
     close: 500,
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -411,12 +413,12 @@ prismium.init();</code></pre>
           ></span>
         </template>
         <template #note>
-          <AppCode lang="ts">
+          <LazyAppCode lang="ts">
             <pre><code>type ScrollBehavior = 
   | 'auto'
   | 'instant'
   | 'smooth'</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -432,7 +434,7 @@ prismium.init();</code></pre>
           ></span>
         </template>
         <template #note>
-          <AppCode lang="html">{{ codeIconSprite }}</AppCode>
+          <LazyAppCode lang="html">{{ codeIconSprite }}</LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -516,12 +518,12 @@ prismium.init();</code></pre>
         </template>
         <template #note>
           <p v-html="$t(`${i18nPage}.parameters.active_class.note`)"></p>
-          <AppCode lang="html">
+          <LazyAppCode lang="html">
             <pre><code>&lt;div class="prismium-active" data-prismium&gt;
   &lt;div data-prismium-current&gt;&lt;/div&gt;
   &lt;div data-prismium-content&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -551,12 +553,12 @@ prismium.init();</code></pre>
         </template>
         <template #note>
           <p v-html="$t(`${i18nPage}.parameters.disabled_class.note`)"></p>
-          <AppCode lang="html">
+          <LazyAppCode lang="html">
             <pre><code>&lt;div class="prismium-disabled" data-prismium&gt;
   &lt;div data-prismium-current&gt;&lt;/div&gt;
   &lt;div data-prismium-content&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -565,7 +567,7 @@ prismium.init();</code></pre>
           <span v-html="$t(`${i18nPage}.parameters.on.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]', {
   on: {
     BeforeOpen: (prismium) => {
@@ -576,7 +578,7 @@ prismium.init();</code></pre>
     },
   }
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -589,13 +591,13 @@ prismium.init();</code></pre>
           <span v-html="$t(`${i18nPage}.parameters.on_any.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]', {
   onAny: (handler, priority) => {
     console.log(handler);
   }
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -605,7 +607,7 @@ prismium.init();</code></pre>
           <span v-html="$t(`${i18nPage}.parameters.effect.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>import Prismium from 'prismium';
 // Module connection
 import { EffectsModule } from 'prismium/modules';
@@ -615,7 +617,7 @@ new Prismium('[data-prismium]', {
   modules: [EffectsModule],
   effect: 'line-by-line',
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -645,7 +647,7 @@ new Prismium('[data-prismium]', {
         type="object"
       >
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'line-by-line',
   effectLineByLine: {
@@ -658,7 +660,7 @@ new Prismium('[data-prismium]', {
     opacity: 0,
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -668,7 +670,7 @@ new Prismium('[data-prismium]', {
         type="object"
       >
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'fade-scale',
   effectFadeScale: {
@@ -678,7 +680,7 @@ new Prismium('[data-prismium]', {
     opacity: 0,
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -688,7 +690,7 @@ new Prismium('[data-prismium]', {
         type="object"
       >
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'slide',
   effectSlide: {
@@ -699,7 +701,7 @@ new Prismium('[data-prismium]', {
     opacity: 0,
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -709,7 +711,7 @@ new Prismium('[data-prismium]', {
         type="object"
       >
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'stagger',
   effectStagger: {
@@ -721,13 +723,13 @@ new Prismium('[data-prismium]', {
     opacity: 0,
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
       <ElementsDocsItem id="param-effect-wave" title="effectWave" type="object">
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'wave',
   effectWave: {
@@ -739,13 +741,13 @@ new Prismium('[data-prismium]', {
     opacity: 0,
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
       <ElementsDocsItem id="param-effect-flip" title="effectFlip" type="object">
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'flip',
   effectFlip: {
@@ -757,13 +759,13 @@ new Prismium('[data-prismium]', {
     opacity: 0,
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
       <ElementsDocsItem id="param-effect-zoom" title="effectZoom" type="object">
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'zoom',
   effectZoom: {
@@ -781,7 +783,7 @@ new Prismium('[data-prismium]', {
     ],
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -791,7 +793,7 @@ new Prismium('[data-prismium]', {
         type="object"
       >
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'cascade',
   effectCascade: {
@@ -803,7 +805,7 @@ new Prismium('[data-prismium]', {
     opacity: 0,
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -818,7 +820,7 @@ new Prismium('[data-prismium]', {
           ></div>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>new Prismium('[data-prismium]', {
   effect: 'custom',
   effectCustom: {
@@ -849,7 +851,7 @@ new Prismium('[data-prismium]', {
     },
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -861,14 +863,16 @@ new Prismium('[data-prismium]', {
         return="Prismium instance"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.init`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.init.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
 
 Prismium.init();</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -879,10 +883,12 @@ Prismium.init();</code></pre>
         return="void"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.use`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.use.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code> import Prismium from 'prismium';
 import { EffectsModule } from 'prismium/modules';
 
@@ -894,7 +900,7 @@ const prismium = new Prismium('[data-prismium]', {
     // effect options
   },
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -905,10 +911,12 @@ const prismium = new Prismium('[data-prismium]', {
         return="Prismium instance"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.get_instance`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.get_instance.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const element = document.querySelector('[data-prismium]');
 
 Prismium.getInstance(element);
@@ -916,7 +924,7 @@ Prismium.getInstance(element);
 Prismium.getInstance('[data-prismium]');
 //or
 element.prismium</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -927,16 +935,18 @@ element.prismium</code></pre>
         return="Prismium constructor"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.open`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.open.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
 
 Prismium.open(prismium);
 // or
 Prismium.open('[data-prismium]');</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -947,16 +957,18 @@ Prismium.open('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.open_all`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.open_all.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const myContainer = document.querySelector('.my-container');
 
 Prismium.openAll(myContainer, '.prismium');
 // or
 Prismium.openAll('.my-container', '.prismium')</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -968,15 +980,17 @@ Prismium.openAll('.my-container', '.prismium')</code></pre>
       >
         <template #default>
           <span
-            v-html="$t(`${i18nPage}.static_methods.open_everything`)"
+            v-html="
+              $t(`${i18nPage}.static_methods.open_everything.description`)
+            "
           ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>Prismium.openEverything();
 // or
 Prismium.openEverything('.my-prismium')</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -987,16 +1001,18 @@ Prismium.openEverything('.my-prismium')</code></pre>
         return="void"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.toggle`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.toggle.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
 
 Prismium.toggle(prismium);
 // or
 Prismium.toggle('[data-prismium]');</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1007,16 +1023,18 @@ Prismium.toggle('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.close`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.close.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
 
 Prismium.close(prismium);
 // or
 Prismium.close('[data-prismium]');</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1027,16 +1045,18 @@ Prismium.close('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.close_all`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.close_all.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const myContainer = document.querySelector('.my-container');
 
 Prismium.closeAll(myContainer, '.prismium');
 // or
 Prismium.closeAll('.my-container', '.prismium')</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1048,15 +1068,17 @@ Prismium.closeAll('.my-container', '.prismium')</code></pre>
       >
         <template #default>
           <span
-            v-html="$t(`${i18nPage}.static_methods.close_everything`)"
+            v-html="
+              $t(`${i18nPage}.static_methods.close_everything.description`)
+            "
           ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>Prismium.closeEverything();
 // or
 Prismium.closeEverything('.my-prismium')</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1067,16 +1089,18 @@ Prismium.closeEverything('.my-prismium')</code></pre>
         return="void"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.close_nested`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.close_nested.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const parent = document.querySelector('[data-prismium]');
 
 Prismium.closeNested(parent);
 // or
 Prismium.closeNested('[data-prismium]');</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1087,16 +1111,18 @@ Prismium.closeNested('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.disable`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.disable.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
 
 Prismium.disable(prismium);
 // or
 Prismium.disable('[data-prismium]');</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1107,16 +1133,18 @@ Prismium.disable('[data-prismium]');</code></pre>
         return="void"
       >
         <template #default>
-          <span v-html="$t(`${i18nPage}.static_methods.enable`)"></span>
+          <span
+            v-html="$t(`${i18nPage}.static_methods.enable.description`)"
+          ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = document.querySelector('[data-prismium]');
 
 Prismium.enable(prismium);
 // or
 Prismium.enable('[data-prismium]');</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1131,13 +1159,13 @@ Prismium.enable('[data-prismium]');</code></pre>
           <span v-html="$t(`${i18nPage}.methods.init.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]', {
   init: false,
 });
 
 prismium.init();</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1151,11 +1179,11 @@ prismium.init();</code></pre>
           <span v-html="$t(`${i18nPage}.methods.destroy.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 
 prismium.destroy();</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1171,11 +1199,11 @@ prismium.destroy();</code></pre>
           ></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 
 prismium.setupSpeed(100, 200);</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1184,11 +1212,11 @@ prismium.setupSpeed(100, 200);</code></pre>
           <span v-html="$t(`${i18nPage}.methods.open.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 
 prismium.open();</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1197,11 +1225,11 @@ prismium.open();</code></pre>
           <span v-html="$t(`${i18nPage}.methods.close.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 
 prismium.close();</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1210,11 +1238,11 @@ prismium.close();</code></pre>
           <span v-html="$t(`${i18nPage}.methods.toggle.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 
 prismium.toggle();</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1231,7 +1259,7 @@ prismium.toggle();</code></pre>
           <span v-html="$t(`${i18nPage}.methods.on.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 
 prismium.on('beforeOpen', (prismium) => console.log(prismium));
@@ -1240,7 +1268,7 @@ prismium.on(['beforeOpen', 'afterOpen'], (prismium) => console.log(prismium));
 // or
 prismium.on('beforeOpen afterOpen', (prismium) => console.log(prismium));
 </code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1257,7 +1285,7 @@ prismium.on('beforeOpen afterOpen', (prismium) => console.log(prismium));
           <span v-html="$t(`${i18nPage}.methods.once.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 
 prismium.once('beforeOpen', (prismium) => console.log(prismium));
@@ -1266,7 +1294,7 @@ prismium.once(['beforeOpen', 'afterOpen'], (prismium) => console.log(prismium));
 // or
 prismium.once('beforeOpen afterOpen', (prismium) => console.log(prismium));
 </code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1280,12 +1308,12 @@ prismium.once('beforeOpen afterOpen', (prismium) => console.log(prismium));
           <span v-html="$t(`${i18nPage}.methods.on_any.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 
 prismium.onAny((prismium) => console.log(prismium));
 </code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1302,7 +1330,7 @@ prismium.onAny((prismium) => console.log(prismium));
           <span v-html="$t(`${i18nPage}.methods.off.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 const handler = (prismium) => console.log(prismium);
 
@@ -1315,7 +1343,7 @@ prismium.off('beforeOpen', handler);
 // removed event handlers with specific names
 prismium.off(['beforeOpen', 'afterOpen']);
 </code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1329,7 +1357,7 @@ prismium.off(['beforeOpen', 'afterOpen']);
           <span v-html="$t(`${i18nPage}.methods.off_any.description`)"></span>
         </template>
         <template #note>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 const handler = (prismium) => console.log(prismium);
 prismium.onAny(handler);
@@ -1338,7 +1366,7 @@ prismium.onAny(handler);
 prismium.offAny(handler);
 // removed all event handlers
 prismium.offAny();</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </template>
       </ElementsDocsItem>
 
@@ -1347,7 +1375,7 @@ prismium.offAny();</code></pre>
       <ol>
         <li>
           <p v-html="$t(`${i18nPage}.events.list.init`)"></p>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]', {
   on: {
     beforeOpen: (prismium) => {
@@ -1355,16 +1383,16 @@ prismium.offAny();</code></pre>
     },
   }
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </li>
         <li>
           <p v-html="$t(`${i18nPage}.events.list.method`)"></p>
-          <AppCode lang="js">
+          <LazyAppCode lang="js">
             <pre><code>const prismium = new Prismium('[data-prismium]');
 prismium.on('beforeOpen', (prismium) => {
   console.log(prismium);
 });</code></pre>
-          </AppCode>
+          </LazyAppCode>
         </li>
       </ol>
       <p v-html="$t(`${i18nPage}.events.note`)"></p>
@@ -1467,7 +1495,7 @@ prismium.on('beforeOpen', (prismium) => {
 
       <h2>{{ $t(`${i18nPage}.ts.title`) }}</h2>
       <p v-html="$t(`${i18nPage}.ts.description`)"></p>
-      <AppCode lang="js">
+      <LazyAppCode lang="js">
         <pre><code>// main.ts
 import Prismium, { PrismiumOptions } from 'prismium';
 
@@ -1483,8 +1511,8 @@ const options: PrismiumOptions = {
 
 const prismium = new Prismium('[data-prismium]', options);
       </code></pre>
-      </AppCode>
-    </SectionsDocs>
+      </LazyAppCode>
+    </LazySectionsDocs>
   </div>
 </template>
 

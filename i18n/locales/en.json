@@ -1,137 +1,137 @@
 {
   "common": {
-    "back_home": "Вернуться домой",
-    "docs": "Дока",
-    "resources": "Ресурсы",
-    "demos": "Демо",
-    "constructor": "Конструктор",
-    "language": "Язык",
-    "language_name": "Ru",
-    "get_started": "Начать работу",
-    "changelog": "Журнал изменений",
-    "copy": "Скопировать",
-    "copied": "Скопировано!",
-    "copy_get_started": "Скопируйте код, чтобы начать",
-    "released_on": "выпущен",
-    "license": "Лицензия",
-    "license_text": "MIT лицензия",
-    "star": "звезда",
-    "stars": "звезд",
-    "stars2": "звезды",
-    "without_theme": "Без темы",
-    "type": "Тип",
-    "default": "По умолчанию",
-    "args": "Аргументы",
-    "params": "Параметры",
-    "return": "Возвращает",
-    "note": "Примечание"
+    "back_home": "Back home",
+    "docs": "Docs",
+    "resources": "Resources",
+    "demos": "Demos",
+    "constructor": "Constructor",
+    "language": "Language",
+    "language_name": "En",
+    "get_started": "Get Started",
+    "changelog": "Changelog",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "copy_get_started": "Copy the code to get started",
+    "released_on": "released on",
+    "license": "License",
+    "license_text": "MIT License",
+    "star": "star",
+    "stars": "stars",
+    "stars2": "stars",
+    "without_theme": "Without theme",
+    "type": "Type",
+    "default": "Default",
+    "args": "Arguments",
+    "params": "Parameters",
+    "return": "Returns",
+    "note": "Note"
   },
   "banner": {
-    "title": "Больше чем просто аккордеон",
-    "description": "<strong>Prismium</strong> позволяет в пару кликов создать самый современный аккордеон, который подойдет под любой дизайн (ведь вы можете сами решить, как он будет выглядеть, или использовать предустановленные темы)."
+    "title": "More than just an accordion",
+    "description": "<strong>Prismium</strong> allows you to create the most modern accordion in just a few clicks, which will suit any design (since you can decide for yourself how it will look, or use preset themes)."
   },
   "easy_to_use": {
-    "title": "Прост в использовании",
-    "description": "Простая и понятная API, которая позволяет вам <strong>быстро и легко</strong> создавать аккордеоны. Вам <strong>не нужно беспокоиться</strong> о том, как это работает под капотом, <strong>просто используйте его</strong>."
+    "title": "Easy to use",
+    "description": "Simple and intuitive API that allows you to <strong>quickly and easily</strong> create accordions. You <strong>don't have to worry</strong> about how it works under the hood, <strong>just use it</strong>."
   },
   "available_for": {
-    "title": "<strong>Prismium</strong> доступен для",
-    "description": "<strong>Prismium</strong> — это библиотека, которая работает с любым фреймворком, поддерживающим Vanilla JS. Вы можете использовать <strong>Prismium</strong> с React, Vue и другими фреймворками. Просто импортируйте библиотеку и используйте ее в своем проекте."
+    "title": "<strong>Prismium</strong> is available for",
+    "description": "<strong>Prismium</strong> is a library that works with any framework supporting Vanilla JS. You can use <strong>Prismium</strong> with React, Vue, and other frameworks. Just import the library and use it in your project."
   },
   "presentation": {
     "select_you_theme": {
-      "title": "Выбери <strong>свой</strong> стиль <strong>Prismium</strong>",
-      "description": "Или <strong>создай свой собственный</strong> стильный аккордеон с помощью CSS. <strong>Prismium</strong> позволяет вам легко настраивать стили аккордеона так, чтобы он соответствовал вашему дизайну. Вы можете использовать предустановленные темы или создать свою собственную."
+      "title": "Choose <strong>your</strong> <strong>Prismium</strong> style",
+      "description": "Or <strong>create your own</strong> stylish accordion using CSS. <strong>Prismium</strong> allows you to easily customize the accordion styles to match your design. You can use preset themes or create your own."
     },
     "animations": {
-      "title": "Используй <strong>современные анимации</strong>",
-      "description": "А также у вас всегда остается возможность реализовать кастомную анимацию."
+      "title": "Use <strong>modern animations</strong>",
+      "description": "Additionally, you always have the option to implement a custom animation."
     },
     "attention": {
-      "title": "Внимание <strong>к мелочам</strong>",
-      "description": "Контролируй даже <strong>самые мелкие детали</strong> своего приложения. <br><strong>Prismium</strong> позволяет вам настраивать каждую деталь вашего приложения, чтобы сделать его уникальным. Вы можете настроить цвета, шрифты, размеры, отступы, анимации, иконки и многое другое."
+      "title": "Attention to <strong>the details</strong>",
+      "description": "Control even the <strong>smallest details</strong> of your application. <br><strong>Prismium</strong> lets you customize every aspect of your application to make it unique. You can adjust colors, fonts, sizes, margins, animations, icons, and much more."
     },
     "accessibility": {
-      "title": "Отличная <strong>доступность</strong>",
-      "description": "Благодаря современным технологиям, <strong>Prismium доступен для всех пользователей</strong>. Вам доступны темы для людей с нарушениями зрения, а также поддержка RTL.",
-      "theme": "Контрастная тема:",
-      "rtl": "Поддержка RTL:"
+      "title": "Excellent <strong>accessibility</strong>",
+      "description": "Thanks to modern technologies, <strong>Prismium is accessible to all users</strong>. It offers themes for people with visual impairments, as well as RTL support.",
+      "theme": "High contrast theme:",
+      "rtl": "RTL support:"
     },
     "compatibility": {
-      "title": "<strong>Совместимость</strong> с любыми браузерами",
-      "description": "<strong>Prismium</strong> поддерживает все современные браузеры и устройства. Мы тестируем Prismium на всех популярных браузерах и устройствах, чтобы гарантировать, что библиотека будет работать без проблем.",
-      "description_2": "А также вы можете использовать <strong>Prismium</strong> на мобильных устройствах и планшетах. Prismium адаптируется к любому размеру экрана и разрешению, чтобы обеспечить лучший опыт работы с вашим приложением."
+      "title": "<strong>Compatibility</strong> with any browsers",
+      "description": "<strong>Prismium</strong> supports all modern browsers and devices. We test Prismium on all popular browsers and devices to ensure that the library works flawlessly.",
+      "description_2": "Additionally, you can use <strong>Prismium</strong> on mobile devices and tablets. Prismium adapts to any screen size and resolution to provide the best user experience."
     },
     "use_prismium": {
-      "title": "Используй <strong>Prismium</strong> в самых неожиданных местах",
-      "description": "С помощью <strong>Prismium</strong> ты можешь создавать не только обычные аккордеоны, но и многие другие элементы интерфейса. Например, ты можешь использовать его для создания фильтров, карточек, сравнения товаров и т.д.",
-      "filters": "Фильтры",
-      "cards": "Карточки",
-      "comparison": "Сравнение"
+      "title": "Use <strong>Prismium</strong> in the most unexpected places",
+      "description": "With <strong>Prismium</strong> you can create not only regular accordions but also many other interface elements. For example, you can use it to create filters, cards, product comparisons, etc.",
+      "filters": "Filters",
+      "cards": "Cards",
+      "comparison": "Comparison"
     }
   },
   "start_using": {
-    "title": "Начни использовать <strong>Prismium</strong> прямо сейчас"
+    "title": "Start using <strong>Prismium</strong> now"
   },
   "pages": {
     "home": {
       "common": {
         "link": "/",
-        "breadcrumbs": "Главная"
+        "breadcrumbs": "Home"
       },
       "seo": {
-        "title": "Гибкие и настраиваемые аккордеоны для Vue, React и JavaScript",
-        "description": "Простой и мощный инструмент для создания красивых, отзывчивых аккордеонов с поддержкой Vue, React и Vanilla JavaScript. Начните с Prismium уже сегодня!"
+        "title": "Flexible and customizable accordions for Vue, React, and JavaScript",
+        "description": "A simple and powerful tool for creating beautiful, responsive accordions with support for Vue, React, and Vanilla JavaScript. Start with Prismium today!"
       }
     },
     "get_started": {
       "common": {
         "link": "/get-started/",
-        "breadcrumbs": "Начало работы"
+        "breadcrumbs": "Get Started"
       },
       "seo": {
-        "title": "Как создать аккордеон с Prismium: Руководство по JavaScript, React и Vue",
-        "description": "Легко начните использовать Prismium в вашем проекте с простым импортом и настройкой. Поддержка Vue, React и Vanilla JS для гибкости и кастомизации."
+        "title": "How to create an accordion with Prismium: A guide for JavaScript, React, and Vue",
+        "description": "Easily start using Prismium in your project with simple import and configuration. Supports Vue, React, and Vanilla JS for flexibility and customization."
       },
-      "h1": "Начало работы с <strong>Prismium</strong>",
+      "h1": "Getting started with <strong>Prismium</strong>",
       "installation": {
-        "title": "Установка",
-        "description": "У вас имеется несколько способов установить <b>Prismium</b> в ваш проект. Все зависит от ваших предпочтений и требований проекта.",
+        "title": "Installation",
+        "description": "There are several ways to install <b>Prismium</b> in your project. It all depends on your preferences and project requirements.",
         "npm": {
-          "title": "Установка через <strong>NPM</strong>",
-          "theme_desc": "По умолчанию <b>Prismium</b> импортируется без тем и модулей. Если вам недостаточно стандартного функционала, то вам придется импортировать необходимые модули и темы.",
-          "theme_desc_2": "Если вы не хотите импортировать модули или темы, вы можете использовать <b>Prismium</b> со всеми модулями и темами по умолчанию. Однако это может привести к увеличению размера вашего бандла."
+          "title": "Installation via <strong>NPM</strong>",
+          "theme_desc": "By default, <b>Prismium</b> is imported without themes and modules. If the standard functionality is insufficient, you will need to import the necessary modules and themes.",
+          "theme_desc_2": "If you don't want to import modules or themes, you can use <b>Prismium</b> with all modules and themes by default. However, this may result in a larger bundle size."
         },
         "cdn": {
-          "title": "Использование через <strong>CDN</strong>"
+          "title": "Using via <strong>CDN</strong>"
         },
         "download": {
-          "title": "Скачать ресурсы <strong>Prismium</strong>",
-          "description": "Если вы хотите использовать <b>Prismium</b> локально, то можете загрузить ресурсы с сайта: <a href=\"https://www.jsdelivr.com/package/npm/prismium\">jsdelivr.com</a>"
+          "title": "Download <strong>Prismium</strong> resources",
+          "description": "If you want to use <b>Prismium</b> locally, you can download the resources from the website: <a href=\"https://www.jsdelivr.com/package/npm/prismium\">jsdelivr.com</a>"
         }
       },
       "html": {
-        "title": "Добавление HTML шаблона <strong>Prismium</strong>",
-        "description": "Давайте добавим базовый шаблон <b>Prismium</b> в ваше приложение:"
+        "title": "Adding the HTML template of <strong>Prismium</strong>",
+        "description": "Let's add the basic <b>Prismium</b> template to your application:"
       },
       "init": {
-        "title": "Инициализация <strong>Prismium</strong> в проекте"
+        "title": "Initializing <strong>Prismium</strong> in the project"
       },
       "styles": {
-        "title": "Настройка стилей и размеров <strong>Prismium</strong>",
-        "description": "Скорее всего, вам понадобится кастомизировать <b>Prismium</b>; сделать это очень просто – обращайтесь к классам, которые заданы в HTML <b>Prismium</b>, или к своим, которые вы зададите сами. <a href=\"/core\">Список основных классов</a>.",
-        "description_2": "Если вам не нужно сильно кастомизировать <b>Prismium</b>, то, возможно, вам хватит базовых CSS-переменных. С их списком вы можете ознакомиться по <a href=\"/core\">ссылке</a>. Кстати, темы <b>Prismium</b> полностью реализованы с применением базовых CSS-переменных библиотеки, так что ничто не мешает вам с легкостью создать свою тему."
+        "title": "Customizing <strong>Prismium</strong> styles and sizes",
+        "description": "Most likely, you will need to customize <b>Prismium</b>; it is very simple – use the classes defined in the HTML <b>Prismium</b>, or your own that you define. <a href=\"/core\">List of main classes</a>.",
+        "description_2": "If you don't need extensive customization of <b>Prismium</b>, the basic CSS variables might be sufficient. You can check the list via <a href=\"/core\">this link</a>. By the way, <b>Prismium</b> themes are fully implemented using the library's basic CSS variables, so nothing prevents you from easily creating your own theme."
       },
       "next": {
-        "title": "Что делать дальше?",
-        "description": "Как вы можете заметить, <b>Prismium</b> очень прост в использовании и настройке. Вы можете применять его в своем проекте, как только добавите и инициализируете библиотеку. Но это только начало!",
-        "description_2": "<b>Что вы можете сделать дальше:</b>",
+        "title": "What next?",
+        "description": "As you can see, <b>Prismium</b> is very easy to use and customize. You can start using it in your project as soon as you add and initialize the library. But this is just the beginning!",
+        "description_2": "<b>What you can do next:</b>",
         "list": [
-          "Ознакомиться <a href=\"/core\">с полной документацией</a> <b>Prismium</b>",
-          "Посмотреть готовые демо-кейсы <a href=\"/demos\">Prismium</a>",
-          "Попробовать реализовать свой <b>Prismium</b> через <a href=\"/constructor\">конструктор</a>",
-          "Если у вас возникли вопросы, задать их на <a href=\"https://stackoverflow.com/questions\">StackOverflow</a> или в <a href=\"https://github.com/koirodev/prismium/discussions\">Prismium Discussions</a>",
-          "Если вы обнаружили ошибку или у вас есть предложение по улучшению <b>Prismium</b>, создать issue на <a href=\"https://github.com/koirodev/prismium/issues\">GitHub</a>"
+          "Read the <a href=\"/core\">full documentation</a> of <b>Prismium</b>",
+          "Check out ready-made demo cases of <a href=\"/demos\">Prismium</a>",
+          "Try implementing your own <b>Prismium</b> using the <a href=\"/constructor\">constructor</a>",
+          "If you have any questions, ask them on <a href=\"https://stackoverflow.com/questions\">StackOverflow</a> or in <a href=\"https://github.com/koirodev/prismium/discussions\">Prismium Discussions</a>",
+          "If you find an error or have a suggestion to improve <b>Prismium</b>, create an issue on <a href=\"https://github.com/koirodev/prismium/issues\">GitHub</a>"
         ]
       }
     },
@@ -141,310 +141,306 @@
         "breadcrumbs": "Prismium API"
       },
       "seo": {
-        "title": "Документация Prismium API для Vanilla JavaScript",
-        "description": "Изучите полную документацию Prismium API для Vanilla JavaScript. Получите информацию о кастомизации и настройке аккордеонов в проектах на чистом JavaScript."
+        "title": "Prismium API documentation for Vanilla JavaScript",
+        "description": "Explore the full Prismium API documentation for Vanilla JavaScript. Gain insights on customization and configuration of accordions in pure JavaScript projects."
       },
-      "h1": "Полная документация <strong>Prismium API</strong>",
+      "h1": "Full documentation of <strong>Prismium API</strong>",
       "full_html": {
-        "title": "<strong>Prismium</strong> полный HTML шаблон"
+        "title": "<strong>Prismium</strong> full HTML template"
       },
       "icons": {
-        "title": "Варианты иконок <strong>Prismium</strong>",
-        "description": "<b>Prismium</b> поддерживает добавление статичных и динамичных иконок, а так-же добавление иконок через спрайты. Всего у вас есть <b>3 способа</b> добавить иконку:",
+        "title": "Icon options for <strong>Prismium</strong>",
+        "description": "<b>Prismium</b> supports adding static and dynamic icons, as well as icons via sprites. You have <b>3 ways</b> to add an icon:",
         "static": {
-          "title": "Статичная иконка",
-          "description": "Поддерживает любой формат и <b>HTML-тег</b>. Например: <code class=\"local-code\">`svg`</code>, <code class=\"local-code\">`button`</code>, <code class=\"local-code\">`span`</code>, <code class=\"local-code\">`img`</code> и т.д."
+          "title": "Static icon",
+          "description": "Supports any format and <b>HTML tag</b>. For example: <code class=\"local-code\">`svg`</code>, <code class=\"local-code\">`button`</code>, <code class=\"local-code\">`span`</code>, <code class=\"local-code\">`img`</code>, etc."
         },
         "sprite": {
-          "title": "Динамический SVG-спрайт",
-          "description": "Поддерживает только <b>SVG-спрайты</b>. Требует указания пути к спрайту. <a href=\"#param-sprite-path\">Подробнее.</a>"
+          "title": "Dynamic SVG sprite",
+          "description": "Supports only <b>SVG sprites</b>. Requires specifying the sprite path. <a href=\"#param-sprite-path\">Learn more.</a>"
         },
         "dynamic": {
-          "title": "Динамическая иконка",
-          "description": "Поддерживает любой формат и <b>HTML-тег</b>, аналогично статичной иконке. Не требует указания дополнительных параметров."
+          "title": "Dynamic icon",
+          "description": "Supports any format and <b>HTML tag</b>, similar to a static icon. No additional parameters required."
         }
       },
       "styles": {
-        "title": "Стили <strong>Prismium</strong>",
-        "description": "Библиотека Prismium содержит предустановленный стили <b>CSS</b> и <b>SCSS</b>",
+        "title": "<strong>Prismium</strong> styles",
+        "description": "The Prismium library includes preset <b>CSS</b> and <b>SCSS</b> styles",
         "css": {
-          "title": "CSS стили",
-          "description": "<b>CSS</b> стили для использования через <b>NPM</b>",
-          "prismium_css": "базовый набор стилей",
-          "prismium_min_css": "минифицированный базовый набор стилей",
-          "prismium_bundle_css": "набор всех стилей Prismium, включая темы",
-          "prismium_bundle_min_css": "минифицированный набор всех стилей Prismium, включая темы"
+          "title": "CSS styles",
+          "description": "<b>CSS</b> styles for use via <b>NPM</b>",
+          "prismium_css": "basic style set",
+          "prismium_min_css": "minified basic style set",
+          "prismium_bundle_css": "set of all Prismium styles, including themes",
+          "prismium_bundle_min_css": "minified set of all Prismium styles, including themes"
         },
         "scss": {
-          "title": "SCSS стили",
-          "prismium_scss": "базовый набор стилей",
-          "prismium_scss_bundle": "набор всех стилей Prismium, включая темы"
+          "title": "SCSS styles",
+          "prismium_scss": "basic style set",
+          "prismium_scss_bundle": "set of all Prismium styles, including themes"
         }
       },
       "themes": {
-        "title": "Темы Prismium",
-        "without_npm": "Темы (без NPM)",
-        "dark": "темная тема, вдохновлена свежи асфальтом на треках Ф-1",
-        "dark_min": "темная тема (минифицированная)",
-        "dark_contrast": "контрастная темная тема",
-        "dark_contrast_min": "контрастная темная тема (минифицированная)",
-        "light": "светлая тема с нотками легкости",
-        "light_min": "светлая тема (минифицированная)",
-        "light_contrast": "контрастная светлая тема",
-        "light_contrast_min": "контрастная светлая тема (минифицированная)",
-        "forest": "светлая тема, вдохновленная бамбуковой рощей в Арасияме",
-        "forest_min": "тоже самое (минифицированная)",
-        "ocean": "светлая тема, вдохновленная индийским океаном",
-        "ocean_min": "тоже самое (минифицированная)",
-        "sunset": "светлая тема, вдохновленная закатами в Сиднее",
-        "sunset_min": "тоже самое (минифицированная)",
-        "with_npm": "Импорт тем (через NPM)"
+        "title": "Prismium Themes",
+        "without_npm": "Themes (without NPM)",
+        "dark": "dark theme, inspired by fresh asphalt on F1 tracks",
+        "dark_min": "dark theme (minified)",
+        "dark_contrast": "high contrast dark theme",
+        "dark_contrast_min": "high contrast dark theme (minified)",
+        "light": "light theme with a touch of ease",
+        "light_min": "light theme (minified)",
+        "light_contrast": "high contrast light theme",
+        "light_contrast_min": "high contrast light theme (minified)",
+        "forest": "light theme inspired by the bamboo grove in Arashiyama",
+        "forest_min": "same (minified)",
+        "ocean": "light theme inspired by the Indian ocean",
+        "ocean_min": "same (minified)",
+        "sunset": "light theme inspired by sunsets in Sydney",
+        "sunset_min": "same (minified)",
+        "with_npm": "Import themes (via NPM)"
       },
       "initialization": {
-        "title": "Инициализация <strong>Prismium</strong> в проекте",
-        "description": "Отлично, мы реализовали HTML шаблон <b>Prismium</b> и подключили необходимые стили. Теперь можно приступить к инициализации.",
-        "description2": "Чтобы инициализировать <b>Prismium</b>, вам понадобится вызвать класс <AppCode small>Prismium(element, parameters)</AppCode>",
-        "element": "HTMLElement или строка (CSS селектор). <b>Обязательный параметр!</b>",
-        "parameters": "Object с параметрами инициализации.",
-        "example_title": "<b>Пример инициализации <b>Prismium</b>:</b>",
-        "after_init": "После инициализации <b>Prismium</b> у вас появится доступ к его экземпляру через HTMLElement:"
+        "title": "Initialization of <strong>Prismium</strong> in the project",
+        "description": "Great, we have implemented the HTML template of <b>Prismium</b> and linked the necessary styles. Now you can start initialization.",
+        "description2": "To initialize <b>Prismium</b>, you need to call the class <AppCode small>Prismium(element, parameters)</AppCode>",
+        "element": "HTMLElement or a string (CSS selector). <b>Required parameter!</b>",
+        "parameters": "Object with initialization parameters.",
+        "example_title": "<b>Example of <b>Prismium</b> initialization:</b>",
+        "after_init": "After initializing <b>Prismium</b>, you will have access to its instance through the HTMLElement:"
       },
       "parameters": {
-        "title": "Параметры <strong>Prismium</strong>",
+        "title": "<strong>Prismium</strong> Parameters",
         "init": {
-          "description": "Параметр для автоматической инициализации <b>Prismium</b> сразу после вызова класса."
+          "description": "Parameter for auto-initialization of <b>Prismium</b> immediately after class invocation."
         },
         "opened": {
-          "description": "Определяет будет ли <b>Prismium</b> открытым по умолчанию."
+          "description": "Determines whether <b>Prismium</b> will be open by default."
         },
         "disabled": {
-          "description": "Определяет будет ли возможность взаимодействия с <b>Prismium</b> по умолчанию. <b>Отключает взаимодействие (открытие/закрытие) даже при помощи методов!</b>"
+          "description": "Determines whether interaction with <b>Prismium</b> is enabled by default. <b>Disables interaction (opening/closing) even via methods!</b>"
         },
         "theme": {
-          "description": "Устанавливает тему <b>Prismium</b> из существующих наборов."
+          "description": "Sets the <b>Prismium</b> theme from available sets."
         },
         "speed": {
-          "description": "Устанавливает скорость анимации открытия и закрытия <b>Prismium</b>."
+          "description": "Sets the animation speed for opening and closing <b>Prismium</b>."
         },
         "auto_close": {
-          "description": "Определяет, будет ли <b>Prismium</b> закрываться при открытии других <b>Prismium</b> первого уровня."
+          "description": "Determines if <b>Prismium</b> will close when other first-level <b>Prismium</b> are opened."
         },
         "auto_close_nested": {
-          "description": "Определяет, будут ли вложенные <b>Prismium</b> закрываться при открытии других вложенных <b>Prismium</b> в родительском <b>Prismium</b>."
+          "description": "Determines if nested <b>Prismium</b> will close when other nested <b>Prismium</b> within the parent are opened."
         },
         "get_parent_height": {
-          "description": "Определяет источник высоты при открытии. Необходимо для плавной анимации раскрытия <b>Prismium</b>, по умолчанию высота берется исходя их высоты контента <i>(по умолчанию <code class=\"local-code\">`[data-prismium-content]`</code>)</i> При установленном значении <code class=\"local-code\">`true`</code> высота будет браться из родительского элемента <i>(по умолчанию <code class=\"local-code\">`[data-prismium]`</code>)</i>."
+          "description": "Determines the source of height when opening. Necessary for smooth accordion animation; by default, the height is taken from the content's height <i>(by default <code class=\"local-code\">`[data-prismium-content]`</code>)</i>. When set to <code class=\"local-code\">`true`</code>, the height will be taken from the parent element <i>(by default <code class=\"local-code\">`[data-prismium]`</code>)</i>."
         },
         "scroll_to": {
-          "description": "Определяет, будет ли <b>Prismium</b> прокручивать страницу к открываемому элементу."
+          "description": "Determines whether <b>Prismium</b> will scroll the page to the element being opened."
         },
         "sprite_path": {
-          "description": "Необходимо для поддержки смены иконки в <b>Prismium</b> через спрайт при открытии/закрытии."
+          "description": "Required to support icon switching in <b>Prismium</b> via sprite on opening/closing."
         },
         "icon_attribute": {
-          "description": "Указывает атрибут, который будет использоваться для <b>HTML-элемента</b> иконки. Допустимы только <b>data</b> и <b>HTML-атрибуты</b>."
+          "description": "Specifies the attribute that will be used for the <b>HTML element</b> icon. Only <b>data</b> and <b>HTML attributes</b> are allowed."
         },
         "container_selectors": {
-          "description": "Указывает селекторы, которые будут использоваться для поиска контейнера <b>Prismium</b>."
+          "description": "Specifies the selectors that will be used to find the <b>Prismium</b> container."
         },
         "current_selector": {
-          "description": "Указывает селектор элемента, который будет использоваться для открытия <b>Prismium</b>."
+          "description": "Specifies the selector for the element that will be used to open <b>Prismium</b>."
         },
         "content_selector": {
-          "description": "Указывает селектор элемента, который будет использоваться для поиска контента внутри <b>Prismium</b>."
+          "description": "Specifies the selector for the element that will be used to locate the content inside <b>Prismium</b>."
         },
         "hidden_selector": {
-          "description": "Указывает селектор элемента, который будет использоваться для поиска технического контейнера <b>Prismium</b>. Контейнер не является обязательным в DOM-дереве. Смотреть <a href=\"#full-html-layout\">полный HTML шаблон</a>."
+          "description": "Specifies the selector for the element that will be used to find the technical container of <b>Prismium</b>. The container is not required in the DOM. See the <a href=\"#full-html-layout\">full HTML template</a>."
         },
         "active_class": {
-          "description": "Указывает класс активного <b>Prismium</b>. Может использоваться для установки активного состояния. <br /> <b>Не рекомендуется изменять!</b> Участвует в стилях <b>Prismium</b> по умолчанию.",
-          "note": "Для установки активного состояния <b>Prismium</b> по умолчанию, необходимо добавить класс <code class=\"local-code\">`prismium-active`</code> к элементу <code class=\"local-code\">`[data-prismium]`</code>. <br /><b>Например:</b>"
+          "description": "Specifies the active class for <b>Prismium</b>. It can be used to set the active state. <br /> <b>Not recommended to change!</b> It is used in the default <b>Prismium</b> styles.",
+          "note": "To set the active state of <b>Prismium</b> by default, add the class <code class=\"local-code\">`prismium-active`</code> to the element <code class=\"local-code\">`[data-prismium]`</code>. <br /><b>For example:</b>"
         },
         "opened_class": {
-          "description": "Указывает класс технического контейнера <b>Prismium</b> после полного раскрытия. <br /> <b>Не рекомендуется изменять!</b> Участвует в стилях <b>Prismium</b> по умолчанию."
+          "description": "Specifies the class for the technical container of <b>Prismium</b> after it is fully expanded. <br /> <b>Not recommended to change!</b> It is used in the default <b>Prismium</b> styles."
         },
         "disabled_class": {
-          "description": "Указывает класс выключенного <b>Prismium</b>. Может использоваться для установки выключенного состояния. Не влияет на состояние <b>Prismium</b> (открыт/закрыт) по умолчанию. <br /> <b>Не рекомендуется изменять!</b> Участвует в стилях <b>Prismium</b> по умолчанию.",
-          "note": "Для установки выключенного состояния <b>Prismium</b> по умолчанию, необходимо добавить класс <code class=\"local-code\">`prismium-disabled`</code> к элементу <code class=\"local-code\">`[data-prismium]`</code>. <br /><b>Например:</b>"
+          "description": "Specifies the class for a disabled <b>Prismium</b>. It can be used to set the disabled state. It does not affect the open/closed state of <b>Prismium</b> by default. <br /> <b>Not recommended to change!</b> It is used in the default <b>Prismium</b> styles.",
+          "note": "To set the disabled state of <b>Prismium</b> by default, add the class <code class=\"local-code\">`prismium-disabled`</code> to the element <code class=\"local-code\">`[data-prismium]`</code>. <br /><b>For example:</b>"
         },
         "on": {
-          "description": "Используется для установки событий на экземпляр <b>Prismium</b>."
+          "description": "Used to set events on the <b>Prismium</b> instance."
         },
         "on_any": {
-          "description": "Добавляет прослушиватель событий, который будет срабатывать при всех событиях"
+          "description": "Adds an event listener that will trigger for all events."
         },
         "effect": {
-          "description": "Используется для установки эффекта открытия/закрытия <b>Prismium</b>.<br />Доступные эффекты: <code class=\"local-code\">`line-by-line`</code>, <code class=\"local-code\">`fade-scale`</code>, <code class=\"local-code\">`slide`</code>, <code class=\"local-code\">`stagger`</code>, <code class=\"local-code\">`wave`</code>, <code class=\"local-code\">`flip`</code>, <code class=\"local-code\">`zoom`</code>, <code class=\"local-code\">`cascade`</code>, <code class=\"local-code\">`custom`</code>. Требует подключения модуля эффектов. Если вы используете бандл, то он уже подключен."
+          "description": "Used to set the opening/closing effect for <b>Prismium</b>.<br />Available effects: <code class=\"local-code\">`line-by-line`</code>, <code class=\"local-code\">`fade-scale`</code>, <code class=\"local-code\">`slide`</code>, <code class=\"local-code\">`stagger`</code>, <code class=\"local-code\">`wave`</code>, <code class=\"local-code\">`flip`</code>, <code class=\"local-code\">`zoom`</code>, <code class=\"local-code\">`cascade`</code>, <code class=\"local-code\">`custom`</code>. Requires the effects module. If you are using the bundle, it is already included."
         },
         "effect_selectors": {
-          "description": "Определяет селекторы, которые будут использоваться для поиска элементов эффекта. По умолчанию <b>Prismium</b> анимирует первых детей <code class=\"local-code\">`[data-prismium-content]`</code>"
+          "description": "Specifies the selectors that will be used to find elements for the effect. By default, <b>Prismium</b> animates the first children from <code class=\"local-code\">`[data-prismium-content]`</code>"
         },
         "effect_ignore": {
-          "description": "Определяет элементы с селектором, которые будут игнорироваться при анимации эффекта."
+          "description": "Specifies elements with a selector that will be ignored in the effect animation."
         },
         "effect_custom": {
-          "description": "Используется для создания кастомного эффекта открытия/закрытия.<ul><li><code class=\"local-code\">`speed`</code> — необходим для правильного подсчета конечной точки анимации. Доступен через <code class=\"local-code\">`prismium.effect.open`</code> в событиях.</li><li><code class=\"local-code\">`delay`</code> — необходим для правильного подсчета конечной точки анимации. Доступен через <code class=\"local-code\">`prismium.effect.delay`</code> в событиях.</li><li><code class=\"local-code\">`setup`</code> — событие срабатывает непосредственно перед закрытием или открытием экземпляра <b>Prismium</b>.<ul><li><code class=\"local-code\">`prismium`</code> — экземпляр <b>Prismium</b>. </li><li><code class=\"local-code\">`children`</code> — HTML-элемент ребенка</li><li><code class=\"local-code\">`index`</code> — индекс ребенка. Отсчитывается с 0.</li><li><code class=\"local-code\">`total`</code> — общее количество детей с эффектом</li><li><code class=\"local-code\">`isOpening`</code> — определяет открывается ли <b>Prismium</b> или закрывается</li></ul></li><li><code class=\"local-code\">`open`</code> — событие срабатывает при открытии экземпляра <b>Prismium</b>.<ul><li><code class=\"local-code\">`prismium`</code> — экземпляр <b>Prismium</b>.</li><li><code class=\"local-code\">`children`</code> — HTML-элемент ребенка</li><li><code class=\"local-code\">`index`</code> — индекс ребенка. Отсчитывается с 0.</li><li><code class=\"local-code\">`total`</code> — общее количество детей с эффектом</li></ul></li><li><code class=\"local-code\">`close`</code> — событие срабатывает при закрытии экземпляра <b>Prismium</b>.<ul><li><code class=\"local-code\">`prismium`</code> — экземпляр <b>Prismium</b>.</li><li><code class=\"local-code\">`children`</code> — HTML-элемент ребенка</li><li><code class=\"local-code\">`index`</code> — индекс ребенка. Отсчитывается с 0.</li><li><code class=\"local-code\">`total`</code> — общее количество детей с эффектом</li></ul></li><li><code class=\"local-code\">`cleanup`</code> — событие срабатывает непосредственно после закрытия или открытия экземпляра <b>Prismium</b>. Как правило используется для очистки от ранее установленных стилей.<ul><li><code class=\"local-code\">`prismium`</code> — экземпляр <b>Prismium</b>.</li><li><code class=\"local-code\">`children`</code> — HTML-элемент ребенка</li><li><code class=\"local-code\">`index`</code> — индекс ребенка. Отсчитывается с 0.</li><li><code class=\"local-code\">`total`</code> — общее количество детей с эффектом</li><li><code class=\"local-code\">`isOpening`</code> — определяет открывается ли <b>Prismium</b> или закрывается</li></ul></li></ul>"
+          "description": "Used to create a custom opening/closing effect.<ul><li><code class=\"local-code\">`speed`</code> — required for proper calculation of the animation endpoint. Available via <code class=\"local-code\">`prismium.effect.open`</code> in events.</li><li><code class=\"local-code\">`delay`</code> — required for proper calculation of the animation endpoint. Available via <code class=\"local-code\">`prismium.effect.delay`</code> in events.</li><li><code class=\"local-code\">`setup`</code> — event that triggers immediately before closing or opening the <b>Prismium</b> instance.<ul><li><code class=\"local-code\">`prismium`</code> — the <b>Prismium</b> instance.</li><li><code class=\"local-code\">`children`</code> — child HTML element</li><li><code class=\"local-code\">`index`</code> — index of the child, starting from 0.</li><li><code class=\"local-code\">`total`</code> — total count of children with the effect</li><li><code class=\"local-code\">`isOpening`</code> — indicates whether <b>Prismium</b> is opening or closing</li></ul></li><li><code class=\"local-code\">`open`</code> — event that triggers when the <b>Prismium</b> instance opens.<ul><li><code class=\"local-code\">`prismium`</code> — the <b>Prismium</b> instance.</li><li><code class=\"local-code\">`children`</code> — child HTML element</li><li><code class=\"local-code\">`index`</code> — index of the child, starting from 0.</li><li><code class=\"local-code\">`total`</code> — total count of children with the effect</li></ul></li><li><code class=\"local-code\">`close`</code> — event that triggers when the <b>Prismium</b> instance closes.<ul><li><code class=\"local-code\">`prismium`</code> — the <b>Prismium</b> instance.</li><li><code class=\"local-code\">`children`</code> — child HTML element</li><li><code class=\"local-code\">`index`</code> — index of the child, starting from 0.</li><li><code class=\"local-code\">`total`</code> — total count of children with the effect</li></ul></li><li><code class=\"local-code\">`cleanup`</code> — event that triggers immediately after closing or opening the <b>Prismium</b> instance. Typically used to clean up previously set styles.<ul><li><code class=\"local-code\">`prismium`</code> — the <b>Prismium</b> instance.</li><li><code class=\"local-code\">`children`</code> — child HTML element</li><li><code class=\"local-code\">`index`</code> — index of the child, starting from 0.</li><li><code class=\"local-code\">`total`</code> — total count of children with the effect</li><li><code class=\"local-code\">`isOpening`</code> — indicates whether <b>Prismium</b> is opening or closing</li></ul></li></ul>"
         }
       },
       "effects": {
-        "title": "Эффекты <strong>Prismium</strong>"
+        "title": "<strong>Prismium</strong> Effects"
       },
       "static_methods": {
-        "title": {
-          "description": "Статические методы"
-        },
+        "title": "Static methods",
         "init": {
-          "description": "Инициализирует экземпляр <b>Prismium</b> на переданном элементе<code class=\"local-code\">`el`</code>."
+          "description": "Initializes a <b>Prismium</b> instance on the given element <code class=\"local-code\">`el`</code>."
         },
         "use": {
-          "description": "Регистрирует модуль, который будет использоваться <b>Prismium</b>."
+          "description": "Registers a module to be used by <b>Prismium</b>."
         },
         "get_instance": {
-          "description": "Получает экземпляр <b>Prismium</b> по переданному элементу <code class=\"local-code\">`el`</code>."
+          "description": "Retrieves the <b>Prismium</b> instance for the given element <code class=\"local-code\">`el`</code>."
         },
         "open": {
-          "description": "Открывает один экземпляр <b>Prismium</b>"
+          "description": "Opens a <b>Prismium</b> instance"
         },
         "open_all": {
-          "description": "Открывает все экземпляры <b>Prismium</b> в выбранном контейнере по селектору <code class=\"local-code\">`selector`</code> <i>(по умолчанию <code class=\"local-code\">`'.prismium'`</code>)</i>"
+          "description": "Opens all <b>Prismium</b> instances in the selected container by the selector <code class=\"local-code\">`selector`</code> <i>(by default <code class=\"local-code\">`'.prismium'`</code>)</i>"
         },
         "open_everything": {
-          "description": "Открывает все экземпляры <b>Prismium</b> на странице по селектору. По умолчанию откроет все экземпляры <b>Prismium</b>."
+          "description": "Opens all <b>Prismium</b> instances on the page by selector. By default, it opens all <b>Prismium</b> instances."
         },
         "toggle": {
-          "description": "Переключает один экземпляр <b>Prismium</b>"
+          "description": "Toggles a <b>Prismium</b> instance."
         },
         "close": {
-          "description": "Закрывает один экземпляр <b>Prismium</b>"
+          "description": "Closes a <b>Prismium</b> instance."
         },
         "close_all": {
-          "description": "Закрывает все экземпляры <b>Prismium</b> в выбранном контейнере по селектору <code class=\"local-code\">`selector`</code> <i>(по умолчанию <code class=\"local-code\">`'.prismium'`</code>)</i>"
+          "description": "Closes all <b>Prismium</b> instances in the selected container by the selector <code class=\"local-code\">`selector`</code> <i>(by default <code class=\"local-code\">`'.prismium'`</code>)</i>"
         },
         "close_everything": {
-          "description": "Открывает все экземпляры <b>Prismium</b> на странице по селектору. По умолчанию откроет все экземпляры <b>Prismium</b>."
+          "description": "Closes all <b>Prismium</b> instances on the page by selector. By default, it closes all <b>Prismium</b> instances."
         },
         "close_nested": {
-          "description": "Закрывает все вложенные экземпляры <b>Prismium</b> в выбранном экземпляре."
+          "description": "Closes all nested <b>Prismium</b> instances within the selected instance."
         },
         "disable": {
-          "description": "Запрещает взаимодействие с одним экземпляром <b>Prismium</b>. <b>Отключает взаимодействие (открытие/закрытие) даже при помощи методов!</b>"
+          "description": "Disables interaction with a <b>Prismium</b> instance. <b>Disables interaction (opening/closing) even via methods!</b>"
         },
         "enable": {
-          "description": "Возобновляет возможность взаимодействия с одним экземпляром <b>Prismium</b>."
+          "description": "Enables interaction with a <b>Prismium</b> instance."
         }
       },
       "methods": {
-        "title": {
-          "description": "Методы экземпляра"
-        },
+        "title": "Instance methods",
         "init": {
-          "description": "Инициализирует экземпляр <b>Prismium</b>."
+          "description": "Initializes the <b>Prismium</b> instance."
         },
         "destroy": {
-          "description": "Уничтожает экземпляр <b>Prismium</b>."
+          "description": "Destroys the <b>Prismium</b> instance."
         },
         "setup_speed": {
-          "description": "Устанавливает скорость открытия/закрытия <b>Prismium</b>. <br /> <code class=\"local-code\">`open`</code> — скорость открытия <code class=\"local-code\">`close`</code> — скорость закрытия"
+          "description": "Sets the opening/closing speed of <b>Prismium</b>. <br /> <code class=\"local-code\">`open`</code> — opening speed, <code class=\"local-code\">`close`</code> — closing speed"
         },
         "open": {
-          "description": "Открывает один экземпляр <b>Prismium</b>."
+          "description": "Opens a <b>Prismium</b> instance."
         },
         "close": {
-          "description": "Закрывает один экземпляр <b>Prismium</b>."
+          "description": "Closes a <b>Prismium</b> instance."
         },
         "toggle": {
-          "description": "Переключает один экземпляр <b>Prismium</b>."
+          "description": "Toggles a <b>Prismium</b> instance."
         },
         "on": {
-          "description": "Добавляет обработчик событий."
+          "description": "Adds an event handler."
         },
         "once": {
-          "description": "Добавляет обработчик событий, который будет вызван только один раз. При добавлении нескольких обработчиков, обработчик будет удален автоматически после первого вызова."
+          "description": "Adds an event handler that will be called only once. If multiple handlers are added, the handler will be automatically removed after the first call."
         },
         "on_any": {
-          "description": "Добавляет обработчик на все события."
+          "description": "Adds a handler for all events."
         },
         "off": {
-          "description": "Снимает привязку обработчиков событий. <br />Если указан только список событий (без обработчика), удаляются все обработчики этих событий. <br />Если указан и обработчик, то удаляется только этот конкретный обработчик."
+          "description": "Removes event handlers. <br />If only a list of events is provided (without a handler), all handlers for those events are removed. <br />If a handler is also provided, only that specific handler is removed."
         },
         "off_any": {
-          "description": "Снимает привязку обработчика на все события."
+          "description": "Removes the handler for all events."
         }
       },
       "events": {
-        "title": "События <b>Prismium</b>",
-        "description": "<b>Prismium</b> имеет много полезных событий, которые вы можете прослушивать. События могут быть назначены двумя способами:",
+        "title": "<b>Prismium</b> Events",
+        "description": "<b>Prismium</b> has many useful events that you can listen to. Events can be assigned in two ways:",
         "list": {
-          "init": "Использовать параметр <code class=\"local-code\">`on`</code> при инициализации <b>Prismium</b>:",
-          "method": "Использовать метод <code class=\"local-code\">`on`</code> после инициализации <b>Prismium</b>:"
+          "init": "Use the <code class=\"local-code\">`on`</code> parameter when initializing <b>Prismium</b>:",
+          "method": "Use the <code class=\"local-code\">`on`</code> method after initializing <b>Prismium</b>:"
         },
-        "note": "<b>Обратите внимание, что ключевое слово <code class=\"local-code\">`this`</code> в обработчике всегда указывает на экземпляр Prismium, а не на элемент, на котором он был вызван.</b>",
+        "note": "<b>Note that the keyword <code class=\"local-code\">`this`</code> in the handler always refers to the <b>Prismium</b> instance, not the element on which it was called.</b>",
         "before_init": {
-          "description": "Событие срабатывает перед инициализацией экземпляра."
+          "description": "Event triggered before the instance is initialized."
         },
         "init": {
-          "description": "Событие срабатывает при инициализации экземпляра."
+          "description": "Event triggered when the instance is initialized."
         },
         "after_init": {
-          "description": "Событие срабатывает сразу после инициализации экземпляра."
+          "description": "Event triggered immediately after the instance is initialized."
         },
         "before_open": {
-          "description": "Событие срабатывает перед открытием экземпляра."
+          "description": "Event triggered before the instance opens."
         },
         "open": {
-          "description": "Событие срабатывает при открытии экземпляра."
+          "description": "Event triggered when the instance opens."
         },
         "after_open": {
-          "description": "Событие срабатывает сразу после открытия экземпляра."
+          "description": "Event triggered immediately after the instance opens."
         },
         "before_close": {
-          "description": "Событие срабатывает перед закрытием экземпляра."
+          "description": "Event triggered before the instance closes."
         },
         "close": {
-          "description": "Событие срабатывает при закрытии экземпляра."
+          "description": "Event triggered when the instance closes."
         },
         "after_close": {
-          "description": "Событие срабатывает сразу после закрытия экземпляра."
+          "description": "Event triggered immediately after the instance closes."
         },
         "before_destroy": {
-          "description": "Событие срабатывает перед уничтожением экземпляра."
+          "description": "Event triggered before the instance is destroyed."
         },
         "destroy": {
-          "description": "Событие срабатывает при уничтожении экземпляра."
+          "description": "Event triggered when the instance is destroyed."
         },
         "after_destroy": {
-          "description": "Событие срабатывает сразу после уничтожения экземпляра."
+          "description": "Event triggered immediately after the instance is destroyed."
         },
         "effect_start": {
-          "description": "Событие срабатывает при начале эффекта открытия/закрытия экземпляра. <br /> <code class=\"local-code\">`direction`</code> — направление эффекта <code class=\"local-code\">`'open'`</code> или <code class=\"local-code\">`'close'`</code>"
+          "description": "Event triggered at the start of the opening/closing effect. <br /> <code class=\"local-code\">`direction`</code> — effect direction, either <code class=\"local-code\">`'open'`</code> or <code class=\"local-code\">`'close'`</code>"
         },
         "effect_end": {
-          "description": "Событие срабатывает при завершении эффекта открытия/закрытия экземпляра. <br /> <code class=\"local-code\">`'direction'`</code> — направление эффекта <code class=\"local-code\">`'open'`</code> или <code class=\"local-code\">`'close'`</code>"
+          "description": "Event triggered at the end of the opening/closing effect. <br /> <code class=\"local-code\">`'direction'`</code> — effect direction, either <code class=\"local-code\">`'open'`</code> or <code class=\"local-code\">`'close'`</code>"
         }
       },
       "ts": {
-        "title": "Определения TypeScript",
-        "description": "<b>Prismium</b> полностью типизирован и экспортирует определения в <code class=\"local-code\">`Prismium`</code> и <code class=\"local-code\">`PrismiumOptions`</code>:"
+        "title": "TypeScript Definitions",
+        "description": "<b>Prismium</b> is fully typed and exports definitions for <code class=\"local-code\">`Prismium`</code> and <code class=\"local-code\">`PrismiumOptions`</code>:"
       }
     },
     "error": {
       "seo": {
-        "unknown": "Неизвестная ошибка",
-        "404": "Страница не найдена",
-        "500": "Внутренняя ошибка сервера",
-        "other": "Ошибка {code}"
+        "unknown": "Unknown error",
+        "404": "Page not found",
+        "500": "Internal server error",
+        "other": "Error {code}"
       },
       "404": {
-        "title": "Ошибка <strong>404</strong>.",
-        "description": "К сожалению, такой страницы не существует. Вероятно, был неправильно набран адрес или страница была удалена. Попробуйте вернуться на главную страницу."
+        "title": "Error <strong>404</strong>.",
+        "description": "Unfortunately, this page does not exist. The address may have been entered incorrectly or the page was deleted. Try returning to the home page."
       },
       "500": {
-        "title": "Ошибка <strong>500</strong>.",
-        "description": "К сожалению, произошла внутренняя ошибка сервера. Мы уже работаем над ее устранением. Пожалуйста, попробуйте вернуться на главную страницу или обновить страницу позже."
+        "title": "Error <strong>500</strong>.",
+        "description": "Unfortunately, an internal server error occurred. We are already working on a fix. Please try returning to the home page or refreshing the page later."
       },
       "000": {
-        "title": "Ошибка <strong>{code}</strong>.",
-        "description": "К сожалению, произошла ошибка. Мы уже работаем над ее устранением. Попробуйте вернуться на главную страницу или обновить страницу позже."
+        "title": "Error <strong>{code}</strong>.",
+        "description": "Unfortunately, an error occurred. We are already working on a fix. Try returning to the home page or refreshing the page later."
       }
     }
   }

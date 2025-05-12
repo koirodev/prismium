@@ -290,9 +290,7 @@
         "title": "Эффекты <strong>Prismium</strong>"
       },
       "static_methods": {
-        "title": {
-          "description": "Статические методы"
-        },
+        "title": "Статические методы",
         "init": {
           "description": "Инициализирует экземпляр <b>Prismium</b> на переданном элементе<code class=\"local-code\">`el`</code>."
         },
@@ -334,9 +332,7 @@
         }
       },
       "methods": {
-        "title": {
-          "description": "Методы экземпляра"
-        },
+        "title": "Методы экземпляра",
         "init": {
           "description": "Инициализирует экземпляр <b>Prismium</b>."
         },
