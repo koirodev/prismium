@@ -39,9 +39,6 @@
   align-items: flex-start;
   justify-content: flex-start;
 
-  color: var(--pr-current-color);
-  font: var(--pr-current-font);
-
   background-color: var(--pr-bg);
   border: solid var(--pr-border-width) var(--pr-border-color);
   border-radius: var(--pr-border-radius);
@@ -70,8 +67,8 @@
     justify-content: space-between;
     gap: var(--pr-current-gap);
 
-    color: inherit;
-    font: inherit;
+    color: var(--pr-current-color);
+    font: var(--pr-current-font);
     text-align: start;
 
     background-color: transparent;
