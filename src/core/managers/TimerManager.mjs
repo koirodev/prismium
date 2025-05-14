@@ -12,16 +12,11 @@ export class TimerManager {
 
   /**
    * Set of active timers
-   * @type {Set<number>}
-   * @private
    */
   #timers;
 
   /**
    * Set timeout for a function
-   * @param {Function} callback - Function to call
-   * @param {number} delay - Delay in milliseconds
-   * @returns {number} Timeout ID
    */
   setTimeout(callback, delay) {
     const timer = setTimeout(() => {
@@ -35,7 +30,6 @@ export class TimerManager {
 
   /**
    * Clear a timeout
-   * @param {number} timer - Timeout ID
    */
   clearTimeout(timer) {
     if (timer) {

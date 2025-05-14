@@ -13,7 +13,6 @@ import PrismiumCore from '../../core/core.mjs';
 
 /**
  * Injection key for Prismium context
- * @type {string}
  */
 export const PRISMIUM_INJECTION_KEY = 'prismium';
 
@@ -43,7 +42,6 @@ export const Prismium = defineComponent({
   props: {
     /**
      * Configuration options for Prismium
-     * @type {import('../../types/options').PrismiumOptions}
      */
     options: {
       type: Object,
@@ -52,7 +50,6 @@ export const Prismium = defineComponent({
 
     /**
      * Array of modules to use with Prismium
-     * @type {import('../../types/index').PrismiumModule[]}
      */
     modules: {
       type: Array,
@@ -61,7 +58,6 @@ export const Prismium = defineComponent({
 
     /**
      * Additional attributes to apply to the root element
-     * @type {Object}
      */
     attributes: {
       type: Object,
@@ -71,12 +67,6 @@ export const Prismium = defineComponent({
 
   /**
    * Component setup function
-   * @param {Object} props - Component props
-   * @param {Object} context - Setup context
-   * @param {Function} context.emit - Emit event function
-   * @param {Object} context.attrs - Non-prop attributes
-   * @param {Object} context.slots - Component slots
-   * @returns {Function} Render function
    */
   setup(props, { slots, emit, attrs }) {
     const prismiumRef = ref(null);

@@ -1,9 +1,7 @@
 import { isNode, isObject } from './is.mjs';
 
 /**
- * @description Deep merge objects
- * @param {...object} sources - Objects to merge
- * @returns {object} Merged object
+ * Deep merge objects
  */
 export function deepMerge(...sources) {
   const [target, ...rest] = sources;
@@ -26,7 +24,7 @@ export function deepMerge(...sources) {
       const targetValue = target[key];
 
       if (isObject(sourceValue)) {
-        // Обработка объектов | Handle objects
+        // Handle objects
         if (sourceValue.__prismium__) {
           target[key] = sourceValue;
         } else if (isObject(targetValue)) {

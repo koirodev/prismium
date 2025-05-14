@@ -29,24 +29,6 @@ const prismiumOptions: PrismiumOptions = {
 const accordion = new Prismium('.accordion', prismiumOptions);
 ```
 
-## Using with JavaScript + JSDoc
-
-```javascript
-/**
- * @typedef {import('prismium').PrismiumOptions} PrismiumOptions
- */
-
-/**
- * @type {PrismiumOptions}
- */
-const prismiumOptions = {
-  theme: 'dark',
-  effect: 'line-by-line',
-};
-
-const accordion = new Prismium('.accordion', prismiumOptions);
-```
-
 ## React Components
 
 ```tsx

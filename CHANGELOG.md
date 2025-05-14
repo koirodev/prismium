@@ -1,3 +1,16 @@
+## 4.1.1 - Released on 2025-05-14
+
+### Reactor
+
+- JS DOC removed
+- Themes refactored
+
+### Fixes
+
+- Fixed the effect of CSS variable `--pr-current-font` on content
+
+<br>
+
 ## 4.1.0 - Released on 2025-05-14
 
 It's done! I found time to finish this useful library!
