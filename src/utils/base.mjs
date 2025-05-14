@@ -1,30 +1,30 @@
-// Получить текущее время | Get current time
+// Get current time
 function now() {
   return Date.now();
 }
 
-// Обработка аккордеонов | Process accordions
+// Process accordions
 function processAccordions(
   nestedAccordions,
   rootAccordions,
   getInstance,
   open
 ) {
-  // Открываем вложенные мгновенно | Open nested accordions instantly
+  // Open nested accordions instantly
   nestedAccordions.forEach((el) => {
     const instance = getInstance(el);
     if (instance) {
-      // Сохраняем оригинальную скорость | Save original speed
+      // Save original speed
       const originalSpeed = { ...instance.speed };
 
-      // Устанавливаем нулевую скорость | Set zero speed
+      // Set zero speed
       el.style.setProperty('--pr-speed', '0ms');
 
-      // Открываем аккордеон | Open accordion
+      // Open accordion
       open(el, false);
       instance.iconManager?.updateIcon('open');
 
-      // Сразу восстанавливаем скорость | Restore speed immediately
+      // Restore speed immediately
       requestAnimationFrame(() => {
         instance.speed = originalSpeed;
         el.style.setProperty('--pr-speed', `${originalSpeed.open}ms`);
@@ -32,7 +32,7 @@ function processAccordions(
     }
   });
 
-  // Открываем корневые с анимацией | Open root accordions with animation
+  // Open root accordions with animation
   rootAccordions.forEach((el) => {
     const instance = getInstance(el);
     if (instance) {
@@ -42,7 +42,7 @@ function processAccordions(
   });
 }
 
-// Получить глубину элемента | Get element depth
+// Get element depth
 function getElementDepth(el, container) {
   let depth = 0;
   let current = el;

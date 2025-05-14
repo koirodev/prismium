@@ -7,9 +7,6 @@ import { PrismiumError } from '../errors/PrismiumError.mjs';
 export class DOMManager {
   /**
    * Set up the DOM manager with Prismium instance and element
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {HTMLElement} el - Root element
-   * @returns {DOMManager} The DOMManager instance
    */
   setup(instance, el) {
     this.validateElement(el);
@@ -23,8 +20,6 @@ export class DOMManager {
 
   /**
    * Validate that the element is valid for Prismium
-   * @param {Element} el - Element to validate
-   * @throws {PrismiumError} If the element is invalid
    */
   validateElement(el) {
     if (!el) {
@@ -42,8 +37,6 @@ export class DOMManager {
 
   /**
    * Create the accordion structure
-   * @param {HTMLElement} el - Root element
-   * @throws {Error} If required elements are not found
    */
   createStructure(el) {
     const content = el.querySelector(this.instance.options.contentSelector);
@@ -87,7 +80,6 @@ export class DOMManager {
 
   /**
    * Set CSS classes for elements
-   * @param {HTMLElement} el - Root element
    */
   setClasses(el) {
     el.classList.add('prismium');
@@ -98,7 +90,6 @@ export class DOMManager {
 
   /**
    * Apply theme classes to the element
-   * @param {HTMLElement} el - Root element
    */
   setTheme(el) {
     const { theme } = this.instance.options;
@@ -117,7 +108,6 @@ export class DOMManager {
 
   /**
    * Handle the initial state of the accordion
-   * @param {HTMLElement} el - Root element
    */
   handleInitialState(el) {
     if (

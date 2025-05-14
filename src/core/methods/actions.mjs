@@ -154,7 +154,7 @@ export default {
 
     instance.emit('beforeClose');
 
-    // Установка скорости | Set the speed
+    // Set the speed
     instance.el.style.setProperty('--pr-speed', `${instance.speed.close}ms`);
 
     // If there is an effects manager and an effect is set, start the effect event

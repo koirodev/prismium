@@ -5,9 +5,6 @@
 export class IconManager {
   /**
    * Set up the Icon manager with Prismium instance and current element
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {HTMLElement} $current - Current element where icon is placed
-   * @returns {IconManager} The IconManager instance
    */
   setup(instance, $current) {
     this.instance = instance;
@@ -24,7 +21,6 @@ export class IconManager {
 
   /**
    * Update icon based on accordion state
-   * @param {'open'|'close'} state - Current accordion state
    */
   updateIcon(state) {
     if (!this.$icons || !this.icon) return;

@@ -5,9 +5,6 @@
 export class EffectsManager {
   /**
    * Apply animation effect based on instance options
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyEffect(instance, isOpening) {
     if (!instance.$content) return;
@@ -30,7 +27,6 @@ export class EffectsManager {
 
   /**
    * Apply effects when opening the accordion
-   * @param {import('../../types/core').default} instance - Prismium instance
    */
   applyOpenEffects(instance) {
     this.#applyEffect(instance, true);
@@ -38,7 +34,6 @@ export class EffectsManager {
 
   /**
    * Apply effects when closing the accordion
-   * @param {import('../../types/core').default} instance - Prismium instance
    */
   applyCloseEffects(instance) {
     this.#applyEffect(instance, false);
@@ -46,9 +41,6 @@ export class EffectsManager {
 
   /**
    * Get filtered children elements for animation
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @returns {Element[]} Filtered child elements
-   * @private
    */
   #getFilteredChildren(instance) {
     let childrenSelectors, ignoreSelectors;
@@ -92,9 +84,6 @@ export class EffectsManager {
   /**
    * Apply line-by-line animation effect
    * Shows elements one by one with translation and opacity
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyLineByLineEffect(instance, isOpening) {
     const defaults = {
@@ -112,21 +101,21 @@ export class EffectsManager {
 
     if (!children.length) return;
 
-    // Обрабатываем options | Process options
+    // Process options
     if (typeof options.y === 'number') options.y = `${options.y}px`;
     if (typeof options.x === 'number') options.x = `${options.x}px`;
 
-    // Форсируем reflow | Force reflow
+    // Force reflow
     instance.$content.offsetHeight;
 
     if (isOpening) {
-      // Настраиваем начальное состояние | Setup initial state
+      // Setup initial state
       children.forEach((child) => {
         child.style.transform = `translate(${options.x}, ${options.y}) scale(${options.scale})`;
         child.style.opacity = options.opacity;
       });
 
-      // Запускаем анимацию с задержкой | Start animation with delay
+      // Start animation with delay
       requestAnimationFrame(() => {
         children.forEach((child, i) => {
           child.style.transition = `transform ${options.speed}ms ${options.easing}, 
@@ -137,7 +126,7 @@ export class EffectsManager {
         });
       });
     } else {
-      // Анимация закрытия | Closing animation
+      // Closing animation
       children.forEach((child, i) => {
         const reverseIndex = children.length - 1 - i;
         child.style.transition = `transform ${options.speed}ms ${options.easing}, 
@@ -148,14 +137,14 @@ export class EffectsManager {
       });
     }
 
-    // Очистка стилей после завершения | Cleanup styles after animation
+    // Cleanup styles after animation
     const maxDelay = options.delay * (children.length - 1) + options.speed;
 
-    // Очищаем предыдущий таймер если есть | Clear previous timer if exists
+    // Clear previous timer if exists
     instance.__cleanupTimer &&
       instance.timerManager.clearTimeout(instance.__cleanupTimer);
 
-    // Устанавливаем новый таймер | Set new timer
+    // Set new timer
     instance.__cleanupTimer = instance.timerManager.setTimeout(() => {
       children.forEach((child) => {
         child.style.transition = '';
@@ -170,9 +159,6 @@ export class EffectsManager {
   /**
    * Apply fade-scale animation effect
    * Fades and scales elements simultaneously
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyFadeScaleEffect(instance, isOpening) {
     const defaults = {
@@ -186,7 +172,7 @@ export class EffectsManager {
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
-    // Сбрасываем стили перед анимацией | Reset styles before animation
+    // Reset styles before animation
     children.forEach((child) => {
       child.style.transition = 'none';
       child.style.transform = isOpening
@@ -195,7 +181,7 @@ export class EffectsManager {
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
-    // Форсируем reflow | Force reflow
+    // Force reflow
     instance.$content.offsetHeight;
 
     children.forEach((child) => {
@@ -219,9 +205,6 @@ export class EffectsManager {
   /**
    * Apply slide animation effect
    * Slides elements from a specified direction
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applySlideEffect(instance, isOpening) {
     const defaults = {
@@ -236,11 +219,11 @@ export class EffectsManager {
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
-    // Обрабатываем options | Process options
+    // Process options
     if (typeof options.distance === 'number')
       options.distance = `${options.distance}px`;
 
-    // Определяем трансформацию в зависимости от направления | Define transform based on direction
+    // Define transform based on direction
     const getTransform = (direction, distance) => {
       switch (direction) {
         case 'up':
@@ -256,7 +239,7 @@ export class EffectsManager {
       }
     };
 
-    // Сбрасываем стили перед анимацией | Reset styles before animation
+    // Reset styles before animation
     children.forEach((child) => {
       child.style.transition = 'none';
       child.style.transform = isOpening
@@ -265,7 +248,7 @@ export class EffectsManager {
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
-    // Форсируем reflow | Force reflow
+    // Force reflow
     instance.$content.offsetHeight;
 
     children.forEach((child) => {
@@ -292,9 +275,6 @@ export class EffectsManager {
   /**
    * Apply stagger animation effect
    * Animates elements from different directions
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyStaggerEffect(instance, isOpening) {
     const defaults = {
@@ -310,11 +290,11 @@ export class EffectsManager {
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
-    // Обрабатываем options | Process options
+    // Process options
     if (typeof options.distance === 'number')
       options.distance = `${options.distance}px`;
 
-    // Сбрасываем стили перед анимацией | Reset styles before animation
+    // Reset styles before animation
     children.forEach((child, i) => {
       const direction = options.directions[i % options.directions.length];
       let transform;
@@ -339,7 +319,7 @@ export class EffectsManager {
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
-    // Форсируем reflow | Force reflow
+    // Force reflow
     instance.$content.offsetHeight;
 
     children.forEach((child, i) => {
@@ -382,9 +362,6 @@ export class EffectsManager {
   /**
    * Apply wave animation effect
    * Creates a wave-like animation pattern
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyWaveEffect(instance, isOpening) {
     const defaults = {
@@ -400,11 +377,11 @@ export class EffectsManager {
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
-    // Обрабатываем options | Process options
+    // Process options
     if (typeof options.amplitude === 'number')
       options.amplitude = `${options.amplitude}px`;
 
-    // Сбрасываем стили перед анимацией | Reset styles before animation
+    // Reset styles before animation
     children.forEach((child, i) => {
       const phase = (i / children.length) * Math.PI * options.frequency;
       const y = Math.sin(phase) * parseInt(options.amplitude);
@@ -416,7 +393,7 @@ export class EffectsManager {
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
-    // Форсируем reflow | Force reflow
+    // Force reflow
     instance.$content.offsetHeight;
 
     children.forEach((child, i) => {
@@ -444,9 +421,6 @@ export class EffectsManager {
   /**
    * Apply flip animation effect
    * Flips elements in 3D space
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyFlipEffect(instance, isOpening) {
     const defaults = {
@@ -462,7 +436,7 @@ export class EffectsManager {
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
-    // Обрабатываем options | Process options
+    // Process options
     if (typeof options.perspective === 'number')
       options.perspective = `${options.perspective}px`;
 
@@ -471,7 +445,7 @@ export class EffectsManager {
 
     instance.$content.style.perspective = options.perspective;
 
-    // Сбрасываем стили перед анимацией | Reset styles before animation
+    // Reset styles before animation
     children.forEach((child, i) => {
       child.style.transition = 'none';
       child.style.transform = isOpening
@@ -480,7 +454,7 @@ export class EffectsManager {
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
-    // Форсируем reflow | Force reflow
+    // Force reflow
     instance.$content.offsetHeight;
 
     children.forEach((child, i) => {
@@ -505,9 +479,6 @@ export class EffectsManager {
   /**
    * Apply zoom animation effect
    * Zooms elements from different origins
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyZoomEffect(instance, isOpening) {
     const defaults = {
@@ -560,9 +531,6 @@ export class EffectsManager {
   /**
    * Apply cascade animation effect
    * Creates a cascading animation with rotation
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyCascadeEffect(instance, isOpening) {
     const defaults = {
@@ -578,7 +546,7 @@ export class EffectsManager {
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
-    // Обрабатываем options | Process options
+    // Process options
     if (typeof options.distance === 'number')
       options.distance = `${options.distance}px`;
 
@@ -613,9 +581,6 @@ export class EffectsManager {
   /**
    * Apply custom animation effect
    * Allows for custom user-defined animations
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @param {boolean} isOpening - Whether accordion is opening
-   * @private
    */
   #applyCustomEffect(instance, isOpening) {
     const defaults = {
@@ -643,17 +608,17 @@ export class EffectsManager {
 
     if (!children.length) return;
 
-    // Применяем начальную настройку если есть | Apply setup if exists
+    // Apply setup if exists
     if (typeof options.setup === 'function') {
       children.forEach((child, i) => {
         options.setup(instance, child, i, children.length, isOpening);
       });
     }
 
-    // Форсируем reflow | Force reflow
+    // Force reflow
     instance.$content.offsetHeight;
 
-    // Применяем анимацию | Apply animation
+    // Apply animation
     children.forEach((child, i) => {
       const animate = isOpening ? options.open : options.close;
       if (typeof animate === 'function') {
@@ -663,7 +628,7 @@ export class EffectsManager {
       }
     });
 
-    // Очистка после анимации | Cleanup after animation
+    // Cleanup after animation
     if (typeof options.cleanup === 'function') {
       const maxDelay = options.delay * (children.length - 1) + options.speed;
 
@@ -679,8 +644,6 @@ export class EffectsManager {
 
   /**
    * Calculate total animation duration for the current effect
-   * @param {import('../../types/core').default} instance - Prismium instance
-   * @returns {number} Total animation duration in milliseconds
    */
   getEffectsDuration(instance) {
     if (!instance.$content || !instance.options.effect) return 0;

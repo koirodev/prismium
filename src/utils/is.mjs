@@ -1,7 +1,5 @@
 /**
- * @description Check if value is an object
- * @param {object} obj - Value to check
- * @returns {boolean} True if value is an object, false otherwise
+ * Check if value is an object
  */
 function isObject(obj) {
   return (
@@ -13,9 +11,7 @@ function isObject(obj) {
 }
 
 /**
- * @description Check if value is a DOM node
- * @param {Node} node - Value to check
- * @returns {boolean} True if value is a DOM node, false otherwise
+ * Check if value is a DOM node
  */
 function isNode(node) {
   return typeof window !== 'undefined' &&

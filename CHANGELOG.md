@@ -1,3 +1,11 @@
+## 4.1.1 - Released on 2025-05-x
+
+### Reactor
+
+- JS DOC removed
+
+<br>
+
 ## 4.1.0 - Released on 2025-05-14
 
 It's done! I found time to finish this useful library!
