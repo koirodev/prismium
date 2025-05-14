@@ -1,9 +1,9 @@
-name: Test Build
+name: '[DOCS] Test Build'
 
 on:
   pull_request:
     branches:
-      - main
+      - docs-prod
 
 jobs:
   test-build:
