@@ -1,7 +1,16 @@
 import { PrismiumError } from '../errors/PrismiumError.mjs';
 
+/**
+ * DOM Manager for Prismium
+ * Manages DOM structure and interactions for the accordion
+ */
 export class DOMManager {
-  // Настройка DOM-элемента | Setup DOM element
+  /**
+   * Set up the DOM manager with Prismium instance and element
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {HTMLElement} el - Root element
+   * @returns {DOMManager} The DOMManager instance
+   */
   setup(instance, el) {
     this.validateElement(el);
     this.instance = instance;
@@ -12,7 +21,11 @@ export class DOMManager {
     return this;
   }
 
-  // Проверка валидности элемента | Validate element
+  /**
+   * Validate that the element is valid for Prismium
+   * @param {Element} el - Element to validate
+   * @throws {PrismiumError} If the element is invalid
+   */
   validateElement(el) {
     if (!el) {
       throw new PrismiumError('Element is required');
@@ -27,7 +40,11 @@ export class DOMManager {
     }
   }
 
-  // Создание структуры DOM | Create DOM structure
+  /**
+   * Create the accordion structure
+   * @param {HTMLElement} el - Root element
+   * @throws {Error} If required elements are not found
+   */
   createStructure(el) {
     const content = el.querySelector(this.instance.options.contentSelector);
     const current = el.querySelector(this.instance.options.currentSelector);
@@ -41,7 +58,10 @@ export class DOMManager {
     this.instance.$content = content;
     this.instance.$current = current;
 
-    if (content.parentElement === content.closest(this.instance.options.hiddenSelector)) {
+    if (
+      content.parentElement ===
+      content.closest(this.instance.options.hiddenSelector)
+    ) {
       hidden = content.parentElement;
     } else {
       hidden = document.createElement('div');
@@ -50,16 +70,25 @@ export class DOMManager {
     }
 
     this.instance.$hidden = hidden;
-    
-    this.instance.$binding = this.instance.options.getParentHeight ? el : content;
 
-    let containerSelectors = Array.isArray(this.instance.options.containerSelectors)
-    ? this.instance.options.containerSelectors
-    : [this.instance.options.containerSelectors];
-    this.instance.$container = el.closest(containerSelectors.find(selector => el.closest(selector)));
+    this.instance.$binding = this.instance.options.getParentHeight
+      ? el
+      : content;
+
+    let containerSelectors = Array.isArray(
+      this.instance.options.containerSelectors
+    )
+      ? this.instance.options.containerSelectors
+      : [this.instance.options.containerSelectors];
+    this.instance.$container = el.closest(
+      containerSelectors.find((selector) => el.closest(selector))
+    );
   }
 
-  // Установка классов | Set classes
+  /**
+   * Set CSS classes for elements
+   * @param {HTMLElement} el - Root element
+   */
   setClasses(el) {
     el.classList.add('prismium');
     this.instance.$current.classList.add('prismium__current');
@@ -67,7 +96,10 @@ export class DOMManager {
     this.instance.$hidden.classList.add('prismium__hidden');
   }
 
-  // Установка темы | Set theme
+  /**
+   * Apply theme classes to the element
+   * @param {HTMLElement} el - Root element
+   */
   setTheme(el) {
     const { theme } = this.instance.options;
     if (theme) {
@@ -83,9 +115,15 @@ export class DOMManager {
     }
   }
 
-  // Обработка начального состояния | Handle initial state
+  /**
+   * Handle the initial state of the accordion
+   * @param {HTMLElement} el - Root element
+   */
   handleInitialState(el) {
-    if (el.classList.contains(this.instance.options.activeClass)) {
+    if (
+      el.classList.contains(this.instance.options.activeClass) ||
+      this.instance.opened
+    ) {
       el.classList.remove(this.instance.options.activeClass);
       this.instance.$hidden.classList.add(this.instance.options.openedClass);
       this.instance.on('afterInit', () => {
@@ -94,9 +132,21 @@ export class DOMManager {
     } else {
       this.instance.opened = false;
     }
+
+    if (
+      el.classList.contains(this.instance.options.disabledClass) ||
+      this.instance.disabled
+    ) {
+      this.instance.on('afterInit', () => {
+        this.instance.disable(el);
+      });
+    }
   }
 
-  // Очистка DOM-элемента | Cleanup DOM element
+  /**
+   * Clean up DOM elements
+   * Removes dynamic elements and restores original structure
+   */
   cleanup() {
     if (this.instance.$content && this.instance.$hidden) {
       this.instance.el.appendChild(this.instance.$content);

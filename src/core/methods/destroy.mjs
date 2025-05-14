@@ -8,63 +8,69 @@ export default {
       const PrismiumClass = Object.getPrototypeOf(this).constructor;
       const currentEl = this.el;
 
-      // Сохраняем только важные состояния | Save only important states
+      // Save only important states
       const savedState = {
         options: { ...this.options },
         __modules__: new Map(this.__modules__),
       };
 
-      // Проверка подключения элемента | Check if element is connected
+      // Check if element is connected
       if (this.el && !this.el.isConnected) {
         return this;
       }
 
-      // Очистка основного элемента | Clean up main element
+      // Clean up main element
       if (currentEl) {
-        currentEl.classList.remove(
-          'prismium',
-          this.options.activeClass
-        );
-        currentEl.style.removeProperty('--prismium-speed');
+        currentEl.classList.remove('prismium', this.options.activeClass);
+        currentEl.classList.remove('prismium-disabled');
+        currentEl.classList.remove('prismium-initialized');
+        currentEl.style.removeProperty('--pr-speed');
       }
 
-      // Очистка текущего элемента | Clean up current element
+      // Clean up current element
       if (this.$current && this.$current.isConnected) {
         this.$current.classList.remove('prismium__current');
         if (this.$current._clickHandler) {
-          this.$current.removeEventListener('click', this.$current._clickHandler);
+          this.$current.removeEventListener(
+            'click',
+            this.$current._clickHandler
+          );
           delete this.$current._clickHandler;
         }
         delete this.$current._hasClickHandler;
       }
 
-      // Очистка содержимого | Clean up content
+      // Clean up content
       if (this.$content && this.$content.isConnected) {
         this.$content.classList.remove('prismium__content');
         if (this.$content.children && this.$content.children.length > 0) {
-          Array.from(this.$content.children).forEach(child => {
+          Array.from(this.$content.children).forEach((child) => {
             if (child && child.isConnected) {
-              const stylesToRemove = ['transform', 'opacity', 'transition', 'transform-origin'];
-              stylesToRemove.forEach(style => child.style.removeProperty(style));
+              const stylesToRemove = [
+                'transform',
+                'opacity',
+                'transition',
+                'transform-origin',
+              ];
+              stylesToRemove.forEach((style) =>
+                child.style.removeProperty(style)
+              );
             }
           });
         }
       }
 
-      // Очистка иконок | Clean up icons
+      // Clean up icons
       if (this.$icons) {
-        this.$icons.forEach(icon => {
+        this.$icons.forEach((icon) => {
           if (icon && icon.isConnected) {
-            icon.classList.remove(
-              'prismium__icon',
-              'prismium__icon_hidden',
-            );
-            icon.removeEventListener('click', e => e.preventDefault());
+            icon.classList.remove('prismium__icon', 'prismium__icon_hidden');
+            icon.removeEventListener('click', (e) => e.preventDefault());
           }
         });
       }
 
-      // Очистка темы | Clean up theme
+      // Clean up theme
       if (this.el && this.options.theme) {
         const themeClass = `prismium_${this.options.theme}`;
         if (this.el.classList.contains(themeClass)) {
@@ -72,7 +78,7 @@ export default {
         }
       }
 
-      // Очистка менеджеров | Clean up managers
+      // Clean up managers
       if (this.timerManager) {
         this.timerManager.destroy();
         this.timerManager = null;
@@ -85,14 +91,14 @@ export default {
 
       this.iconManager = null;
 
-      // Очистка модулей (без полного удаления) | Clean up modules (without full deletion)
-      this.__modules__.forEach(module => {
+      // Clean up modules (without full deletion)
+      this.__modules__.forEach((module) => {
         if (typeof module.destroy === 'function') {
           module.destroy(this);
         }
       });
 
-      // Очистка ссылок на DOM элементы (кроме this.el) | Clean up references to DOM elements (except this.el)
+      // Clean up references to DOM elements (except this.el)
       this.$current = null;
       this.$content = null;
       this.$hidden = null;
@@ -109,7 +115,7 @@ export default {
       this.options = savedState.options;
       this.__modules__ = savedState.__modules__;
 
-      // Удаляем инстанс из хранилища | Remove instance from storage
+      // Remove instance from storage
       if (currentEl && PrismiumClass) {
         PrismiumClass.__instances__.delete(currentEl);
         this.el = currentEl;
@@ -124,5 +130,5 @@ export default {
     this.emit('afterDestroy');
 
     return this;
-  }
-}
+  },
+};

@@ -1,8 +1,8 @@
 last 15 versions
 > 90%
-Safari >= 14
-ios_saf >= 14
-Opera >= 70
-Chrome >= 80
-Edge >= 80
-Firefox >= 80
+Safari >= 12
+ios_saf >= 12
+Opera >= 56
+Chrome >= 69
+Edge >= 18
+Firefox >= 62

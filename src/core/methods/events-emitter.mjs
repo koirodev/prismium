@@ -1,24 +1,29 @@
 export default {
-  // Регистрация обработчика событий | Register event handler
+  // Register event handler
   on(events, handler, priority) {
     const self = this;
     if (!self.eventsListeners || self.destroyed) return self;
     if (typeof handler !== 'function') return self;
     const method = priority ? 'unshift' : 'push';
-    events.split(' ').forEach((event) => {
+    const eventsArray = Array.isArray(events) ? events : events.split(' ');
+    eventsArray.forEach((event) => {
       if (!self.eventsListeners[event]) self.eventsListeners[event] = [];
       self.eventsListeners[event][method](handler);
     });
     return self;
   },
 
-  // Регистрация одноразового обработчика событий | Register one-time event handler
+  // Register one-time event handler
   once(events, handler, priority) {
     const self = this;
     if (!self.eventsListeners || self.destroyed) return self;
     if (typeof handler !== 'function') return self;
     function onceHandler(...args) {
-      self.off(events, onceHandler);
+      if (Array.isArray(events)) {
+        events.forEach((event) => self.off(event, onceHandler));
+      } else {
+        self.off(events, onceHandler);
+      }
       if (onceHandler.__emitterProxy) {
         delete onceHandler.__emitterProxy;
       }
@@ -56,15 +61,21 @@ export default {
   off(events, handler) {
     const self = this;
     if (!self.eventsListeners || self.destroyed) return self;
-    if (!self.eventsListeners) return self;
-    events.split(' ').forEach((event) => {
+    let eventsArray = [];
+    if (Array.isArray(events)) {
+      eventsArray = events;
+    } else if (typeof events === 'string') {
+      eventsArray = events.split(' ');
+    }
+    eventsArray.forEach((event) => {
       if (typeof handler === 'undefined') {
         self.eventsListeners[event] = [];
       } else if (self.eventsListeners[event]) {
         self.eventsListeners[event].forEach((eventHandler, index) => {
           if (
             eventHandler === handler ||
-            (eventHandler.__emitterProxy && eventHandler.__emitterProxy === handler)
+            (eventHandler.__emitterProxy &&
+              eventHandler.__emitterProxy === handler)
           ) {
             self.eventsListeners[event].splice(index, 1);
           }

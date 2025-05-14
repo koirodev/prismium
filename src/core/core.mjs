@@ -13,7 +13,7 @@ import { publicMethods } from './methods/public-api.mjs';
 
 import defaultOptions from './options.mjs';
 
-// Прототипы методов | Method prototypes
+// Method prototypes
 const prototypes = {
   eventsEmitter,
   actions,
@@ -25,7 +25,9 @@ class Prismium {
   static __modules__ = new Map();
   static __instances__ = new Map();
 
-  // Публичные методы как статические
+  // Public methods as static
+  static init = publicMethods.init;
+  static getInstance = publicMethods.getInstance;
   static open = publicMethods.open;
   static openAll = publicMethods.openAll;
   static openEverything = publicMethods.openEverything;
@@ -33,11 +35,13 @@ class Prismium {
   static closeAll = publicMethods.closeAll;
   static closeEverything = publicMethods.closeEverything;
   static toggle = publicMethods.toggle;
+  static disable = publicMethods.disable;
+  static closeNested = publicMethods.closeNested;
 
-  // Использовать модуль | Use a module
+  // Use a module
   static use(module) {
     if (Array.isArray(module)) {
-      module.forEach(m => this.use(m));
+      module.forEach((m) => this.use(m));
       return this;
     }
 
@@ -50,12 +54,19 @@ class Prismium {
   }
 
   constructor(...args) {
-    let el, options;    
+    let el, options;
 
-    // Проверка аргументов конструктора | Check constructor arguments
-    if (args.length === 1
-      && args[0].constructor
-      && Object.prototype.toString.call(args[0]).slice(8, -1) === 'Object') {
+    // Fix for requestAnimationFrame in old browsers
+    window.requestAnimationFrame = function (callback) {
+      return setTimeout(callback, 0);
+    };
+
+    // Check constructor arguments
+    if (
+      args.length === 1 &&
+      args[0].constructor &&
+      Object.prototype.toString.call(args[0]).slice(8, -1) === 'Object'
+    ) {
       options = args[0];
     } else {
       [el, options] = args;
@@ -75,17 +86,16 @@ class Prismium {
       this.el = options.el;
     }
 
-    // Обработка строкового селектора | Handle string selector
+    // Handle string selector
     if (this.el && typeof this.el === 'string') {
       const elements = document.querySelectorAll(this.el);
-      const prismiumArray = Array.from(elements).map(el => {
-        
-        // Проверяем, есть ли уже инициализированный экземпляр | Check if instance is already initialized
+      const prismiumArray = Array.from(elements).map((el) => {
+        // Check if instance is already initialized
         if (Prismium.__instances__.has(el)) {
           return Prismium.__instances__.get(el);
         }
-        
-        const newOptions = deepMerge({}, options, { el }); // Удаляем init: true | Remove init: true
+
+        const newOptions = deepMerge({}, options, { el }); // Remove init: true
         const instance = new Prismium(newOptions);
         Prismium.__instances__.set(el, instance);
         return instance;
@@ -98,13 +108,19 @@ class Prismium {
           }
 
           const multiInstanceMethods = [
-            'on', 'once', 'onAny', 'off',
-            'offAny', 'emit', 'init', 'destroy',
+            'on',
+            'once',
+            'onAny',
+            'off',
+            'offAny',
+            'emit',
+            'init',
+            'destroy',
           ];
 
           if (multiInstanceMethods.includes(prop)) {
             return (...args) => {
-              const results = target.map(instance => {
+              const results = target.map((instance) => {
                 return instance[prop].apply(instance, args);
               });
               return target;
@@ -116,7 +132,7 @@ class Prismium {
           }
 
           return target[0][prop];
-        }
+        },
       });
     }
 
@@ -126,7 +142,17 @@ class Prismium {
     this.eventsAnyListeners = [];
     this.__modules__ = new Map();
 
-    // Регистрация событий | Register events
+    if (this.options.modules) {
+      if (Array.isArray(this.options.modules)) {
+        this.options.modules.forEach((module) => {
+          if (typeof module === 'object' && module.name) {
+            this.constructor.use(module);
+          }
+        });
+      }
+    }
+
+    // Register events
     if (this.options && this.options.on) {
       Object.keys(this.options.on).forEach((eventName) => {
         this.on(eventName, this.options.on[eventName]);
@@ -138,13 +164,14 @@ class Prismium {
 
     this.destroyed = false;
     this.initialized = false;
-    this.opened = false;
+    this.opened = this.options.opened || false;
+    this.disabled = this.options.disabled || false;
 
     this.domManager = new DOMManager();
     this.iconManager = new IconManager();
     this.timerManager = new TimerManager();
 
-    // Установка модулей перед монтированием и инициализацией | Setup modules before mounting and initializing
+    // Setup modules before mounting and initializing
     const moduleSetupPromise = Promise.resolve().then(() => {
       Prismium.__modules__.forEach((module, name) => {
         if (typeof module.install === 'function') {
@@ -157,22 +184,22 @@ class Prismium {
         }
       });
 
-      // Монтирование элемента только если указан el | Mount element only if el is specified
+      // Mount element only if el is specified
       if (this.options.el) {
         this.mount(this.options.el);
       }
 
-      // Инициализация только после установки модулей | Initialize only after modules are installed
+      // Initialize only after modules are installed
       if (this.options.init === true) {
         this.init();
       }
     });
 
-    // Сохраняем промис для возможной проверки завершения инициализации | Save promise for possible initialization check
+    // Save promise for possible initialization check
     this.__initPromise = moduleSetupPromise;
   }
 
-  // Монтирование элемента | Mount element
+  // Mount element
   mount(el) {
     if (!el) {
       throw new PrismiumError('Element is required');
@@ -185,7 +212,9 @@ class Prismium {
     if (typeof el === 'string') {
       const elements = document.querySelectorAll(el);
       if (elements.length > 1) {
-        return Array.from(elements).map(el => new this.constructor({ ...this.options, el }));
+        return Array.from(elements).map(
+          (el) => new this.constructor({ ...this.options, el })
+        );
       }
       el = elements[0];
     }
@@ -194,7 +223,7 @@ class Prismium {
     return this;
   }
 
-  // Инициализация | Initialization
+  // Initialization
   init(el = this.el) {
     if (this.initialized) {
       return `this`;
@@ -211,15 +240,15 @@ class Prismium {
     this.destroyed = false;
     this.emit('beforeInit');
 
-    // Проверяем существующий экземпляр
-    const existingInstance = Prismium.__instances__.get(el) || this.getInstance(el);
+    const existingInstance =
+      Prismium.__instances__.get(el) || this.getInstance(el);
     if (existingInstance) {
       if (existingInstance.destroyed) {
         Object.assign(this, {
           options: existingInstance.options,
           eventsListeners: existingInstance.eventsListeners,
           eventsAnyListeners: existingInstance.eventsAnyListeners,
-          __modules__: existingInstance.__modules__
+          __modules__: existingInstance.__modules__,
         });
 
         Prismium.__instances__.set(el, this);
@@ -233,12 +262,12 @@ class Prismium {
       this.iconManager = new IconManager();
       this.timerManager = new TimerManager();
 
-      // Восстанавливаем опции если они были очищены | Restore options if they were cleared
+      // Restore options if they were cleared
       if (!this.options) {
         this.options = { ...defaultOptions };
       }
 
-      // Восстанавливаем слушатели событий если они были уничтожены | Restore event listeners if they were destroyed
+      // Restore event listeners if they were destroyed
       if (!this.eventsListeners) {
         this.eventsListeners = {};
       }
@@ -246,26 +275,26 @@ class Prismium {
         this.eventsAnyListeners = [];
       }
 
-      // Если это существующий экземпляр, восстанавливаем его слушатели | If it's an existing instance, restore its listeners
+      // If it's an existing instance, restore its listeners
       const existingInstance = this.getInstance(el);
       if (existingInstance && existingInstance.eventsListeners) {
         this.eventsListeners = { ...existingInstance.eventsListeners };
         this.eventsAnyListeners = [...existingInstance.eventsAnyListeners];
       }
 
-      // Монтируем элемент | Mount element
+      // Mount element
       if (!this.el || this.el !== el) {
         this.mount(el);
       }
 
-      // Настройка элемента | Setup element
+      // Setup element
       el.classList.add('prismium');
 
       if (this.options.theme) {
         el.classList.add(`prismium_${this.options.theme}`);
       }
 
-      // Инициализация DOM и менеджеров | Initialize DOM and managers
+      // Initialize DOM and managers
       this.domManager.setup(this, el);
 
       if (this.$current) {
@@ -280,8 +309,8 @@ class Prismium {
         this.setupSpeed(this.options.speed.open, this.options.speed.close);
       }
 
-      // Инициализация модулей | Initialize modules
-      this.__modules__.forEach(module => {
+      // Initialize modules
+      this.__modules__.forEach((module) => {
         if (typeof module.init === 'function') {
           module.init(this);
         }
@@ -302,15 +331,15 @@ class Prismium {
     return this;
   }
 
-  // Настройка скорости | Setup speed
+  // Setup speed
   setupSpeed(open, close) {
     this.speed = {
       open: open >= 0 ? open : 350,
-      close: close >= 0 ? close : (open >= 0 ? open : 350)
+      close: close >= 0 ? close : open >= 0 ? open : 350,
     };
   }
 
-  // Получить экземпляр | Get instance
+  // Get instance
   getInstance(el) {
     if (!el) return null;
 
@@ -321,7 +350,7 @@ class Prismium {
     return el.prismium;
   }
 
-  // Привязка событий | Bind events
+  // Bind events
   bindEvents(el) {
     if (this.$current && !this.$current._hasClickHandler) {
       const handler = (event) => {
@@ -338,20 +367,21 @@ class Prismium {
   }
 }
 
-// Добавление методов в прототип | Add methods to prototype
+// Add methods to prototype
 Object.keys(prototypes).forEach((prototypeGroup) => {
   Object.keys(prototypes[prototypeGroup]).forEach((protoMethod) => {
     Prismium.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
   });
 });
 
-// Добавление статических методов в глобальный объект | Add static methods to global object
+// Add static methods to global object
 globalThis.Prismium = Prismium;
 Object.assign(globalThis.Prismium, {
   openAll: Prismium.openAll.bind(Prismium),
   closeAll: Prismium.closeAll.bind(Prismium),
   openEverything: Prismium.openEverything.bind(Prismium),
-  closeEverything: Prismium.closeEverything.bind(Prismium)
+  closeEverything: Prismium.closeEverything.bind(Prismium),
+  disable: Prismium.disable.bind(Prismium),
 });
 
 export default Prismium;

@@ -3,11 +3,32 @@
   "version": "@version",
   "description": "@description",
   "type": "module",
+  "main": "./prismium-core.mjs",
+  "module": "./prismium-core.mjs",
+  "types": "./types/index.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": ["./types/index.d.ts"],
+      "core": ["./types/core.d.ts"],
+      "ui": ["./types/index.d.ts"],
+      "react": ["./types/react.d.ts"],
+      "vue": ["./types/vue.d.ts"]
+    }
+  },
   "exports": {
-    ".": "./prismium-core.mjs",
-    "./ui": "./prismium-ui.mjs",
-
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./prismium-core.mjs"
+    },
+    "./bundle": {
+      "types": "./types/index.d.ts",
+      "import": "./prismium-bundle.mjs"
+    },
     "./css": "./prismium.css",
+    "./css/bundle": "./prismium-bundle.css",
+
+    "./scss": "./prismium.scss",
+    "./scss/bundle": "./prismium-bundle.scss",
 
     "./theme/light": "./themes/light.css",
     "./theme/dark": "./themes/dark.css",
@@ -19,15 +40,21 @@
 
     "./modules": "./modules/index.mjs",
 
-    "./react": "./react/index.mjs",
+    "./react": {
+      "types": "./types/react.d.ts",
+      "import": "./react/index.mjs"
+    },
     
-    "./vue": "./vue/index.mjs"
+    "./vue": {
+      "types": "./types/vue.d.ts",
+      "import": "./vue/index.mjs"
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/koirodev/prismium.git"
   },
-  "keywords": "@keywords",
+  "keywords": @keywords,
   "author": "@author",
   "license": "MIT",
   "bugs": {

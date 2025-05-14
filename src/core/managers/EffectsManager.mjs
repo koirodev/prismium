@@ -1,35 +1,55 @@
+/**
+ * Effects Manager for Prismium
+ * Handles animation effects for accordion content
+ */
 export class EffectsManager {
-  // Применение эффекта | Apply effect
+  /**
+   * Apply animation effect based on instance options
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyEffect(instance, isOpening) {
     if (!instance.$content) return;
 
     const effectMap = {
       'line-by-line': this.#applyLineByLineEffect,
       'fade-scale': this.#applyFadeScaleEffect,
-      'slide': this.#applySlideEffect,
-      'stagger': this.#applyStaggerEffect,
-      'wave': this.#applyWaveEffect,
-      'flip': this.#applyFlipEffect,
-      'zoom': this.#applyZoomEffect,
-      'cascade': this.#applyCascadeEffect,
-      'custom': this.#applyCustomEffect,
+      slide: this.#applySlideEffect,
+      stagger: this.#applyStaggerEffect,
+      wave: this.#applyWaveEffect,
+      flip: this.#applyFlipEffect,
+      zoom: this.#applyZoomEffect,
+      cascade: this.#applyCascadeEffect,
+      custom: this.#applyCustomEffect,
     };
 
     const effect = effectMap[instance.options.effect];
     effect?.call(this, instance, isOpening);
   }
 
-  // Применение эффектов при открытии | Apply open effects
+  /**
+   * Apply effects when opening the accordion
+   * @param {import('../../types/core').default} instance - Prismium instance
+   */
   applyOpenEffects(instance) {
     this.#applyEffect(instance, true);
   }
 
-  // Применение эффектов при закрытии | Apply close effects
+  /**
+   * Apply effects when closing the accordion
+   * @param {import('../../types/core').default} instance - Prismium instance
+   */
   applyCloseEffects(instance) {
     this.#applyEffect(instance, false);
   }
 
-  // Получение отфильтрованных дочерних элементов | Get filtered children
+  /**
+   * Get filtered children elements for animation
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @returns {Element[]} Filtered child elements
+   * @private
+   */
   #getFilteredChildren(instance) {
     let childrenSelectors, ignoreSelectors;
 
@@ -45,10 +65,12 @@ export class EffectsManager {
     if (childrenSelectors[0]) {
       children = childrenSelectors.reduce((acc, selector) => {
         if (selector) {
-          const elements = Array.from(instance.$content.querySelectorAll(selector));
-          elements.forEach(el => {
-            const isNested = ignoreSelectors.some(ignoreSelector =>
-              ignoreSelector && el.closest(ignoreSelector)
+          const elements = Array.from(
+            instance.$content.querySelectorAll(selector)
+          );
+          elements.forEach((el) => {
+            const isNested = ignoreSelectors.some(
+              (ignoreSelector) => ignoreSelector && el.closest(ignoreSelector)
             );
             if (!isNested) {
               acc.push(el);
@@ -61,14 +83,19 @@ export class EffectsManager {
       children = Array.from(instance.$content.children);
     }
 
-    return children.filter(child =>
-      !ignoreSelectors.some(selector =>
-        selector && child.matches(selector)
-      )
+    return children.filter(
+      (child) =>
+        !ignoreSelectors.some((selector) => selector && child.matches(selector))
     );
   }
 
-  // Применение эффекта 'line-by-line' | Apply 'line-by-line' effect
+  /**
+   * Apply line-by-line animation effect
+   * Shows elements one by one with translation and opacity
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyLineByLineEffect(instance, isOpening) {
     const defaults = {
       speed: 350,
@@ -77,7 +104,7 @@ export class EffectsManager {
       scale: 0.95,
       y: 30,
       x: 0,
-      opacity: 0
+      opacity: 0,
     };
 
     const options = { ...defaults, ...instance.options.effectLineByLine };
@@ -94,7 +121,7 @@ export class EffectsManager {
 
     if (isOpening) {
       // Настраиваем начальное состояние | Setup initial state
-      children.forEach(child => {
+      children.forEach((child) => {
         child.style.transform = `translate(${options.x}, ${options.y}) scale(${options.scale})`;
         child.style.opacity = options.opacity;
       });
@@ -102,8 +129,7 @@ export class EffectsManager {
       // Запускаем анимацию с задержкой | Start animation with delay
       requestAnimationFrame(() => {
         children.forEach((child, i) => {
-          child.style.transition =
-            `transform ${options.speed}ms ${options.easing}, 
+          child.style.transition = `transform ${options.speed}ms ${options.easing}, 
              opacity ${options.speed}ms ${options.easing}`;
           child.style.transitionDelay = `${options.delay * i}ms`;
           child.style.transform = 'translate(0,0) scale(1)';
@@ -114,8 +140,7 @@ export class EffectsManager {
       // Анимация закрытия | Closing animation
       children.forEach((child, i) => {
         const reverseIndex = children.length - 1 - i;
-        child.style.transition =
-          `transform ${options.speed}ms ${options.easing}, 
+        child.style.transition = `transform ${options.speed}ms ${options.easing}, 
            opacity ${options.speed}ms ${options.easing}`;
         child.style.transitionDelay = `${options.delay * reverseIndex}ms`;
         child.style.transform = `translate(${options.x}, ${options.y}) scale(${options.scale})`;
@@ -127,11 +152,12 @@ export class EffectsManager {
     const maxDelay = options.delay * (children.length - 1) + options.speed;
 
     // Очищаем предыдущий таймер если есть | Clear previous timer if exists
-    instance.__cleanupTimer && instance.timerManager.clearTimeout(instance.__cleanupTimer);
+    instance.__cleanupTimer &&
+      instance.timerManager.clearTimeout(instance.__cleanupTimer);
 
     // Устанавливаем новый таймер | Set new timer
     instance.__cleanupTimer = instance.timerManager.setTimeout(() => {
-      children.forEach(child => {
+      children.forEach((child) => {
         child.style.transition = '';
         if (isOpening) {
           child.style.transform = '';
@@ -141,29 +167,38 @@ export class EffectsManager {
     }, maxDelay);
   }
 
-  // Применение эффекта 'fade-scale' | Apply 'fade-scale' effect
+  /**
+   * Apply fade-scale animation effect
+   * Fades and scales elements simultaneously
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyFadeScaleEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 400,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       scale: 0.9,
-      opacity: 0
+      opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectFadeScale };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
     // Сбрасываем стили перед анимацией | Reset styles before animation
-    children.forEach(child => {
+    children.forEach((child) => {
       child.style.transition = 'none';
-      child.style.transform = isOpening ? `scale(${options.scale})` : 'scale(1)';
+      child.style.transform = isOpening
+        ? `scale(${options.scale})`
+        : 'scale(1)';
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
     // Форсируем reflow | Force reflow
     instance.$content.offsetHeight;
 
-    children.forEach(child => {
+    children.forEach((child) => {
       child.style.transition = `transform ${options.speed}ms ${options.easing}, 
                               opacity ${options.speed}ms ${options.easing}`;
 
@@ -181,14 +216,20 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'slide' | Apply 'slide' effect
+  /**
+   * Apply slide animation effect
+   * Slides elements from a specified direction
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applySlideEffect(instance, isOpening) {
     const defaults = {
       speed: 400,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       direction: 'up',
       distance: 30,
-      opacity: 0
+      opacity: 0,
     };
 
     const options = { ...defaults, ...instance.options.effectSlide };
@@ -196,30 +237,38 @@ export class EffectsManager {
     if (!children.length) return;
 
     // Обрабатываем options | Process options
-    if (typeof options.distance === 'number') options.distance = `${options.distance}px`;
+    if (typeof options.distance === 'number')
+      options.distance = `${options.distance}px`;
 
     // Определяем трансформацию в зависимости от направления | Define transform based on direction
     const getTransform = (direction, distance) => {
       switch (direction) {
-        case 'up': return `translateY(${distance})`;
-        case 'down': return `translateY(-${distance})`;
-        case 'left': return `translateX(${distance})`;
-        case 'right': return `translateX(-${distance})`;
-        default: return `translateY(${distance})`;
+        case 'up':
+          return `translateY(${distance})`;
+        case 'down':
+          return `translateY(-${distance})`;
+        case 'left':
+          return `translateX(${distance})`;
+        case 'right':
+          return `translateX(-${distance})`;
+        default:
+          return `translateY(${distance})`;
       }
     };
 
     // Сбрасываем стили перед анимацией | Reset styles before animation
-    children.forEach(child => {
+    children.forEach((child) => {
       child.style.transition = 'none';
-      child.style.transform = isOpening ? getTransform(options.direction, options.distance) : 'translate(0)';
+      child.style.transform = isOpening
+        ? getTransform(options.direction, options.distance)
+        : 'translate(0)';
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
     // Форсируем reflow | Force reflow
     instance.$content.offsetHeight;
 
-    children.forEach(child => {
+    children.forEach((child) => {
       child.style.transition = `transform ${options.speed}ms ${options.easing}, 
                               opacity ${options.speed}ms ${options.easing}`;
 
@@ -230,29 +279,40 @@ export class EffectsManager {
         });
       } else {
         requestAnimationFrame(() => {
-          child.style.transform = getTransform(options.direction, options.distance);
+          child.style.transform = getTransform(
+            options.direction,
+            options.distance
+          );
           child.style.opacity = options.opacity;
         });
       }
     });
   }
 
-  // Применение эффекта 'stagger' | Apply 'stagger' effect
+  /**
+   * Apply stagger animation effect
+   * Animates elements from different directions
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyStaggerEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 400,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       delay: 50,
       directions: ['up', 'right', 'down', 'left'],
       distance: 30,
-      opacity: 0
+      opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectStagger };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
     // Обрабатываем options | Process options
-    if (typeof options.distance === 'number') options.distance = `${options.distance}px`;
+    if (typeof options.distance === 'number')
+      options.distance = `${options.distance}px`;
 
     // Сбрасываем стили перед анимацией | Reset styles before animation
     children.forEach((child, i) => {
@@ -260,10 +320,18 @@ export class EffectsManager {
       let transform;
 
       switch (direction) {
-        case 'up': transform = `translateY(${options.distance})`; break;
-        case 'right': transform = `translateX(-${options.distance})`; break;
-        case 'down': transform = `translateY(-${options.distance})`; break;
-        case 'left': transform = `translateX(${options.distance})`; break;
+        case 'up':
+          transform = `translateY(${options.distance})`;
+          break;
+        case 'right':
+          transform = `translateX(-${options.distance})`;
+          break;
+        case 'down':
+          transform = `translateY(-${options.distance})`;
+          break;
+        case 'left':
+          transform = `translateX(${options.distance})`;
+          break;
       }
 
       child.style.transition = 'none';
@@ -279,10 +347,18 @@ export class EffectsManager {
       let transform;
 
       switch (direction) {
-        case 'up': transform = `translateY(${options.distance})`; break;
-        case 'right': transform = `translateX(-${options.distance})`; break;
-        case 'down': transform = `translateY(-${options.distance})`; break;
-        case 'left': transform = `translateX(${options.distance})`; break;
+        case 'up':
+          transform = `translateY(${options.distance})`;
+          break;
+        case 'right':
+          transform = `translateX(-${options.distance})`;
+          break;
+        case 'down':
+          transform = `translateY(-${options.distance})`;
+          break;
+        case 'left':
+          transform = `translateX(${options.distance})`;
+          break;
       }
 
       child.style.transition = `transform ${options.speed}ms ${options.easing}, 
@@ -303,22 +379,30 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'wave' | Apply 'wave' effect
+  /**
+   * Apply wave animation effect
+   * Creates a wave-like animation pattern
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyWaveEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 400,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       delay: 30,
       amplitude: 20,
       frequency: 2,
-      opacity: 0
+      opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectWave };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
     // Обрабатываем options | Process options
-    if (typeof options.amplitude === 'number') options.amplitude = `${options.amplitude}px`;
+    if (typeof options.amplitude === 'number')
+      options.amplitude = `${options.amplitude}px`;
 
     // Сбрасываем стили перед анимацией | Reset styles before animation
     children.forEach((child, i) => {
@@ -326,7 +410,9 @@ export class EffectsManager {
       const y = Math.sin(phase) * parseInt(options.amplitude);
 
       child.style.transition = 'none';
-      child.style.transform = isOpening ? `translateY(${y}px)` : 'translateY(0)';
+      child.style.transform = isOpening
+        ? `translateY(${y}px)`
+        : 'translateY(0)';
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
@@ -355,29 +441,42 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'flip' | Apply 'flip' effect
+  /**
+   * Apply flip animation effect
+   * Flips elements in 3D space
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyFlipEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 600,
       easing: 'cubic-bezier(.25,.1,.25,1)',
       delay: 50,
       perspective: 1000,
       rotation: 90,
-      opacity: 0
+      opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectFlip };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
     // Обрабатываем options | Process options
-    if (typeof options.perspective === 'number') options.perspective = `${options.perspective}px`;
+    if (typeof options.perspective === 'number')
+      options.perspective = `${options.perspective}px`;
+
+    if (typeof options.rotation === 'number')
+      options.rotation = `${options.rotation}deg`;
 
     instance.$content.style.perspective = options.perspective;
 
     // Сбрасываем стили перед анимацией | Reset styles before animation
     children.forEach((child, i) => {
       child.style.transition = 'none';
-      child.style.transform = isOpening ? `rotateX(${options.rotation}deg)` : 'rotateX(0)';
+      child.style.transform = isOpening
+        ? `rotateX(${options.rotation})`
+        : 'rotateX(0)';
       child.style.opacity = isOpening ? options.opacity : '1';
     });
 
@@ -403,17 +502,30 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'zoom' | Apply 'zoom' effect
+  /**
+   * Apply zoom animation effect
+   * Zooms elements from different origins
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyZoomEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 500,
       easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
       delay: 50,
       scale: 0.1,
       opacity: 0,
-      origins: ['top left', 'top right', 'bottom left', 'bottom right', 'center']
+      origins: [
+        'top left',
+        'top right',
+        'bottom left',
+        'bottom right',
+        'center',
+      ],
     };
 
+    const options = { ...defaults, ...instance.options.effectZoom };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
@@ -445,22 +557,30 @@ export class EffectsManager {
     });
   }
 
-  // Применение эффекта 'cascade' | Apply 'cascade' effect
+  /**
+   * Apply cascade animation effect
+   * Creates a cascading animation with rotation
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyCascadeEffect(instance, isOpening) {
-    const options = {
+    const defaults = {
       speed: 600,
       easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
       delay: 100,
       rotation: 15,
       distance: 50,
-      opacity: 0
+      opacity: 0,
     };
 
+    const options = { ...defaults, ...instance.options.effectCascade };
     const children = this.#getFilteredChildren(instance);
     if (!children.length) return;
 
     // Обрабатываем options | Process options
-    if (typeof options.distance === 'number') options.distance = `${options.distance}px`;
+    if (typeof options.distance === 'number')
+      options.distance = `${options.distance}px`;
 
     children.forEach((child, i) => {
       child.style.transition = 'none';
@@ -490,27 +610,43 @@ export class EffectsManager {
     });
   }
 
-  // Применение кастомного эффекта | Apply custom effect
+  /**
+   * Apply custom animation effect
+   * Allows for custom user-defined animations
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @param {boolean} isOpening - Whether accordion is opening
+   * @private
+   */
   #applyCustomEffect(instance, isOpening) {
     const defaults = {
       speed: 400,
-      easing: 'cubic-bezier(.25,.1,.25,1)',
       delay: 50,
       setup: null,
       open: null,
       close: null,
-      cleanup: null
+      cleanup: null,
     };
 
     const options = { ...defaults, ...instance.options.effectCustom };
     const children = this.#getFilteredChildren(instance);
+
+    if (!instance.effect) {
+      instance.effect = {};
+    }
+
+    const instanceEffect = instance.effect;
+
+    if (!instanceEffect.speed || !instanceEffect.delay) {
+      instanceEffect.speed = options.speed;
+      instanceEffect.delay = options.delay;
+    }
 
     if (!children.length) return;
 
     // Применяем начальную настройку если есть | Apply setup if exists
     if (typeof options.setup === 'function') {
       children.forEach((child, i) => {
-        options.setup(child, i, children.length, isOpening);
+        options.setup(instance, child, i, children.length, isOpening);
       });
     }
 
@@ -522,7 +658,7 @@ export class EffectsManager {
       const animate = isOpening ? options.open : options.close;
       if (typeof animate === 'function') {
         requestAnimationFrame(() => {
-          animate(child, i, children.length);
+          animate(instance, child, i, children.length);
         });
       }
     });
@@ -531,16 +667,21 @@ export class EffectsManager {
     if (typeof options.cleanup === 'function') {
       const maxDelay = options.delay * (children.length - 1) + options.speed;
 
-      instance.__cleanupTimer && instance.timerManager.clearTimeout(instance.__cleanupTimer);
+      instance.__cleanupTimer &&
+        instance.timerManager.clearTimeout(instance.__cleanupTimer);
       instance.__cleanupTimer = instance.timerManager.setTimeout(() => {
         children.forEach((child, i) => {
-          options.cleanup(child, i, children.length, isOpening);
+          options.cleanup(instance, child, i, children.length, isOpening);
         });
       }, maxDelay);
     }
   }
 
-  // Получение длительности эффектов | Get effects duration
+  /**
+   * Calculate total animation duration for the current effect
+   * @param {import('../../types/core').default} instance - Prismium instance
+   * @returns {number} Total animation duration in milliseconds
+   */
   getEffectsDuration(instance) {
     if (!instance.$content || !instance.options.effect) return 0;
 
@@ -549,8 +690,10 @@ export class EffectsManager {
 
     switch (instance.options.effect) {
       case 'line-by-line':
-        return (instance.options.effectLineByLine?.delay || 30) * lastIndex +
-          (instance.options.effectLineByLine?.speed || 350);
+        return (
+          (instance.options.effectLineByLine?.delay || 30) * lastIndex +
+          (instance.options.effectLineByLine?.speed || 350)
+        );
       case 'stagger':
         return (instance.options.effectStagger?.delay || 50) * lastIndex + 400;
       case 'wave':
@@ -559,7 +702,7 @@ export class EffectsManager {
         return (instance.options.effectFlip?.delay || 50) * lastIndex + 600;
       case 'slide':
       case 'slide-up':
-        return (instance.options.effectSlide?.speed || 400);
+        return instance.options.effectSlide?.speed || 400;
       case 'fade-scale':
         return 400;
       case 'zoom':

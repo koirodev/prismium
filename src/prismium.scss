@@ -1,1 +1,215 @@
-@import "core/core";
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+:root {
+  --pr-anim-duration: 0.35s;
+  --pr-anim-ease: cubic-bezier(0.36, 0.3, 0, 1);
+  --pr-bg: transparent;
+  --pr-bg-active: transparent;
+  --pr-bg-active-nested: transparent;
+  --pr-bg-hover: transparent;
+  --pr-border-color: transparent;
+  --pr-border-radius: 0;
+  --pr-border-width: 0;
+  --pr-content-color: inherit;
+  --pr-content-font: inherit;
+  --pr-content-gap: 0;
+  --pr-content-offset: 0;
+  --pr-current-color: inherit;
+  --pr-current-font: inherit;
+  --pr-current-gap: 0;
+  --pr-gap: 0;
+  --pr-icon-color: inherit;
+  --pr-icon-color-hover: inherit;
+  --pr-icon-size: unset;
+  --pr-padding: 0;
+}
+
+.prismium {
+  margin-top: var(--pr-gap);
+
+  padding: var(--pr-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  color: var(--pr-current-color);
+  font: var(--pr-current-font);
+
+  background-color: var(--pr-bg);
+  border: solid var(--pr-border-width) var(--pr-border-color);
+  border-radius: var(--pr-border-radius);
+
+  transition: background-color calc(var(--pr-anim-duration) * 2)
+    var(--pr-anim-ease);
+
+  @include hover {
+    &:not(.prismium-disabled) {
+      background-color: var(--pr-bg-hover);
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &__current {
+    position: relative;
+    margin: 0;
+
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pr-current-gap);
+
+    color: inherit;
+    font: inherit;
+    text-align: start;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    &:disabled {
+      opacity: 0.6;
+
+      cursor: not-allowed;
+
+      .prismium__icon {
+        fill: var(--pr-icon-color);
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+
+    width: var(--pr-icon-size);
+    height: var(--pr-icon-size);
+    flex-shrink: 0;
+
+    fill: var(--pr-icon-color);
+
+    transition: transform var(--pr-speed) var(--pr-anim-ease),
+      fill var(--pr-anim-duration) var(--pr-anim-ease);
+
+    pointer-events: all;
+
+    @include hover {
+      fill: var(--pr-icon-color-hover);
+    }
+
+    &_hidden {
+      position: absolute;
+      margin: -1px;
+
+      padding: 0;
+      width: 0 !important;
+      height: 0 !important;
+
+      border: 0;
+      overflow: hidden;
+
+      pointer-events: none;
+      user-select: none;
+      clip: rect(0 0 0 0);
+    }
+  }
+
+  &__hidden {
+    padding-top: 0;
+    width: 100%;
+    max-height: 0;
+    display: block;
+    box-sizing: content-box;
+
+    overflow: hidden;
+    will-change: max-height;
+
+    transition: max-height var(--pr-speed) var(--pr-anim-ease);
+
+    &.prismium-opened {
+      max-height: unset;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    padding-top: var(--pr-content-offset);
+    width: 100%;
+    height: fit-content;
+
+    color: var(--pr-content-color);
+    font: var(--pr-content-font);
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: calc(var(--pr-content-offset, 20px) / 2);
+      right: 0;
+
+      width: 0;
+      height: var(--pr-border-width);
+
+      background-color: var(--pr-border-color);
+
+      transition: width var(--pr-anim-duration) var(--pr-anim-ease);
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    > * + .prismium:first-of-type {
+      margin-top: calc(var(--pr-gap) * 2);
+    }
+
+    .prismium {
+      margin-top: var(--pr-gap);
+    }
+  }
+
+  &.prismium-active {
+    > .prismium__current {
+      > .prismium__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .prismium__content {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    .prismium-active {
+      background-color: var(--pr-bg-active-nested);
+    }
+  }
+
+  &.prismium-disabled {
+    > .prismium__current {
+      opacity: 0.6;
+
+      cursor: not-allowed;
+    }
+  }
+}

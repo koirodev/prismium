@@ -10,10 +10,17 @@
   </a>
 </div>
 
-Prismium
-========
+# Prismium
 
-Modern JavaScript UI component library featuring smooth animated accordions, filters, dropdowns and tooltips. Seamlessly integrates with React, Vue and vanilla JavaScript.
+A simple and powerful tool for creating beautiful, responsive accordions with support for Vue, React, and Vanilla JavaScript.
 
-<h3 style="color: red;">ATTENTION!</h3>
-This is a <b style="color: red;">beta version</b>! There is only an accordion module and effects for it!
+Prismium allows you to create the most modern accordion in just a few clicks, which will suit any design (since you can decide for yourself how it will look, or use preset themes).
+
+## Getting Started
+
+- [Getting Started Guide](https://prismify.in/get-started/)
+- [API](https://prismify.in/core/)
+- [React Docs](https://prismify.in/react/)
+- [Vue Docs](https://prismify.in/vue/)
+- [Constructor](https://prismify.in/constructor/) (in development)
+- [Demo](https://prismify.in/demos/) (in development)

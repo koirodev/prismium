@@ -1,6 +1,10 @@
 import { isNode, isObject } from './is.mjs';
 
-// Глубокое слияние объектов | Deep merge objects
+/**
+ * @description Deep merge objects
+ * @param {...object} sources - Objects to merge
+ * @returns {object} Merged object
+ */
 export function deepMerge(...sources) {
   const [target, ...rest] = sources;
   const PROTECTED_KEYS = ['__proto__', 'constructor', 'prototype'];
@@ -10,8 +14,9 @@ export function deepMerge(...sources) {
   for (const source of rest) {
     if (!source || isNode(source)) continue;
 
-    const keys = Object.keys(Object(source))
-      .filter(key => !PROTECTED_KEYS.includes(key));
+    const keys = Object.keys(Object(source)).filter(
+      (key) => !PROTECTED_KEYS.includes(key)
+    );
 
     for (const key of keys) {
       const descriptor = Object.getOwnPropertyDescriptor(source, key);

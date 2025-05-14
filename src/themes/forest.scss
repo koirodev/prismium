@@ -1,154 +1,22 @@
-@import "../core/scss/_mixins.scss";
-
-.prismium_forest {
-  --prismium-background-color-active: #d8eecc;
-  --prismium-background-color-active-nested: #61ff051c;
-  --prismium-background-color-disabled: #8fa890;
-  --prismium-background-color-hover: #e8f0e8;
-  --prismium-background-color-primary: #f5faf5;
-  --prismium-border-color-primary: #7a917a;
-  --prismium-border-radius: 4px;
-  --prismium-border-width: 1px;
-  --prismium-content-gap: 20px;
-  --prismium-content-offset: 20px;
-  --prismium-current-gap: 20px;
-  --prismium-font-primary: 500 20px/1.2 sans-serif;
-  --prismium-font-secondary: 500 16px/1.2 sans-serif;
-  --prismium-gap: 10px;
-  --prismium-icon-color-hover: var(--prismium-link-color-primary);
-  --prismium-icon-color-primary: var(--prismium-text-color-primary);
-  --prismium-icon-size: 24px;
-  --prismium-link-color-hover: #1c3f26;
-  --prismium-link-color-primary: #1b4d29;
-  --prismium-link-decoration: underline;
-  --prismium-padding: 12px;
-  --prismium-text-color-primary: #1a291e;
-  --prismium-text-color-secondary: #415445;
-
-  margin-top: var(--prismium-gap);
-
-  padding: var(--prismium-padding);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  color: var(--prismium-text-color-primary);
-  font: var(--prismium-font-primary);
-
-  background-color: var(--prismium-background-color-primary);
-  border: solid var(--prismium-border-width) var(--prismium-border-color-primary);
-  border-radius: var(--prismium-border-radius);
-
-  transition: background-color calc(var(--prismium-speed) * 2) var(--prismium-ease);
-
-  @media (any-hover: hover) {
-    &:has(> .prismium__current:hover:not(:disabled)) {
-      background-color: var(--prismium-background-color-hover);
-    }
-  }
-
-  &:first-of-type {
-    margin-top: 0;
-  }
-
-  &.js-prismium-active {
-    background-color: var(--prismium-background-color-active);
-
-    & .prismium__content {
-      &::before {
-        width: 100%;
-      }
-    }
-
-    & .js-prismium-active {
-      background-color: var(--prismium-background-color-active-nested);
-    }
-  }
-
-  & a[href] {
-    color: var(--prismium-link-color-primary);
-    text-decoration-color: inherit;
-    text-decoration-line: var(--prismium-link-decoration);
-    text-decoration-style: var(--contacts-link-decoration);
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: 1px;
-    text-underline-position: from-font;
-
-    transition: color var(--prismium-speed) var(--prismium-ease);
-
-    @include hover {
-      color: var(--prismium-link-color-hover);
-    }
-  }
-
-  & .prismium {
-    &__current {
-      margin: 0;
-
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: flex-start;
-      gap: var(--prismium-current-gap);
-
-      color: inherit;
-      font: inherit;
-      text-align: start;
-
-      &:disabled {
-        opacity: 0.6;
-
-        cursor: not-allowed;
-
-        & .prismium__icon {
-          fill: var(--prismium-icon-color-primary);
-        }
-      }
-    }
-
-    &__icon {
-      width: var(--prismium-icon-size);
-      height: var(--prismium-icon-size);
-      flex-shrink: 0;
-
-      fill: var(--prismium-icon-color-primary);
-
-      @include hover {
-        fill: var(--prismium-icon-color-hover);
-      }
-    }
-
-    &__content {
-      position: relative;
-
-      padding-top: var(--prismium-content-offset);
-
-      color: var(--prismium-text-color-secondary);
-      font: var(--prismium-font-secondary);
-
-      &::before {
-        content: "";
-
-        position: absolute;
-        top: calc(var(--prismium-content-offset, 20px) / 2);
-        right: 0;
-
-        width: 0;
-        height: var(--prismium-border-width);
-
-        background-color: var(--prismium-border-color-primary);
-
-        transition: width var(--prismium-speed) var(--prismium-ease);
-      }
-
-      & > * + .prismium:first-of-type {
-        margin-top: calc(var(--prismium-gap) * 2);
-      }
-
-      & .prismium {
-        margin-top: var(--prismium-gap);
-      }
-    }
-  }
+.prismium.prismium_forest {
+  --pr-bg-active: #d8eecc;
+  --pr-bg-active-nested: #61ff051c;
+  --pr-bg-hover: #e8f0e8;
+  --pr-bg: #f5faf5;
+  --pr-border-color: #7a917a;
+  --pr-border-radius: 2px;
+  --pr-border-width: 1px;
+  --pr-content-gap: 20px;
+  --pr-content-offset: 20px;
+  --pr-current-gap: 20px;
+  --pr-anim-duration: 0.35s;
+  --pr-current-font: 500 20px/1.2 sans-serif;
+  --pr-content-font: 500 16px/1.2 sans-serif;
+  --pr-gap: 10px;
+  --pr-icon-color-hover: #1b4d29;
+  --pr-icon-color: var(--pr-current-color);
+  --pr-icon-size: 24px;
+  --pr-padding: 12px;
+  --pr-current-color: #1a291e;
+  --pr-content-color: #415445;
 }

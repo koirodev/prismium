@@ -4,16 +4,21 @@ function now() {
 }
 
 // Обработка аккордеонов | Process accordions
-function processAccordions(nestedAccordions, rootAccordions, getInstance, open) {
+function processAccordions(
+  nestedAccordions,
+  rootAccordions,
+  getInstance,
+  open
+) {
   // Открываем вложенные мгновенно | Open nested accordions instantly
-  nestedAccordions.forEach(el => {
+  nestedAccordions.forEach((el) => {
     const instance = getInstance(el);
     if (instance) {
       // Сохраняем оригинальную скорость | Save original speed
       const originalSpeed = { ...instance.speed };
 
       // Устанавливаем нулевую скорость | Set zero speed
-      el.style.setProperty('--prismium-speed', '0ms');
+      el.style.setProperty('--pr-speed', '0ms');
 
       // Открываем аккордеон | Open accordion
       open(el, false);
@@ -22,13 +27,13 @@ function processAccordions(nestedAccordions, rootAccordions, getInstance, open) 
       // Сразу восстанавливаем скорость | Restore speed immediately
       requestAnimationFrame(() => {
         instance.speed = originalSpeed;
-        el.style.setProperty('--prismium-speed', `${originalSpeed.open}ms`);
+        el.style.setProperty('--pr-speed', `${originalSpeed.open}ms`);
       });
     }
   });
 
   // Открываем корневые с анимацией | Open root accordions with animation
-  rootAccordions.forEach(el => {
+  rootAccordions.forEach((el) => {
     const instance = getInstance(el);
     if (instance) {
       open(el, false);
