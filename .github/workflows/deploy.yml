@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - docs-deploy
+      - docs-prod
 
 jobs:
   deploy:
