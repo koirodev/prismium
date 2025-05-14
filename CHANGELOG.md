@@ -1,8 +1,13 @@
-## 4.1.1 - Released on 2025-05-x
+## 4.1.1 - Released on 2025-05-14
 
 ### Reactor
 
 - JS DOC removed
+- Themes refactored
+
+### Fixes
+
+- Fixed the effect of CSS variable `--pr-current-font` on content
 
 <br>
 

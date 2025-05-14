@@ -11,8 +11,9 @@
   --pr-anim-ease: cubic-bezier(0.36, 0.3, 0, 1);
   --pr-bg: transparent;
   --pr-bg-active: transparent;
-  --pr-bg-active-nested: transparent;
   --pr-bg-hover: transparent;
+  --pr-bg-nested: transparent;
+  --pr-bg-nested-active: transparent;
   --pr-border-color: transparent;
   --pr-border-radius: 0;
   --pr-border-width: 0;
@@ -99,7 +100,8 @@
 
     fill: var(--pr-icon-color);
 
-    transition: transform var(--pr-speed) var(--pr-anim-ease),
+    transition: transform var(--pr-speed, var(--pr-anim-duration))
+        var(--pr-anim-ease),
       fill var(--pr-anim-duration) var(--pr-anim-ease);
 
     pointer-events: all;
@@ -181,12 +183,16 @@
 
     .prismium {
       margin-top: var(--pr-gap);
+
+      background-color: var(--pr-bg-nested);
     }
   }
 
   &.prismium-active {
+    background-color: var(--pr-bg-active);
+
     > .prismium__current {
-      > .prismium__icon {
+      .prismium__icon {
         transform: rotate(180deg);
       }
     }
@@ -198,7 +204,7 @@
     }
 
     .prismium-active {
-      background-color: var(--pr-bg-active-nested);
+      background-color: var(--pr-bg-nested-active);
     }
   }
 
