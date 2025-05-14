@@ -17,10 +17,7 @@ export default {
     instance.emit('beforeOpen');
 
     // Set the speed
-    instance.el.style.setProperty(
-      '--prismium-speed',
-      `${instance.speed.open}ms`
-    );
+    instance.el.style.setProperty('--pr-speed', `${instance.speed.open}ms`);
 
     // If there is an effects manager and an effect is set, start the effect event
     if (instance.effectsManager && instance.options.effect) {
@@ -122,7 +119,7 @@ export default {
 
     instance.__animationTimer = this.timerManager.setTimeout(() => {
       instance.$hidden.style.removeProperty('max-height');
-      instance.el.style.removeProperty('--prismium-speed');
+      instance.el.style.removeProperty('--pr-speed');
       instance.$hidden.classList.add(instance.options.openedClass);
 
       this.emit('afterOpen');
@@ -158,10 +155,7 @@ export default {
     instance.emit('beforeClose');
 
     // Установка скорости | Set the speed
-    instance.el.style.setProperty(
-      '--prismium-speed',
-      `${instance.speed.close}ms`
-    );
+    instance.el.style.setProperty('--pr-speed', `${instance.speed.close}ms`);
 
     // If there is an effects manager and an effect is set, start the effect event
     if (instance.effectsManager && instance.options.effect) {
@@ -211,7 +205,7 @@ export default {
 
       instance.__animationTimer = this.timerManager.setTimeout(() => {
         instance.$hidden.style.removeProperty('max-height');
-        instance.el.style.removeProperty('--prismium-speed');
+        instance.el.style.removeProperty('--pr-speed');
 
         // Clear styles for child elements
         if (instance.$content) {

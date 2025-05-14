@@ -24,7 +24,7 @@ export default {
         currentEl.classList.remove('prismium', this.options.activeClass);
         currentEl.classList.remove('prismium-disabled');
         currentEl.classList.remove('prismium-initialized');
-        currentEl.style.removeProperty('--prismium-speed');
+        currentEl.style.removeProperty('--pr-speed');
       }
 
       // Clean up current element

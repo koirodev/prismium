@@ -18,7 +18,7 @@ function processAccordions(
       const originalSpeed = { ...instance.speed };
 
       // Устанавливаем нулевую скорость | Set zero speed
-      el.style.setProperty('--prismium-speed', '0ms');
+      el.style.setProperty('--pr-speed', '0ms');
 
       // Открываем аккордеон | Open accordion
       open(el, false);
@@ -27,7 +27,7 @@ function processAccordions(
       // Сразу восстанавливаем скорость | Restore speed immediately
       requestAnimationFrame(() => {
         instance.speed = originalSpeed;
-        el.style.setProperty('--prismium-speed', `${originalSpeed.open}ms`);
+        el.style.setProperty('--pr-speed', `${originalSpeed.open}ms`);
       });
     }
   });
