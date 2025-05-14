@@ -16,7 +16,7 @@ const setTheme = (theme) => {
       darkTheme.value = true;
       break;
     case 'clear':
-      darkTheme.value = true;
+      darkTheme.value = false;
       break;
     default:
       darkTheme.value = false;
@@ -358,5 +358,12 @@ onMounted(() => {
       max-height: calc(100vh - (var(--global-header-height, 80px) + 10px) * 2);
     }
   }
+}
+</style>
+<style>
+.prismium.prismium_clear {
+  --pr-icon-size: 24px;
+  --pr-current-font: 500 24px / 1.5 sans-serif;
+  --pr-content-font: 500 16px / 1.5 sans-serif;
 }
 </style>

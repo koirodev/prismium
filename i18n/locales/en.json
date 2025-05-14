@@ -443,5 +443,9 @@
         "description": "Unfortunately, an error occurred. We are already working on a fix. Try returning to the home page or refreshing the page later."
       }
     }
+  },
+  "beta_warning": {
+    "title": "<b>The site is under development!</b> We will soon release a fully updated version of the site.",
+    "close": "Close"
   }
 }

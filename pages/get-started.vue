@@ -105,17 +105,14 @@ new Prismium('[data-prismium]', {
       <p v-html="$t(`${i18nPage}.styles.description_2`)"></p>
       <AppCode lang="css">
         <pre><code>.prismium {
-  --prismium-background-color-disabled: #C5C5C5;
-  --prismium-background-color-hover: #DFFFFF;
-  --prismium-background-color-primary: #FCFFFF;
-  --prismium-border-color-primary: #C5C5C5;
-  --prismium-border-radius: 12px;
-  --prismium-border-width: 1px;
-  --prismium-content-gap: 20px;
-  --prismium-content-offset: 20px;
-  --prismium-link-color-hover: #C93AD6;
-  --prismium-link-color-primary: #3234B4;
-  --prismium-link-decoration: underline;
+  --pr-bg: #1c1c1c;
+  --pr-bg-active: var(--pr-bg);
+  --pr-bg-hover: #222222;
+  --pr-bg-nested: var(--pr-bg);
+  --pr-bg-nested-active: #ffffff05;
+  --pr-border-color: #3a3a3a;
+  --pr-border-radius: 16px;
+  --pr-border-width: 1px;
   /* and other variables... */
 
   width: 100%;

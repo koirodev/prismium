@@ -52,44 +52,35 @@ const classes = computed(() => {
 
 <style lang="scss" scoped>
 .prismium-doc {
-  --prismium-background-color-active: theme('colors.dark2');
-  --prismium-background-color-active-nested: theme('colors.dark2');
-  --prismium-background-color-disabled: theme('colors.dark2');
-  --prismium-background-color-hover: theme('colors.dark2');
-  --prismium-background-color-primary: theme('colors.dark2');
-  --prismium-border-color-primary: theme('colors.stroke.DEFAULT');
-  --prismium-border-radius: theme('borderRadius.DEFAULT');
-  --prismium-border-width: 1px;
-  --prismium-content-gap: 20px;
-  --prismium-content-offset: 30px;
-  --prismium-current-gap: 20px;
-  --prismium-duration: theme('transitionDuration.default');
-  --prismium-ease: theme('transitionTimingFunction.default');
-  --prismium-font-primary: inherit;
-  --prismium-font-secondary: inherit;
-  --prismium-gap: 10px;
-  --prismium-icon-color-hover: theme('colors.primary.DEFAULT');
-  --prismium-icon-color-primary: theme('colors.light.DEFAULT');
-  --prismium-icon-size: 24px;
-  --prismium-link-color-hover: theme('colors.primary.DEFAULT');
-  --prismium-link-color-primary: theme('colors.primary.DEFAULT');
-  --prismium-padding: 16px;
-  --prismium-text-color-primary: theme('colors.light.DEFAULT');
-  --prismium-text-color-secondary: inherit;
-
-  a:any-link {
-    --link-color: theme('colors.primary.DEFAULT');
-    --link-color-hover: theme('colors.primary.DEFAULT');
-    --link-stroke-color: theme('colors.primary.transparent');
-    --link-stroke-color-hover: theme('colors.primary.DEFAULT');
-  }
+  --pr-anim-duration: 0.35s;
+  --pr-anim-ease: cubic-bezier(0.36, 0.3, 0, 1);
+  --pr-bg: theme('colors.dark2');
+  --pr-bg-active: theme('colors.dark2');
+  --pr-bg-hover: theme('colors.dark2');
+  --pr-bg-nested: theme('colors.dark');
+  --pr-bg-nested-active: theme('colors.dark2');
+  --pr-border-color: theme('colors.stroke.DEFAULT');
+  --pr-border-radius: theme('borderRadius.DEFAULT');
+  --pr-border-width: 1px;
+  --pr-content-color: theme('colors.light.DEFAULT');
+  --pr-content-font: theme('fontFamily.primary');
+  --pr-content-gap: 20px;
+  --pr-content-offset: 30px;
+  --pr-current-color: theme('colors.light.DEFAULT');
+  --pr-current-font: theme('fontFamily.secondary');
+  --pr-current-gap: 20px;
+  --pr-gap: 10px;
+  --pr-icon-color: var(--pr-current-color);
+  --pr-icon-color-hover: theme('colors.primary.DEFAULT');
+  --pr-icon-size: 24px;
+  --pr-padding: 16px;
 
   .icon {
-    --icon-color: var(--prismium-icon-color-primary);
-    --icon-size: var(--prismium-icon-size);
+    --icon-color: var(--pr-icon-color);
+    --icon-size: var(--pr-icon-size);
 
     @include hover {
-      --icon-color: var(--prismium-icon-color-hover);
+      --icon-color: var(--pr-icon-color-hover);
     }
   }
 

@@ -33,32 +33,6 @@ useHead(
     <SectionsTitle :title="$t(`${i18nPage}.h1`)" />
 
     <LazySectionsDocs class="section_padding_bottom">
-      <template #aside>
-        <AppAsideNav
-          :items="[
-            {
-              title: 'Начало работы',
-              link: '/get-started',
-            },
-            {
-              title: 'Установка',
-              link: '/core/installation',
-            },
-            {
-              title: 'Инициализация',
-              link: '/core/initialization',
-            },
-            {
-              title: 'Параметры',
-              link: '/core/parameters',
-            },
-            {
-              title: 'Эффекты',
-              link: '/core/effects',
-            },
-          ]"
-        />
-      </template>
       <h2 id="full-html-layout" v-html="$t(`${i18nPage}.full_html.title`)"></h2>
       <LazyAppCode max-height="unset" lang="html">{{
         codeHtmlLayout

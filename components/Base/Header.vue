@@ -24,19 +24,23 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header
-    :class="[
-      'animation-default fixed left-0 top-0 z-50 h-fit w-full bg-gradient-to-b from-dark to-transparent py-4 transition-[transform_backdrop-filter]',
-      { '-translate-y-full': isHeaderHidden },
-      { 'backdrop-blur-[1px]': isStartPosition },
-    ]"
-  >
-    <div class="container flex items-end justify-start gap-5">
-      <AppLogo />
+  <div class="contents">
+    <header
+      :class="[
+        'animation-default fixed left-0 top-0 z-50 h-fit w-full bg-gradient-to-b from-dark to-transparent py-4 transition-[transform_backdrop-filter]',
+        { '-translate-y-full': isHeaderHidden },
+        { 'backdrop-blur-[1px]': isStartPosition },
+      ]"
+    >
+      <div class="container flex items-end justify-start gap-5">
+        <AppLogo />
 
-      <BaseNav />
+        <BaseNav />
 
-      <AppBurgerButton />
-    </div>
-  </header>
+        <AppBurgerButton />
+      </div>
+    </header>
+
+    <WarningBanner />
+  </div>
 </template>

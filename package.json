@@ -27,7 +27,7 @@
     "overlayscrollbars": "^2.11.1",
     "postcss-media-minmax": "^5.0.0",
     "prism-themes": "^1.9.0",
-    "prismium": "^4.0.0-beta.49",
+    "prismium": "^4.1.1",
     "prismjs": "^1.30.0",
     "sass": "^1.87.0",
     "sass-loader": "^16.0.5",
