@@ -1,3 +1,11 @@
+## 4.1.2 - Released on 2025-05-17
+
+### Fixes
+
+- Fixed import in Vue with TypeScript
+
+<br>
+
 ## 4.1.1 - Released on 2025-05-14
 
 ### Reactor
