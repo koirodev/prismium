@@ -1,3 +1,11 @@
+## 4.1.3 - Released on 2025-05-17
+
+### Features
+
+- Added TypeScript module typing
+
+<br>
+
 ## 4.1.2 - Released on 2025-05-17
 
 ### Fixes

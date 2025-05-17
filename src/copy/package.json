@@ -38,7 +38,10 @@
     "./theme/ocean": "./themes/ocean.css",
     "./theme/sunset": "./themes/sunset.css",
 
-    "./modules": "./modules/index.mjs",
+    "./modules": {
+      "types": "./types/modules/index.d.ts",
+      "import": "./modules/index.mjs"
+    },
 
     "./react": {
       "types": "./types/react.d.ts",
