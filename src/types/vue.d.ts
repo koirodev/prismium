@@ -11,7 +11,7 @@ export interface PrismiumInjection {
    * Reference to Prismium root element
    */
   prismiumRef: Ref<HTMLElement | null>;
-  
+
   /**
    * Reference to Prismium instance
    */
@@ -31,12 +31,12 @@ export interface PrismiumProps {
    * Options for configuring the Prismium instance
    */
   options?: PrismiumOptions;
-  
+
   /**
    * Modules to register with Prismium
    */
   modules?: PrismiumModule[];
-  
+
   /**
    * Additional attributes to apply to the element
    */
@@ -52,7 +52,7 @@ export interface PrismiumCurrentProps {
    * @default 'div'
    */
   selector?: string;
-  
+
   /**
    * Additional attributes to apply to the element
    */
@@ -68,7 +68,7 @@ export interface PrismiumContentProps {
    * @default 'div'
    */
   selector?: string;
-  
+
   /**
    * Additional attributes to apply to the element
    */
@@ -98,5 +98,5 @@ export default {
    * Install Prismium plugin in Vue application
    * @param app - Vue application instance
    */
-  install: (app: any) => void;
+  install(app: any): void {},
 };
