@@ -1,3 +1,11 @@
+## 4.1.5 - Released on 2025-05-17
+
+### Fixes
+
+- Urgent fix for an accidental `console.log()` in the core.
+
+<br>
+
 ## 4.1.4 - Released on 2025-05-17
 
 ### Fixes

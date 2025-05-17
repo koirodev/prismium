@@ -93,7 +93,6 @@ export class DOMManager {
    */
   setTheme(el) {
     const { theme } = this.instance.options;
-    console.log(el);
 
     if (theme) {
       if (typeof theme === 'object') {
