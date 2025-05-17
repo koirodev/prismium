@@ -15,15 +15,18 @@
       "vue": ["./types/vue.d.ts"]
     }
   },
+
   "exports": {
     ".": {
       "types": "./types/index.d.ts",
       "import": "./prismium-core.mjs"
     },
+
     "./bundle": {
       "types": "./types/index.d.ts",
       "import": "./prismium-bundle.mjs"
     },
+
     "./css": "./prismium.css",
     "./css/bundle": "./prismium-bundle.css",
 
@@ -38,7 +41,10 @@
     "./theme/ocean": "./themes/ocean.css",
     "./theme/sunset": "./themes/sunset.css",
 
-    "./modules": "./modules/index.mjs",
+    "./modules": {
+      "types": "./types/modules/index.d.ts",
+      "import": "./modules/index.mjs"
+    },
 
     "./react": {
       "types": "./types/react.d.ts",
@@ -50,10 +56,12 @@
       "import": "./vue/index.mjs"
     }
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/koirodev/prismium.git"
   },
+  
   "keywords": @keywords,
   "author": "@author",
   "license": "MIT",
