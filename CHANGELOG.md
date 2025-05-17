@@ -1,3 +1,13 @@
+## 4.1.4 - Released on 2025-05-17
+
+### Fixes
+
+- Fixed incorrect import in Vue with TypeScript
+- Fixed incorrect theme application in Vue with TypeScript
+- Fixed incorrect theme application in React with TypeScript
+
+<br>
+
 ## 4.1.3 - Released on 2025-05-17
 
 ### Features

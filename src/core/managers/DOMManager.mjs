@@ -93,15 +93,17 @@ export class DOMManager {
    */
   setTheme(el) {
     const { theme } = this.instance.options;
-    if (theme) {
-      el.classList.add(`prismium_${theme}`);
+    console.log(el);
 
+    if (theme) {
       if (typeof theme === 'object') {
         Object.entries(theme).forEach(([key, value]) => {
           if (value) {
             el.classList.add(`prismium_${key}`);
           }
         });
+      } else {
+        el.classList.add(`prismium_${theme}`);
       }
     }
   }

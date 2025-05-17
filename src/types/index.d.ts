@@ -86,17 +86,3 @@ export type PrismiumTheme =
   | 'ocean'
   | 'sunset'
   | { [key: string]: boolean };
-
-/**
- * Effect types available in Prismium
- */
-export type PrismiumEffect =
-  | 'line-by-line'
-  | 'fade-scale'
-  | 'slide'
-  | 'stagger'
-  | 'wave'
-  | 'flip'
-  | 'zoom'
-  | 'cascade'
-  | 'custom';

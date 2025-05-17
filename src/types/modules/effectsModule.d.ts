@@ -1,5 +1,19 @@
-import { PrismiumEffect, PrismiumModule } from '../index';
+import { PrismiumModule } from '../index';
 import Prismium from '../core';
+
+/**
+ * Effect types available in Prismium
+ */
+export type PrismiumEffect =
+  | 'line-by-line'
+  | 'fade-scale'
+  | 'slide'
+  | 'stagger'
+  | 'wave'
+  | 'flip'
+  | 'zoom'
+  | 'cascade'
+  | 'custom';
 
 /**
  * Options for the EffectsModule

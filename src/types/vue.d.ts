@@ -1,3 +1,4 @@
+import { EffectsModule } from './modules/index';
 import { PrismiumModule } from './index';
 import { PrismiumOptions } from './options';
 import Prismium from './core';
