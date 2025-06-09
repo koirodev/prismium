@@ -1,3 +1,11 @@
+## 4.1.6 - Released on 2025-06-09
+
+### Features
+
+- Added the ability to change the selector for `prismium` in Vue and React, allowing the use of custom selectors for component styling.
+
+<br>
+
 ## 4.1.5 - Released on 2025-05-17
 
 ### Fixes
