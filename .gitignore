@@ -13,7 +13,6 @@ __MACOSX
 /middleware
 
 node_modules
-package-lock.json
 dist
 demos
 demos_vue
