@@ -24,6 +24,12 @@ export interface PrismiumProps {
   children?: React.ReactNode;
 
   /**
+   * HTML selector to use for rendering the component
+   * @default 'div'
+   */
+  selector?: string;
+
+  /**
    * Event handler for beforeInit event
    */
   beforeInit?: (instance: Prismium) => void;

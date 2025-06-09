@@ -39,6 +39,12 @@ export interface PrismiumProps {
   modules?: PrismiumModule[];
 
   /**
+   * HTML selector to use for rendering the component
+   * @default 'div'
+   */
+  selector?: string;
+
+  /**
    * Additional attributes to apply to the element
    */
   attributes?: Record<string, any>;

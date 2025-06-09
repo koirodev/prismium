@@ -9,6 +9,7 @@ import PrismiumCore from '../../core/core.mjs';
 export const Prismium = ({
   options = {},
   modules = [],
+  selector = 'div',
   children,
   ...extraProps
 }) => {
@@ -117,7 +118,7 @@ export const Prismium = ({
   }, []);
 
   return React.createElement(
-    'div',
+    selector,
     {
       ref: containerRef,
       'data-prismium': '',

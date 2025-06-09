@@ -57,6 +57,14 @@ export const Prismium = defineComponent({
     },
 
     /**
+     * HTML tag/selector to use for rendering the component
+     */
+    selector: {
+      type: String,
+      default: 'div',
+    },
+
+    /**
      * Additional attributes to apply to the root element
      */
     attributes: {
@@ -137,7 +145,7 @@ export const Prismium = defineComponent({
 
     return () =>
       h(
-        'div',
+        props.selector,
         {
           ref: prismiumRef,
           'data-prismium': '',
