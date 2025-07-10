@@ -1,3 +1,11 @@
+## 4.1.7 - Released on 2025-07-10
+
+### Fixes
+
+- Fixed TypeScript typings to resolve import issues in Vue and React.
+
+<br>
+
 ## 4.1.6 - Released on 2025-06-09
 
 ### Features
