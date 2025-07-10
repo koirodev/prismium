@@ -86,3 +86,5 @@ export type PrismiumTheme =
   | 'ocean'
   | 'sunset'
   | { [key: string]: boolean };
+
+export default Prismium;
