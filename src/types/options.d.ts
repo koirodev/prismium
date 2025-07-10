@@ -5,10 +5,12 @@ import {
 } from './index';
 import Prismium from './core';
 
+import type { EffectsModuleOptions } from './modules/effectsModule';
+
 /**
  * Default options for Prismium
  */
-export interface PrismiumOptions {
+export interface PrismiumOptions extends EffectsModuleOptions {
   /**
    * Root element for the accordion
    */
