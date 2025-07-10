@@ -1,3 +1,5 @@
+import { PrismiumOptions } from './options';
+
 /**
  * Main type definitions for Prismium
  */
@@ -86,5 +88,51 @@ export type PrismiumTheme =
   | 'ocean'
   | 'sunset'
   | { [key: string]: boolean };
+
+/**
+ * Main Prismium class
+ */
+declare class Prismium {
+  constructor(
+    selector?: string | HTMLElement | null,
+    options?: PrismiumOptions
+  );
+
+  init(el?: HTMLElement): void;
+  destroy(el?: HTMLElement): Prismium;
+  setupSpeed(open: number, close?: number): void;
+  open(): void;
+  close(): void;
+  toggle(): void;
+
+  on(
+    event: PrismiumEventName | PrismiumEventName[],
+    handler: PrismiumEventCallback | PrismiumEventCallback[]
+  ): Prismium;
+  once(
+    event: PrismiumEventName | PrismiumEventName[],
+    handler: PrismiumEventCallback | PrismiumEventCallback[]
+  ): Prismium;
+  onAny(handler: PrismiumEventCallback | PrismiumEventCallback[]): Prismium;
+  off(
+    event: PrismiumEventName | PrismiumEventName[],
+    handler?: PrismiumEventCallback | PrismiumEventCallback[]
+  ): Prismium;
+  offAny(handler: PrismiumEventCallback | PrismiumEventCallback[]): Prismium;
+
+  static unit(el: HTMLElement): Prismium;
+  static use(module: PrismiumModule): void;
+  static getInstance(selector: HTMLElement | string): Prismium;
+  static open(selector: HTMLElement | string): Prismium;
+  static openAll(container: HTMLElement | string, selector?: string): void;
+  static openEverything(selector?: string): void;
+  static toggle(selector: HTMLElement | string): void;
+  static close(selector: HTMLElement | string): Prismium;
+  static closeAll(container: HTMLElement | string, selector?: string): void;
+  static closeEverything(selector?: string): void;
+  static closeNested(selector: HTMLElement | string): void;
+  static disable(selector: HTMLElement | string): void;
+  static enable(selector: HTMLElement | string): void;
+}
 
 export default Prismium;
