@@ -355,6 +355,17 @@ class Prismium {
     if (this.$current && !this.$current._hasClickHandler) {
       const handler = (event) => {
         event.preventDefault();
+
+        const preventSelectors = Array.isArray(
+          this.options.preventSelectors
+        )
+          ? this.options.preventSelectors
+          : [this.options.preventSelectors];
+        const isInPreventSelector = preventSelectors.some((selector) =>
+          event.target.closest(selector)
+        );
+        if (isInPreventSelector) return;
+
         if (!this.destroyed) {
           this.toggle(el, true);
         }
