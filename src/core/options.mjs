@@ -11,6 +11,7 @@ export default {
   // NS
   iconAttribute: 'data-prismium-icon',
   containerSelectors: ['[data-prismium-container]'],
+  preventSelectors: ['[data-prismium-prevent]'],
   currentSelector: '[data-prismium-current]',
   contentSelector: '[data-prismium-content]',
   hiddenSelector: '[data-prismium-hidden]',

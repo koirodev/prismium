@@ -1,3 +1,11 @@
+## 4.1.9 - Released on 2025-09-24
+
+### Features
+
+- Added support for the `data-prismium-prevent` selector to prevent interaction with the accordion.
+
+<br>
+
 ## 4.1.8 - Released on 2025-07-10
 
 ### Fixes
