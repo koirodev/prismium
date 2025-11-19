@@ -32,11 +32,19 @@ export class IconManager {
       if (!useTag) return;
 
       const icon = state === 'open' ? this.icon.close : this.icon.open;
-      useTag.setAttributeNS(
-        'http://www.w3.org/1999/xlink',
-        'xlink:href',
-        `${this.instance.options.spritePath}#${icon}`
-      );
+
+      if (useTag.hasAttribute('xlink:href')) {
+        useTag.setAttributeNS(
+          'http://www.w3.org/1999/xlink',
+          'xlink:href',
+          `${this.instance.options.spritePath}#${icon}`
+        );
+      } else {
+        useTag.setAttribute(
+          'href',
+          `${this.instance.options.spritePath}#${icon}`
+        );
+      }
     }
 
     if (this.icon.type === 'multiple') {
