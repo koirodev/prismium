@@ -1,3 +1,11 @@
+## 4.1.10 - Released on 2025-11-19
+
+### Features
+
+- Added support both `xlink:href` and `href` attributes for SVG `<use>` tags in IconManager.
+
+<br>
+
 ## 4.1.9 - Released on 2025-09-24
 
 ### Features
